@@ -1,0 +1,24 @@
+{
+  "name": "campusmap",
+  "version": "1.0.0",
+  "description": "Map for CentraleSupélec's campus",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "/bin/sh create_dist.sh && webpack",
+    "dev": "docker compose -f docker-compose.dev.yaml up -d --build && echo \"\n************************************************\n* Started development server on localhost:8080 *\n************************************************\n\"",
+    "stop-dev": "docker compose -f docker-compose.dev.yaml down && echo \"\n****************************\n* Ended development server *\n****************************\n\"",
+    "prod": "docker compose -f docker-compose.prod.yaml up -d --build && echo \"\n###############################################\n# Started production server on localhost:8080 #\n###############################################\n\"",
+    "stop-prod": "docker compose -f docker-compose.prod.yaml down && echo \"\n###########################\n# Ended production server #\n###########################\n\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab-research.centralesupelec.fr:disi/campusmap.git"
+  },
+  "author": "Jad Zahreddine",
+  "license": "see LICENSE",
+  "devDependencies": {
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0"
+  }
+}

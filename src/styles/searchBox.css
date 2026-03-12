@@ -1,0 +1,258 @@
+/**********************************************************************************************************************/
+/************************************************ Search box **********************************************************/
+/**********************************************************************************************************************/
+
+/* Top search container by id*/
+#top-container {
+    z-index: 999;
+    /* Setting the search box in the forefront, not 1000 to be able to use OSM native zoom buttons*/
+    display: flex;
+    flex-direction: row;
+    margin-top: 2px;
+    align-items: flex-start;
+    /* Align the search box to the top */
+    justify-content: flex-end;
+    /* Align the search box to the center */
+}
+
+#searchContainer {
+    margin: 4px 4px;
+}
+
+/* Search container by class*/
+.autocomplete-searchContainer {
+    /* position: relative;
+    top:15px;
+    left:58px;  */
+    z-index: 1000;
+    width: 290px;
+    height: 42px;
+    background-color: white;
+    border-style: solid;
+    border-width: 1px;
+    border-color: lightgrey;
+    border-left: none;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+
+    -moz-box-shadow: 2px 2px 2px -2px gray;
+    -webkit-box-shadow: 2px 2px 2px -2px gray;
+    box-shadow: 2px 2px 2px -2px gray;
+
+}
+
+/* Input search box, id = searchBox */
+.autocomplete-searchBox {
+    width: 200px;
+    height: 40px;
+    border: none;
+    margin-left: 10px;
+    overflow: hidden;
+    outline: none;
+}
+
+/* Input search button, id = searchButton */
+.autocomplete-searchButton {
+    background: url('./image/search_double.png') no-repeat;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    border: none;
+    background-color: white;
+    outline: none;
+    vertical-align: middle;
+}
+
+.autocomplete-searchButton:hover {
+    background: url('./image/search_double.png') no-repeat -24px 0px;
+}
+
+/* Input clear button, id = clearButton */
+.autocomplete-clearButton {
+    background: url('./image/clear_multiple.png') no-repeat;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    border: none;
+    background-color: white;
+    outline: none;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.autocomplete-clearButton:hover {
+    background: url('./image/clear_multiple.png') no-repeat -24px 0px;
+}
+
+/* Divider between search button & clear button */
+.autocomplete-divider {
+    width: 24px;
+    border-left: solid 1px lightgrey;
+    margin-left: 10px;
+}
+
+/* Result div, id resultsDiv */
+.autocomplete-result {
+    position: absolute;
+    background-color: white;
+    width: 289px;
+    /* //1 pixel less than search container beacause of border
+    top: 200px; */
+
+    border-style: solid;
+    border-width: 1px;
+    border-color: lightgrey;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+
+    -moz-box-shadow: 2px 2px 2px -2px gray;
+    -webkit-box-shadow: 2px 2px 2px -2px gray;
+    box-shadow: 2px 2px 2px -2px gray;
+}
+
+/* Result list */
+.autocomplete-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+/* Result list element */
+.autocomplete-listResult {
+    background-color: white;
+    height: 38px;
+    margin-bottom: 0px;
+    border-top: 1px solid #e6e6e6;
+}
+
+.autocomplete-listResult.active {
+    background-color: lightskyblue;
+}
+
+.autocomplete-listResult.mouseover {
+    background-color: lightgrey;
+}
+
+/* Result list element icon */
+.autocomplete-iconStyle {
+    width: 24px;
+    height: 24px;
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+/* Result list element content */
+.autocomplete-content {
+    float: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 38px;
+    width: 289px;
+    /* //1 pixel less than search container beacause of border */
+    line-height: 38px;
+}
+
+/* Result list element title */
+.autocomplete-title {
+    margin-left: 10px;
+    line-height: 38px;
+}
+
+/* Make display responsive */
+@media (max-width: 410px) {
+    #searchContainer {
+        margin: 4px 4px;
+    }
+
+    .autocomplete-searchContainer {
+        width: 230px;
+    }
+
+    .autocomplete-searchBox {
+        width: 190px;
+        font-size: 12px;
+    }
+
+    .autocomplete-searchButton {
+        display: none;
+    }
+
+    .autocomplete-searchButton:hover {
+        display: none;
+    }
+
+    .autocomplete-clearButton {
+        display: none;
+    }
+
+    .autocomplete-clearButton:hover {
+        display: none;
+    }
+
+    .autocomplete-divider {
+        display: none;
+    }
+
+    .autocomplete-result {
+        width: 229px;
+    }
+
+    .autocomplete-content {
+        width: 229px;
+    }
+
+    .autocomplete-title {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 360px) {
+    #searchContainer {
+        margin: 4px 4px;
+    }
+
+    .autocomplete-searchContainer {
+        width: 190px;
+    }
+
+    .autocomplete-searchBox {
+        width: 160px;
+        font-size: 12px;
+    }
+
+    .autocomplete-searchButton {
+        display: none;
+    }
+
+    .autocomplete-searchButton:hover {
+        display: none;
+    }
+
+    .autocomplete-clearButton {
+        display: none;
+    }
+
+    .autocomplete-clearButton:hover {
+        display: none;
+    }
+
+    .autocomplete-divider {
+        display: none;
+    }
+
+    .autocomplete-result {
+        width: 189px;
+    }
+
+    .autocomplete-content {
+        width: 189px;
+    }
+
+    .autocomplete-title {
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,890 @@
+{
+  "type": "MarkerCollection",
+  "markers": [
+    {
+      "icon": "amusement_park.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#f4af35",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#f4af35",
+      "weight": 1,
+      "opacity": 0.5
+    },
+    {
+      "icon": "auditorium.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#f6a657",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#f6a657",
+      "weight": 1,
+      "opacity": 0.5
+    },
+    {
+      "icon": "bakery.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#d0b497",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#d0b497",
+      "weight": 1,
+      "opacity": 0.5
+    },
+    {
+      "icon": "break_room.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#f6a658",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#f6a658",
+      "weight": 1,
+      "opacity": 0.5
+    },
+    {
+      "icon": "building.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#981c81",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#981c81",
+      "weight": 1,
+      "opacity": 0.5
+    },
+    {
+      "icon": "bus_station.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#6393cd",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#6393cd",
+      "weight": 1,
+      "opacity": 0.5
+    },
+    {
+      "icon": "cafeteria.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#d0b496",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#d0b496",
+      "weight": 1,
+      "opacity": 0.5
+    },
+    {
+      "icon": "car_parking.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#5F92CA",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#5F92CA",
+      "weight": 1,
+      "opacity": 0.5
+    },
+    {
+      "icon": "casino.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#911C22",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#911C22",
+      "weight": 1,
+      "opacity": 0.5
+    },
+    {
+      "icon": "changing_room.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#E3ABAB",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#E3ABAB",
+      "weight": 1,
+      "opacity": 0.5
+    },
+    {
+      "icon": "cinema.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#3A7860",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#3A7860",
+      "weight": 1,
+      "opacity": 0.5
+    },
+    {
+      "icon": "class.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#706655",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#706655",
+      "weight": 1,
+      "opacity": 0.5
+    },
+    {
+      "icon": "classroom.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#9d5452",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#9d5452",
+      "weight": 1,
+      "opacity": 0.5
+    },
+    {
+      "icon": "computer_room.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#788491",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#788491",
+      "weight": 1,
+      "opacity": 0.5
+    },
+    {
+      "icon": "decoration.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#B2A89E",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#B2A89E",
+      "weight": 0,
+      "opacity": 0.5
+    },
+    {
+      "icon": "disabled_toilet.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#336AB0",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#336AB0",
+      "weight": 1,
+      "opacity": 0.5
+    },
+    {
+      "icon": "drinking_fountain.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#5D92CA",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#5D92CA",
+      "weight": 1,
+      "opacity": 0.5
+    },
+    {
+      "icon": "elevator.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#3DC3E0",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#3DC3E0",
+      "weight": 1,
+      "opacity": 0.5
+    },
+    {
+      "icon": "entranceexit.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#5AA971",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#5AA971",
+      "weight": 1,
+      "opacity": 0.5
+    },
+    {
+      "icon": "fast_food.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#C6AA90",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#C6AA90",
+      "weight": 1,
+      "opacity": 0.5
+    },
+    {
+      "icon": "fruits_and_vegetables.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#C5AA91",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#C5AA91",
+      "weight": 1,
+      "opacity": 0.5
+    },
+    {
+      "icon": "gym.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#E2BA49",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#E2BA49",
+      "weight": 1,
+      "opacity": 0.5
+    },
+    {
+      "icon": "hall.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#922E8B",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#922E8B",
+      "weight": 1,
+      "opacity": 0.5
+    },
+    {
+      "icon": "hotel.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#F5B177",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#F5B177",
+      "weight": 1,
+      "opacity": 0.5
+    },
+    {
+      "icon": "information_desk.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#336AB0",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#336AB0",
+      "weight": 1,
+      "opacity": 0.5
+    },
+    {
+      "icon": "library.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#3A7860",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#3A7860",
+      "weight": 1,
+      "opacity": 0.5
+    },
+    {
+      "icon": "liquor.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#C6AA91",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#C6AA91",
+      "weight": 1,
+      "opacity": 0.5
+    },
+    {
+      "icon": "meeting_area.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#37D367",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#37D367",
+      "weight": 1,
+      "opacity": 0.5
+    },
+    {
+      "icon": "meeting_available.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#37D367",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#37D367",
+      "weight": 1,
+      "opacity": 0.5
+    },
+    {
+      "icon": "meeting_point.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#56B85F",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#56B85F",
+      "weight": 1,
+      "opacity": 0.5
+    },
+    {
+      "icon": "meeting_room.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#F7A363",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#F7A363",
+      "weight": 1,
+      "opacity": 0.5
+    },
+    {
+      "icon": "men_restroom.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#336AB0",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#336AB0",
+      "weight": 1,
+      "opacity": 0.5
+    },
+    {
+      "icon": "menwomen_restroom.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#336AB0",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#336AB0",
+      "weight": 1,
+      "opacity": 0.5
+    },
+    {
+      "icon": "movie_rental.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#9AB6C3",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#9AB6C3",
+      "weight": 1,
+      "opacity": 0.5
+    },
+    {
+      "icon": "night_club.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#3E2D71",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#3E2D71",
+      "weight": 1,
+      "opacity": 0.5
+    },
+    {
+      "icon": "office-dark.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#000000",
+      "fillOpacity": 0,
+      "stroke": true,
+      "color": "#000000",
+      "weight": 0,
+      "opacity": 0
+    },
+    {
+      "icon": "office.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#706655",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#706655",
+      "weight": 1,
+      "opacity": 0.5
+    },
+    {
+      "icon": "park.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#8eb186",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#8eb186",
+      "weight": 1,
+      "opacity": 0.5
+    },
+    {
+      "icon": "pharmacy.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#94c67b",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#94c67b",
+      "weight": 1,
+      "opacity": 0.5
+    },
+    {
+      "icon": "printer.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#818a98",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#818a98",
+      "weight": 1,
+      "opacity": 0.5
+    },
+    {
+      "icon": "quiet_zone.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#dc3c4d",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#dc3c4d",
+      "weight": 1,
+      "opacity": 0.5
+    },
+    {
+      "icon": "ramp.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#03f",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#03f",
+      "weight": 1,
+      "opacity": 0.5
+    },
+    {
+      "icon": "reception.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#d6667c",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#d6667c",
+      "weight": 1,
+      "opacity": 0.5
+    },
+    {
+      "icon": "recycle.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#6aae40",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#6aae40",
+      "weight": 5,
+      "opacity": 0.5
+    },
+    {
+      "icon": "restaurant.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#d0b497",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#d0b497",
+      "weight": 1,
+      "opacity": 0.5
+    },
+    {
+      "icon": "restroom_2.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": " #658e4c",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": " #658e4c",
+      "weight": 5,
+      "opacity": 0.5
+    },
+    {
+      "icon": "room.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#8b72a2",
+      "fillOpacity": 0.1,
+      "stroke": true,
+      "color": "#8b72a2",
+      "weight": 1,
+      "opacity": 0.5
+    },
+    {
+      "icon": "school.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#7b6d56",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#7b6d56",
+      "weight": 1,
+      "opacity": 0.5
+    },
+    {
+      "icon": "seating_area.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#f6a658",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#f6a658",
+      "weight": 1,
+      "opacity": 0.5
+    },
+    {
+      "icon": "stairs.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#3DC3E0",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#3DC3E0",
+      "weight": 1,
+      "opacity": 0.5
+    },
+    {
+      "icon": "storage.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#B2A89F",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#B2A89F",
+      "weight": 1,
+      "opacity": 0.5
+    },
+    {
+      "icon": "studio_photo.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#03f",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#03f",
+      "weight": 5,
+      "opacity": 0.5
+    },
+    {
+      "icon": "technical_room.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#808080",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#808080",
+      "weight": 1,
+      "opacity": 0.5
+    },
+    {
+      "icon": "toilet_disabled.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#336AB0",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#336AB0",
+      "weight": 0,
+      "opacity": 0.5
+    },
+    {
+      "icon": "tv.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#ecdb53",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#ecdb53",
+      "weight": 1,
+      "opacity": 0.5
+    },
+    {
+      "icon": "university.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#706655",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#706655",
+      "weight": 1,
+      "opacity": 0.5
+    },
+    {
+      "icon": "welcome_house.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#03f",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#03f",
+      "weight": 5,
+      "opacity": 0.5
+    },
+    {
+      "icon": "wifi.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#55c2be",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#55c2be",
+      "weight": 1,
+      "opacity": 0.5
+    },
+    {
+      "icon": "women_restroom.svg",
+      "displayOptions": {
+        "marker": true,
+        "title": true,
+        "polygon": true
+      },
+      "fill": true,
+      "fillColor": "#336ab0",
+      "fillOpacity": 0.2,
+      "stroke": true,
+      "color": "#336ab0",
+      "weight": 1,
+      "opacity": 0.5
+    }
+  ]
+}

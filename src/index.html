@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <title>CentraleSupélec Maps</title>
+    <link
+      rel="icon"
+      href="assets/favicon.ico"
+    />
+    <meta charset="UTF-8" />
+
+    <!--Disable unwanted scaling of the page and set it to its actual size-->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+
+    <link rel="stylesheet" href="index.css" />
+
+    <script src="lib/jquery/jquery-3.6.0.min.js"></script>
+    <script type="module" src="index.js"></script>
+  </head>
+
+  <body>
+    <div id="map">
+      <div id="top-container">
+        <div id="searchContainer"></div>
+        <div id="custom-select">
+          <select id="campus-select">
+            <option value="">Campus :</option>
+          </select>
+        </div>
+      </div>
+      <div id="buttons-container">
+        <div id="floorButtons-container">
+          <button id="bLoc" class="floorButton">&target;</button>
+        </div>
+      </div>
+      <div class="footer">
+        <p>
+          &nbsp; By <a id="viarezo" href="https://viarezo.fr">VIAREZO</a> ©
+          <a id="osm" href="https://openstreetmap.fr">OpenStreetMap</a> &nbsp;
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

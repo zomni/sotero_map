@@ -1,0 +1,24 @@
+/* Map div element stretch to all available space (fullscreen) */
+body {
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body,
+#map {
+    height: 100%;
+    width: 100vw;
+}
+
+/* Use Flexbox for button position display */
+#map {
+    display: flex;
+    flex-direction: column;
+}
+
+.marker_circle {
+    padding: 3px !important;
+    border-radius: 50% !important;
+    background-color: white;
+}

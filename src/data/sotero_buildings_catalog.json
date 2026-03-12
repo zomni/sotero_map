@@ -1,0 +1,1246 @@
+{
+  "buildings": [
+    {
+      "id": "SR-BLD-001",
+      "slug": "edificio_001",
+      "displayName": "Edificio 001",
+      "shortName": "BLD-001",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "relation/9606272",
+      "centroid": [
+        -70.58092213921,
+        -33.576474497776566
+      ]
+    },
+    {
+      "id": "SR-BLD-002",
+      "slug": "edificio_002",
+      "displayName": "Edificio 002",
+      "shortName": "BLD-002",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "relation/12752169",
+      "centroid": [
+        -70.57870224686953,
+        -33.57807898298344
+      ]
+    },
+    {
+      "id": "SR-BLD-003",
+      "slug": "edificio_003",
+      "displayName": "Edificio 003",
+      "shortName": "BLD-003",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/107309704",
+      "centroid": [
+        -70.58146570853042,
+        -33.57456507168515
+      ]
+    },
+    {
+      "id": "SR-BLD-004",
+      "slug": "edificio_004",
+      "displayName": "Edificio 004",
+      "shortName": "BLD-004",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/197610961",
+      "centroid": [
+        -70.58229410979166,
+        -33.57682022327125
+      ]
+    },
+    {
+      "id": "SR-BLD-005",
+      "slug": "casa_colorada",
+      "displayName": "Casa Colorada",
+      "shortName": "BLD-005",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/278048439",
+      "centroid": [
+        -70.57937500228793,
+        -33.57747563903215
+      ]
+    },
+    {
+      "id": "SR-BLD-006",
+      "slug": "sala_cuna_hospital",
+      "displayName": "Sala Cuna Hospital",
+      "shortName": "BLD-006",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/278844029",
+      "centroid": [
+        -70.57992000237134,
+        -33.579000961907994
+      ]
+    },
+    {
+      "id": "SR-BLD-007",
+      "slug": "edificio_maternidad",
+      "displayName": "Edificio Maternidad",
+      "shortName": "BLD-007",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/278844410",
+      "centroid": [
+        -70.57953868233074,
+        -33.57810754102435
+      ]
+    },
+    {
+      "id": "SR-BLD-008",
+      "slug": "edificio_008",
+      "displayName": "Edificio 008",
+      "shortName": "BLD-008",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/278875383",
+      "centroid": [
+        -70.5800126361656,
+        -33.57784278375641
+      ]
+    },
+    {
+      "id": "SR-BLD-009",
+      "slug": "edificio_009",
+      "displayName": "Edificio 009",
+      "shortName": "BLD-009",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/278875384",
+      "centroid": [
+        -70.58076292178437,
+        -33.57811004456788
+      ]
+    },
+    {
+      "id": "SR-BLD-010",
+      "slug": "edificio_010",
+      "displayName": "Edificio 010",
+      "shortName": "BLD-010",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/278875385",
+      "centroid": [
+        -70.57846324300078,
+        -33.578853384476105
+      ]
+    },
+    {
+      "id": "SR-BLD-011",
+      "slug": "salud_mental_h_sotero_del_rio",
+      "displayName": "Salud Mental H. Sótero del Río",
+      "shortName": "BLD-011",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/278875386",
+      "centroid": [
+        -70.57802338374678,
+        -33.57732013464304
+      ]
+    },
+    {
+      "id": "SR-BLD-012",
+      "slug": "edificio_012",
+      "displayName": "Edificio 012",
+      "shortName": "BLD-012",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/278875390",
+      "centroid": [
+        -70.58049355828457,
+        -33.57735559957543
+      ]
+    },
+    {
+      "id": "SR-BLD-013",
+      "slug": "edificio_013",
+      "displayName": "Edificio 013",
+      "shortName": "BLD-013",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/399316145",
+      "centroid": [
+        -70.58062191917989,
+        -33.57791374776361
+      ]
+    },
+    {
+      "id": "SR-BLD-014",
+      "slug": "edificio_014",
+      "displayName": "Edificio 014",
+      "shortName": "BLD-014",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/399316146",
+      "centroid": [
+        -70.58091592326367,
+        -33.57779740064251
+      ]
+    },
+    {
+      "id": "SR-BLD-015",
+      "slug": "edificio_015",
+      "displayName": "Edificio 015",
+      "shortName": "BLD-015",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/399316152",
+      "centroid": [
+        -70.58007878591766,
+        -33.57809871908114
+      ]
+    },
+    {
+      "id": "SR-BLD-016",
+      "slug": "edificio_016",
+      "displayName": "Edificio 016",
+      "shortName": "BLD-016",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/663073586",
+      "centroid": [
+        -70.5801396189903,
+        -33.57878205780082
+      ]
+    },
+    {
+      "id": "SR-BLD-017",
+      "slug": "edificio_017",
+      "displayName": "Edificio 017",
+      "shortName": "BLD-017",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/663073587",
+      "centroid": [
+        -70.57913231415351,
+        -33.578767898680596
+      ]
+    },
+    {
+      "id": "SR-BLD-018",
+      "slug": "edificio_018",
+      "displayName": "Edificio 018",
+      "shortName": "BLD-018",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/663073588",
+      "centroid": [
+        -70.5786580404901,
+        -33.57838077381018
+      ]
+    },
+    {
+      "id": "SR-BLD-019",
+      "slug": "edificio_019",
+      "displayName": "Edificio 019",
+      "shortName": "BLD-019",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/755290351",
+      "centroid": [
+        -70.57938873565854,
+        -33.57697463847506
+      ]
+    },
+    {
+      "id": "SR-BLD-020",
+      "slug": "edificio_020",
+      "displayName": "Edificio 020",
+      "shortName": "BLD-020",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/755290352",
+      "centroid": [
+        -70.57980414531858,
+        -33.57756120505733
+      ]
+    },
+    {
+      "id": "SR-BLD-021",
+      "slug": "edificio_021",
+      "displayName": "Edificio 021",
+      "shortName": "BLD-021",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/944466579",
+      "centroid": [
+        -70.5791824182288,
+        -33.577158427148305
+      ]
+    },
+    {
+      "id": "SR-BLD-022",
+      "slug": "edificio_022",
+      "displayName": "Edificio 022",
+      "shortName": "BLD-022",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/944466580",
+      "centroid": [
+        -70.5783707085552,
+        -33.57665797140212
+      ]
+    },
+    {
+      "id": "SR-BLD-023",
+      "slug": "edificio_023",
+      "displayName": "Edificio 023",
+      "shortName": "BLD-023",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/944466581",
+      "centroid": [
+        -70.5784832986384,
+        -33.576758173654774
+      ]
+    },
+    {
+      "id": "SR-BLD-024",
+      "slug": "edificio_024",
+      "displayName": "Edificio 024",
+      "shortName": "BLD-024",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/944466582",
+      "centroid": [
+        -70.57865234536459,
+        -33.577744296432186
+      ]
+    },
+    {
+      "id": "SR-BLD-025",
+      "slug": "edificio_025",
+      "displayName": "Edificio 025",
+      "shortName": "BLD-025",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/944466583",
+      "centroid": [
+        -70.57876615524631,
+        -33.57757873094575
+      ]
+    },
+    {
+      "id": "SR-BLD-026",
+      "slug": "edificio_026",
+      "displayName": "Edificio 026",
+      "shortName": "BLD-026",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/944466584",
+      "centroid": [
+        -70.57830900752205,
+        -33.57814692171963
+      ]
+    },
+    {
+      "id": "SR-BLD-027",
+      "slug": "edificio_027",
+      "displayName": "Edificio 027",
+      "shortName": "BLD-027",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/944466585",
+      "centroid": [
+        -70.57823483487903,
+        -33.57828210328214
+      ]
+    },
+    {
+      "id": "SR-BLD-028",
+      "slug": "edificio_028",
+      "displayName": "Edificio 028",
+      "shortName": "BLD-028",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/944466586",
+      "centroid": [
+        -70.57905147786104,
+        -33.57836929483976
+      ]
+    },
+    {
+      "id": "SR-BLD-029",
+      "slug": "edificio_029",
+      "displayName": "Edificio 029",
+      "shortName": "BLD-029",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/944466587",
+      "centroid": [
+        -70.57898248589427,
+        -33.57852996692068
+      ]
+    },
+    {
+      "id": "SR-BLD-030",
+      "slug": "edificio_030",
+      "displayName": "Edificio 030",
+      "shortName": "BLD-030",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/944466588",
+      "centroid": [
+        -70.57922956683485,
+        -33.5788073488148
+      ]
+    },
+    {
+      "id": "SR-BLD-031",
+      "slug": "edificio_031",
+      "displayName": "Edificio 031",
+      "shortName": "BLD-031",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/944466590",
+      "centroid": [
+        -70.58062419964169,
+        -33.578370537788
+      ]
+    },
+    {
+      "id": "SR-BLD-032",
+      "slug": "edificio_032",
+      "displayName": "Edificio 032",
+      "shortName": "BLD-032",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/944466591",
+      "centroid": [
+        -70.58131535727404,
+        -33.578260408040194
+      ]
+    },
+    {
+      "id": "SR-BLD-033",
+      "slug": "edificio_033",
+      "displayName": "Edificio 033",
+      "shortName": "BLD-033",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/944466592",
+      "centroid": [
+        -70.58166585373517,
+        -33.578325983831014
+      ]
+    },
+    {
+      "id": "SR-BLD-034",
+      "slug": "edificio_034",
+      "displayName": "Edificio 034",
+      "shortName": "BLD-034",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/944466593",
+      "centroid": [
+        -70.58074008086189,
+        -33.576299187433534
+      ]
+    },
+    {
+      "id": "SR-BLD-035",
+      "slug": "edificio_035",
+      "displayName": "Edificio 035",
+      "shortName": "BLD-035",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/944466594",
+      "centroid": [
+        -70.58203063617053,
+        -33.57685790563913
+      ]
+    },
+    {
+      "id": "SR-BLD-036",
+      "slug": "edificio_036",
+      "displayName": "Edificio 036",
+      "shortName": "BLD-036",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/944466595",
+      "centroid": [
+        -70.58151781455126,
+        -33.57609871959909
+      ]
+    },
+    {
+      "id": "SR-BLD-037",
+      "slug": "edificio_037",
+      "displayName": "Edificio 037",
+      "shortName": "BLD-037",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/944466596",
+      "centroid": [
+        -70.58158972304511,
+        -33.576010335275235
+      ]
+    },
+    {
+      "id": "SR-BLD-038",
+      "slug": "edificio_038",
+      "displayName": "Edificio 038",
+      "shortName": "BLD-038",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/944466597",
+      "centroid": [
+        -70.58194442145832,
+        -33.576024376025636
+      ]
+    },
+    {
+      "id": "SR-BLD-039",
+      "slug": "edificio_039",
+      "displayName": "Edificio 039",
+      "shortName": "BLD-039",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/944466598",
+      "centroid": [
+        -70.58114103609883,
+        -33.57560403890235
+      ]
+    },
+    {
+      "id": "SR-BLD-040",
+      "slug": "edificio_040",
+      "displayName": "Edificio 040",
+      "shortName": "BLD-040",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/944466599",
+      "centroid": [
+        -70.58177529253723,
+        -33.57562336227322
+      ]
+    },
+    {
+      "id": "SR-BLD-041",
+      "slug": "edificio_041",
+      "displayName": "Edificio 041",
+      "shortName": "BLD-041",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/944466600",
+      "centroid": [
+        -70.5820840759305,
+        -33.575874670848826
+      ]
+    },
+    {
+      "id": "SR-BLD-042",
+      "slug": "edificio_042",
+      "displayName": "Edificio 042",
+      "shortName": "BLD-042",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/944466601",
+      "centroid": [
+        -70.58192246413093,
+        -33.57559417823176
+      ]
+    },
+    {
+      "id": "SR-BLD-043",
+      "slug": "edificio_043",
+      "displayName": "Edificio 043",
+      "shortName": "BLD-043",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/944466602",
+      "centroid": [
+        -70.58099490572687,
+        -33.57487296763186
+      ]
+    },
+    {
+      "id": "SR-BLD-044",
+      "slug": "edificio_044",
+      "displayName": "Edificio 044",
+      "shortName": "BLD-044",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/944466603",
+      "centroid": [
+        -70.58187642546174,
+        -33.57505308567589
+      ]
+    },
+    {
+      "id": "SR-BLD-045",
+      "slug": "edificio_045",
+      "displayName": "Edificio 045",
+      "shortName": "BLD-045",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/944466604",
+      "centroid": [
+        -70.58374788617168,
+        -33.57567664518616
+      ]
+    },
+    {
+      "id": "SR-BLD-046",
+      "slug": "edificio_046",
+      "displayName": "Edificio 046",
+      "shortName": "BLD-046",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/944466605",
+      "centroid": [
+        -70.58206723897977,
+        -33.57481081248237
+      ]
+    },
+    {
+      "id": "SR-BLD-047",
+      "slug": "edificio_047",
+      "displayName": "Edificio 047",
+      "shortName": "BLD-047",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/944466606",
+      "centroid": [
+        -70.58123506416,
+        -33.57490445511265
+      ]
+    },
+    {
+      "id": "SR-BLD-048",
+      "slug": "edificio_048",
+      "displayName": "Edificio 048",
+      "shortName": "BLD-048",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/946646840",
+      "centroid": [
+        -70.58208794812808,
+        -33.57482508278678
+      ]
+    },
+    {
+      "id": "SR-BLD-049",
+      "slug": "edificio_049",
+      "displayName": "Edificio 049",
+      "shortName": "BLD-049",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/946646841",
+      "centroid": [
+        -70.5800470394482,
+        -33.57640883663038
+      ]
+    },
+    {
+      "id": "SR-BLD-050",
+      "slug": "edificio_050",
+      "displayName": "Edificio 050",
+      "shortName": "BLD-050",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/946646842",
+      "centroid": [
+        -70.57864762498659,
+        -33.57723664788472
+      ]
+    },
+    {
+      "id": "SR-BLD-051",
+      "slug": "edificio_051",
+      "displayName": "Edificio 051",
+      "shortName": "BLD-051",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/946646843",
+      "centroid": [
+        -70.57997888342851,
+        -33.5778970305467
+      ]
+    },
+    {
+      "id": "SR-BLD-052",
+      "slug": "edificio_052",
+      "displayName": "Edificio 052",
+      "shortName": "BLD-052",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/946646844",
+      "centroid": [
+        -70.57809930963782,
+        -33.576859214354165
+      ]
+    },
+    {
+      "id": "SR-BLD-053",
+      "slug": "edificio_053",
+      "displayName": "Edificio 053",
+      "shortName": "BLD-053",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/946646845",
+      "centroid": [
+        -70.57968978573075,
+        -33.57875705867475
+      ]
+    },
+    {
+      "id": "SR-BLD-054",
+      "slug": "edificio_054",
+      "displayName": "Edificio 054",
+      "shortName": "BLD-054",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/946646846",
+      "centroid": [
+        -70.5777153534443,
+        -33.577526764601004
+      ]
+    },
+    {
+      "id": "SR-BLD-055",
+      "slug": "edificio_055",
+      "displayName": "Edificio 055",
+      "shortName": "BLD-055",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/946646847",
+      "centroid": [
+        -70.57792162187057,
+        -33.57768070511702
+      ]
+    },
+    {
+      "id": "SR-BLD-056",
+      "slug": "edificio_056",
+      "displayName": "Edificio 056",
+      "shortName": "BLD-056",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/946646848",
+      "centroid": [
+        -70.57793134181235,
+        -33.57774269838354
+      ]
+    },
+    {
+      "id": "SR-BLD-057",
+      "slug": "edificio_057",
+      "displayName": "Edificio 057",
+      "shortName": "BLD-057",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/946646849",
+      "centroid": [
+        -70.57928151063238,
+        -33.57830960670658
+      ]
+    },
+    {
+      "id": "SR-BLD-058",
+      "slug": "edificio_058",
+      "displayName": "Edificio 058",
+      "shortName": "BLD-058",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/946646850",
+      "centroid": [
+        -70.57852934049014,
+        -33.57774021434389
+      ]
+    },
+    {
+      "id": "SR-BLD-059",
+      "slug": "edificio_059",
+      "displayName": "Edificio 059",
+      "shortName": "BLD-059",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/946646851",
+      "centroid": [
+        -70.5779137077673,
+        -33.57816058076995
+      ]
+    },
+    {
+      "id": "SR-BLD-060",
+      "slug": "edificio_060",
+      "displayName": "Edificio 060",
+      "shortName": "BLD-060",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/946646856",
+      "centroid": [
+        -70.58179481720546,
+        -33.57633521096362
+      ]
+    },
+    {
+      "id": "SR-BLD-061",
+      "slug": "edificio_061",
+      "displayName": "Edificio 061",
+      "shortName": "BLD-061",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/957230551",
+      "centroid": [
+        -70.58123199625557,
+        -33.57800116584143
+      ]
+    },
+    {
+      "id": "SR-BLD-062",
+      "slug": "edificio_062",
+      "displayName": "Edificio 062",
+      "shortName": "BLD-062",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/957230552",
+      "centroid": [
+        -70.58107436975874,
+        -33.577270604486934
+      ]
+    },
+    {
+      "id": "SR-BLD-063",
+      "slug": "edificio_063",
+      "displayName": "Edificio 063",
+      "shortName": "BLD-063",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/957230553",
+      "centroid": [
+        -70.5834095711614,
+        -33.57848895264352
+      ]
+    },
+    {
+      "id": "SR-BLD-064",
+      "slug": "edificio_064",
+      "displayName": "Edificio 064",
+      "shortName": "BLD-064",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "way/1187493933",
+      "centroid": [
+        -70.58124940161247,
+        -33.575676246219274
+      ]
+    },
+    {
+      "id": "SR-BLD-065",
+      "slug": "edificio_065",
+      "displayName": "Edificio 065",
+      "shortName": "BLD-065",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "feature/65",
+      "centroid": [
+        -70.5785806,
+        -33.5772634
+      ]
+    },
+    {
+      "id": "SR-BLD-066",
+      "slug": "edificio_066",
+      "displayName": "Edificio 066",
+      "shortName": "BLD-066",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "feature/66",
+      "centroid": [
+        -70.57839648898104,
+        -33.57716889964509
+      ]
+    },
+    {
+      "id": "SR-BLD-067",
+      "slug": "edificio_067",
+      "displayName": "Edificio 067",
+      "shortName": "BLD-067",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "feature/67",
+      "centroid": [
+        -70.57938882124765,
+        -33.57919638592974
+      ]
+    },
+    {
+      "id": "SR-BLD-068",
+      "slug": "hospital_de_campana",
+      "displayName": "Hospital de Campaña",
+      "shortName": "BLD-068",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "feature/68",
+      "centroid": [
+        -70.57770553074215,
+        -33.57832156294643
+      ]
+    },
+    {
+      "id": "SR-BLD-069",
+      "slug": "edificio_069",
+      "displayName": "Edificio 069",
+      "shortName": "BLD-069",
+      "realName": "",
+      "type": "unknown",
+      "floors": [],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "feature/69",
+      "centroid": [
+        -70.5786318439962,
+        -33.57876457042968
+      ]
+    }
+  ]
+}

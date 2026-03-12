@@ -1,0 +1,45 @@
+/**********************************************************************************************************************/
+/************************************************* Footer *************************************************************/
+/**********************************************************************************************************************/
+
+.footer {
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+}
+
+.footer>p {
+    border: 2px solid #2d79a0;
+    border-radius: 25px;
+    font-size: 10px;
+    color: white;
+    background-color: #2d79a0;
+    opacity: 1;
+    text-align: center;
+    padding: 0px;
+    margin: 0px 4px;
+}
+
+@font-face {
+    font-family: 'Earth Orbiter';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Earth Orbiter'), url('https://fonts.cdnfonts.com/s/20706/earthorbiter.woff') format('woff');
+}
+
+#viarezo {
+    font-family: 'Earth Orbiter', sans-serif;
+    text-decoration: none;
+    color: white;
+}
+
+#osm {
+    text-decoration: none;
+    color: white;
+}
+
+@media (min-width: 500px) {
+    .footer>p {
+        font-size: 16px;
+    }
+}

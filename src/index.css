@@ -1,0 +1,20 @@
+/* Import leaflet's CSS */
+@import url("lib/leaflet/leaflet.css");
+
+/* Import leaflet.draw css */
+@import url("lib/leaflet.draw/leaflet.draw.css");
+
+/* Import map style */
+@import url("styles/map.css");
+
+/* Import search box style */
+@import url("styles/searchBox.css");
+
+/* Import campus selection style */
+@import url("styles/campusSelection.css");
+
+/* Import floor buttons style */
+@import url("styles/floorButtons.css");
+
+/* Import footer style */
+@import url("styles/footer.css");
