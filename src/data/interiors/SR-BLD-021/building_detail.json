@@ -1,0 +1,45 @@
+{
+  "buildingId": "SR-BLD-021",
+  "buildingName": "CDT",
+  "shortName": "BLD-021",
+  "realName": "CDT",
+  "type": "consultas",
+  "responsibleArea": "Consultas",
+  "floors": [
+    0,
+    1,
+    2
+  ],
+  "hasInteriorMap": false,
+  "hasInventory": false,
+  "inventoryStatus": "pendiente",
+  "mappingStatus": "pendiente",
+  "floorSummaries": [
+    {
+      "floor": 0,
+      "roomsCount": 0,
+      "mappedRoomsCount": 0,
+      "devicesCount": 0,
+      "notes": ""
+    },
+    {
+      "floor": 1,
+      "roomsCount": 0,
+      "mappedRoomsCount": 0,
+      "devicesCount": 0,
+      "notes": ""
+    },
+    {
+      "floor": 2,
+      "roomsCount": 0,
+      "mappedRoomsCount": 0,
+      "devicesCount": 0,
+      "notes": ""
+    }
+  ],
+  "operationalNotes": "",
+  "technicalNotes": "",
+  "lastUpdate": "",
+  "contacts": [],
+  "tags": []
+}

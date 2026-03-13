@@ -1,0 +1,26 @@
+{
+  "buildingId": "SR-BLD-010",
+  "buildingName": "Hospitalización",
+  "floor": 1,
+  "rooms": [
+    {
+      "roomId": "SR-BLD-010-F1-ROOM-001",
+      "name": "Sala 201",
+      "shortName": "S201",
+      "type": "sala_clinica",
+      "floor": 1,
+      "buildingId": "SR-BLD-010",
+      "sector": "",
+      "unit": "Hospitalización",
+      "service": "",
+      "isMapped": false,
+      "geometry": null,
+      "status": "active",
+      "capacity": 2,
+      "devicesCount": 2,
+      "responsibleArea": "Hospitalización",
+      "responsiblePerson": "",
+      "notes": "Sala de ejemplo en piso 1"
+    }
+  ]
+}

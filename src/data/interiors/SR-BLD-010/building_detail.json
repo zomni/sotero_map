@@ -1,0 +1,63 @@
+{
+  "buildingId": "SR-BLD-010",
+  "buildingName": "Hospitalización",
+  "shortName": "BLD-010",
+  "realName": "Hospitalización",
+  "type": "hospitalizacion",
+  "responsibleArea": "Hospitalización",
+  "floors": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "hasInteriorMap": false,
+  "hasInventory": false,
+  "inventoryStatus": "en_levantamiento",
+  "mappingStatus": "en_progreso",
+  "floorSummaries": [
+    {
+      "floor": 0,
+      "roomsCount": 4,
+      "mappedRoomsCount": 0,
+      "devicesCount": 6,
+      "notes": ""
+    },
+    {
+      "floor": 1,
+      "roomsCount": 1,
+      "mappedRoomsCount": 0,
+      "devicesCount": 2,
+      "notes": ""
+    },
+    {
+      "floor": 2,
+      "roomsCount": 0,
+      "mappedRoomsCount": 0,
+      "devicesCount": 0,
+      "notes": ""
+    },
+    {
+      "floor": 3,
+      "roomsCount": 0,
+      "mappedRoomsCount": 0,
+      "devicesCount": 0,
+      "notes": ""
+    }
+  ],
+  "operationalNotes": "Edificio piloto para pruebas de salas y equipos.",
+  "technicalNotes": "Pendiente incorporar geometrías de salas.",
+  "lastUpdate": "2026-03-13",
+  "contacts": [
+    {
+      "name": "",
+      "role": "",
+      "email": "",
+      "phone": ""
+    }
+  ],
+  "tags": [
+    "piloto",
+    "hospitalizacion"
+  ]
+}

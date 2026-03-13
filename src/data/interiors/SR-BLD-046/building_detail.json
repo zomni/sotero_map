@@ -1,0 +1,37 @@
+{
+  "buildingId": "SR-BLD-046",
+  "buildingName": "Urgencia Adulto",
+  "shortName": "BLD-046",
+  "realName": "Urgencia Adulto",
+  "type": "urgencia",
+  "responsibleArea": "Urgencia",
+  "floors": [
+    0,
+    1
+  ],
+  "hasInteriorMap": false,
+  "hasInventory": false,
+  "inventoryStatus": "pendiente",
+  "mappingStatus": "pendiente",
+  "floorSummaries": [
+    {
+      "floor": 0,
+      "roomsCount": 0,
+      "mappedRoomsCount": 0,
+      "devicesCount": 0,
+      "notes": ""
+    },
+    {
+      "floor": 1,
+      "roomsCount": 0,
+      "mappedRoomsCount": 0,
+      "devicesCount": 0,
+      "notes": ""
+    }
+  ],
+  "operationalNotes": "",
+  "technicalNotes": "",
+  "lastUpdate": "",
+  "contacts": [],
+  "tags": []
+}

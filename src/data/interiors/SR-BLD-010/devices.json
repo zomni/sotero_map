@@ -1,0 +1,260 @@
+{
+  "buildingId": "SR-BLD-010",
+  "buildingName": "Hospitalización",
+  "devices": [
+    {
+      "deviceId": "SR-BLD-010-PC-001",
+      "roomId": "SR-BLD-010-F0-ROOM-001",
+      "buildingId": "SR-BLD-010",
+      "type": "pc",
+      "subtype": "desktop",
+      "name": "PC Sala 101",
+      "inventoryCode": "INV-PC-0001",
+      "serialNumber": "",
+      "brand": "Dell",
+      "model": "",
+      "ip": "10.10.10.11",
+      "mac": "",
+      "assignedTo": "Hospitalización",
+      "responsiblePerson": "",
+      "status": "activo",
+      "networkStatus": "desconocido",
+      "lastSeen": "",
+      "purchaseDate": "",
+      "notes": "",
+      "history": [
+        {
+          "date": "2026-03-13",
+          "type": "installation",
+          "description": "Equipo incorporado al inventario",
+          "performedBy": "",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "deviceId": "SR-BLD-010-PRN-001",
+      "roomId": "SR-BLD-010-F0-ROOM-001",
+      "buildingId": "SR-BLD-010",
+      "type": "printer",
+      "subtype": "laser",
+      "name": "Impresora Sala 101",
+      "inventoryCode": "INV-PRN-0001",
+      "serialNumber": "",
+      "brand": "HP",
+      "model": "",
+      "ip": "10.10.10.21",
+      "mac": "",
+      "assignedTo": "Hospitalización",
+      "responsiblePerson": "",
+      "status": "activo",
+      "networkStatus": "desconocido",
+      "lastSeen": "",
+      "purchaseDate": "",
+      "notes": "",
+      "history": [
+        {
+          "date": "2026-03-13",
+          "type": "installation",
+          "description": "Impresora agregada al inventario",
+          "performedBy": "",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "deviceId": "SR-BLD-010-PHN-001",
+      "roomId": "SR-BLD-010-F0-ROOM-002",
+      "buildingId": "SR-BLD-010",
+      "type": "phone",
+      "subtype": "ip_phone",
+      "name": "Teléfono Enfermería",
+      "inventoryCode": "INV-PHN-0001",
+      "serialNumber": "",
+      "brand": "Cisco",
+      "model": "",
+      "ip": "10.10.10.31",
+      "mac": "",
+      "assignedTo": "Enfermería",
+      "responsiblePerson": "",
+      "status": "activo",
+      "networkStatus": "desconocido",
+      "lastSeen": "",
+      "purchaseDate": "",
+      "notes": "",
+      "history": [
+        {
+          "date": "2026-03-13",
+          "type": "installation",
+          "description": "Teléfono registrado en el inventario",
+          "performedBy": "",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "deviceId": "SR-BLD-010-PC-002",
+      "roomId": "SR-BLD-010-F0-ROOM-003",
+      "buildingId": "SR-BLD-010",
+      "type": "pc",
+      "subtype": "all_in_one",
+      "name": "PC Procedimientos 1",
+      "inventoryCode": "INV-PC-0002",
+      "serialNumber": "",
+      "brand": "Lenovo",
+      "model": "",
+      "ip": "10.10.10.12",
+      "mac": "",
+      "assignedTo": "Procedimientos",
+      "responsiblePerson": "",
+      "status": "activo",
+      "networkStatus": "conectado",
+      "lastSeen": "2026-03-13",
+      "purchaseDate": "",
+      "notes": "",
+      "history": [
+        {
+          "date": "2026-03-10",
+          "type": "installation",
+          "description": "Equipo instalado en sala de procedimientos",
+          "performedBy": "",
+          "notes": ""
+        },
+        {
+          "date": "2026-03-12",
+          "type": "maintenance",
+          "description": "Mantenimiento preventivo realizado",
+          "performedBy": "",
+          "notes": "Limpieza interna y revisión general"
+        }
+      ]
+    },
+    {
+      "deviceId": "SR-BLD-010-MON-001",
+      "roomId": "SR-BLD-010-F0-ROOM-003",
+      "buildingId": "SR-BLD-010",
+      "type": "other",
+      "subtype": "monitor_clinico",
+      "name": "Monitor Procedimientos",
+      "inventoryCode": "INV-MON-0001",
+      "serialNumber": "",
+      "brand": "Philips",
+      "model": "",
+      "ip": "",
+      "mac": "",
+      "assignedTo": "Procedimientos",
+      "responsiblePerson": "",
+      "status": "activo",
+      "networkStatus": "no_aplica",
+      "lastSeen": "",
+      "purchaseDate": "",
+      "notes": "",
+      "history": [
+        {
+          "date": "2026-03-11",
+          "type": "installation",
+          "description": "Monitor incorporado a la sala",
+          "performedBy": "",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "deviceId": "SR-BLD-010-PRN-002",
+      "roomId": "SR-BLD-010-F0-ROOM-004",
+      "buildingId": "SR-BLD-010",
+      "type": "printer",
+      "subtype": "thermal",
+      "name": "Impresora Bodega Clínica",
+      "inventoryCode": "INV-PRN-0002",
+      "serialNumber": "",
+      "brand": "Zebra",
+      "model": "",
+      "ip": "10.10.10.22",
+      "mac": "",
+      "assignedTo": "Bodega Clínica",
+      "responsiblePerson": "",
+      "status": "en_revision",
+      "networkStatus": "intermitente",
+      "lastSeen": "2026-03-12",
+      "purchaseDate": "",
+      "notes": "Presenta fallas de impresión",
+      "history": [
+        {
+          "date": "2026-03-08",
+          "type": "installation",
+          "description": "Impresora asignada a bodega clínica",
+          "performedBy": "",
+          "notes": ""
+        },
+        {
+          "date": "2026-03-13",
+          "type": "incident",
+          "description": "Falla de arrastre de etiquetas",
+          "performedBy": "",
+          "notes": "Pendiente revisión técnica"
+        }
+      ]
+    },
+    {
+      "deviceId": "SR-BLD-010-PC-003",
+      "roomId": "SR-BLD-010-F1-ROOM-001",
+      "buildingId": "SR-BLD-010",
+      "type": "pc",
+      "subtype": "desktop",
+      "name": "PC Sala 201",
+      "inventoryCode": "INV-PC-0003",
+      "serialNumber": "",
+      "brand": "HP",
+      "model": "",
+      "ip": "10.10.11.11",
+      "mac": "",
+      "assignedTo": "Hospitalización",
+      "responsiblePerson": "",
+      "status": "activo",
+      "networkStatus": "conectado",
+      "lastSeen": "2026-03-13",
+      "purchaseDate": "",
+      "notes": "",
+      "history": [
+        {
+          "date": "2026-03-09",
+          "type": "installation",
+          "description": "Equipo incorporado al piso 1",
+          "performedBy": "",
+          "notes": ""
+        }
+      ]
+    },
+    {
+      "deviceId": "SR-BLD-010-PHN-002",
+      "roomId": "SR-BLD-010-F1-ROOM-001",
+      "buildingId": "SR-BLD-010",
+      "type": "phone",
+      "subtype": "ip_phone",
+      "name": "Teléfono Sala 201",
+      "inventoryCode": "INV-PHN-0002",
+      "serialNumber": "",
+      "brand": "Cisco",
+      "model": "",
+      "ip": "10.10.11.31",
+      "mac": "",
+      "assignedTo": "Hospitalización",
+      "responsiblePerson": "",
+      "status": "activo",
+      "networkStatus": "conectado",
+      "lastSeen": "2026-03-13",
+      "purchaseDate": "",
+      "notes": "",
+      "history": [
+        {
+          "date": "2026-03-09",
+          "type": "installation",
+          "description": "Teléfono instalado en sala 201",
+          "performedBy": "",
+          "notes": ""
+        }
+      ]
+    }
+  ]
+}

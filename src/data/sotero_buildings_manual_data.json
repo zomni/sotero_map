@@ -1,0 +1,34 @@
+{
+  "buildings": [
+    {
+      "id": "SR-BLD-046",
+      "realName": "Urgencia Adulto",
+      "type": "urgencia",
+      "floors": [0, 1],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "Urgencia",
+      "notes": "Pendiente validar nombre oficial"
+    },
+    {
+      "id": "SR-BLD-021",
+      "realName": "CDT",
+      "type": "consultas",
+      "floors": [0, 1, 2],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "Consultas",
+      "notes": ""
+    },
+    {
+      "id": "SR-BLD-010",
+      "realName": "Hospitalización",
+      "type": "hospitalizacion",
+      "floors": [0, 1, 2, 3],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "Hospitalización",
+      "notes": ""
+    }
+  ]
+}

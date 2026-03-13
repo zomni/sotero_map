@@ -2,11 +2,16 @@
 ///////////////////////////// Add layers to the map /////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////
 
-import "../views/draw.js"
+import "../views/draw.js";
 
 import { map } from "../views/map.js";
 
-import { filter, style, onEachFeature } from "../views/featureDisplay.js"; // GeoJSON  options
+import {
+  filter,
+  style,
+  onEachFeature,
+  currentOpenFeatureId,
+} from "../views/featureDisplay.js"; // GeoJSON options + popup state
 
 import { createMarkers } from "../components/markers.js"; // Create markers for the map
 
@@ -36,22 +41,47 @@ const SVGLayerGroup = (svg, floorNumber, building, location) => {
   return toAdd;
 };
 
+const reopenPopupIfNeeded = (geoJsonLayers) => {
+  if (!currentOpenFeatureId || !Array.isArray(geoJsonLayers)) {
+    return;
+  }
+
+  geoJsonLayers.forEach((geoJsonLayer) => {
+    if (!geoJsonLayer || !geoJsonLayer.eachLayer) return;
+
+    geoJsonLayer.eachLayer((layer) => {
+      const featureId = layer?.feature?.properties?.id;
+      if (featureId === currentOpenFeatureId) {
+        layer.openPopup();
+      }
+    });
+  });
+};
+
 const featuresLayerGroup = (json) => {
   /* Add Leaflet GeoJSON to layerGroup */
-  var markers, geoJson;
+  var markers;
+  var geoJsonLayers = [];
+
   json.features.map((feature) => {
     if (feature.geometry.type === "Polygon") {
-      geoJson = L.geoJSON(feature, {
+      const geoJson = L.geoJSON(feature, {
         filter: filter,
         style: style,
         onEachFeature: onEachFeature,
       });
+
+      geoJsonLayers.push(geoJson);
       layerGroup.addLayer(geoJson);
     }
   });
+
   markers = createMarkers(json);
-  var toAdd = L.layerGroup(markers.concat([geoJson]));
+  var toAdd = L.layerGroup(markers);
   layerGroup.addLayer(toAdd);
+
+  // Reopen popup automatically after the new floor is drawn
+  reopenPopupIfNeeded(geoJsonLayers);
 };
 
 const addSVG = (floorNumber, building, location) => {
@@ -73,7 +103,15 @@ const addSVG = (floorNumber, building, location) => {
 const addFeatures = (school, floorNumber, location) => {
   /* Get the GeoJSON from the server */
   $.ajax({
-    url: "data/" + school + "_" + location + "_" + floorNumber.toString() + ".json",
+    url:
+      "data/" +
+      school +
+      "_" +
+      location +
+      "_" +
+      floorNumber.toString() +
+      ".json?v=" +
+      Date.now(),
     type: "GET",
     data: {},
     dataType: "json",
@@ -90,6 +128,7 @@ export const addDataToMap = (school, floorNumber, location) => {
   /* Add GeoJSON and SVGs to the map */
   layerGroup.clearLayers();
   addFeatures(school, floorNumber, location);
+
   // Iterate on the buildings of the location
   Object.keys(campusBuildings[location]).map((key) => {
     // Check if the floor exists before adding the SVG
