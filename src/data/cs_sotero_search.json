@@ -1,0 +1,4015 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5813938,
+              -33.5760138
+            ],
+            [
+              -70.5814904,
+              -33.576282
+            ],
+            [
+              -70.5814904,
+              -33.5764071
+            ],
+            [
+              -70.5815976,
+              -33.5764071
+            ],
+            [
+              -70.5815976,
+              -33.576568
+            ],
+            [
+              -70.5814962,
+              -33.5765728
+            ],
+            [
+              -70.5814904,
+              -33.5766485
+            ],
+            [
+              -70.5805569,
+              -33.5768988
+            ],
+            [
+              -70.5805203,
+              -33.5768154
+            ],
+            [
+              -70.5803638,
+              -33.5768541
+            ],
+            [
+              -70.5802136,
+              -33.5764786
+            ],
+            [
+              -70.5803727,
+              -33.5764355
+            ],
+            [
+              -70.5803209,
+              -33.5762909
+            ],
+            [
+              -70.5813938,
+              -33.5760138
+            ]
+          ],
+          [
+            [
+              -70.581318,
+              -33.5763639
+            ],
+            [
+              -70.5812643,
+              -33.5763741
+            ],
+            [
+              -70.581279,
+              -33.5764188
+            ],
+            [
+              -70.5812399,
+              -33.5764248
+            ],
+            [
+              -70.5812131,
+              -33.5763862
+            ],
+            [
+              -70.5811789,
+              -33.5763984
+            ],
+            [
+              -70.581279,
+              -33.5766097
+            ],
+            [
+              -70.5812912,
+              -33.5764553
+            ],
+            [
+              -70.5813252,
+              -33.5764411
+            ],
+            [
+              -70.581318,
+              -33.5763639
+            ]
+          ],
+          [
+            [
+              -70.5812302,
+              -33.5761019
+            ],
+            [
+              -70.5811965,
+              -33.5761112
+            ],
+            [
+              -70.5812804,
+              -33.5763208
+            ],
+            [
+              -70.5813141,
+              -33.5763115
+            ],
+            [
+              -70.5812302,
+              -33.5761019
+            ]
+          ],
+          [
+            [
+              -70.5807395,
+              -33.5765595
+            ],
+            [
+              -70.5807005,
+              -33.576571
+            ],
+            [
+              -70.5807744,
+              -33.5767453
+            ],
+            [
+              -70.5808135,
+              -33.5767338
+            ],
+            [
+              -70.5807395,
+              -33.5765595
+            ]
+          ],
+          [
+            [
+              -70.5804988,
+              -33.5763559
+            ],
+            [
+              -70.5804602,
+              -33.5763663
+            ],
+            [
+              -70.580527,
+              -33.5765383
+            ],
+            [
+              -70.5805655,
+              -33.5765279
+            ],
+            [
+              -70.5804988,
+              -33.5763559
+            ]
+          ],
+          [
+            [
+              -70.5806479,
+              -33.5763165
+            ],
+            [
+              -70.5806117,
+              -33.5763258
+            ],
+            [
+              -70.5806738,
+              -33.5764947
+            ],
+            [
+              -70.58071,
+              -33.5764854
+            ],
+            [
+              -70.5806479,
+              -33.5763165
+            ]
+          ],
+          [
+            [
+              -70.5803982,
+              -33.576513
+            ],
+            [
+              -70.5802968,
+              -33.5765419
+            ],
+            [
+              -70.5803206,
+              -33.5765997
+            ],
+            [
+              -70.5804219,
+              -33.5765707
+            ],
+            [
+              -70.5803982,
+              -33.576513
+            ]
+          ],
+          [
+            [
+              -70.5807917,
+              -33.5762699
+            ],
+            [
+              -70.5807603,
+              -33.5762791
+            ],
+            [
+              -70.5808297,
+              -33.5764438
+            ],
+            [
+              -70.5808611,
+              -33.5764346
+            ],
+            [
+              -70.5807917,
+              -33.5762699
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-001",
+        "title": "Edificio 001",
+        "description": "Edificio · BLD-001 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 001</b><br/>\n    ID: SR-BLD-001<br/>\n    Tipo: unknown<br/>\n    Código: BLD-001<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-001 | Edificio 001 | BLD-001 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5785558,
+              -33.5780334
+            ],
+            [
+              -70.5785136,
+              -33.5780463
+            ],
+            [
+              -70.5784836,
+              -33.5779787
+            ],
+            [
+              -70.5787727,
+              -33.5778897
+            ],
+            [
+              -70.5787667,
+              -33.5778763
+            ],
+            [
+              -70.5788367,
+              -33.5778547
+            ],
+            [
+              -70.5789583,
+              -33.5781291
+            ],
+            [
+              -70.5787094,
+              -33.5782057
+            ],
+            [
+              -70.578718,
+              -33.5782251
+            ],
+            [
+              -70.5784932,
+              -33.5782943
+            ],
+            [
+              -70.5784287,
+              -33.5781488
+            ],
+            [
+              -70.5785076,
+              -33.5781245
+            ],
+            [
+              -70.5785218,
+              -33.5781566
+            ],
+            [
+              -70.5785998,
+              -33.5781326
+            ],
+            [
+              -70.5785558,
+              -33.5780334
+            ]
+          ],
+          [
+            [
+              -70.578653,
+              -33.5780037
+            ],
+            [
+              -70.5786313,
+              -33.5780098
+            ],
+            [
+              -70.5786448,
+              -33.5780431
+            ],
+            [
+              -70.5786665,
+              -33.578037
+            ],
+            [
+              -70.578653,
+              -33.5780037
+            ]
+          ],
+          [
+            [
+              -70.5787086,
+              -33.5780037
+            ],
+            [
+              -70.5787168,
+              -33.5780209
+            ],
+            [
+              -70.5787652,
+              -33.5780048
+            ],
+            [
+              -70.578757,
+              -33.5779876
+            ],
+            [
+              -70.5787086,
+              -33.5780037
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-002",
+        "title": "Edificio 002",
+        "description": "Edificio · BLD-002 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 002</b><br/>\n    ID: SR-BLD-002<br/>\n    Tipo: unknown<br/>\n    Código: BLD-002<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-002 | Edificio 002 | BLD-002 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5819981,
+              -33.5744983
+            ],
+            [
+              -70.5816406,
+              -33.5745836
+            ],
+            [
+              -70.5816513,
+              -33.5746372
+            ],
+            [
+              -70.58168,
+              -33.5747377
+            ],
+            [
+              -70.5814869,
+              -33.5747824
+            ],
+            [
+              -70.5814415,
+              -33.5746234
+            ],
+            [
+              -70.5809432,
+              -33.5747445
+            ],
+            [
+              -70.5808574,
+              -33.574521
+            ],
+            [
+              -70.5810719,
+              -33.5744763
+            ],
+            [
+              -70.5811041,
+              -33.5745836
+            ],
+            [
+              -70.5812819,
+              -33.574543
+            ],
+            [
+              -70.5812329,
+              -33.5744048
+            ],
+            [
+              -70.5815225,
+              -33.5743423
+            ],
+            [
+              -70.5815547,
+              -33.5744406
+            ],
+            [
+              -70.5819624,
+              -33.5743512
+            ],
+            [
+              -70.5819981,
+              -33.5744983
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-003",
+        "title": "Edificio 003",
+        "description": "Edificio · BLD-003 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 003</b><br/>\n    ID: SR-BLD-003<br/>\n    Tipo: unknown<br/>\n    Código: BLD-003<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-003 | Edificio 003 | BLD-003 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5824291,
+              -33.5765857
+            ],
+            [
+              -70.5824253,
+              -33.5766047
+            ],
+            [
+              -70.5823272,
+              -33.5770941
+            ],
+            [
+              -70.5822051,
+              -33.5770751
+            ],
+            [
+              -70.5823008,
+              -33.5765891
+            ],
+            [
+              -70.5823044,
+              -33.5765712
+            ],
+            [
+              -70.5824291,
+              -33.5765857
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-004",
+        "title": "Edificio 004",
+        "description": "Edificio · BLD-004 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 004</b><br/>\n    ID: SR-BLD-004<br/>\n    Tipo: unknown<br/>\n    Código: BLD-004<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-004 | Edificio 004 | BLD-004 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5794491,
+              -33.5775884
+            ],
+            [
+              -70.5793025,
+              -33.5776318
+            ],
+            [
+              -70.5791592,
+              -33.5772953
+            ],
+            [
+              -70.5793091,
+              -33.5772546
+            ],
+            [
+              -70.5794491,
+              -33.5775884
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-005",
+        "title": "Casa Colorada",
+        "description": "Edificio · BLD-005 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Casa Colorada</b><br/>\n    ID: SR-BLD-005<br/>\n    Tipo: unknown<br/>\n    Código: BLD-005<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-005 | Casa Colorada | BLD-005 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5801287,
+              -33.5788759
+            ],
+            [
+              -70.5801287,
+              -33.5789139
+            ],
+            [
+              -70.5801743,
+              -33.5789166
+            ],
+            [
+              -70.580171,
+              -33.5789926
+            ],
+            [
+              -70.5802244,
+              -33.5789926
+            ],
+            [
+              -70.580218,
+              -33.5790885
+            ],
+            [
+              -70.5799592,
+              -33.5790801
+            ],
+            [
+              -70.5799652,
+              -33.5790385
+            ],
+            [
+              -70.5798519,
+              -33.579036
+            ],
+            [
+              -70.5798515,
+              -33.5789829
+            ],
+            [
+              -70.5797509,
+              -33.5789845
+            ],
+            [
+              -70.5797509,
+              -33.5790387
+            ],
+            [
+              -70.5795132,
+              -33.5790414
+            ],
+            [
+              -70.5795132,
+              -33.5790632
+            ],
+            [
+              -70.5794285,
+              -33.5790632
+            ],
+            [
+              -70.5794285,
+              -33.5788732
+            ],
+            [
+              -70.5794854,
+              -33.5788711
+            ],
+            [
+              -70.5794838,
+              -33.5788488
+            ],
+            [
+              -70.5797389,
+              -33.5788231
+            ],
+            [
+              -70.5798486,
+              -33.5788244
+            ],
+            [
+              -70.5801287,
+              -33.5788759
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-006",
+        "title": "Sala Cuna Hospital",
+        "description": "Edificio · BLD-006 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Sala Cuna Hospital</b><br/>\n    ID: SR-BLD-006<br/>\n    Tipo: unknown<br/>\n    Código: BLD-006<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-006 | Sala Cuna Hospital | BLD-006 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5797117,
+              -33.5775646
+            ],
+            [
+              -70.5797854,
+              -33.5777458
+            ],
+            [
+              -70.5799571,
+              -33.5781751
+            ],
+            [
+              -70.5799297,
+              -33.5781852
+            ],
+            [
+              -70.5799642,
+              -33.5782541
+            ],
+            [
+              -70.5798776,
+              -33.5782826
+            ],
+            [
+              -70.5798971,
+              -33.5783255
+            ],
+            [
+              -70.5799721,
+              -33.5782837
+            ],
+            [
+              -70.5800156,
+              -33.5782923
+            ],
+            [
+              -70.5800662,
+              -33.5783976
+            ],
+            [
+              -70.579851,
+              -33.5784638
+            ],
+            [
+              -70.579842,
+              -33.578478
+            ],
+            [
+              -70.579757,
+              -33.5785051
+            ],
+            [
+              -70.5797776,
+              -33.5785488
+            ],
+            [
+              -70.5795897,
+              -33.5786053
+            ],
+            [
+              -70.5795774,
+              -33.578575
+            ],
+            [
+              -70.5795431,
+              -33.5785858
+            ],
+            [
+              -70.5795318,
+              -33.5785545
+            ],
+            [
+              -70.5794624,
+              -33.5785754
+            ],
+            [
+              -70.5794398,
+              -33.5785287
+            ],
+            [
+              -70.5793172,
+              -33.5785665
+            ],
+            [
+              -70.5792939,
+              -33.5785151
+            ],
+            [
+              -70.5792523,
+              -33.5784625
+            ],
+            [
+              -70.5791494,
+              -33.5782932
+            ],
+            [
+              -70.5791791,
+              -33.5782738
+            ],
+            [
+              -70.5791372,
+              -33.578147
+            ],
+            [
+              -70.579203,
+              -33.5781228
+            ],
+            [
+              -70.5790649,
+              -33.5777849
+            ],
+            [
+              -70.5797117,
+              -33.5775646
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-007",
+        "title": "Edificio Maternidad",
+        "description": "Edificio · BLD-007 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio Maternidad</b><br/>\n    ID: SR-BLD-007<br/>\n    Tipo: unknown<br/>\n    Código: BLD-007<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-007 | Edificio Maternidad | BLD-007 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5800553,
+              -33.5776019
+            ],
+            [
+              -70.5801503,
+              -33.5778063
+            ],
+            [
+              -70.5801854,
+              -33.5777974
+            ],
+            [
+              -70.5802685,
+              -33.5779921
+            ],
+            [
+              -70.5799672,
+              -33.5780901
+            ],
+            [
+              -70.5797888,
+              -33.5776834
+            ],
+            [
+              -70.5800553,
+              -33.5776019
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-008",
+        "title": "Edificio 008",
+        "description": "Edificio · BLD-008 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 008</b><br/>\n    ID: SR-BLD-008<br/>\n    Tipo: unknown<br/>\n    Código: BLD-008<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-008 | Edificio 008 | BLD-008 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.581052,
+              -33.5780052
+            ],
+            [
+              -70.5810943,
+              -33.5781012
+            ],
+            [
+              -70.5805714,
+              -33.5782613
+            ],
+            [
+              -70.5805291,
+              -33.5781653
+            ],
+            [
+              -70.581052,
+              -33.5780052
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-009",
+        "title": "Edificio 009",
+        "description": "Edificio · BLD-009 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 009</b><br/>\n    ID: SR-BLD-009<br/>\n    Tipo: unknown<br/>\n    Código: BLD-009<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-009 | Edificio 009 | BLD-009 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5785375,
+              -33.5786285
+            ],
+            [
+              -70.5785335,
+              -33.5788648
+            ],
+            [
+              -70.578657,
+              -33.5788657
+            ],
+            [
+              -70.5786541,
+              -33.5790149
+            ],
+            [
+              -70.5785931,
+              -33.5790155
+            ],
+            [
+              -70.5785922,
+              -33.5789946
+            ],
+            [
+              -70.5783544,
+              -33.5789868
+            ],
+            [
+              -70.5783567,
+              -33.5790063
+            ],
+            [
+              -70.5782732,
+              -33.5790053
+            ],
+            [
+              -70.5782753,
+              -33.5789866
+            ],
+            [
+              -70.5782141,
+              -33.5789839
+            ],
+            [
+              -70.5782207,
+              -33.5788595
+            ],
+            [
+              -70.5782292,
+              -33.5786211
+            ],
+            [
+              -70.5785375,
+              -33.5786285
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-010",
+        "title": "Hospitalización",
+        "description": "Edificio · BLD-010 · piso(s): 0, 1, 2, 3",
+        "floor": 0,
+        "popupContent": "\n    <b>Hospitalización</b><br/>\n    ID: SR-BLD-010<br/>\n    Tipo: hospitalizacion<br/>\n    Código: BLD-010<br/>\n    Área: Hospitalización<br/>\n    Pisos: 0, 1, 2, 3\n  ",
+        "searchText": "SR-BLD-010 | Hospitalización | Edificio 010 | BLD-010 | hospitalizacion | Hospitalización | 1 | 2 | 3"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.57846324300078,
+          -33.578853384476105
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-010-F0-ROOM-001",
+        "title": "Sala 101",
+        "description": "Sala · Hospitalización · piso 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Sala 101</b><br/>\n    Sala ID: SR-BLD-010-F0-ROOM-001<br/>\n    Edificio: Hospitalización<br/>\n    Piso: 0<br/>\n    Tipo: sala_clinica<br/>\n    Estado: active\n  ",
+        "searchText": "SR-BLD-010-F0-ROOM-001 | Sala 101 | S101 | sala_clinica | Hospitalización | Hospitalización | SR-BLD-010 | Hospitalización | Edificio 010 | BLD-010"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.57846324300078,
+          -33.578853384476105
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-010-F0-ROOM-002",
+        "title": "Estación de Enfermería",
+        "description": "Sala · Hospitalización · piso 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Estación de Enfermería</b><br/>\n    Sala ID: SR-BLD-010-F0-ROOM-002<br/>\n    Edificio: Hospitalización<br/>\n    Piso: 0<br/>\n    Tipo: estacion_enfermeria<br/>\n    Estado: active\n  ",
+        "searchText": "SR-BLD-010-F0-ROOM-002 | Estación de Enfermería | ENF-1 | estacion_enfermeria | Enfermería | Enfermería | SR-BLD-010 | Hospitalización | Edificio 010 | BLD-010"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.57846324300078,
+          -33.578853384476105
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-010-F0-ROOM-003",
+        "title": "Sala de Procedimientos",
+        "description": "Sala · Hospitalización · piso 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Sala de Procedimientos</b><br/>\n    Sala ID: SR-BLD-010-F0-ROOM-003<br/>\n    Edificio: Hospitalización<br/>\n    Piso: 0<br/>\n    Tipo: sala_procedimientos<br/>\n    Estado: active\n  ",
+        "searchText": "SR-BLD-010-F0-ROOM-003 | Sala de Procedimientos | PROC-1 | sala_procedimientos | Hospitalización | Procedimientos | Hospitalización | SR-BLD-010 | Hospitalización | Edificio 010 | BLD-010"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.57846324300078,
+          -33.578853384476105
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-010-F0-ROOM-004",
+        "title": "Bodega Clínica",
+        "description": "Sala · Hospitalización · piso 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Bodega Clínica</b><br/>\n    Sala ID: SR-BLD-010-F0-ROOM-004<br/>\n    Edificio: Hospitalización<br/>\n    Piso: 0<br/>\n    Tipo: bodega_clinica<br/>\n    Estado: active\n  ",
+        "searchText": "SR-BLD-010-F0-ROOM-004 | Bodega Clínica | BOD-1 | bodega_clinica | Hospitalización | Apoyo clínico | Hospitalización | SR-BLD-010 | Hospitalización | Edificio 010 | BLD-010"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.57846324300078,
+          -33.578853384476105
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-010-F1-ROOM-001",
+        "title": "Sala 201",
+        "description": "Sala · Hospitalización · piso 1",
+        "floor": 1,
+        "popupContent": "\n    <b>Sala 201</b><br/>\n    Sala ID: SR-BLD-010-F1-ROOM-001<br/>\n    Edificio: Hospitalización<br/>\n    Piso: 1<br/>\n    Tipo: sala_clinica<br/>\n    Estado: active\n  ",
+        "searchText": "SR-BLD-010-F1-ROOM-001 | Sala 201 | S201 | sala_clinica | Hospitalización | Hospitalización | SR-BLD-010 | Hospitalización | Edificio 010 | BLD-010 | 1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.57846324300078,
+          -33.578853384476105
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-010-PC-001",
+        "title": "PC Sala 101",
+        "description": "Equipo · pc · Sala 101 · piso 0",
+        "floor": 0,
+        "popupContent": "\n    <b>PC Sala 101</b><br/>\n    Equipo ID: SR-BLD-010-PC-001<br/>\n    Edificio: Hospitalización<br/>\n    Sala: Sala 101<br/>\n    Piso: 0<br/>\n    Tipo: pc<br/>\n    IP: 10.10.10.11<br/>\n    Inventario: INV-PC-0001<br/>\n    Serie: \n  ",
+        "searchText": "SR-BLD-010-PC-001 | PC Sala 101 | pc | desktop | INV-PC-0001 | 10.10.10.11 | Dell | Hospitalización | activo | SR-BLD-010-F0-ROOM-001 | Sala 101 | S101 | SR-BLD-010 | Hospitalización | Edificio 010 | BLD-010"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.57846324300078,
+          -33.578853384476105
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-010-PRN-001",
+        "title": "Impresora Sala 101",
+        "description": "Equipo · printer · Sala 101 · piso 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Impresora Sala 101</b><br/>\n    Equipo ID: SR-BLD-010-PRN-001<br/>\n    Edificio: Hospitalización<br/>\n    Sala: Sala 101<br/>\n    Piso: 0<br/>\n    Tipo: printer<br/>\n    IP: 10.10.10.21<br/>\n    Inventario: INV-PRN-0001<br/>\n    Serie: \n  ",
+        "searchText": "SR-BLD-010-PRN-001 | Impresora Sala 101 | printer | laser | INV-PRN-0001 | 10.10.10.21 | HP | Hospitalización | activo | SR-BLD-010-F0-ROOM-001 | Sala 101 | S101 | SR-BLD-010 | Hospitalización | Edificio 010 | BLD-010"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.57846324300078,
+          -33.578853384476105
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-010-PHN-001",
+        "title": "Teléfono Enfermería",
+        "description": "Equipo · phone · Estación de Enfermería · piso 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Teléfono Enfermería</b><br/>\n    Equipo ID: SR-BLD-010-PHN-001<br/>\n    Edificio: Hospitalización<br/>\n    Sala: Estación de Enfermería<br/>\n    Piso: 0<br/>\n    Tipo: phone<br/>\n    IP: 10.10.10.31<br/>\n    Inventario: INV-PHN-0001<br/>\n    Serie: \n  ",
+        "searchText": "SR-BLD-010-PHN-001 | Teléfono Enfermería | phone | ip_phone | INV-PHN-0001 | 10.10.10.31 | Cisco | Enfermería | activo | SR-BLD-010-F0-ROOM-002 | Estación de Enfermería | ENF-1 | SR-BLD-010 | Hospitalización | Edificio 010 | BLD-010"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.57846324300078,
+          -33.578853384476105
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-010-PC-002",
+        "title": "PC Procedimientos 1",
+        "description": "Equipo · pc · Sala de Procedimientos · piso 0",
+        "floor": 0,
+        "popupContent": "\n    <b>PC Procedimientos 1</b><br/>\n    Equipo ID: SR-BLD-010-PC-002<br/>\n    Edificio: Hospitalización<br/>\n    Sala: Sala de Procedimientos<br/>\n    Piso: 0<br/>\n    Tipo: pc<br/>\n    IP: 10.10.10.12<br/>\n    Inventario: INV-PC-0002<br/>\n    Serie: \n  ",
+        "searchText": "SR-BLD-010-PC-002 | PC Procedimientos 1 | pc | all_in_one | INV-PC-0002 | 10.10.10.12 | Lenovo | Procedimientos | activo | SR-BLD-010-F0-ROOM-003 | Sala de Procedimientos | PROC-1 | SR-BLD-010 | Hospitalización | Edificio 010 | BLD-010"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.57846324300078,
+          -33.578853384476105
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-010-MON-001",
+        "title": "Monitor Procedimientos",
+        "description": "Equipo · other · Sala de Procedimientos · piso 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Monitor Procedimientos</b><br/>\n    Equipo ID: SR-BLD-010-MON-001<br/>\n    Edificio: Hospitalización<br/>\n    Sala: Sala de Procedimientos<br/>\n    Piso: 0<br/>\n    Tipo: other<br/>\n    IP: sin IP<br/>\n    Inventario: INV-MON-0001<br/>\n    Serie: \n  ",
+        "searchText": "SR-BLD-010-MON-001 | Monitor Procedimientos | other | monitor_clinico | INV-MON-0001 | Philips | Procedimientos | activo | SR-BLD-010-F0-ROOM-003 | Sala de Procedimientos | PROC-1 | SR-BLD-010 | Hospitalización | Edificio 010 | BLD-010"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.57846324300078,
+          -33.578853384476105
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-010-PRN-002",
+        "title": "Impresora Bodega Clínica",
+        "description": "Equipo · printer · Bodega Clínica · piso 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Impresora Bodega Clínica</b><br/>\n    Equipo ID: SR-BLD-010-PRN-002<br/>\n    Edificio: Hospitalización<br/>\n    Sala: Bodega Clínica<br/>\n    Piso: 0<br/>\n    Tipo: printer<br/>\n    IP: 10.10.10.22<br/>\n    Inventario: INV-PRN-0002<br/>\n    Serie: \n  ",
+        "searchText": "SR-BLD-010-PRN-002 | Impresora Bodega Clínica | printer | thermal | INV-PRN-0002 | 10.10.10.22 | Zebra | Bodega Clínica | en_revision | SR-BLD-010-F0-ROOM-004 | Bodega Clínica | BOD-1 | SR-BLD-010 | Hospitalización | Edificio 010 | BLD-010"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.57846324300078,
+          -33.578853384476105
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-010-PC-003",
+        "title": "PC Sala 201",
+        "description": "Equipo · pc · Sala 201 · piso 1",
+        "floor": 1,
+        "popupContent": "\n    <b>PC Sala 201</b><br/>\n    Equipo ID: SR-BLD-010-PC-003<br/>\n    Edificio: Hospitalización<br/>\n    Sala: Sala 201<br/>\n    Piso: 1<br/>\n    Tipo: pc<br/>\n    IP: 10.10.11.11<br/>\n    Inventario: INV-PC-0003<br/>\n    Serie: \n  ",
+        "searchText": "SR-BLD-010-PC-003 | PC Sala 201 | pc | desktop | INV-PC-0003 | 10.10.11.11 | HP | Hospitalización | activo | SR-BLD-010-F1-ROOM-001 | Sala 201 | S201 | SR-BLD-010 | Hospitalización | Edificio 010 | BLD-010 | 1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.57846324300078,
+          -33.578853384476105
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-010-PHN-002",
+        "title": "Teléfono Sala 201",
+        "description": "Equipo · phone · Sala 201 · piso 1",
+        "floor": 1,
+        "popupContent": "\n    <b>Teléfono Sala 201</b><br/>\n    Equipo ID: SR-BLD-010-PHN-002<br/>\n    Edificio: Hospitalización<br/>\n    Sala: Sala 201<br/>\n    Piso: 1<br/>\n    Tipo: phone<br/>\n    IP: 10.10.11.31<br/>\n    Inventario: INV-PHN-0002<br/>\n    Serie: \n  ",
+        "searchText": "SR-BLD-010-PHN-002 | Teléfono Sala 201 | phone | ip_phone | INV-PHN-0002 | 10.10.11.31 | Cisco | Hospitalización | activo | SR-BLD-010-F1-ROOM-001 | Sala 201 | S201 | SR-BLD-010 | Hospitalización | Edificio 010 | BLD-010 | 1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.57818,
+              -33.5771931
+            ],
+            [
+              -70.5782712,
+              -33.5774047
+            ],
+            [
+              -70.5779097,
+              -33.5775051
+            ],
+            [
+              -70.5777697,
+              -33.5772039
+            ],
+            [
+              -70.5780367,
+              -33.577128
+            ],
+            [
+              -70.5780732,
+              -33.5772186
+            ],
+            [
+              -70.57818,
+              -33.5771931
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-011",
+        "title": "Salud Mental H. Sótero del Río",
+        "description": "Edificio · BLD-011 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Salud Mental H. Sótero del Río</b><br/>\n    ID: SR-BLD-011<br/>\n    Tipo: unknown<br/>\n    Código: BLD-011<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-011 | Salud Mental H. Sótero del Río | BLD-011 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5797503,
+              -33.5775821
+            ],
+            [
+              -70.5797185,
+              -33.5775052
+            ],
+            [
+              -70.5796532,
+              -33.5773636
+            ],
+            [
+              -70.5798073,
+              -33.5773144
+            ],
+            [
+              -70.5800769,
+              -33.5772282
+            ],
+            [
+              -70.5801158,
+              -33.5772157
+            ],
+            [
+              -70.5801635,
+              -33.5773192
+            ],
+            [
+              -70.5812057,
+              -33.576986
+            ],
+            [
+              -70.5812779,
+              -33.5771427
+            ],
+            [
+              -70.5810154,
+              -33.5772256
+            ],
+            [
+              -70.5810996,
+              -33.5773983
+            ],
+            [
+              -70.5809102,
+              -33.577463
+            ],
+            [
+              -70.5809374,
+              -33.5775211
+            ],
+            [
+              -70.5808656,
+              -33.5775497
+            ],
+            [
+              -70.5808513,
+              -33.5775187
+            ],
+            [
+              -70.580786,
+              -33.577536
+            ],
+            [
+              -70.5807682,
+              -33.5774972
+            ],
+            [
+              -70.5803392,
+              -33.5776453
+            ],
+            [
+              -70.5803737,
+              -33.5777076
+            ],
+            [
+              -70.5802896,
+              -33.5777386
+            ],
+            [
+              -70.5801467,
+              -33.5774575
+            ],
+            [
+              -70.5797503,
+              -33.5775821
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-012",
+        "title": "Edificio 012",
+        "description": "Edificio · BLD-012 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 012</b><br/>\n    ID: SR-BLD-012<br/>\n    Tipo: unknown<br/>\n    Código: BLD-012<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-012 | Edificio 012 | BLD-012 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5807867,
+              -33.5778445
+            ],
+            [
+              -70.5808354,
+              -33.577948
+            ],
+            [
+              -70.5805675,
+              -33.5780355
+            ],
+            [
+              -70.5805188,
+              -33.577932
+            ],
+            [
+              -70.5807867,
+              -33.5778445
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-013",
+        "title": "Edificio 013",
+        "description": "Edificio · BLD-013 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 013</b><br/>\n    ID: SR-BLD-013<br/>\n    Tipo: unknown<br/>\n    Código: BLD-013<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-013 | Edificio 013 | BLD-013 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5808512,
+              -33.5776119
+            ],
+            [
+              -70.5808728,
+              -33.5776491
+            ],
+            [
+              -70.5809286,
+              -33.5776391
+            ],
+            [
+              -70.5809729,
+              -33.577742
+            ],
+            [
+              -70.5806302,
+              -33.5778538
+            ],
+            [
+              -70.5805486,
+              -33.5776867
+            ],
+            [
+              -70.5805821,
+              -33.57766
+            ],
+            [
+              -70.5805681,
+              -33.5776261
+            ],
+            [
+              -70.5806749,
+              -33.5775915
+            ],
+            [
+              -70.5806963,
+              -33.5776407
+            ],
+            [
+              -70.5807948,
+              -33.5776152
+            ],
+            [
+              -70.5808029,
+              -33.5776276
+            ],
+            [
+              -70.5808512,
+              -33.5776119
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-014",
+        "title": "Edificio 014",
+        "description": "Edificio · BLD-014 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 014</b><br/>\n    ID: SR-BLD-014<br/>\n    Tipo: unknown<br/>\n    Código: BLD-014<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-014 | Edificio 014 | BLD-014 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5800364,
+              -33.5782045
+            ],
+            [
+              -70.5800154,
+              -33.578152
+            ],
+            [
+              -70.5802866,
+              -33.5780709
+            ],
+            [
+              -70.5803061,
+              -33.5781221
+            ],
+            [
+              -70.5800364,
+              -33.5782045
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-015",
+        "title": "Edificio 015",
+        "description": "Edificio · BLD-015 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 015</b><br/>\n    ID: SR-BLD-015<br/>\n    Tipo: unknown<br/>\n    Código: BLD-015<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-015 | Edificio 015 | BLD-015 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5800643,
+              -33.5786129
+            ],
+            [
+              -70.5801192,
+              -33.5787295
+            ],
+            [
+              -70.5800005,
+              -33.5787683
+            ],
+            [
+              -70.579856,
+              -33.5787683
+            ],
+            [
+              -70.5798204,
+              -33.5786927
+            ],
+            [
+              -70.5800643,
+              -33.5786129
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-016",
+        "title": "Edificio 016",
+        "description": "Edificio · BLD-016 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 016</b><br/>\n    ID: SR-BLD-016<br/>\n    Tipo: unknown<br/>\n    Código: BLD-016<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-016 | Edificio 016 | BLD-016 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5794234,
+              -33.5788706
+            ],
+            [
+              -70.5793682,
+              -33.578932
+            ],
+            [
+              -70.5792593,
+              -33.5788641
+            ],
+            [
+              -70.5793145,
+              -33.5788027
+            ],
+            [
+              -70.5794234,
+              -33.5788706
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-017",
+        "title": "Edificio 017",
+        "description": "Edificio · BLD-017 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 017</b><br/>\n    ID: SR-BLD-017<br/>\n    Tipo: unknown<br/>\n    Código: BLD-017<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-017 | Edificio 017 | BLD-017 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5786997,
+              -33.5783054
+            ],
+            [
+              -70.5787487,
+              -33.5784062
+            ],
+            [
+              -70.5787121,
+              -33.5784186
+            ],
+            [
+              -70.5787372,
+              -33.5784702
+            ],
+            [
+              -70.5786784,
+              -33.5784901
+            ],
+            [
+              -70.5786042,
+              -33.5783376
+            ],
+            [
+              -70.5786997,
+              -33.5783054
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-018",
+        "title": "Edificio 018",
+        "description": "Edificio · BLD-018 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 018</b><br/>\n    ID: SR-BLD-018<br/>\n    Tipo: unknown<br/>\n    Código: BLD-018<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-018 | Edificio 018 | BLD-018 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5790992,
+              -33.577004
+            ],
+            [
+              -70.5790448,
+              -33.5768907
+            ],
+            [
+              -70.5793504,
+              -33.5767888
+            ],
+            [
+              -70.5794072,
+              -33.5769068
+            ],
+            [
+              -70.5793616,
+              -33.576922
+            ],
+            [
+              -70.5793772,
+              -33.5769544
+            ],
+            [
+              -70.5795054,
+              -33.5769117
+            ],
+            [
+              -70.5795838,
+              -33.5769511
+            ],
+            [
+              -70.5792587,
+              -33.5770596
+            ],
+            [
+              -70.5792338,
+              -33.5770077
+            ],
+            [
+              -70.5793582,
+              -33.5769661
+            ],
+            [
+              -70.5793381,
+              -33.5769243
+            ],
+            [
+              -70.5790992,
+              -33.577004
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-019",
+        "title": "Edificio 019",
+        "description": "Edificio · BLD-019 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 019</b><br/>\n    ID: SR-BLD-019<br/>\n    Tipo: unknown<br/>\n    Código: BLD-019<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-019 | Edificio 019 | BLD-019 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5787261,
+              -33.5770641
+            ],
+            [
+              -70.5788483,
+              -33.5770308
+            ],
+            [
+              -70.5788716,
+              -33.5770401
+            ],
+            [
+              -70.5788904,
+              -33.5770761
+            ],
+            [
+              -70.5788788,
+              -33.5771013
+            ],
+            [
+              -70.5787491,
+              -33.5771337
+            ],
+            [
+              -70.5787189,
+              -33.5771229
+            ],
+            [
+              -70.5787074,
+              -33.5770869
+            ],
+            [
+              -70.5787261,
+              -33.5770641
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-020",
+        "title": "Edificio 020",
+        "description": "Edificio · BLD-020 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 020</b><br/>\n    ID: SR-BLD-020<br/>\n    Tipo: unknown<br/>\n    Código: BLD-020<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-020 | Edificio 020 | BLD-020 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.578708,
+              -33.5768603
+            ],
+            [
+              -70.5787227,
+              -33.5768957
+            ],
+            [
+              -70.5785707,
+              -33.5769398
+            ],
+            [
+              -70.5785559,
+              -33.5769044
+            ],
+            [
+              -70.578708,
+              -33.5768603
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-021",
+        "title": "CDT",
+        "description": "Edificio · BLD-021 · piso(s): 0, 1, 2",
+        "floor": 0,
+        "popupContent": "\n    <b>CDT</b><br/>\n    ID: SR-BLD-021<br/>\n    Tipo: consultas<br/>\n    Código: BLD-021<br/>\n    Área: Consultas<br/>\n    Pisos: 0, 1, 2\n  ",
+        "searchText": "SR-BLD-021 | CDT | Edificio 021 | BLD-021 | consultas | Consultas | 1 | 2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5786426,
+              -33.5767062
+            ],
+            [
+              -70.5786983,
+              -33.5768356
+            ],
+            [
+              -70.5786217,
+              -33.5768585
+            ],
+            [
+              -70.578566,
+              -33.5767291
+            ],
+            [
+              -70.5786426,
+              -33.5767062
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-022",
+        "title": "Edificio 022",
+        "description": "Edificio · BLD-022 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 022</b><br/>\n    ID: SR-BLD-022<br/>\n    Tipo: unknown<br/>\n    Código: BLD-022<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-022 | Edificio 022 | BLD-022 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5785595,
+              -33.5767363
+            ],
+            [
+              -70.5785896,
+              -33.576811
+            ],
+            [
+              -70.5785157,
+              -33.5768317
+            ],
+            [
+              -70.5784855,
+              -33.576757
+            ],
+            [
+              -70.5785595,
+              -33.5767363
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-023",
+        "title": "Edificio 023",
+        "description": "Edificio · BLD-023 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 023</b><br/>\n    ID: SR-BLD-023<br/>\n    Tipo: unknown<br/>\n    Código: BLD-023<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-023 | Edificio 023 | BLD-023 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5787824,
+              -33.5776036
+            ],
+            [
+              -70.5788644,
+              -33.5777895
+            ],
+            [
+              -70.5785387,
+              -33.5778891
+            ],
+            [
+              -70.5784992,
+              -33.5777996
+            ],
+            [
+              -70.5787419,
+              -33.5777253
+            ],
+            [
+              -70.5786994,
+              -33.577629
+            ],
+            [
+              -70.5787824,
+              -33.5776036
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-024",
+        "title": "Edificio 024",
+        "description": "Edificio · BLD-024 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 024</b><br/>\n    ID: SR-BLD-024<br/>\n    Tipo: unknown<br/>\n    Código: BLD-024<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-024 | Edificio 024 | BLD-024 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5788315,
+              -33.577557
+            ],
+            [
+              -70.5785672,
+              -33.5776306
+            ],
+            [
+              -70.5785208,
+              -33.5775148
+            ],
+            [
+              -70.578785,
+              -33.5774412
+            ],
+            [
+              -70.5788315,
+              -33.577557
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-025",
+        "title": "Edificio 025",
+        "description": "Edificio · BLD-025 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 025</b><br/>\n    ID: SR-BLD-025<br/>\n    Tipo: unknown<br/>\n    Código: BLD-025<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-025 | Edificio 025 | BLD-025 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5784061,
+              -33.5782887
+            ],
+            [
+              -70.578347,
+              -33.5782905
+            ],
+            [
+              -70.578342,
+              -33.5781716
+            ],
+            [
+              -70.5783707,
+              -33.5781708
+            ],
+            [
+              -70.5783645,
+              -33.5780263
+            ],
+            [
+              -70.5783948,
+              -33.5780254
+            ],
+            [
+              -70.5784061,
+              -33.5782887
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-026",
+        "title": "Edificio 026",
+        "description": "Edificio · BLD-026 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 026</b><br/>\n    ID: SR-BLD-026<br/>\n    Tipo: unknown<br/>\n    Código: BLD-026<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-026 | Edificio 026 | BLD-026 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5781501,
+              -33.5780623
+            ],
+            [
+              -70.5783097,
+              -33.5780688
+            ],
+            [
+              -70.5782853,
+              -33.5784856
+            ],
+            [
+              -70.5781257,
+              -33.5784791
+            ],
+            [
+              -70.5781501,
+              -33.5780623
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-027",
+        "title": "Edificio 027",
+        "description": "Edificio · BLD-027 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 027</b><br/>\n    ID: SR-BLD-027<br/>\n    Tipo: unknown<br/>\n    Código: BLD-027<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-027 | Edificio 027 | BLD-027 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5790915,
+              -33.5784084
+            ],
+            [
+              -70.5789174,
+              -33.5784611
+            ],
+            [
+              -70.5789009,
+              -33.5784233
+            ],
+            [
+              -70.5789152,
+              -33.578419
+            ],
+            [
+              -70.5788795,
+              -33.5783373
+            ],
+            [
+              -70.5788542,
+              -33.578345
+            ],
+            [
+              -70.5788358,
+              -33.5783027
+            ],
+            [
+              -70.5788554,
+              -33.5782968
+            ],
+            [
+              -70.5788222,
+              -33.5782206
+            ],
+            [
+              -70.5789574,
+              -33.5781796
+            ],
+            [
+              -70.5789904,
+              -33.5782553
+            ],
+            [
+              -70.5790215,
+              -33.5782459
+            ],
+            [
+              -70.5790434,
+              -33.5782959
+            ],
+            [
+              -70.5789692,
+              -33.5783184
+            ],
+            [
+              -70.5790026,
+              -33.5783951
+            ],
+            [
+              -70.579076,
+              -33.5783729
+            ],
+            [
+              -70.5790915,
+              -33.5784084
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-028",
+        "title": "Edificio 028",
+        "description": "Edificio · BLD-028 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 028</b><br/>\n    ID: SR-BLD-028<br/>\n    Tipo: unknown<br/>\n    Código: BLD-028<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-028 | Edificio 028 | BLD-028 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5790774,
+              -33.5784207
+            ],
+            [
+              -70.5791762,
+              -33.57864
+            ],
+            [
+              -70.578995,
+              -33.5786967
+            ],
+            [
+              -70.5789513,
+              -33.5785998
+            ],
+            [
+              -70.5789983,
+              -33.5785851
+            ],
+            [
+              -70.5789707,
+              -33.5785237
+            ],
+            [
+              -70.5789461,
+              -33.5785314
+            ],
+            [
+              -70.5789186,
+              -33.5784703
+            ],
+            [
+              -70.5790774,
+              -33.5784207
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-029",
+        "title": "Edificio 029",
+        "description": "Edificio · BLD-029 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 029</b><br/>\n    ID: SR-BLD-029<br/>\n    Tipo: unknown<br/>\n    Código: BLD-029<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-029 | Edificio 029 | BLD-029 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5791678,
+              -33.5786681
+            ],
+            [
+              -70.57918,
+              -33.5786984
+            ],
+            [
+              -70.5792874,
+              -33.5786684
+            ],
+            [
+              -70.5793133,
+              -33.5787328
+            ],
+            [
+              -70.5792779,
+              -33.5787427
+            ],
+            [
+              -70.5792877,
+              -33.5787672
+            ],
+            [
+              -70.5791579,
+              -33.5788035
+            ],
+            [
+              -70.5791873,
+              -33.5788763
+            ],
+            [
+              -70.5790806,
+              -33.5789061
+            ],
+            [
+              -70.57901,
+              -33.5787305
+            ],
+            [
+              -70.5790445,
+              -33.5787209
+            ],
+            [
+              -70.5790379,
+              -33.5787044
+            ],
+            [
+              -70.5791678,
+              -33.5786681
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-030",
+        "title": "Edificio 030",
+        "description": "Edificio · BLD-030 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 030</b><br/>\n    ID: SR-BLD-030<br/>\n    Tipo: unknown<br/>\n    Código: BLD-030<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-030 | Edificio 030 | BLD-030 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5807012,
+              -33.5782675
+            ],
+            [
+              -70.5808047,
+              -33.5784923
+            ],
+            [
+              -70.5806742,
+              -33.578534
+            ],
+            [
+              -70.5805707,
+              -33.5783092
+            ],
+            [
+              -70.5807012,
+              -33.5782675
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-031",
+        "title": "Edificio 031",
+        "description": "Edificio · BLD-031 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 031</b><br/>\n    ID: SR-BLD-031<br/>\n    Tipo: unknown<br/>\n    Código: BLD-031<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-031 | Edificio 031 | BLD-031 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5815167,
+              -33.5781484
+            ],
+            [
+              -70.5814448,
+              -33.57846
+            ],
+            [
+              -70.5812237,
+              -33.5784246
+            ],
+            [
+              -70.5812955,
+              -33.578113
+            ],
+            [
+              -70.5815167,
+              -33.5781484
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-032",
+        "title": "Edificio 032",
+        "description": "Edificio · BLD-032 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 032</b><br/>\n    ID: SR-BLD-032<br/>\n    Tipo: unknown<br/>\n    Código: BLD-032<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-032 | Edificio 032 | BLD-032 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5817357,
+              -33.5781583
+            ],
+            [
+              -70.581662,
+              -33.5784659
+            ],
+            [
+              -70.5814706,
+              -33.578434
+            ],
+            [
+              -70.5815444,
+              -33.5781264
+            ],
+            [
+              -70.5817357,
+              -33.5781583
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-033",
+        "title": "Edificio 033",
+        "description": "Edificio · BLD-033 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 033</b><br/>\n    ID: SR-BLD-033<br/>\n    Tipo: unknown<br/>\n    Código: BLD-033<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-033 | Edificio 033 | BLD-033 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5817182,
+              -33.5767239
+            ],
+            [
+              -70.5817345,
+              -33.5767612
+            ],
+            [
+              -70.5816683,
+              -33.5767813
+            ],
+            [
+              -70.5816519,
+              -33.5767441
+            ],
+            [
+              -70.5817182,
+              -33.5767239
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-034",
+        "title": "Edificio 034",
+        "description": "Edificio · BLD-034 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 034</b><br/>\n    ID: SR-BLD-034<br/>\n    Tipo: unknown<br/>\n    Código: BLD-034<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-034 | Edificio 034 | BLD-034 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5817939,
+              -33.576694
+            ],
+            [
+              -70.5818404,
+              -33.5767961
+            ],
+            [
+              -70.5818118,
+              -33.5768051
+            ],
+            [
+              -70.5817653,
+              -33.576703
+            ],
+            [
+              -70.5817939,
+              -33.576694
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-035",
+        "title": "Edificio 035",
+        "description": "Edificio · BLD-035 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 035</b><br/>\n    ID: SR-BLD-035<br/>\n    Tipo: unknown<br/>\n    Código: BLD-035<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-035 | Edificio 035 | BLD-035 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5815998,
+              -33.5760557
+            ],
+            [
+              -70.581629,
+              -33.5761422
+            ],
+            [
+              -70.5814786,
+              -33.5761774
+            ],
+            [
+              -70.581455,
+              -33.5761074
+            ],
+            [
+              -70.5815227,
+              -33.5760916
+            ],
+            [
+              -70.5815057,
+              -33.5760409
+            ],
+            [
+              -70.5815408,
+              -33.5760327
+            ],
+            [
+              -70.5815469,
+              -33.5760508
+            ],
+            [
+              -70.5815764,
+              -33.5760439
+            ],
+            [
+              -70.5815818,
+              -33.5760599
+            ],
+            [
+              -70.5815998,
+              -33.5760557
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-036",
+        "title": "Edificio 036",
+        "description": "Edificio · BLD-036 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 036</b><br/>\n    ID: SR-BLD-036<br/>\n    Tipo: unknown<br/>\n    Código: BLD-036<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-036 | Edificio 036 | BLD-036 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5817553,
+              -33.5759932
+            ],
+            [
+              -70.5818005,
+              -33.5760956
+            ],
+            [
+              -70.5816586,
+              -33.576139
+            ],
+            [
+              -70.5816134,
+              -33.5760366
+            ],
+            [
+              -70.5817553,
+              -33.5759932
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-037",
+        "title": "Edificio 037",
+        "description": "Edificio · BLD-037 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 037</b><br/>\n    ID: SR-BLD-037<br/>\n    Tipo: unknown<br/>\n    Código: BLD-037<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-037 | Edificio 037 | BLD-037 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5820182,
+              -33.5759609
+            ],
+            [
+              -70.5820119,
+              -33.5760968
+            ],
+            [
+              -70.5818805,
+              -33.5760925
+            ],
+            [
+              -70.5818869,
+              -33.5759567
+            ],
+            [
+              -70.5820182,
+              -33.5759609
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-038",
+        "title": "Edificio 038",
+        "description": "Edificio · BLD-038 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 038</b><br/>\n    ID: SR-BLD-038<br/>\n    Tipo: unknown<br/>\n    Código: BLD-038<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-038 | Edificio 038 | BLD-038 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5815601,
+              -33.5758806
+            ],
+            [
+              -70.5815336,
+              -33.5759298
+            ],
+            [
+              -70.5814378,
+              -33.575894
+            ],
+            [
+              -70.5815573,
+              -33.5756718
+            ],
+            [
+              -70.5816713,
+              -33.5757144
+            ],
+            [
+              -70.5816433,
+              -33.5757664
+            ],
+            [
+              -70.5816134,
+              -33.575779
+            ],
+            [
+              -70.5816375,
+              -33.5758309
+            ],
+            [
+              -70.5815946,
+              -33.5758326
+            ],
+            [
+              -70.5815973,
+              -33.5758723
+            ],
+            [
+              -70.5815601,
+              -33.5758806
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-039",
+        "title": "Edificio 039",
+        "description": "Edificio · BLD-039 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 039</b><br/>\n    ID: SR-BLD-039<br/>\n    Tipo: unknown<br/>\n    Código: BLD-039<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-039 | Edificio 039 | BLD-039 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.581719,
+              -33.5754529
+            ],
+            [
+              -70.5816574,
+              -33.5756791
+            ],
+            [
+              -70.5815463,
+              -33.5756581
+            ],
+            [
+              -70.581608,
+              -33.5754319
+            ],
+            [
+              -70.581719,
+              -33.5754529
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-040",
+        "title": "Edificio 040",
+        "description": "Edificio · BLD-040 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 040</b><br/>\n    ID: SR-BLD-040<br/>\n    Tipo: unknown<br/>\n    Código: BLD-040<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-040 | Edificio 040 | BLD-040 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5817704,
+              -33.5756704
+            ],
+            [
+              -70.581875,
+              -33.5756707
+            ],
+            [
+              -70.5818748,
+              -33.5757028
+            ],
+            [
+              -70.5818378,
+              -33.5757026
+            ],
+            [
+              -70.5818376,
+              -33.5757498
+            ],
+            [
+              -70.5819298,
+              -33.5757501
+            ],
+            [
+              -70.58193,
+              -33.5757146
+            ],
+            [
+              -70.5819747,
+              -33.5757148
+            ],
+            [
+              -70.5819743,
+              -33.5757935
+            ],
+            [
+              -70.5819424,
+              -33.5757934
+            ],
+            [
+              -70.5819422,
+              -33.5758404
+            ],
+            [
+              -70.5817696,
+              -33.5758398
+            ],
+            [
+              -70.5817704,
+              -33.5756704
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-041",
+        "title": "Edificio 041",
+        "description": "Edificio · BLD-041 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 041</b><br/>\n    ID: SR-BLD-041<br/>\n    Tipo: unknown<br/>\n    Código: BLD-041<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-041 | Edificio 041 | BLD-041 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5817621,
+              -33.5754755
+            ],
+            [
+              -70.5818931,
+              -33.5755037
+            ],
+            [
+              -70.5818811,
+              -33.5755424
+            ],
+            [
+              -70.5819665,
+              -33.5755608
+            ],
+            [
+              -70.5819454,
+              -33.5756287
+            ],
+            [
+              -70.581729,
+              -33.5755822
+            ],
+            [
+              -70.5817621,
+              -33.5754755
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-042",
+        "title": "Edificio 042",
+        "description": "Edificio · BLD-042 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 042</b><br/>\n    ID: SR-BLD-042<br/>\n    Tipo: unknown<br/>\n    Código: BLD-042<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-042 | Edificio 042 | BLD-042 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5814561,
+              -33.5750032
+            ],
+            [
+              -70.5814301,
+              -33.57514
+            ],
+            [
+              -70.5813455,
+              -33.5751289
+            ],
+            [
+              -70.5813715,
+              -33.5749921
+            ],
+            [
+              -70.5814561,
+              -33.5750032
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-043",
+        "title": "Edificio 043",
+        "description": "Edificio · BLD-043 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 043</b><br/>\n    ID: SR-BLD-043<br/>\n    Tipo: unknown<br/>\n    Código: BLD-043<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-043 | Edificio 043 | BLD-043 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5817933,
+              -33.5748921
+            ],
+            [
+              -70.5819268,
+              -33.574989
+            ],
+            [
+              -70.5817805,
+              -33.5751289
+            ],
+            [
+              -70.581647,
+              -33.575032
+            ],
+            [
+              -70.5817933,
+              -33.5748921
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-044",
+        "title": "Edificio 044",
+        "description": "Edificio · BLD-044 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 044</b><br/>\n    ID: SR-BLD-044<br/>\n    Tipo: unknown<br/>\n    Código: BLD-044<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-044 | Edificio 044 | BLD-044 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5823034,
+              -33.5749379
+            ],
+            [
+              -70.5823189,
+              -33.5749902
+            ],
+            [
+              -70.5822333,
+              -33.5750078
+            ],
+            [
+              -70.5822178,
+              -33.5749555
+            ],
+            [
+              -70.5823034,
+              -33.5749379
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-045",
+        "title": "Edificio 045",
+        "description": "Edificio · BLD-045 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 045</b><br/>\n    ID: SR-BLD-045<br/>\n    Tipo: unknown<br/>\n    Código: BLD-045<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-045 | Edificio 045 | BLD-045 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5819785,
+              -33.5748155
+            ],
+            [
+              -70.5818693,
+              -33.5749268
+            ],
+            [
+              -70.5817996,
+              -33.5748793
+            ],
+            [
+              -70.5820774,
+              -33.5745961
+            ],
+            [
+              -70.5821479,
+              -33.5746441
+            ],
+            [
+              -70.5820247,
+              -33.5747696
+            ],
+            [
+              -70.5822145,
+              -33.5747689
+            ],
+            [
+              -70.5822153,
+              -33.5749472
+            ],
+            [
+              -70.5820851,
+              -33.5749475
+            ],
+            [
+              -70.5820845,
+              -33.5748145
+            ],
+            [
+              -70.5819785,
+              -33.5748155
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-046",
+        "title": "Urgencia Adulto",
+        "description": "Edificio · BLD-046 · piso(s): 0, 1",
+        "floor": 0,
+        "popupContent": "\n    <b>Urgencia Adulto</b><br/>\n    ID: SR-BLD-046<br/>\n    Tipo: urgencia<br/>\n    Código: BLD-046<br/>\n    Área: Urgencia<br/>\n    Pisos: 0, 1\n  ",
+        "searchText": "SR-BLD-046 | Urgencia Adulto | Edificio 046 | BLD-046 | urgencia | Urgencia | 1"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5812171,
+              -33.574821
+            ],
+            [
+              -70.581232,
+              -33.5748901
+            ],
+            [
+              -70.5810917,
+              -33.5749112
+            ],
+            [
+              -70.5810768,
+              -33.574842
+            ],
+            [
+              -70.5812171,
+              -33.574821
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-047",
+        "title": "Edificio 047",
+        "description": "Edificio · BLD-047 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 047</b><br/>\n    ID: SR-BLD-047<br/>\n    Tipo: unknown<br/>\n    Código: BLD-047<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-047 | Edificio 047 | BLD-047 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5816809,
+              -33.5746433
+            ],
+            [
+              -70.5818171,
+              -33.5746126
+            ],
+            [
+              -70.5818447,
+              -33.5746975
+            ],
+            [
+              -70.5817084,
+              -33.5747282
+            ],
+            [
+              -70.5816809,
+              -33.5746433
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-048",
+        "title": "Edificio 048",
+        "description": "Edificio · BLD-048 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 048</b><br/>\n    ID: SR-BLD-048<br/>\n    Tipo: unknown<br/>\n    Código: BLD-048<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-048 | Edificio 048 | BLD-048 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5799582,
+              -33.5762984
+            ],
+            [
+              -70.579899,
+              -33.5761473
+            ],
+            [
+              -70.5799685,
+              -33.5761284
+            ],
+            [
+              -70.5800282,
+              -33.57628
+            ],
+            [
+              -70.5801095,
+              -33.5763032
+            ],
+            [
+              -70.5800212,
+              -33.5765185
+            ],
+            [
+              -70.5800362,
+              -33.5765294
+            ],
+            [
+              -70.5799761,
+              -33.5765867
+            ],
+            [
+              -70.5798653,
+              -33.5765062
+            ],
+            [
+              -70.5799457,
+              -33.5763002
+            ],
+            [
+              -70.5799582,
+              -33.5762984
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-049",
+        "title": "Edificio 049",
+        "description": "Edificio · BLD-049 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 049</b><br/>\n    ID: SR-BLD-049<br/>\n    Tipo: unknown<br/>\n    Código: BLD-049<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-049 | Edificio 049 | BLD-049 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5783915,
+              -33.5771408
+            ],
+            [
+              -70.5785198,
+              -33.5771036
+            ],
+            [
+              -70.5785439,
+              -33.5771613
+            ],
+            [
+              -70.5784156,
+              -33.5771985
+            ],
+            [
+              -70.5783915,
+              -33.5771408
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-050",
+        "title": "Edificio 050",
+        "description": "Edificio · BLD-050 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 050</b><br/>\n    ID: SR-BLD-050<br/>\n    Tipo: unknown<br/>\n    Código: BLD-050<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-050 | Edificio 050 | BLD-050 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5783368,
+              -33.5770618
+            ],
+            [
+              -70.5783799,
+              -33.5771694
+            ],
+            [
+              -70.5783521,
+              -33.5771771
+            ],
+            [
+              -70.5783091,
+              -33.5770695
+            ],
+            [
+              -70.5783368,
+              -33.5770618
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-051",
+        "title": "Edificio 051",
+        "description": "Edificio · BLD-051 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 051</b><br/>\n    ID: SR-BLD-051<br/>\n    Tipo: unknown<br/>\n    Código: BLD-051<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-051 | Edificio 051 | BLD-051 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5788855,
+              -33.5772947
+            ],
+            [
+              -70.5788132,
+              -33.577201
+            ],
+            [
+              -70.5788761,
+              -33.5771673
+            ],
+            [
+              -70.5789484,
+              -33.577261
+            ],
+            [
+              -70.5788855,
+              -33.5772947
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-052",
+        "title": "Edificio 052",
+        "description": "Edificio · BLD-052 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 052</b><br/>\n    ID: SR-BLD-052<br/>\n    Tipo: unknown<br/>\n    Código: BLD-052<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-052 | Edificio 052 | BLD-052 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5783593,
+              -33.5780582
+            ],
+            [
+              -70.5783591,
+              -33.5781703
+            ],
+            [
+              -70.578318,
+              -33.5781703
+            ],
+            [
+              -70.5783182,
+              -33.5780582
+            ],
+            [
+              -70.5783593,
+              -33.5780582
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-053",
+        "title": "Edificio 053",
+        "description": "Edificio · BLD-053 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 053</b><br/>\n    ID: SR-BLD-053<br/>\n    Tipo: unknown<br/>\n    Código: BLD-053<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-053 | Edificio 053 | BLD-053 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5784278,
+              -33.5777986
+            ],
+            [
+              -70.5784637,
+              -33.5779116
+            ],
+            [
+              -70.5784087,
+              -33.5779237
+            ],
+            [
+              -70.5783728,
+              -33.5778108
+            ],
+            [
+              -70.5784278,
+              -33.5777986
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-054",
+        "title": "Edificio 054",
+        "description": "Edificio · BLD-054 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 054</b><br/>\n    ID: SR-BLD-054<br/>\n    Tipo: unknown<br/>\n    Código: BLD-054<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-054 | Edificio 054 | BLD-054 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5783486,
+              -33.5778144
+            ],
+            [
+              -70.5783873,
+              -33.5779279
+            ],
+            [
+              -70.5783258,
+              -33.5779424
+            ],
+            [
+              -70.5782871,
+              -33.577829
+            ],
+            [
+              -70.5783486,
+              -33.5778144
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-055",
+        "title": "Edificio 055",
+        "description": "Edificio · BLD-055 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 055</b><br/>\n    ID: SR-BLD-055<br/>\n    Tipo: unknown<br/>\n    Código: BLD-055<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-055 | Edificio 055 | BLD-055 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5782172,
+              -33.5778455
+            ],
+            [
+              -70.5782571,
+              -33.5778371
+            ],
+            [
+              -70.57829,
+              -33.5779466
+            ],
+            [
+              -70.5782501,
+              -33.5779549
+            ],
+            [
+              -70.5782172,
+              -33.5778455
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-056",
+        "title": "Edificio 056",
+        "description": "Edificio · BLD-056 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 056</b><br/>\n    ID: SR-BLD-056<br/>\n    Tipo: unknown<br/>\n    Código: BLD-056<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-056 | Edificio 056 | BLD-056 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5781935,
+              -33.5777307
+            ],
+            [
+              -70.5782246,
+              -33.5778377
+            ],
+            [
+              -70.5781797,
+              -33.5778467
+            ],
+            [
+              -70.5781487,
+              -33.5777397
+            ],
+            [
+              -70.5781935,
+              -33.5777307
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-057",
+        "title": "Edificio 057",
+        "description": "Edificio · BLD-057 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 057</b><br/>\n    ID: SR-BLD-057<br/>\n    Tipo: unknown<br/>\n    Código: BLD-057<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-057 | Edificio 057 | BLD-057 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5783791,
+              -33.577534
+            ],
+            [
+              -70.578478,
+              -33.5777272
+            ],
+            [
+              -70.5783607,
+              -33.5777689
+            ],
+            [
+              -70.5783338,
+              -33.5777163
+            ],
+            [
+              -70.5783424,
+              -33.5777133
+            ],
+            [
+              -70.5783183,
+              -33.5776662
+            ],
+            [
+              -70.5783305,
+              -33.5776619
+            ],
+            [
+              -70.578325,
+              -33.5776511
+            ],
+            [
+              -70.5783006,
+              -33.5776598
+            ],
+            [
+              -70.57831,
+              -33.5776782
+            ],
+            [
+              -70.5782277,
+              -33.5777074
+            ],
+            [
+              -70.5781759,
+              -33.5776061
+            ],
+            [
+              -70.5783791,
+              -33.577534
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-058",
+        "title": "Edificio 058",
+        "description": "Edificio · BLD-058 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 058</b><br/>\n    ID: SR-BLD-058<br/>\n    Tipo: unknown<br/>\n    Código: BLD-058<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-058 | Edificio 058 | BLD-058 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.578457,
+              -33.5783956
+            ],
+            [
+              -70.5785136,
+              -33.5783783
+            ],
+            [
+              -70.5785646,
+              -33.5784936
+            ],
+            [
+              -70.5785079,
+              -33.578511
+            ],
+            [
+              -70.578457,
+              -33.5783956
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-059",
+        "title": "Edificio 059",
+        "description": "Edificio · BLD-059 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 059</b><br/>\n    ID: SR-BLD-059<br/>\n    Tipo: unknown<br/>\n    Código: BLD-059<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-059 | Edificio 059 | BLD-059 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5817603,
+              -33.5764102
+            ],
+            [
+              -70.5817234,
+              -33.576455
+            ],
+            [
+              -70.5816451,
+              -33.5764546
+            ],
+            [
+              -70.5816392,
+              -33.5764387
+            ],
+            [
+              -70.5816191,
+              -33.576444
+            ],
+            [
+              -70.5815591,
+              -33.5762834
+            ],
+            [
+              -70.5815071,
+              -33.5762969
+            ],
+            [
+              -70.5814706,
+              -33.5761995
+            ],
+            [
+              -70.5817884,
+              -33.576117
+            ],
+            [
+              -70.5818358,
+              -33.5762437
+            ],
+            [
+              -70.58179,
+              -33.5762556
+            ],
+            [
+              -70.5817963,
+              -33.5762725
+            ],
+            [
+              -70.5817361,
+              -33.5762881
+            ],
+            [
+              -70.5817746,
+              -33.576391
+            ],
+            [
+              -70.581755,
+              -33.5763961
+            ],
+            [
+              -70.5817603,
+              -33.5764102
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-060",
+        "title": "Edificio 060",
+        "description": "Edificio · BLD-060 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 060</b><br/>\n    ID: SR-BLD-060<br/>\n    Tipo: unknown<br/>\n    Código: BLD-060<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-060 | Edificio 060 | BLD-060 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5809768,
+              -33.5777706
+            ],
+            [
+              -70.5810217,
+              -33.5778716
+            ],
+            [
+              -70.5810048,
+              -33.5778768
+            ],
+            [
+              -70.5810154,
+              -33.5779006
+            ],
+            [
+              -70.5808802,
+              -33.5779424
+            ],
+            [
+              -70.5808246,
+              -33.5778175
+            ],
+            [
+              -70.5809768,
+              -33.5777706
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-061",
+        "title": "Edificio 061",
+        "description": "Edificio · BLD-061 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 061</b><br/>\n    ID: SR-BLD-061<br/>\n    Tipo: unknown<br/>\n    Código: BLD-061<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-061 | Edificio 061 | BLD-061 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5812933,
+              -33.5773108
+            ],
+            [
+              -70.5813126,
+              -33.5773516
+            ],
+            [
+              -70.5811928,
+              -33.5773909
+            ],
+            [
+              -70.5811735,
+              -33.5773501
+            ],
+            [
+              -70.5812933,
+              -33.5773108
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-062",
+        "title": "Edificio 062",
+        "description": "Edificio · BLD-062 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 062</b><br/>\n    ID: SR-BLD-062<br/>\n    Tipo: unknown<br/>\n    Código: BLD-062<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-062 | Edificio 062 | BLD-062 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5812011,
+              -33.5773953
+            ],
+            [
+              -70.5812253,
+              -33.5774451
+            ],
+            [
+              -70.5811666,
+              -33.5774649
+            ],
+            [
+              -70.5811424,
+              -33.5774152
+            ],
+            [
+              -70.5812011,
+              -33.5773953
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-063",
+        "title": "Edificio 063",
+        "description": "Edificio · BLD-063 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 063</b><br/>\n    ID: SR-BLD-063<br/>\n    Tipo: unknown<br/>\n    Código: BLD-063<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-063 | Edificio 063 | BLD-063 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5812536,
+              -33.5757825
+            ],
+            [
+              -70.5810704,
+              -33.5757491
+            ],
+            [
+              -70.5811317,
+              -33.575516
+            ],
+            [
+              -70.5813149,
+              -33.5755494
+            ],
+            [
+              -70.5812536,
+              -33.5757825
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-064",
+        "title": "Edificio 064",
+        "description": "Edificio · BLD-064 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 064</b><br/>\n    ID: SR-BLD-064<br/>\n    Tipo: unknown<br/>\n    Código: BLD-064<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-064 | Edificio 064 | BLD-064 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5785806,
+              -33.5772634
+            ],
+            [
+              -70.5785806,
+              -33.5772634
+            ],
+            [
+              -70.5785806,
+              -33.5772634
+            ],
+            [
+              -70.5785806,
+              -33.5772634
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-065",
+        "title": "Edificio 065",
+        "description": "Edificio · BLD-065 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 065</b><br/>\n    ID: SR-BLD-065<br/>\n    Tipo: unknown<br/>\n    Código: BLD-065<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-065 | Edificio 065 | BLD-065 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5786317,
+              -33.5772183
+            ],
+            [
+              -70.5785173,
+              -33.5772246
+            ],
+            [
+              -70.5785227,
+              -33.5772916
+            ],
+            [
+              -70.5785817,
+              -33.5772901
+            ],
+            [
+              -70.5786442,
+              -33.5772871
+            ],
+            [
+              -70.5786317,
+              -33.5772183
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-066",
+        "title": "Edificio 066",
+        "description": "Edificio · BLD-066 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 066</b><br/>\n    ID: SR-BLD-066<br/>\n    Tipo: unknown<br/>\n    Código: BLD-066<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-066 | Edificio 066 | BLD-066 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.57821,
+              -33.5786028
+            ],
+            [
+              -70.5781462,
+              -33.5786011
+            ],
+            [
+              -70.5781457,
+              -33.5786377
+            ],
+            [
+              -70.5782095,
+              -33.5786394
+            ],
+            [
+              -70.57821,
+              -33.5786028
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-067",
+        "title": "Edificio 067",
+        "description": "Edificio · BLD-067 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 067</b><br/>\n    ID: SR-BLD-067<br/>\n    Tipo: unknown<br/>\n    Código: BLD-067<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-067 | Edificio 067 | BLD-067 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5779603,
+              -33.5779804
+            ],
+            [
+              -70.5776401,
+              -33.5779718
+            ],
+            [
+              -70.5776327,
+              -33.5780247
+            ],
+            [
+              -70.5776549,
+              -33.5780259
+            ],
+            [
+              -70.5776401,
+              -33.578107
+            ],
+            [
+              -70.5777213,
+              -33.578107
+            ],
+            [
+              -70.5777183,
+              -33.5781575
+            ],
+            [
+              -70.5776445,
+              -33.5781538
+            ],
+            [
+              -70.5776313,
+              -33.5783185
+            ],
+            [
+              -70.5777154,
+              -33.578321
+            ],
+            [
+              -70.577708,
+              -33.5784058
+            ],
+            [
+              -70.5776283,
+              -33.5784046
+            ],
+            [
+              -70.5776283,
+              -33.5784685
+            ],
+            [
+              -70.5777109,
+              -33.578466
+            ],
+            [
+              -70.5777109,
+              -33.5785914
+            ],
+            [
+              -70.5776401,
+              -33.5786
+            ],
+            [
+              -70.5776283,
+              -33.578798
+            ],
+            [
+              -70.5778733,
+              -33.5787906
+            ],
+            [
+              -70.5778851,
+              -33.5785976
+            ],
+            [
+              -70.5778113,
+              -33.5785976
+            ],
+            [
+              -70.5778201,
+              -33.5784673
+            ],
+            [
+              -70.5779397,
+              -33.5784673
+            ],
+            [
+              -70.5779411,
+              -33.578407
+            ],
+            [
+              -70.5778526,
+              -33.5784033
+            ],
+            [
+              -70.5778615,
+              -33.5783271
+            ],
+            [
+              -70.5779456,
+              -33.5783259
+            ],
+            [
+              -70.5779559,
+              -33.5781894
+            ],
+            [
+              -70.5778615,
+              -33.5781845
+            ],
+            [
+              -70.5778541,
+              -33.5781046
+            ],
+            [
+              -70.5779618,
+              -33.578112
+            ],
+            [
+              -70.5779603,
+              -33.5779804
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-068",
+        "title": "Hospital de Campaña",
+        "description": "Edificio · BLD-068 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Hospital de Campaña</b><br/>\n    ID: SR-BLD-068<br/>\n    Tipo: unknown<br/>\n    Código: BLD-068<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-068 | Hospital de Campaña | BLD-068 | unknown"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5786832,
+              -33.5788389
+            ],
+            [
+              -70.578576,
+              -33.5788355
+            ],
+            [
+              -70.5785841,
+              -33.578689
+            ],
+            [
+              -70.5786832,
+              -33.5786907
+            ],
+            [
+              -70.5786832,
+              -33.5788389
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "id": "SR-BLD-069",
+        "title": "Edificio 069",
+        "description": "Edificio · BLD-069 · piso(s): 0",
+        "floor": 0,
+        "popupContent": "\n    <b>Edificio 069</b><br/>\n    ID: SR-BLD-069<br/>\n    Tipo: unknown<br/>\n    Código: BLD-069<br/>\n    Área: <br/>\n    Pisos: N/D\n  ",
+        "searchText": "SR-BLD-069 | Edificio 069 | BLD-069 | unknown"
+      }
+    }
+  ]
+}

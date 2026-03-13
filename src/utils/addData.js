@@ -22,6 +22,56 @@ import { createSvgElement } from "../utils/tools.js"; // Create SVG empty elemen
 // Create a layer group
 var layerGroup = L.layerGroup().addTo(map);
 
+let buildingsCatalogCache = null;
+
+const loadBuildingsCatalog = async () => {
+  if (buildingsCatalogCache) {
+    return buildingsCatalogCache;
+  }
+
+  try {
+    const response = await fetch(`data/sotero_buildings_catalog.json?v=${Date.now()}`, {
+      cache: "no-store",
+    });
+
+    if (!response.ok) {
+      throw new Error("No se pudo cargar sotero_buildings_catalog.json");
+    }
+
+    const data = await response.json();
+    buildingsCatalogCache = data;
+    return data;
+  } catch (error) {
+    console.error("Error cargando catálogo de edificios:", error);
+    return { buildings: [] };
+  }
+};
+
+const getAllowedBuildingIdsForFloor = async (floorNumber) => {
+  const catalog = await loadBuildingsCatalog();
+  const buildings = Array.isArray(catalog.buildings) ? catalog.buildings : [];
+
+  const allowedIds = new Set();
+
+  for (const building of buildings) {
+    const floors = Array.isArray(building.floors) ? building.floors : [];
+
+    // Si tiene pisos definidos, respetarlos
+    if (floors.length > 0) {
+      if (floors.includes(Number(floorNumber))) {
+        allowedIds.add(building.id);
+      }
+    } else {
+      // Si aún no tiene pisos definidos, mostrarlo solo en piso 0
+      if (Number(floorNumber) === 0) {
+        allowedIds.add(building.id);
+      }
+    }
+  }
+
+  return allowedIds;
+};
+
 const SVGLayerGroup = (svg, floorNumber, building, location) => {
   /* Add Leaflet SVG overlay to layerGroup */
   var floor = "floor" + floorNumber.toString();
@@ -115,8 +165,19 @@ const addFeatures = (school, floorNumber, location) => {
     type: "GET",
     data: {},
     dataType: "json",
-    success: function (json) {
-      featuresLayerGroup(json);
+    success: async function (json) {
+      const allowedBuildingIds = await getAllowedBuildingIdsForFloor(floorNumber);
+
+      const filteredJson = {
+        ...json,
+        features: (json.features || []).filter((feature) => {
+          const featureId = feature?.properties?.id;
+          if (!featureId) return false;
+          return allowedBuildingIds.has(featureId);
+        }),
+      };
+
+      featuresLayerGroup(filteredJson);
     },
     error: function () {
       console.log("ERROR Failed to load JSON");

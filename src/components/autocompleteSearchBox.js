@@ -8,6 +8,7 @@
 
 import { map, HOST_URL } from "../views/map.js";
 import campuses from "../data/campuses.js";
+import { setCurrentOpenFeatureId } from "../views/featureDisplay.js";
 
 // import "../lib/jquery/jquery-3.6.0.min.js"; // Not working with webpack
 
@@ -15,9 +16,19 @@ import Fuse from "../lib/fuse/fuse.basic.esm.min.js";
 
 (function ($) {
   const fuseSearch = (geoJson, pattern, resultLimit) => {
-    var fuseResult,
-      result = [];
-    const options = { keys: ["properties.title"] };
+      var fuseResult,
+        result = [];
+      const options = {
+    includeScore: true,
+    threshold: 0.35,
+    ignoreLocation: true,
+    keys: [
+      { name: "properties.title", weight: 0.45 },
+      { name: "properties.description", weight: 0.2 },
+      { name: "properties.searchText", weight: 0.3 },
+      { name: "properties.id", weight: 0.05 },
+    ],
+  };
 
     const fuse = new Fuse(geoJson.features, options);
 
@@ -294,6 +305,17 @@ import Fuse from "../lib/fuse/fuse.basic.esm.min.js";
     // Draws the selected feature on the map
 
     let floorNumber = features[index].properties.floor; // Get floor number for the selected item
+    const selectedProps = features[index].properties || {};
+
+    if (window.preparePopupNavigation) {
+      window.preparePopupNavigation(
+        selectedProps.buildingId || selectedProps.id,
+        selectedProps.view || "summary",
+        selectedProps.roomId || ""
+      );
+    }
+
+setCurrentOpenFeatureId(selectedProps.buildingId || selectedProps.id);
     let resetFloorNumber = campuses[options.place]["floors"].indexOf(
       floorNumber.toString()
     );

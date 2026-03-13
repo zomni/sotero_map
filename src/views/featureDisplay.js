@@ -5,6 +5,17 @@
 import { map, HOST_URL } from "../views/map.js";
 
 export let currentOpenFeatureId = null;
+let currentOpenLayer = null;
+
+export const setPopupViewForFeature = (featureId, viewKey) => {
+  if (!featureId || !viewKey) return;
+  popupViewState[featureId] = viewKey;
+};
+
+export const setPopupRoomForFeature = (featureId, roomId) => {
+  if (!featureId) return;
+  popupRoomState[featureId] = roomId || null;
+};
 
 export const setCurrentOpenFeatureId = (featureId) => {
   currentOpenFeatureId = featureId || null;
@@ -12,7 +23,11 @@ export const setCurrentOpenFeatureId = (featureId) => {
 
 export const clearCurrentOpenFeatureId = () => {
   currentOpenFeatureId = null;
+  currentOpenLayer = null;
 };
+
+const popupViewState = {};
+const popupRoomState = {};
 
 const loadBuildingsCatalog = async () => {
   try {
@@ -90,9 +105,7 @@ const loadRoomsForBuilding = async (building) => {
 };
 
 const loadDevicesForBuilding = async (building) => {
-  if (!building) {
-    return [];
-  }
+  if (!building) return [];
 
   try {
     const response = await fetch(
@@ -140,12 +153,7 @@ const escapeHtml = (value) => {
 };
 
 const countDevicesByType = (devices) => {
-  const counts = {
-    pc: 0,
-    printer: 0,
-    phone: 0,
-    other: 0,
-  };
+  const counts = { pc: 0, printer: 0, phone: 0, other: 0 };
 
   for (const device of devices) {
     const type = device?.type || "other";
@@ -161,23 +169,10 @@ const countDevicesByType = (devices) => {
 
 const buildRoomsMap = (rooms) => {
   const roomMap = new Map();
-
   for (const room of rooms) {
     roomMap.set(room.roomId, room);
   }
-
   return roomMap;
-};
-
-const buildCollapsibleSection = (title, innerHtml, open = false) => {
-  return `
-    <details ${open ? "open" : ""} style="margin-top:8px;">
-      <summary style="cursor:pointer; font-weight:600;">${escapeHtml(title)}</summary>
-      <div style="margin-top:6px; padding-left:4px; line-height:1.35;">
-        ${innerHtml}
-      </div>
-    </details>
-  `;
 };
 
 const filterRoomsByFloor = (rooms, floor) => {
@@ -187,108 +182,6 @@ const filterRoomsByFloor = (rooms, floor) => {
 const filterDevicesByFloor = (devices, roomsInFloor) => {
   const roomIds = new Set(roomsInFloor.map((room) => room.roomId));
   return devices.filter((device) => roomIds.has(device.roomId));
-};
-
-const buildBuildingDetailHtml = (buildingDetail) => {
-  if (!buildingDetail) {
-    return "Sin información adicional.";
-  }
-
-  let html = "";
-
-  if (buildingDetail.mappingStatus) {
-    html += `Estado de mapeo: ${escapeHtml(buildingDetail.mappingStatus)}<br/>`;
-  }
-
-  if (buildingDetail.inventoryStatus) {
-    html += `Estado de inventario: ${escapeHtml(buildingDetail.inventoryStatus)}<br/>`;
-  }
-
-  if (buildingDetail.lastUpdate) {
-    html += `Última actualización: ${escapeHtml(buildingDetail.lastUpdate)}<br/>`;
-  }
-
-  if (buildingDetail.operationalNotes) {
-    html += `Nota operativa: ${escapeHtml(buildingDetail.operationalNotes)}<br/>`;
-  }
-
-  if (buildingDetail.technicalNotes) {
-    html += `Nota técnica: ${escapeHtml(buildingDetail.technicalNotes)}<br/>`;
-  }
-
-  if (Array.isArray(buildingDetail.tags) && buildingDetail.tags.length > 0) {
-    html += `Etiquetas: ${escapeHtml(buildingDetail.tags.join(", "))}<br/>`;
-  }
-
-  return html || "Sin datos adicionales.";
-};
-
-const buildRoomsSummaryHtml = (rooms, devices, floorLabel) => {
-  if (!rooms.length) {
-    return `No hay salas cargadas para el piso ${escapeHtml(floorLabel)}.`;
-  }
-
-  const firstRooms = rooms.slice(0, 8);
-  let html = "";
-
-  for (const room of firstRooms) {
-    const roomDevicesCount = devices.filter((device) => device.roomId === room.roomId).length;
-    const roomName = escapeHtml(room.name || room.shortName || room.roomId);
-    const roomType = escapeHtml(room.type || "sin_tipo");
-    const roomStatus = escapeHtml(room.status || "sin_estado");
-
-    html += `• ${roomName} — ${roomType} — ${roomStatus} — ${roomDevicesCount} equipo(s)<br/>`;
-  }
-
-  if (rooms.length > 8) {
-    html += `... y ${rooms.length - 8} sala(s) más<br/>`;
-  }
-
-  return html;
-};
-
-const buildDevicesSummaryHtml = (devices, floorLabel) => {
-  if (!devices.length) {
-    return `No hay equipos cargados para el piso ${escapeHtml(floorLabel)}.`;
-  }
-
-  const counts = countDevicesByType(devices);
-
-  return `
-    PCs: ${counts.pc}<br/>
-    Impresoras: ${counts.printer}<br/>
-    Teléfonos: ${counts.phone}<br/>
-    Otros: ${counts.other}
-  `;
-};
-
-const buildDevicesListHtml = (devices, rooms, floorLabel) => {
-  if (!devices.length) {
-    return `No hay equipos destacados para el piso ${escapeHtml(floorLabel)}.`;
-  }
-
-  const roomsMap = buildRoomsMap(rooms);
-  const firstDevices = devices.slice(0, 8);
-
-  let html = "";
-
-  for (const device of firstDevices) {
-    const room = roomsMap.get(device.roomId);
-    const roomName = room?.name || room?.shortName || device.roomId || "Sin sala";
-    const deviceName = escapeHtml(device.name || device.deviceId || "Sin nombre");
-    const deviceType = escapeHtml(device.type || "sin_tipo");
-    const ip = escapeHtml(device.ip || "sin IP");
-    const status = escapeHtml(device.status || "sin estado");
-    const roomLabel = escapeHtml(roomName);
-
-    html += `• ${deviceName} — ${deviceType} — ${roomLabel} — IP: ${ip} — ${status}<br/>`;
-  }
-
-  if (devices.length > 8) {
-    html += `... y ${devices.length - 8} equipo(s) más<br/>`;
-  }
-
-  return html;
 };
 
 const getRecentEvents = (devices) => {
@@ -309,6 +202,143 @@ const getRecentEvents = (devices) => {
 
   events.sort((a, b) => String(b.date).localeCompare(String(a.date)));
   return events;
+};
+
+const popupShellStyle = `
+  min-width: 300px;
+  max-width: 390px;
+  max-height: 68vh;
+  overflow-y: auto;
+  line-height: 1.35;
+  font-size: 13px;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  padding-right: 2px;
+`;
+
+const sectionBoxStyle = `
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid #ddd;
+`;
+
+const chipRowStyle = `
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+`;
+
+const getChipButtonStyle = (isActive = false, compact = false) => `
+  margin: 0;
+  padding: ${compact ? "4px 10px" : "6px 12px"};
+  min-width: ${compact ? "0" : "40px"};
+  border-radius: 999px;
+  border: 2px solid ${isActive ? "#444" : "#2f7ea8"};
+  background: ${isActive ? "#e9ecef" : "#fff"};
+  color: #333;
+  font-weight: ${isActive ? "700" : "600"};
+  font-size: ${compact ? "12px" : "13px"};
+  line-height: 1.1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+`;
+
+const getActionButtonStyle = () => `
+  margin: 0;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 2px solid #2f7ea8;
+  background: #fff;
+  color: #333;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 1.1;
+  white-space: nowrap;
+`;
+
+const buildKeyValueRow = (label, value) => {
+  return `<div style="margin-bottom:3px;"><b>${escapeHtml(label)}:</b> ${escapeHtml(value)}</div>`;
+};
+
+const buildBuildingDetailHtml = (buildingDetail) => {
+  if (!buildingDetail) return "Sin información adicional.";
+
+  let html = "";
+
+  if (buildingDetail.mappingStatus) {
+    html += buildKeyValueRow("Estado de mapeo", buildingDetail.mappingStatus);
+  }
+
+  if (buildingDetail.inventoryStatus) {
+    html += buildKeyValueRow("Estado de inventario", buildingDetail.inventoryStatus);
+  }
+
+  if (buildingDetail.lastUpdate) {
+    html += buildKeyValueRow("Última actualización", buildingDetail.lastUpdate);
+  }
+
+  if (buildingDetail.operationalNotes) {
+    html += buildKeyValueRow("Nota operativa", buildingDetail.operationalNotes);
+  }
+
+  if (buildingDetail.technicalNotes) {
+    html += buildKeyValueRow("Nota técnica", buildingDetail.technicalNotes);
+  }
+
+  if (Array.isArray(buildingDetail.tags) && buildingDetail.tags.length > 0) {
+    html += buildKeyValueRow("Etiquetas", buildingDetail.tags.join(", "));
+  }
+
+  return html || "Sin datos adicionales.";
+};
+
+const buildDevicesSummaryHtml = (devices, floorLabel) => {
+  if (!devices.length) {
+    return `No hay equipos cargados para el piso ${escapeHtml(floorLabel)}.`;
+  }
+
+  const counts = countDevicesByType(devices);
+
+  return `
+    ${buildKeyValueRow("PCs", counts.pc)}
+    ${buildKeyValueRow("Impresoras", counts.printer)}
+    ${buildKeyValueRow("Teléfonos", counts.phone)}
+    ${buildKeyValueRow("Otros", counts.other)}
+  `;
+};
+
+const buildDevicesListHtml = (devices, rooms, floorLabel) => {
+  if (!devices.length) {
+    return `No hay equipos destacados para el piso ${escapeHtml(floorLabel)}.`;
+  }
+
+  const roomsMap = buildRoomsMap(rooms);
+  const firstDevices = devices.slice(0, 10);
+
+  let html = "";
+
+  for (const device of firstDevices) {
+    const room = roomsMap.get(device.roomId);
+    const roomName = room?.name || room?.shortName || device.roomId || "Sin sala";
+
+    html += `
+      <div style="margin-bottom:8px; padding:8px 10px; border:1px solid #ddd; border-radius:8px; background:#fafafa;">
+        <div style="font-weight:600;">${escapeHtml(device.name || device.deviceId || "Sin nombre")}</div>
+        <div style="margin-top:2px; font-size:12px;">
+          ${escapeHtml(device.type || "sin_tipo")} · ${escapeHtml(roomName)} · IP: ${escapeHtml(device.ip || "sin IP")} · ${escapeHtml(device.status || "sin estado")}
+        </div>
+      </div>
+    `;
+  }
+
+  if (devices.length > 10) {
+    html += `... y ${devices.length - 10} equipo(s) más<br/>`;
+  }
+
+  return html;
 };
 
 const buildHistorySummaryHtml = (devices, floorLabel) => {
@@ -348,22 +378,230 @@ const buildHistorySummaryHtml = (devices, floorLabel) => {
   return html;
 };
 
+const buildFloorSelectorHtml = (building, currentFloor) => {
+  const floors = Array.isArray(building?.floors) ? building.floors : [];
+  if (!floors.length) return "";
+
+  let html = `
+    <div style="margin-top:10px;">
+      <div style="font-weight:600; margin-bottom:4px;">Pisos del edificio</div>
+      <div style="${chipRowStyle}">
+  `;
+
+  for (const floor of floors) {
+    const isCurrent = Number(floor) === Number(currentFloor);
+
+    html += `
+      <button
+        class="floorButton"
+        style="${getChipButtonStyle(isCurrent, false)}"
+        onclick="window.selectBuildingFloor && window.selectBuildingFloor('${escapeHtml(String(floor))}')"
+      >
+        ${escapeHtml(String(floor))}
+      </button>
+    `;
+  }
+
+  html += `</div></div>`;
+  return html;
+};
+
+const buildViewSelectorHtml = (featureId, currentView) => {
+  const views = [
+    { key: "summary", label: "Resumen" },
+    { key: "rooms", label: "Salas" },
+    { key: "devices", label: "Equipos" },
+    { key: "history", label: "Historial" },
+  ];
+
+  let html = `
+    <div style="margin-top:10px;">
+      <div style="font-weight:600; margin-bottom:4px;">Vista</div>
+      <div style="${chipRowStyle}">
+  `;
+
+  for (const view of views) {
+    const isCurrent = view.key === currentView;
+
+    html += `
+      <button
+        class="floorButton"
+        style="${getChipButtonStyle(isCurrent, true)}"
+        onclick="window.setPopupView && window.setPopupView('${escapeHtml(featureId)}','${escapeHtml(view.key)}')"
+      >
+        ${escapeHtml(view.label)}
+      </button>
+    `;
+  }
+
+  html += `</div></div>`;
+  return html;
+};
+
+const refreshCurrentPopup = async () => {
+  if (!currentOpenLayer || !currentOpenLayer.feature) return;
+
+  currentOpenLayer.setPopupContent("Cargando información...");
+  const popupHtml = await getFeaturePopupHtml(currentOpenLayer.feature);
+  currentOpenLayer.setPopupContent(popupHtml);
+};
+
+window.preparePopupNavigation = (featureId, viewKey, roomId = "") => {
+  if (!featureId) return;
+
+  popupViewState[featureId] = viewKey || "summary";
+  popupRoomState[featureId] = roomId || null;
+};
+
+window.setPopupView = (featureId, viewKey) => {
+  if (!featureId || !viewKey) return;
+
+  popupViewState[featureId] = viewKey;
+  popupRoomState[featureId] = null;
+  refreshCurrentPopup();
+};
+
+window.selectBuildingFloor = (targetFloor) => {
+  const floorText = String(targetFloor).trim();
+
+  const candidates = Array.from(document.querySelectorAll("button, a")).filter((el) => {
+    const text = (el.textContent || "").trim();
+    const insidePopup = !!el.closest(".leaflet-popup-content");
+    return text === floorText && !insidePopup;
+  });
+
+  if (candidates.length > 0) {
+    candidates[0].click();
+    return;
+  }
+
+  console.warn(`No se encontró botón global para el piso ${floorText}`);
+};
+
+window.selectRoomDetail = (featureId, roomId) => {
+  if (!featureId || !roomId) return;
+
+  popupViewState[featureId] = "rooms";
+  popupRoomState[featureId] = roomId;
+  refreshCurrentPopup();
+};
+
+window.backToRoomsList = (featureId) => {
+  popupRoomState[featureId] = null;
+  refreshCurrentPopup();
+};
+
+const buildRoomsListWithButtonsHtml = (featureId, rooms, devices, floorLabel) => {
+  if (!rooms.length) {
+    return `No hay salas cargadas para el piso ${escapeHtml(floorLabel)}.`;
+  }
+
+  let html = "";
+
+  for (const room of rooms.slice(0, 10)) {
+    const roomDevicesCount = devices.filter((device) => device.roomId === room.roomId).length;
+
+    html += `
+      <div style="margin-bottom:10px; padding:10px; border:1px solid #ddd; border-radius:8px; background:#fafafa;">
+        <div style="font-weight:600; margin-bottom:3px;">${escapeHtml(room.name || room.shortName || room.roomId)}</div>
+        <div style="font-size:12px; color:#444;">
+          ${escapeHtml(room.type || "sin_tipo")} · ${escapeHtml(room.status || "sin_estado")} · ${roomDevicesCount} equipo(s)
+        </div>
+        <div style="margin-top:8px;">
+          <button
+            class="floorButton"
+            style="${getActionButtonStyle()}"
+            onclick="window.selectRoomDetail && window.selectRoomDetail('${escapeHtml(featureId)}','${escapeHtml(room.roomId)}')"
+          >
+            Ver
+          </button>
+        </div>
+      </div>
+    `;
+  }
+
+  if (rooms.length > 10) {
+    html += `... y ${rooms.length - 10} sala(s) más<br/>`;
+  }
+
+  return html;
+};
+
+const buildRoomDetailHtml = (featureId, room, roomDevices) => {
+  const recentEvents = getRecentEvents(roomDevices).slice(0, 5);
+
+  let html = `
+    <div style="margin-bottom:10px;">
+      <button
+        class="floorButton"
+        style="${getActionButtonStyle()}"
+        onclick="window.backToRoomsList && window.backToRoomsList('${escapeHtml(featureId)}')"
+      >
+        ← Volver
+      </button>
+    </div>
+  `;
+
+  html += buildKeyValueRow("Nombre", room.name || "");
+  html += buildKeyValueRow("Código", room.shortName || "");
+  html += buildKeyValueRow("Tipo", room.type || "");
+  html += buildKeyValueRow("Estado", room.status || "");
+  html += buildKeyValueRow("Unidad", room.unit || "");
+  html += buildKeyValueRow("Área responsable", room.responsibleArea || "");
+  html += buildKeyValueRow("Equipos", roomDevices.length);
+
+  if (room.notes) {
+    html += buildKeyValueRow("Notas", room.notes);
+  }
+
+  html += `<div style="margin-top:10px; font-weight:600;">Equipos de la sala</div>`;
+
+  if (!roomDevices.length) {
+    html += `No hay equipos asociados.<br/>`;
+  } else {
+    for (const device of roomDevices) {
+      html += `
+        <div style="margin-top:6px; padding:8px 10px; border:1px solid #ddd; border-radius:8px; background:#fafafa;">
+          <div style="font-weight:600;">${escapeHtml(device.name || device.deviceId)}</div>
+          <div style="font-size:12px; margin-top:2px;">
+            ${escapeHtml(device.type || "sin_tipo")} · IP: ${escapeHtml(device.ip || "sin IP")} · ${escapeHtml(device.status || "sin estado")}
+          </div>
+        </div>
+      `;
+    }
+  }
+
+  html += `<div style="margin-top:12px; font-weight:600;">Historial reciente</div>`;
+
+  if (!recentEvents.length) {
+    html += `No hay historial reciente.`;
+  } else {
+    for (const event of recentEvents) {
+      html += `• ${escapeHtml(event.date)} — ${escapeHtml(event.type)} — ${escapeHtml(event.description || "Sin descripción")}<br/>`;
+    }
+  }
+
+  return html;
+};
+
 const getFeaturePopupHtml = async (feature) => {
   const building = await findBuildingInCatalog(feature);
   const featureId = feature?.properties?.id || "Sin ID";
   const currentFloor = feature?.properties?.floor ?? 0;
   const floorLabel = currentFloor;
+  const currentView = popupViewState[featureId] || "summary";
+  const selectedRoomId = popupRoomState[featureId] || null;
 
   const link = `${HOST_URL}/?id=${featureId}&zoom=20`;
   const copyButtonHtml = `<button class="floorButton copy-button" onclick='
     navigator.clipboard.writeText("${link}")
       .then(()=>{this.innerHTML="Copiado ✓"})
       .catch(()=>{alert("No se pudo copiar el enlace: ${link}");});
-    '>Copiar enlace</button>`;
+    ' style="${getActionButtonStyle()}">Copiar enlace</button>`;
 
   if (!building) {
     return `
-      <div style="min-width:280px; max-width:360px; max-height:60vh; overflow-y:auto;">
+      <div style="${popupShellStyle}">
         <b>${escapeHtml(feature?.properties?.name || "Edificio sin nombre")}</b><br/>
         ID: ${escapeHtml(featureId)}<br/>
         Piso: ${escapeHtml(floorLabel)}<br/><br/>
@@ -387,65 +625,77 @@ const getFeaturePopupHtml = async (feature) => {
   const responsibleArea = building?.responsibleArea || "";
   const floors = Array.isArray(building?.floors) ? building.floors.join(", ") : "";
 
-  const totalRoomsCount = allRooms.length;
-  const totalDevicesCount = allDevices.length;
-  const floorRoomsCount = roomsInFloor.length;
-  const floorDevicesCount = devicesInFloor.length;
-
   let detailsHtml = `
-    <div style="min-width:280px; max-width:360px; max-height:60vh; overflow-y:auto; line-height:1.35;">
-      <b style="font-size:15px;">${escapeHtml(featureName)}</b><br/>
+    <div style="${popupShellStyle}">
+      <b style="font-size:16px;">${escapeHtml(featureName)}</b><br/>
       ID: ${escapeHtml(featureId)}<br/>
       Piso actual: ${escapeHtml(floorLabel)}<br/>
       Tipo: ${escapeHtml(type)}
   `;
 
-  if (shortName) {
-    detailsHtml += `<br/>Código: ${escapeHtml(shortName)}`;
+  if (shortName) detailsHtml += `<br/>Código: ${escapeHtml(shortName)}`;
+  if (responsibleArea) detailsHtml += `<br/>Área: ${escapeHtml(responsibleArea)}`;
+  if (floors) detailsHtml += `<br/>Pisos: ${escapeHtml(floors)}`;
+
+  detailsHtml += `<br/>Salas edificio: ${escapeHtml(allRooms.length)}`;
+  detailsHtml += `<br/>Equipos edificio: ${escapeHtml(allDevices.length)}`;
+  detailsHtml += `<br/>Salas piso ${escapeHtml(floorLabel)}: ${escapeHtml(roomsInFloor.length)}`;
+  detailsHtml += `<br/>Equipos piso ${escapeHtml(floorLabel)}: ${escapeHtml(devicesInFloor.length)}`;
+
+  detailsHtml += buildFloorSelectorHtml(building, currentFloor);
+  detailsHtml += buildViewSelectorHtml(featureId, currentView);
+
+  if (currentView === "summary") {
+    detailsHtml += `
+      <div style="${sectionBoxStyle}">
+        <div style="font-weight:600; margin-bottom:6px;">Resumen</div>
+        ${buildBuildingDetailHtml(buildingDetail)}
+      </div>
+    `;
   }
 
-  if (responsibleArea) {
-    detailsHtml += `<br/>Área: ${escapeHtml(responsibleArea)}`;
+  if (currentView === "rooms") {
+    detailsHtml += `<div style="${sectionBoxStyle}">`;
+
+    if (selectedRoomId) {
+      const selectedRoom = roomsInFloor.find((room) => room.roomId === selectedRoomId);
+      const roomDevices = devicesInFloor.filter((device) => device.roomId === selectedRoomId);
+
+      if (selectedRoom) {
+        detailsHtml += `<div style="font-weight:600; margin-bottom:6px;">Detalle de sala</div>`;
+        detailsHtml += buildRoomDetailHtml(featureId, selectedRoom, roomDevices);
+      } else {
+        detailsHtml += `Sala no encontrada en este piso.`;
+      }
+    } else {
+      detailsHtml += `<div style="font-weight:600; margin-bottom:6px;">Salas del piso ${escapeHtml(floorLabel)}</div>`;
+      detailsHtml += buildRoomsListWithButtonsHtml(featureId, roomsInFloor, devicesInFloor, floorLabel);
+    }
+
+    detailsHtml += `</div>`;
   }
 
-  if (floors) {
-    detailsHtml += `<br/>Pisos: ${escapeHtml(floors)}`;
+  if (currentView === "devices") {
+    detailsHtml += `
+      <div style="${sectionBoxStyle}">
+        <div style="font-weight:600; margin-bottom:6px;">Equipos por tipo</div>
+        ${buildDevicesSummaryHtml(devicesInFloor, floorLabel)}
+        <div style="margin-top:10px; font-weight:600;">Equipos destacados</div>
+        <div style="margin-top:4px;">
+          ${buildDevicesListHtml(devicesInFloor, roomsInFloor, floorLabel)}
+        </div>
+      </div>
+    `;
   }
 
-  detailsHtml += `<br/>Salas edificio: ${escapeHtml(totalRoomsCount)}`;
-  detailsHtml += `<br/>Equipos edificio: ${escapeHtml(totalDevicesCount)}`;
-  detailsHtml += `<br/>Salas piso ${escapeHtml(floorLabel)}: ${escapeHtml(floorRoomsCount)}`;
-  detailsHtml += `<br/>Equipos piso ${escapeHtml(floorLabel)}: ${escapeHtml(floorDevicesCount)}`;
-
-  detailsHtml += buildCollapsibleSection(
-    "Estado del edificio",
-    buildBuildingDetailHtml(buildingDetail),
-    false
-  );
-
-  detailsHtml += buildCollapsibleSection(
-    `Salas del piso ${floorLabel}`,
-    buildRoomsSummaryHtml(roomsInFloor, devicesInFloor, floorLabel),
-    true
-  );
-
-  detailsHtml += buildCollapsibleSection(
-    `Equipos por tipo (piso ${floorLabel})`,
-    buildDevicesSummaryHtml(devicesInFloor, floorLabel),
-    false
-  );
-
-  detailsHtml += buildCollapsibleSection(
-    `Equipos destacados (piso ${floorLabel})`,
-    buildDevicesListHtml(devicesInFloor, roomsInFloor, floorLabel),
-    false
-  );
-
-  detailsHtml += buildCollapsibleSection(
-    `Historial resumido (piso ${floorLabel})`,
-    buildHistorySummaryHtml(devicesInFloor, floorLabel),
-    false
-  );
+  if (currentView === "history") {
+    detailsHtml += `
+      <div style="${sectionBoxStyle}">
+        <div style="font-weight:600; margin-bottom:6px;">Historial resumido del piso ${escapeHtml(floorLabel)}</div>
+        ${buildHistorySummaryHtml(devicesInFloor, floorLabel)}
+      </div>
+    `;
+  }
 
   detailsHtml += `<div style="margin-top:12px;">${copyButtonHtml}</div>`;
   detailsHtml += `</div>`;
@@ -494,6 +744,12 @@ export const onEachFeature = (feature, layer) => {
 
     layer.on("popupopen", async () => {
       setCurrentOpenFeatureId(feature?.properties?.id || null);
+      currentOpenLayer = layer;
+
+      if (!popupViewState[feature.properties.id]) {
+        popupViewState[feature.properties.id] = "summary";
+      }
+
       const popupHtml = await getFeaturePopupHtml(feature);
       layer.setPopupContent(popupHtml);
     });
