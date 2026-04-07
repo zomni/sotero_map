@@ -18,6 +18,10 @@ import { createMarkers } from "../components/markers.js"; // Create markers for 
 import { latlngBuildings, campusBuildings } from "../views/buildingsInfo.js"; // Buildings info
 
 import { createSvgElement } from "../utils/tools.js"; // Create SVG empty element
+import {
+  mergeCatalogWithSoteroSearch,
+  mergeGeoJsonWithSoteroSearch,
+} from "../utils/soteroSearchMetadata.js";
 
 // Create a layer group
 var layerGroup = L.layerGroup().addTo(map);
@@ -39,8 +43,9 @@ const loadBuildingsCatalog = async () => {
     }
 
     const data = await response.json();
-    buildingsCatalogCache = data;
-    return data;
+    const mergedData = await mergeCatalogWithSoteroSearch(data);
+    buildingsCatalogCache = mergedData;
+    return mergedData;
   } catch (error) {
     console.error("Error cargando catálogo de edificios:", error);
     return { buildings: [] };
@@ -167,10 +172,11 @@ const addFeatures = (school, floorNumber, location) => {
     dataType: "json",
     success: async function (json) {
       const allowedBuildingIds = await getAllowedBuildingIdsForFloor(floorNumber);
+      const enrichedJson = await mergeGeoJsonWithSoteroSearch(json);
 
       const filteredJson = {
-        ...json,
-        features: (json.features || []).filter((feature) => {
+        ...enrichedJson,
+        features: (enrichedJson.features || []).filter((feature) => {
           const featureId = feature?.properties?.id;
           if (!featureId) return false;
           return allowedBuildingIds.has(featureId);

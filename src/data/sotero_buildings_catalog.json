@@ -3,11 +3,13 @@
     {
       "id": "SR-BLD-001",
       "slug": "edificio_001",
-      "displayName": "Edificio 001",
+      "displayName": "CDT",
       "shortName": "BLD-001",
-      "realName": "",
+      "realName": "CDT",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -21,11 +23,13 @@
     {
       "id": "SR-BLD-002",
       "slug": "edificio_002",
-      "displayName": "Edificio 002",
+      "displayName": "Centro Nefrologico",
       "shortName": "BLD-002",
-      "realName": "",
+      "realName": "Centro Nefrologico",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -41,9 +45,11 @@
       "slug": "edificio_003",
       "displayName": "Edificio 003",
       "shortName": "BLD-003",
-      "realName": "",
+      "realName": "Edificio 003",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -59,9 +65,11 @@
       "slug": "edificio_004",
       "displayName": "Edificio 004",
       "shortName": "BLD-004",
-      "realName": "",
+      "realName": "Edificio 004",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -75,11 +83,13 @@
     {
       "id": "SR-BLD-005",
       "slug": "casa_colorada",
-      "displayName": "Casa Colorada",
+      "displayName": "Servicio de Salud Metropolitano Sur Oriente SSMSO",
       "shortName": "BLD-005",
-      "realName": "",
+      "realName": "Servicio de Salud Metropolitano Sur Oriente SSMSO",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -95,9 +105,11 @@
       "slug": "sala_cuna_hospital",
       "displayName": "Sala Cuna Hospital",
       "shortName": "BLD-006",
-      "realName": "",
+      "realName": "Sala Cuna Hospital",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -113,9 +125,11 @@
       "slug": "edificio_maternidad",
       "displayName": "Edificio Maternidad",
       "shortName": "BLD-007",
-      "realName": "",
+      "realName": "Edificio Maternidad",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -129,11 +143,13 @@
     {
       "id": "SR-BLD-008",
       "slug": "edificio_008",
-      "displayName": "Edificio 008",
+      "displayName": "Casino",
       "shortName": "BLD-008",
-      "realName": "",
+      "realName": "Casino",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -147,11 +163,13 @@
     {
       "id": "SR-BLD-009",
       "slug": "edificio_009",
-      "displayName": "Edificio 009",
+      "displayName": "RRHH CASR",
       "shortName": "BLD-009",
-      "realName": "",
+      "realName": "RRHH CASR",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -165,7 +183,7 @@
     {
       "id": "SR-BLD-010",
       "slug": "edificio_010",
-      "displayName": "Edificio 010",
+      "displayName": "Hospitalización",
       "shortName": "BLD-010",
       "realName": "Hospitalización",
       "type": "hospitalizacion",
@@ -188,11 +206,13 @@
     {
       "id": "SR-BLD-011",
       "slug": "salud_mental_h_sotero_del_rio",
-      "displayName": "Salud Mental H. Sótero del Río",
+      "displayName": "Gimansio Santo Tomas",
       "shortName": "BLD-011",
-      "realName": "",
+      "realName": "Gimansio Santo Tomas",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -208,9 +228,11 @@
       "slug": "edificio_012",
       "displayName": "Edificio 012",
       "shortName": "BLD-012",
-      "realName": "",
+      "realName": "Edificio 012",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -224,11 +246,13 @@
     {
       "id": "SR-BLD-013",
       "slug": "edificio_013",
-      "displayName": "Edificio 013",
+      "displayName": "Central Termica",
       "shortName": "BLD-013",
-      "realName": "",
+      "realName": "Central Termica",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -244,9 +268,11 @@
       "slug": "edificio_014",
       "displayName": "Edificio 014",
       "shortName": "BLD-014",
-      "realName": "",
+      "realName": "Edificio 014",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -260,11 +286,13 @@
     {
       "id": "SR-BLD-015",
       "slug": "edificio_015",
-      "displayName": "Edificio 015",
+      "displayName": "Servicio Social",
       "shortName": "BLD-015",
-      "realName": "",
+      "realName": "Servicio Social",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -278,11 +306,13 @@
     {
       "id": "SR-BLD-016",
       "slug": "edificio_016",
-      "displayName": "Edificio 016",
+      "displayName": "Jardín Infantil",
       "shortName": "BLD-016",
-      "realName": "",
+      "realName": "Jardín Infantil",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -296,11 +326,13 @@
     {
       "id": "SR-BLD-017",
       "slug": "edificio_017",
-      "displayName": "Edificio 017",
+      "displayName": "Gremios",
       "shortName": "BLD-017",
-      "realName": "",
+      "realName": "Gremios",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -314,11 +346,13 @@
     {
       "id": "SR-BLD-018",
       "slug": "edificio_018",
-      "displayName": "Edificio 018",
+      "displayName": "Investigaciones Medicas",
       "shortName": "BLD-018",
-      "realName": "",
+      "realName": "Investigaciones Medicas",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -334,9 +368,11 @@
       "slug": "edificio_019",
       "displayName": "Edificio 019",
       "shortName": "BLD-019",
-      "realName": "",
+      "realName": "Edificio 019",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -350,11 +386,13 @@
     {
       "id": "SR-BLD-020",
       "slug": "edificio_020",
-      "displayName": "Edificio 020",
+      "displayName": "Ruka Ñi Mongen",
       "shortName": "BLD-020",
-      "realName": "",
+      "realName": "Ruka Ñi Mongen",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -368,7 +406,7 @@
     {
       "id": "SR-BLD-021",
       "slug": "edificio_021",
-      "displayName": "Edificio 021",
+      "displayName": "CFT2",
       "shortName": "BLD-021",
       "realName": "CDT",
       "type": "consultas",
@@ -390,11 +428,13 @@
     {
       "id": "SR-BLD-022",
       "slug": "edificio_022",
-      "displayName": "Edificio 022",
+      "displayName": "CFT1",
       "shortName": "BLD-022",
-      "realName": "",
+      "realName": "CFT1",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -408,11 +448,13 @@
     {
       "id": "SR-BLD-023",
       "slug": "edificio_023",
-      "displayName": "Edificio 023",
+      "displayName": "CFT3",
       "shortName": "BLD-023",
-      "realName": "",
+      "realName": "CFT3",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -426,11 +468,13 @@
     {
       "id": "SR-BLD-024",
       "slug": "edificio_024",
-      "displayName": "Edificio 024",
+      "displayName": "Capacitación SSMSO",
       "shortName": "BLD-024",
-      "realName": "",
+      "realName": "Capacitación SSMSO",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -444,11 +488,13 @@
     {
       "id": "SR-BLD-025",
       "slug": "edificio_025",
-      "displayName": "Edificio 025",
+      "displayName": "Glaucoma",
       "shortName": "BLD-025",
-      "realName": "",
+      "realName": "Glaucoma",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -462,11 +508,13 @@
     {
       "id": "SR-BLD-026",
       "slug": "edificio_026",
-      "displayName": "Edificio 026",
+      "displayName": "CDD Bodegas",
       "shortName": "BLD-026",
-      "realName": "",
+      "realName": "CDD Bodegas",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -480,11 +528,13 @@
     {
       "id": "SR-BLD-027",
       "slug": "edificio_027",
-      "displayName": "Edificio 027",
+      "displayName": "CDD Bodega Abastecimiento",
       "shortName": "BLD-027",
-      "realName": "",
+      "realName": "CDD Bodega Abastecimiento",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -498,11 +548,13 @@
     {
       "id": "SR-BLD-028",
       "slug": "edificio_028",
-      "displayName": "Edificio 028",
+      "displayName": "Bienestar SSMSO",
       "shortName": "BLD-028",
-      "realName": "",
+      "realName": "Bienestar SSMSO",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -516,11 +568,13 @@
     {
       "id": "SR-BLD-029",
       "slug": "edificio_029",
-      "displayName": "Edificio 029",
+      "displayName": "CAIF SSMSO",
       "shortName": "BLD-029",
-      "realName": "",
+      "realName": "CAIF SSMSO",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -534,11 +588,13 @@
     {
       "id": "SR-BLD-030",
       "slug": "edificio_030",
-      "displayName": "Edificio 030",
+      "displayName": "RRHH SSMSO",
       "shortName": "BLD-030",
-      "realName": "",
+      "realName": "RRHH SSMSO",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -552,11 +608,13 @@
     {
       "id": "SR-BLD-031",
       "slug": "edificio_031",
-      "displayName": "Edificio 031",
+      "displayName": "Servicios Generales",
       "shortName": "BLD-031",
-      "realName": "",
+      "realName": "Servicios Generales",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -570,11 +628,13 @@
     {
       "id": "SR-BLD-032",
       "slug": "edificio_032",
-      "displayName": "Edificio 032",
+      "displayName": "Bodega Central",
       "shortName": "BLD-032",
-      "realName": "",
+      "realName": "Bodega Central",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -588,11 +648,13 @@
     {
       "id": "SR-BLD-033",
       "slug": "edificio_033",
-      "displayName": "Edificio 033",
+      "displayName": "Bodega Ajuares/Excluidos/Oficina",
       "shortName": "BLD-033",
-      "realName": "",
+      "realName": "Bodega Ajuares/Excluidos/Oficina",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -608,9 +670,11 @@
       "slug": "edificio_034",
       "displayName": "Edificio 034",
       "shortName": "BLD-034",
-      "realName": "",
+      "realName": "Edificio 034",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -626,9 +690,11 @@
       "slug": "edificio_035",
       "displayName": "Edificio 035",
       "shortName": "BLD-035",
-      "realName": "",
+      "realName": "Edificio 035",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -644,9 +710,11 @@
       "slug": "edificio_036",
       "displayName": "Edificio 036",
       "shortName": "BLD-036",
-      "realName": "",
+      "realName": "Edificio 036",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -662,9 +730,11 @@
       "slug": "edificio_037",
       "displayName": "Edificio 037",
       "shortName": "BLD-037",
-      "realName": "",
+      "realName": "Edificio 037",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -680,9 +750,11 @@
       "slug": "edificio_038",
       "displayName": "Edificio 038",
       "shortName": "BLD-038",
-      "realName": "",
+      "realName": "Edificio 038",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -698,9 +770,11 @@
       "slug": "edificio_039",
       "displayName": "Edificio 039",
       "shortName": "BLD-039",
-      "realName": "",
+      "realName": "Edificio 039",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -716,9 +790,11 @@
       "slug": "edificio_040",
       "displayName": "Edificio 040",
       "shortName": "BLD-040",
-      "realName": "",
+      "realName": "Edificio 040",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -734,9 +810,11 @@
       "slug": "edificio_041",
       "displayName": "Edificio 041",
       "shortName": "BLD-041",
-      "realName": "",
+      "realName": "Edificio 041",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -752,9 +830,11 @@
       "slug": "edificio_042",
       "displayName": "Edificio 042",
       "shortName": "BLD-042",
-      "realName": "",
+      "realName": "Edificio 042",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -770,9 +850,11 @@
       "slug": "edificio_043",
       "displayName": "Edificio 043",
       "shortName": "BLD-043",
-      "realName": "",
+      "realName": "Edificio 043",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -788,9 +870,11 @@
       "slug": "edificio_044",
       "displayName": "Edificio 044",
       "shortName": "BLD-044",
-      "realName": "",
+      "realName": "Edificio 044",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -806,9 +890,11 @@
       "slug": "edificio_045",
       "displayName": "Edificio 045",
       "shortName": "BLD-045",
-      "realName": "",
+      "realName": "Edificio 045",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -822,7 +908,7 @@
     {
       "id": "SR-BLD-046",
       "slug": "edificio_046",
-      "displayName": "Edificio 046",
+      "displayName": "Urgencia Adulto",
       "shortName": "BLD-046",
       "realName": "Urgencia Adulto",
       "type": "urgencia",
@@ -845,9 +931,11 @@
       "slug": "edificio_047",
       "displayName": "Edificio 047",
       "shortName": "BLD-047",
-      "realName": "",
+      "realName": "Edificio 047",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -863,9 +951,11 @@
       "slug": "edificio_048",
       "displayName": "Edificio 048",
       "shortName": "BLD-048",
-      "realName": "",
+      "realName": "Edificio 048",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -881,9 +971,11 @@
       "slug": "edificio_049",
       "displayName": "Edificio 049",
       "shortName": "BLD-049",
-      "realName": "",
+      "realName": "Edificio 049",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -897,11 +989,13 @@
     {
       "id": "SR-BLD-050",
       "slug": "edificio_050",
-      "displayName": "Edificio 050",
+      "displayName": "Unidad Digitación",
       "shortName": "BLD-050",
-      "realName": "",
+      "realName": "Unidad Digitación",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -915,11 +1009,13 @@
     {
       "id": "SR-BLD-051",
       "slug": "edificio_051",
-      "displayName": "Edificio 051",
+      "displayName": "GES",
       "shortName": "BLD-051",
-      "realName": "",
+      "realName": "GES",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -933,11 +1029,13 @@
     {
       "id": "SR-BLD-052",
       "slug": "edificio_052",
-      "displayName": "Edificio 052",
+      "displayName": "Auditorio",
       "shortName": "BLD-052",
-      "realName": "",
+      "realName": "Auditorio",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -951,11 +1049,13 @@
     {
       "id": "SR-BLD-053",
       "slug": "edificio_053",
-      "displayName": "Edificio 053",
+      "displayName": "Oficina CDD",
       "shortName": "BLD-053",
-      "realName": "",
+      "realName": "Oficina CDD",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -969,11 +1069,13 @@
     {
       "id": "SR-BLD-054",
       "slug": "edificio_054",
-      "displayName": "Edificio 054",
+      "displayName": "Desarrollo ORG1",
       "shortName": "BLD-054",
-      "realName": "",
+      "realName": "Desarrollo ORG1",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -987,11 +1089,13 @@
     {
       "id": "SR-BLD-055",
       "slug": "edificio_055",
-      "displayName": "Edificio 055",
+      "displayName": "Desarrollo ORG2",
       "shortName": "BLD-055",
-      "realName": "",
+      "realName": "Desarrollo ORG2",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -1005,11 +1109,13 @@
     {
       "id": "SR-BLD-056",
       "slug": "edificio_056",
-      "displayName": "Edificio 056",
+      "displayName": "Desarrollo ORG3",
       "shortName": "BLD-056",
-      "realName": "",
+      "realName": "Desarrollo ORG3",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -1023,11 +1129,13 @@
     {
       "id": "SR-BLD-057",
       "slug": "edificio_057",
-      "displayName": "Edificio 057",
+      "displayName": "Desarrollo ORG4",
       "shortName": "BLD-057",
-      "realName": "",
+      "realName": "Desarrollo ORG4",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -1041,11 +1149,13 @@
     {
       "id": "SR-BLD-058",
       "slug": "edificio_058",
-      "displayName": "Edificio 058",
+      "displayName": "Salud Mental",
       "shortName": "BLD-058",
-      "realName": "",
+      "realName": "Salud Mental",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -1059,11 +1169,13 @@
     {
       "id": "SR-BLD-059",
       "slug": "edificio_059",
-      "displayName": "Edificio 059",
+      "displayName": "SIDRA",
       "shortName": "BLD-059",
-      "realName": "",
+      "realName": "SIDRA",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -1079,9 +1191,11 @@
       "slug": "edificio_060",
       "displayName": "Edificio 060",
       "shortName": "BLD-060",
-      "realName": "",
+      "realName": "Edificio 060",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -1095,11 +1209,13 @@
     {
       "id": "SR-BLD-061",
       "slug": "edificio_061",
-      "displayName": "Edificio 061",
+      "displayName": "Bodaga SSMSO",
       "shortName": "BLD-061",
-      "realName": "",
+      "realName": "Bodaga SSMSO",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -1113,11 +1229,13 @@
     {
       "id": "SR-BLD-062",
       "slug": "edificio_062",
-      "displayName": "Edificio 062",
+      "displayName": "Planificación y Proyectos",
       "shortName": "BLD-062",
-      "realName": "",
+      "realName": "Planificación y Proyectos",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -1131,11 +1249,13 @@
     {
       "id": "SR-BLD-063",
       "slug": "edificio_063",
-      "displayName": "Edificio 063",
+      "displayName": "Operaciones",
       "shortName": "BLD-063",
-      "realName": "",
+      "realName": "Operaciones",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -1151,9 +1271,11 @@
       "slug": "edificio_064",
       "displayName": "Edificio 064",
       "shortName": "BLD-064",
-      "realName": "",
+      "realName": "Edificio 064",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -1167,11 +1289,13 @@
     {
       "id": "SR-BLD-065",
       "slug": "edificio_065",
-      "displayName": "Edificio 065",
+      "displayName": "CFT Santo Tomas",
       "shortName": "BLD-065",
-      "realName": "",
+      "realName": "CFT Santo Tomas",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -1187,9 +1311,11 @@
       "slug": "edificio_066",
       "displayName": "Edificio 066",
       "shortName": "BLD-066",
-      "realName": "",
+      "realName": "Edificio 066",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -1203,11 +1329,13 @@
     {
       "id": "SR-BLD-067",
       "slug": "edificio_067",
-      "displayName": "Edificio 067",
+      "displayName": "Bus Banco de Sangre",
       "shortName": "BLD-067",
-      "realName": "",
+      "realName": "Bus Banco de Sangre",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -1223,9 +1351,11 @@
       "slug": "hospital_de_campana",
       "displayName": "Hospital de Campaña",
       "shortName": "BLD-068",
-      "realName": "",
+      "realName": "Hospital de Campaña",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -1239,11 +1369,13 @@
     {
       "id": "SR-BLD-069",
       "slug": "edificio_069",
-      "displayName": "Edificio 069",
+      "displayName": "Informatica CASR",
       "shortName": "BLD-069",
-      "realName": "",
+      "realName": "Informatica CASR",
       "type": "unknown",
-      "floors": [],
+      "floors": [
+        0
+      ],
       "hasInteriorMap": false,
       "hasInventory": false,
       "responsibleArea": "",
@@ -1253,6 +1385,533 @@
         -70.5786318439962,
         -33.57876457042968
       ]
+    },
+    {
+      "id": "SR-BLD-070",
+      "slug": "reas",
+      "displayName": "REAS",
+      "shortName": "BLD-070",
+      "realName": "REAS",
+      "type": "unknown",
+      "floors": [
+        0
+      ],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "",
+      "centroid": null
+    },
+    {
+      "id": "SR-BLD-071",
+      "slug": "antena",
+      "displayName": "Antena",
+      "shortName": "BLD-071",
+      "realName": "Antena",
+      "type": "unknown",
+      "floors": [
+        0
+      ],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "",
+      "centroid": null
+    },
+    {
+      "id": "SR-BLD-072",
+      "slug": "sala_mel",
+      "displayName": "Sala Mel",
+      "shortName": "BLD-072",
+      "realName": "Sala Mel",
+      "type": "unknown",
+      "floors": [
+        0
+      ],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "",
+      "centroid": null
+    },
+    {
+      "id": "SR-BLD-073",
+      "slug": "multicancha",
+      "displayName": "Multicancha",
+      "shortName": "BLD-073",
+      "realName": "Multicancha",
+      "type": "unknown",
+      "floors": [
+        0
+      ],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "",
+      "centroid": null
+    },
+    {
+      "id": "SR-BLD-074",
+      "slug": "sector_convenios",
+      "displayName": "Sector Convenios",
+      "shortName": "BLD-074",
+      "realName": "Sector Convenios",
+      "type": "unknown",
+      "floors": [
+        0
+      ],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "",
+      "centroid": null
+    },
+    {
+      "id": "SR-BLD-075",
+      "slug": "copa_de_agua",
+      "displayName": "Copa de Agua",
+      "shortName": "BLD-075",
+      "realName": "Copa de Agua",
+      "type": "unknown",
+      "floors": [
+        0
+      ],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "",
+      "centroid": null
+    },
+    {
+      "id": "SR-BLD-076",
+      "slug": "container0",
+      "displayName": "Container0",
+      "shortName": "BLD-076",
+      "realName": "Container0",
+      "type": "unknown",
+      "floors": [
+        0
+      ],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "",
+      "centroid": null
+    },
+    {
+      "id": "SR-BLD-077",
+      "slug": "anatomia_patologica",
+      "displayName": "Anatomia Patologica",
+      "shortName": "BLD-077",
+      "realName": "Anatomia Patologica",
+      "type": "unknown",
+      "floors": [
+        0
+      ],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "",
+      "centroid": null
+    },
+    {
+      "id": "SR-BLD-078",
+      "slug": "asistente_social",
+      "displayName": "Asistente Social",
+      "shortName": "BLD-078",
+      "realName": "Asistente Social",
+      "type": "unknown",
+      "floors": [
+        0
+      ],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "",
+      "centroid": null
+    },
+    {
+      "id": "SR-BLD-079",
+      "slug": "sala_de_maquinas",
+      "displayName": "Sala de Maquinas",
+      "shortName": "BLD-079",
+      "realName": "Sala de Maquinas",
+      "type": "unknown",
+      "floors": [
+        0
+      ],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "",
+      "centroid": null
+    },
+    {
+      "id": "SR-BLD-080",
+      "slug": "container1",
+      "displayName": "Container1",
+      "shortName": "BLD-080",
+      "realName": "Container1",
+      "type": "unknown",
+      "floors": [
+        0
+      ],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "",
+      "centroid": null
+    },
+    {
+      "id": "SR-BLD-081",
+      "slug": "container2",
+      "displayName": "Container2",
+      "shortName": "BLD-081",
+      "realName": "Container2",
+      "type": "unknown",
+      "floors": [
+        0
+      ],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "",
+      "centroid": null
+    },
+    {
+      "id": "SR-BLD-082",
+      "slug": "equipos_medicos",
+      "displayName": "Equipos Medicos",
+      "shortName": "BLD-082",
+      "realName": "Equipos Medicos",
+      "type": "unknown",
+      "floors": [
+        0
+      ],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "",
+      "centroid": null
+    },
+    {
+      "id": "SR-BLD-083",
+      "slug": "mantenimiento",
+      "displayName": "Mantenimiento",
+      "shortName": "BLD-083",
+      "realName": "Mantenimiento",
+      "type": "unknown",
+      "floors": [
+        0
+      ],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "",
+      "centroid": null
+    },
+    {
+      "id": "SR-BLD-084",
+      "slug": "38_comisaria_puente_alto",
+      "displayName": "38° Comisaria Puente Alto",
+      "shortName": "BLD-084",
+      "realName": "38° Comisaria Puente Alto",
+      "type": "unknown",
+      "floors": [
+        0
+      ],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "",
+      "centroid": null
+    },
+    {
+      "id": "SR-BLD-085",
+      "slug": "bodega_insumos_aseo",
+      "displayName": "Bodega Insumos Aseo",
+      "shortName": "BLD-085",
+      "realName": "Bodega Insumos Aseo",
+      "type": "unknown",
+      "floors": [
+        0
+      ],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "",
+      "centroid": null
+    },
+    {
+      "id": "SR-BLD-086",
+      "slug": "bodega_oftalmologia",
+      "displayName": "Bodega Oftalmologia",
+      "shortName": "BLD-086",
+      "realName": "Bodega Oftalmologia",
+      "type": "unknown",
+      "floors": [
+        0
+      ],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "",
+      "centroid": null
+    },
+    {
+      "id": "SR-BLD-087",
+      "slug": "bodega_operaciones",
+      "displayName": "Bodega Operaciones",
+      "shortName": "BLD-087",
+      "realName": "Bodega Operaciones",
+      "type": "unknown",
+      "floors": [
+        0
+      ],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "",
+      "centroid": null
+    },
+    {
+      "id": "SR-BLD-088",
+      "slug": "movilizacion",
+      "displayName": "Movilización",
+      "shortName": "BLD-088",
+      "realName": "Movilización",
+      "type": "unknown",
+      "floors": [
+        2
+      ],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "",
+      "centroid": null
+    },
+    {
+      "id": "SR-BLD-089",
+      "slug": "ambulancias",
+      "displayName": "Ambulancias",
+      "shortName": "BLD-089",
+      "realName": "Ambulancias",
+      "type": "unknown",
+      "floors": [
+        0
+      ],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "",
+      "centroid": null
+    },
+    {
+      "id": "SR-BLD-090",
+      "slug": "obras_menores",
+      "displayName": "Obras Menores",
+      "shortName": "BLD-090",
+      "realName": "Obras Menores",
+      "type": "unknown",
+      "floors": [
+        0
+      ],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "",
+      "centroid": null
+    },
+    {
+      "id": "SR-BLD-091",
+      "slug": "central_residuos",
+      "displayName": "Central Residuos",
+      "shortName": "BLD-091",
+      "realName": "Central Residuos",
+      "type": "unknown",
+      "floors": [
+        0
+      ],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "",
+      "centroid": null
+    },
+    {
+      "id": "SR-BLD-092",
+      "slug": "docencia",
+      "displayName": "Docencia",
+      "shortName": "BLD-092",
+      "realName": "Docencia",
+      "type": "unknown",
+      "floors": [
+        0
+      ],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "",
+      "centroid": null
+    },
+    {
+      "id": "SR-BLD-093",
+      "slug": "bodega_abastecimiento",
+      "displayName": "Bodega Abastecimiento",
+      "shortName": "BLD-093",
+      "realName": "Bodega Abastecimiento",
+      "type": "unknown",
+      "floors": [
+        0
+      ],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "",
+      "centroid": null
+    },
+    {
+      "id": "SR-BLD-094",
+      "slug": "saud",
+      "displayName": "SAUD",
+      "shortName": "BLD-094",
+      "realName": "SAUD",
+      "type": "unknown",
+      "floors": [
+        0
+      ],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "",
+      "centroid": null
+    },
+    {
+      "id": "SR-BLD-095",
+      "slug": "finanzas",
+      "displayName": "Finanzas",
+      "shortName": "BLD-095",
+      "realName": "Finanzas",
+      "type": "unknown",
+      "floors": [
+        0
+      ],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "",
+      "centroid": null
+    },
+    {
+      "id": "SR-BLD-096",
+      "slug": "licencias_medicas",
+      "displayName": "Licencias Medicas",
+      "shortName": "BLD-096",
+      "realName": "Licencias Medicas",
+      "type": "unknown",
+      "floors": [
+        0
+      ],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "",
+      "centroid": null
+    },
+    {
+      "id": "SR-BLD-097",
+      "slug": "pensionado_maternidad",
+      "displayName": "Pensionado Maternidad",
+      "shortName": "BLD-097",
+      "realName": "Pensionado Maternidad",
+      "type": "unknown",
+      "floors": [
+        0
+      ],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "",
+      "centroid": null
+    },
+    {
+      "id": "SR-BLD-098",
+      "slug": "ssmso0",
+      "displayName": "SSMSO0",
+      "shortName": "BLD-098",
+      "realName": "SSMSO0",
+      "type": "unknown",
+      "floors": [
+        0
+      ],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "",
+      "centroid": null
+    },
+    {
+      "id": "SR-BLD-099",
+      "slug": "corta_estadia_1",
+      "displayName": "Corta Estadia 1",
+      "shortName": "BLD-099",
+      "realName": "Corta Estadia 1",
+      "type": "unknown",
+      "floors": [
+        0
+      ],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "",
+      "centroid": null
+    },
+    {
+      "id": "SR-BLD-100",
+      "slug": "imagenologia_adulto",
+      "displayName": "Imagenologia Adulto",
+      "shortName": "BLD-100",
+      "realName": "Imagenologia Adulto",
+      "type": "unknown",
+      "floors": [
+        0
+      ],
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "responsibleArea": "",
+      "notes": "",
+      "sourceId": "",
+      "centroid": null
     }
   ]
 }

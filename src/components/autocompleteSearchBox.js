@@ -501,5 +501,8 @@ export const removeSearchContainerElements = () => {
 };
 
 export const showSearch = (location, school) => {
-  loadSearchBox("data/" + school + "_" + location + "_search.json", location);
+  loadSearchBox(
+    "data/" + school + "_" + location + "_search.json?v=" + Date.now(),
+    location
+  );
 };

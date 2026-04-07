@@ -3,6 +3,7 @@
 /////////////////////////////////////////////////////////////////////////////////
 
 import { map, HOST_URL } from "../views/map.js";
+import { mergeCatalogWithSoteroSearch } from "../utils/soteroSearchMetadata.js";
 
 export let currentOpenFeatureId = null;
 let currentOpenLayer = null;
@@ -39,7 +40,8 @@ const loadBuildingsCatalog = async () => {
       throw new Error("No se pudo cargar sotero_buildings_catalog.json");
     }
 
-    return await response.json();
+    const catalog = await response.json();
+    return await mergeCatalogWithSoteroSearch(catalog);
   } catch (error) {
     console.error("Error cargando catálogo de edificios:", error);
     return { buildings: [] };
@@ -128,6 +130,7 @@ const loadDevicesForBuilding = async (building) => {
 const getFeatureDisplayName = (feature, building) => {
   if (building) {
     return (
+      building.searchTitle ||
       building.realName ||
       building.displayName ||
       feature?.properties?.name ||
@@ -624,6 +627,7 @@ const getFeaturePopupHtml = async (feature) => {
   const shortName = building?.shortName || "";
   const responsibleArea = building?.responsibleArea || "";
   const floors = Array.isArray(building?.floors) ? building.floors.join(", ") : "";
+  const searchPopupContent = building?.searchPopupContent || "";
 
   let detailsHtml = `
     <div style="${popupShellStyle}">
@@ -649,6 +653,7 @@ const getFeaturePopupHtml = async (feature) => {
     detailsHtml += `
       <div style="${sectionBoxStyle}">
         <div style="font-weight:600; margin-bottom:6px;">Resumen</div>
+        ${searchPopupContent ? `<div>${searchPopupContent}</div>` : ""}
         ${buildBuildingDetailHtml(buildingDetail)}
       </div>
     `;
