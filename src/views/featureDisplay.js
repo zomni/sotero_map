@@ -7,6 +7,7 @@ import { mergeCatalogWithSoteroSearch } from "../utils/soteroSearchMetadata.js";
 
 export let currentOpenFeatureId = null;
 let currentOpenLayer = null;
+let currentHoveredLayer = null;
 
 export const setPopupViewForFeature = (featureId, viewKey) => {
   if (!featureId || !viewKey) return;
@@ -25,6 +26,38 @@ export const setCurrentOpenFeatureId = (featureId) => {
 export const clearCurrentOpenFeatureId = () => {
   currentOpenFeatureId = null;
   currentOpenLayer = null;
+};
+
+export const closeCurrentPopup = () => {
+  if (currentOpenLayer?.closePopup) {
+    currentOpenLayer.closePopup();
+  } else if (map?.closePopup) {
+    map.closePopup();
+  }
+
+  clearCurrentOpenFeatureId();
+};
+
+map.on("click", (event) => {
+  const originalTarget = event?.originalEvent?.target;
+  const clickedInsideFeature =
+    originalTarget?.closest?.(".leaflet-interactive") ||
+    originalTarget?.closest?.(".leaflet-popup");
+
+  if (!clickedInsideFeature) {
+    closeCurrentPopup();
+  }
+});
+
+const applyDefaultStyle = (layer) => {
+  if (!layer?.feature) return;
+  layer.setStyle(style(layer.feature));
+};
+
+const clearHoveredLayer = () => {
+  if (!currentHoveredLayer) return;
+  applyDefaultStyle(currentHoveredLayer);
+  currentHoveredLayer = null;
 };
 
 const popupViewState = {};
@@ -726,12 +759,19 @@ const zoomToFeaturePoint = (e) => {
 
 const highlightFeature = (e) => {
   var layer = e.target;
+
+  if (currentHoveredLayer && currentHoveredLayer !== layer) {
+    applyDefaultStyle(currentHoveredLayer);
+  }
+
   layer.setStyle({
     weight: 5,
     color: "#666",
     dashArray: "",
     fillOpacity: 0.7,
   });
+
+  currentHoveredLayer = layer;
 
   if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
     layer.bringToFront();
@@ -740,12 +780,22 @@ const highlightFeature = (e) => {
 
 const resetHighlight = (e) => {
   var layer = e.target;
-  layer.setStyle(style(layer.feature));
+  applyDefaultStyle(layer);
+
+  if (currentHoveredLayer === layer) {
+    currentHoveredLayer = null;
+  }
 };
 
 export const onEachFeature = (feature, layer) => {
   if (feature.properties.isClickable) {
     layer.bindPopup("Cargando información...");
+
+    if (layer.getPopup()) {
+      layer.getPopup().options.autoPan = true;
+      layer.getPopup().options.keepInView = true;
+      layer.getPopup().options.closeOnClick = false;
+    }
 
     layer.on("popupopen", async () => {
       setCurrentOpenFeatureId(feature?.properties?.id || null);
@@ -759,11 +809,23 @@ export const onEachFeature = (feature, layer) => {
       layer.setPopupContent(popupHtml);
     });
 
+    layer.on("popupclose", () => {
+      if (currentOpenLayer === layer) {
+        clearCurrentOpenFeatureId();
+      }
+    });
+
     if (feature.geometry.type == "Polygon") {
       layer.on({
         mouseover: highlightFeature,
         mouseout: resetHighlight,
         click: zoomToFeature,
+      });
+
+      layer.on("remove", () => {
+        if (currentHoveredLayer === layer) {
+          currentHoveredLayer = null;
+        }
       });
     } else if (feature.geometry.type == "Point") {
       layer.on({
