@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
   <head>
     <title>sotero_map</title>
@@ -23,13 +23,43 @@
   </head>
 
   <body>
+    <div id="map-status-panel" data-backend-state="loading" data-pending-changes="false">
+      <div class="backend-status-header">
+        <div class="backend-status-title-row">
+          <span id="backend-status-indicator" class="backend-status-indicator"></span>
+          <div>
+            <div id="backend-status-text" class="backend-status-subtitle backend-status-inline">Consultando estado...</div>
+          </div>
+        </div>
+        <button id="backend-refresh-button" type="button" class="backend-refresh-button" data-backend-refresh hidden>
+          Actualizar mapa
+        </button>
+      </div>
+      <div class="backend-status-body">
+        <div class="backend-status-line">
+          <span class="backend-status-label">Version</span>
+          <span id="backend-version">Sin datos</span>
+        </div>
+        <div class="backend-status-line">
+          <span class="backend-status-label">BDD</span>
+          <span id="backend-last-change">Sin registros</span>
+        </div>
+        <div id="backend-sync-message" class="backend-status-message">No hay actualizaciones pendientes.</div>
+      </div>
+    </div>
+
     <div id="map">
       <div id="top-container">
         <div id="searchContainer"></div>
-        <div id="custom-select">
-          <select id="campus-select">
-            <option value="">Campus :</option>
-          </select>
+        <div id="top-actions">
+          <div id="custom-select">
+            <select id="campus-select">
+              <option value="">Campus :</option>
+            </select>
+          </div>
+          <a id="dashboard-link" class="dashboard-link" href="http://localhost:5000/admin" target="_blank" rel="noreferrer">
+            Ir al dashboard
+          </a>
         </div>
       </div>
       <div id="buttons-container">

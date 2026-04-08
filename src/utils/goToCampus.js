@@ -1,4 +1,4 @@
-/////////////////////////////////////////////////////////////////////////////////
+﻿/////////////////////////////////////////////////////////////////////////////////
 /////////////////// Create buttons to choose campus location ////////////////////
 /////////////////////////////////////////////////////////////////////////////////
 
@@ -13,9 +13,10 @@ import {
   removeSearchContainerElements,
 } from "../components/autocompleteSearchBox.js";
 
-import { addDataToMap } from "./addData.js";
+import { addDataToMap, resetBuildingsCatalogCache } from "./addData.js";
 
 import campuses from "../data/campuses.js";
+import { resetSoteroSearchMetadataCaches } from "./soteroSearchMetadata.js";
 
 const selectFloor = (floorButtonId) => {
   var floorButtonsId = document.querySelectorAll("[id^='b']");
@@ -108,4 +109,23 @@ export const setDefaultFloor = (campus) => {
   
   forceChange(campuses[campus]["school"], campuses[campus]["defaultFloor"], campus);
   return;
+};
+export const refreshCurrentMapData = () => {
+  if (!(location in campuses)) {
+    return;
+  }
+
+  const selectedFloorButton = document.getElementsByClassName("selectedFloorButton")[0];
+  if (!selectedFloorButton) {
+    return;
+  }
+
+  const campusInfo = campuses[location];
+  const currentFloor = parseInt(selectedFloorButton.innerHTML, 10);
+
+  resetSoteroSearchMetadataCaches();
+  resetBuildingsCatalogCache();
+  removeSearchContainerElements();
+  showSearch(location, campusInfo["school"]);
+  addDataToMap(campusInfo["school"], currentFloor, location);
 };

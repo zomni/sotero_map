@@ -24,3 +24,6 @@ export const HOST_URL =
   "//" +
   window.location.hostname +
   (window.location.port ? ":" + window.location.port : "");
+
+export const BACKEND_API_URL =
+  window.location.protocol + "//" + window.location.hostname + ":5000";

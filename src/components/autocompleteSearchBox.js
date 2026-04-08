@@ -1,4 +1,4 @@
-/* 
+﻿/* 
     Created on : Aug 31, 2015
     Author     : yeozkaya@gmail.com
     repo       : https://github.com/utahemre/Leaflet.GeoJSONAutocomplete
@@ -9,40 +9,64 @@
 import { map, HOST_URL } from "../views/map.js";
 import campuses from "../data/campuses.js";
 import { setCurrentOpenFeatureId } from "../views/featureDisplay.js";
+import { mergeGeoJsonWithSoteroSearch } from "../utils/soteroSearchMetadata.js";
 
 // import "../lib/jquery/jquery-3.6.0.min.js"; // Not working with webpack
 
 import Fuse from "../lib/fuse/fuse.basic.esm.min.js";
 
 (function ($) {
-  const fuseSearch = (geoJson, pattern, resultLimit) => {
-      var fuseResult,
-        result = [];
-      const options = {
-    includeScore: true,
-    threshold: 0.35,
-    ignoreLocation: true,
-    keys: [
-      { name: "properties.title", weight: 0.45 },
-      { name: "properties.description", weight: 0.2 },
-      { name: "properties.searchText", weight: 0.3 },
-      { name: "properties.id", weight: 0.05 },
-    ],
+  const normalizeSearchValue = (value) =>
+    String(value ?? "")
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase()
+      .trim();
+
+  const buildNormalizedFeature = (feature) => {
+    const properties = feature?.properties || {};
+
+    return {
+      ...feature,
+      properties: {
+        ...properties,
+        normalizedTitle: normalizeSearchValue(properties.title),
+        normalizedSearchText: normalizeSearchValue(properties.searchText),
+        normalizedName: normalizeSearchValue(properties.name),
+        normalizedDescription: normalizeSearchValue(properties.description),
+        normalizedId: normalizeSearchValue(properties.id),
+      },
+    };
   };
 
-    const fuse = new Fuse(geoJson.features, options);
+  const fuseSearch = (geoJson, pattern, resultLimit) => {
+    const normalizedPattern = normalizeSearchValue(pattern);
+    if (!normalizedPattern) {
+      return [];
+    }
 
-    fuseResult = fuse.search(pattern, { limit: resultLimit });
-    fuseResult.map((item) => {
-      result.push(item.item);
-    });
+    const options = {
+      includeScore: true,
+      threshold: 0.18,
+      ignoreLocation: true,
+      keys: [
+        { name: "properties.normalizedTitle", weight: 0.42 },
+        { name: "properties.normalizedSearchText", weight: 0.33 },
+        { name: "properties.normalizedName", weight: 0.15 },
+        { name: "properties.normalizedDescription", weight: 0.05 },
+        { name: "properties.normalizedId", weight: 0.05 },
+      ],
+    };
 
-    return result; // list of features
+    const searchableFeatures = (geoJson?.features || []).map(buildNormalizedFeature);
+    const fuse = new Fuse(searchableFeatures, options);
+
+    return fuse.search(normalizedPattern, { limit: resultLimit }).map((item) => item.item);
   };
 
   var options = {
     geojsonServiceAddress: "http://yourGeoJsonSearchAddress",
-    placeholderMessage: "Search...",
+    placeholderMessage: "Edificios, Salas, Equipos",
     searchButtonTitle: "Search",
     clearButtonTitle: "Clear",
     foundRecordsMessage: "showing results.",
@@ -198,13 +222,16 @@ import Fuse from "../lib/fuse/fuse.basic.esm.min.js";
       type: "GET",
       data: data,
       dataType: "json",
-      success: function (json) {
-        if (json.type === "Feature") {
+      success: async function (json) {
+        const enrichedJson = await mergeGeoJsonWithSoteroSearch(json);
+
+        if (enrichedJson.type === "Feature") {
           resultCount = 1;
-          features[0] = json;
+          features[0] = enrichedJson;
         } else {
-          resultCount = fuseSearch(json, lastSearch, options.limit).length;
-          features = fuseSearch(json, lastSearch, options.limit);
+          const matchedFeatures = fuseSearch(enrichedJson, lastSearch, options.limit);
+          resultCount = matchedFeatures.length;
+          features = matchedFeatures;
         }
         createDropDown();
       },
@@ -339,7 +366,7 @@ setCurrentOpenFeatureId(selectedProps.buildingId || selectedProps.id);
     var link = `${HOST_URL}/?id=${features[index].properties.id}&zoom=20`;
     var copyButtonHtml = `<button class="floorButton copy-button" onclick='
       navigator.clipboard.writeText("${link}")
-        .then(()=>{this.innerHTML="Lien copié &check;"})
+        .then(()=>{this.innerHTML="Lien copiÃ© &check;"})
         .catch(()=>{alert("Impossible de copier le lien : ${link}");});
       '>Copier le lien</button>`;
 
@@ -480,7 +507,7 @@ setCurrentOpenFeatureId(selectedProps.buildingId || selectedProps.id);
 export const loadSearchBox = (path, campus) => {
   var options = {
     geojsonServiceAddress: path,
-    placeholderMessage: "Search in CentraleSupélec ...",
+    placeholderMessage: "Edificios, Salas, Equipos",
     searchButtonTitle: "Search",
     clearButtonTitle: "Clear",
     foundRecordsMessage: "showing results.",
@@ -506,3 +533,13 @@ export const showSearch = (location, school) => {
     location
   );
 };
+
+
+
+
+
+
+
+
+
+

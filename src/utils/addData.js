@@ -1,4 +1,4 @@
-/////////////////////////////////////////////////////////////////////////////////
+﻿/////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////// Add layers to the map /////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////
 
@@ -27,6 +27,7 @@ import {
 var layerGroup = L.layerGroup().addTo(map);
 
 let buildingsCatalogCache = null;
+let renderSequence = 0;
 
 const loadBuildingsCatalog = async () => {
   if (buildingsCatalogCache) {
@@ -47,7 +48,7 @@ const loadBuildingsCatalog = async () => {
     buildingsCatalogCache = mergedData;
     return mergedData;
   } catch (error) {
-    console.error("Error cargando catálogo de edificios:", error);
+    console.error("Error cargando catÃ¡logo de edificios:", error);
     return { buildings: [] };
   }
 };
@@ -61,29 +62,27 @@ const getAllowedBuildingIdsForFloor = async (floorNumber) => {
   for (const building of buildings) {
     const floors = Array.isArray(building.floors) ? building.floors : [];
 
-    // Si tiene pisos definidos, respetarlos
     if (floors.length > 0) {
       if (floors.includes(Number(floorNumber))) {
         allowedIds.add(building.id);
       }
-    } else {
-      // Si aún no tiene pisos definidos, mostrarlo solo en piso 0
-      if (Number(floorNumber) === 0) {
-        allowedIds.add(building.id);
-      }
+    } else if (Number(floorNumber) === 0) {
+      allowedIds.add(building.id);
     }
   }
 
   return allowedIds;
 };
 
-const SVGLayerGroup = (svg, floorNumber, building, location) => {
-  /* Add Leaflet SVG overlay to layerGroup */
+const SVGLayerGroup = (svg, floorNumber, building, location, expectedRenderSequence) => {
+  if (expectedRenderSequence !== renderSequence) {
+    return null;
+  }
+
   var floor = "floor" + floorNumber.toString();
   var svgElement = createSvgElement();
-  var svgOverlay = "";
   svgElement.innerHTML = svg;
-  svgOverlay = L.svgOverlay(
+  var svgOverlay = L.svgOverlay(
     svgElement,
     latlngBuildings[location][building][floor],
     {
@@ -113,8 +112,11 @@ const reopenPopupIfNeeded = (geoJsonLayers) => {
   });
 };
 
-const featuresLayerGroup = (json) => {
-  /* Add Leaflet GeoJSON to layerGroup */
+const featuresLayerGroup = (json, expectedRenderSequence) => {
+  if (expectedRenderSequence !== renderSequence) {
+    return;
+  }
+
   var markers;
   var geoJsonLayers = [];
 
@@ -135,19 +137,17 @@ const featuresLayerGroup = (json) => {
   var toAdd = L.layerGroup(markers);
   layerGroup.addLayer(toAdd);
 
-  // Reopen popup automatically after the new floor is drawn
   reopenPopupIfNeeded(geoJsonLayers);
 };
 
-const addSVG = (floorNumber, building, location) => {
-  /* Get the SVG from the server */
+const addSVG = (floorNumber, building, location, expectedRenderSequence) => {
   $.ajax({
     url: "assets/svg/" + building + floorNumber.toString() + ".svg",
     type: "GET",
     data: {},
     dataType: "text",
     success: function (svg) {
-      SVGLayerGroup(svg, floorNumber, building, location);
+      SVGLayerGroup(svg, floorNumber, building, location, expectedRenderSequence);
     },
     error: function () {
       console.log("ERROR Failed to load SVG");
@@ -155,8 +155,7 @@ const addSVG = (floorNumber, building, location) => {
   });
 };
 
-const addFeatures = (school, floorNumber, location) => {
-  /* Get the GeoJSON from the server */
+const addFeatures = (school, floorNumber, location, expectedRenderSequence) => {
   $.ajax({
     url:
       "data/" +
@@ -171,8 +170,16 @@ const addFeatures = (school, floorNumber, location) => {
     data: {},
     dataType: "json",
     success: async function (json) {
+      if (expectedRenderSequence !== renderSequence) {
+        return;
+      }
+
       const allowedBuildingIds = await getAllowedBuildingIdsForFloor(floorNumber);
       const enrichedJson = await mergeGeoJsonWithSoteroSearch(json);
+
+      if (expectedRenderSequence !== renderSequence) {
+        return;
+      }
 
       const filteredJson = {
         ...enrichedJson,
@@ -183,7 +190,7 @@ const addFeatures = (school, floorNumber, location) => {
         }),
       };
 
-      featuresLayerGroup(filteredJson);
+      featuresLayerGroup(filteredJson, expectedRenderSequence);
     },
     error: function () {
       console.log("ERROR Failed to load JSON");
@@ -192,15 +199,18 @@ const addFeatures = (school, floorNumber, location) => {
 };
 
 export const addDataToMap = (school, floorNumber, location) => {
-  /* Add GeoJSON and SVGs to the map */
+  renderSequence += 1;
+  const expectedRenderSequence = renderSequence;
   layerGroup.clearLayers();
-  addFeatures(school, floorNumber, location);
+  addFeatures(school, floorNumber, location, expectedRenderSequence);
 
-  // Iterate on the buildings of the location
   Object.keys(campusBuildings[location]).map((key) => {
-    // Check if the floor exists before adding the SVG
     if (campusBuildings[location][key].includes(floorNumber)) {
-      addSVG(floorNumber, key, location);
+      addSVG(floorNumber, key, location, expectedRenderSequence);
     }
   });
+};
+
+export const resetBuildingsCatalogCache = () => {
+  buildingsCatalogCache = null;
 };
