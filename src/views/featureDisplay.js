@@ -1,4 +1,4 @@
-﻿/////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
 ///////////////////////// Add interactions with the map /////////////////////////
 /////////////////////////////////////////////////////////////////////////////////
 
@@ -299,7 +299,7 @@ const loadBuildingsCatalog = async () => {
     const catalog = await response.json();
     return await mergeCatalogWithSoteroSearch(catalog);
   } catch (error) {
-    console.error("Error cargando catÃ¡logo de edificios:", error);
+    console.error("Error cargando catálogo de edificios:", error);
     return { buildings: [] };
   }
 };
@@ -651,7 +651,7 @@ const buildKeyValueRow = (label, value) => {
 };
 
 const buildBuildingDetailHtml = (buildingDetail) => {
-  if (!buildingDetail) return "Sin informaciÃ³n adicional.";
+  if (!buildingDetail) return "Sin información adicional.";
 
   let html = "";
 
@@ -664,7 +664,7 @@ const buildBuildingDetailHtml = (buildingDetail) => {
   }
 
   if (buildingDetail.lastUpdate) {
-    html += buildKeyValueRow("Ãšltima actualizaciÃ³n", buildingDetail.lastUpdate);
+    html += buildKeyValueRow("Última actualización", buildingDetail.lastUpdate);
   }
 
   if (buildingDetail.operationalNotes) {
@@ -672,7 +672,7 @@ const buildBuildingDetailHtml = (buildingDetail) => {
   }
 
   if (buildingDetail.technicalNotes) {
-    html += buildKeyValueRow("Nota tÃ©cnica", buildingDetail.technicalNotes);
+    html += buildKeyValueRow("Nota técnica", buildingDetail.technicalNotes);
   }
 
   if (Array.isArray(buildingDetail.tags) && buildingDetail.tags.length > 0) {
@@ -692,7 +692,7 @@ const buildDevicesSummaryHtml = (devices, floorLabel) => {
   return `
     ${buildKeyValueRow("PCs", counts.pc)}
     ${buildKeyValueRow("Impresoras", counts.printer)}
-    ${buildKeyValueRow("EscÃ¡neres", counts.scanner)}
+    ${buildKeyValueRow("Escáneres", counts.scanner)}
     ${buildKeyValueRow("Otros", counts.other)}
   `;
 };
@@ -711,7 +711,7 @@ const buildDevicesListHtml = (devices, rooms, floorLabel) => {
     const room = roomsMap.get(device.roomId);
     const roomName = room?.name || room?.shortName || "Sin sala";
     const title = device.serialNumber || device.name || device.deviceId || "Sin S/N";
-    const description = device.description || device.name || "Sin descripciÃ³n";
+    const description = device.description || device.name || "Sin descripción";
 
     html += `
       <div style="margin-bottom:8px; padding:8px 10px; border:1px solid #ddd; border-radius:8px; background:#fafafa;">
@@ -720,14 +720,14 @@ const buildDevicesListHtml = (devices, rooms, floorLabel) => {
           ${escapeHtml(description)}
         </div>
         <div style="margin-top:2px; font-size:12px;">
-          ${escapeHtml(device.type || "sin_tipo")} Â· ${escapeHtml(roomName)} Â· IP: ${escapeHtml(device.ip || "sin IP")} Â· ${escapeHtml(device.status || "sin estado")}
+          ${escapeHtml(device.type || "sin_tipo")} · ${escapeHtml(roomName)} · IP: ${escapeHtml(device.ip || "sin IP")} · ${escapeHtml(device.status || "sin estado")}
         </div>
       </div>
     `;
   }
 
   if (devices.length > 10) {
-    html += `... y ${devices.length - 10} equipo(s) mÃ¡s<br/>`;
+    html += `... y ${devices.length - 10} equipo(s) más<br/>`;
   }
 
   return html;
@@ -738,7 +738,7 @@ const buildHistorySummaryHtml = (activityItems) => {
     return `No hay actualizaciones pendientes ni cambios recientes para este edificio.`;
   }
 
-  let html = `<b>Ultimos cambios del edificio</b><br/>`;
+  let html = `<b>Últimos cambios del edificio</b><br/>`;
 
   for (const entry of activityItems.slice(0, 6)) {
     const when = formatSyncTimestamp(entry?.createdAtUtc);
@@ -749,7 +749,7 @@ const buildHistorySummaryHtml = (activityItems) => {
     html += `
       <div style="margin-top:8px; padding:8px 10px; border:1px solid #ddd; border-radius:8px; background:#fafafa;">
         <div style="font-weight:600;">${escapeHtml(summary)}</div>
-        <div style="margin-top:2px; font-size:12px; color:#475569;">${escapeHtml(actor)} Â· ${escapeHtml(when)}</div>
+        <div style="margin-top:2px; font-size:12px; color:#475569;">${escapeHtml(actor)} · ${escapeHtml(when)}</div>
         <div style="margin-top:4px; font-size:12px; color:#334155;">${escapeHtml(details)}</div>
       </div>
     `;
@@ -821,7 +821,7 @@ const buildViewSelectorHtml = (featureId, currentView) => {
 const refreshCurrentPopup = async () => {
   if (!currentOpenLayer || !currentOpenLayer.feature) return;
 
-  currentOpenLayer.setPopupContent("Cargando informaciÃ³n...");
+  currentOpenLayer.setPopupContent("Cargando información...");
   const popupHtml = await getFeaturePopupHtml(currentOpenLayer.feature);
   currentOpenLayer.setPopupContent(popupHtml);
 };
@@ -855,7 +855,7 @@ window.selectBuildingFloor = (targetFloor) => {
     return;
   }
 
-  console.warn(`No se encontrÃ³ botÃ³n global para el piso ${floorText}`);
+  console.warn(`No se encontró botón global para el piso ${floorText}`);
 };
 
 window.selectRoomDetail = (featureId, roomId) => {
@@ -885,7 +885,7 @@ const buildRoomsListWithButtonsHtml = (featureId, rooms, devices, floorLabel) =>
       <div style="margin-bottom:10px; padding:10px; border:1px solid #ddd; border-radius:8px; background:#fafafa;">
         <div style="font-weight:600; margin-bottom:3px;">${escapeHtml(room.name || room.shortName || room.roomId)}</div>
         <div style="font-size:12px; color:#444;">
-          ${escapeHtml(room.type || "sin_tipo")} Â· ${escapeHtml(room.status || "sin_estado")} Â· ${roomDevicesCount} equipo(s)
+          ${escapeHtml(room.type || "sin_tipo")} · ${escapeHtml(room.status || "sin_estado")} · ${roomDevicesCount} equipo(s)
         </div>
         <div style="margin-top:8px;">
           <button
@@ -901,7 +901,7 @@ const buildRoomsListWithButtonsHtml = (featureId, rooms, devices, floorLabel) =>
   }
 
   if (rooms.length > 10) {
-    html += `... y ${rooms.length - 10} sala(s) mÃ¡s<br/>`;
+    html += `... y ${rooms.length - 10} sala(s) más<br/>`;
   }
 
   return html;
@@ -917,17 +917,17 @@ const buildRoomDetailHtml = (featureId, room, roomDevices) => {
         style="${getActionButtonStyle()}"
         onclick="window.backToRoomsList && window.backToRoomsList('${escapeHtml(featureId)}')"
       >
-        â† Volver
+        ← Volver
       </button>
     </div>
   `;
 
   html += buildKeyValueRow("Nombre", room.name || "");
-  html += buildKeyValueRow("CÃ³digo", room.shortName || "");
+  html += buildKeyValueRow("Código", room.shortName || "");
   html += buildKeyValueRow("Tipo", room.type || "");
   html += buildKeyValueRow("Estado", room.status || "");
   html += buildKeyValueRow("Unidad", room.unit || "");
-  html += buildKeyValueRow("Ãrea responsable", room.responsibleArea || "");
+  html += buildKeyValueRow("Área responsable", room.responsibleArea || "");
   html += buildKeyValueRow("Equipos", roomDevices.length);
 
   if (room.notes) {
@@ -944,7 +944,7 @@ const buildRoomDetailHtml = (featureId, room, roomDevices) => {
         <div style="margin-top:6px; padding:8px 10px; border:1px solid #ddd; border-radius:8px; background:#fafafa;">
           <div style="font-weight:600;">${escapeHtml(device.name || device.deviceId)}</div>
           <div style="font-size:12px; margin-top:2px;">
-            ${escapeHtml(device.type || "sin_tipo")} Â· IP: ${escapeHtml(device.ip || "sin IP")} Â· ${escapeHtml(device.status || "sin estado")}
+            ${escapeHtml(device.type || "sin_tipo")} · IP: ${escapeHtml(device.ip || "sin IP")} · ${escapeHtml(device.status || "sin estado")}
           </div>
         </div>
       `;
@@ -957,7 +957,7 @@ const buildRoomDetailHtml = (featureId, room, roomDevices) => {
     html += `No hay historial reciente.`;
   } else {
     for (const event of recentEvents) {
-      html += `â€¢ ${escapeHtml(event.date)} â€” ${escapeHtml(event.type)} â€” ${escapeHtml(event.description || "Sin descripciÃ³n")}<br/>`;
+      html += `• ${escapeHtml(event.date)} — ${escapeHtml(event.type)} — ${escapeHtml(event.description || "Sin descripción")}<br/>`;
     }
   }
 
@@ -975,7 +975,7 @@ const getFeaturePopupHtml = async (feature) => {
   const link = `${HOST_URL}/?id=${featureId}&zoom=20`;
   const copyButtonHtml = `<button class="floorButton" onclick='
     navigator.clipboard.writeText("${link}")
-      .then(()=>{this.innerHTML="Copiado âœ“"})
+      .then(()=>{this.innerHTML="Copiado ✓"})
       .catch(()=>{alert("No se pudo copiar el enlace: ${link}");});
     ' style="${getActionButtonStyle()}">Copiar enlace</button>`;
 
@@ -1020,8 +1020,8 @@ const getFeaturePopupHtml = async (feature) => {
       Tipo: ${escapeHtml(type)}
   `;
 
-  if (shortName) detailsHtml += `<br/>CÃ³digo: ${escapeHtml(shortName)}`;
-  if (responsibleArea) detailsHtml += `<br/>Ãrea: ${escapeHtml(responsibleArea)}`;
+  if (shortName) detailsHtml += `<br/>Código: ${escapeHtml(shortName)}`;
+  if (responsibleArea) detailsHtml += `<br/>Área: ${escapeHtml(responsibleArea)}`;
   if (floors) detailsHtml += `<br/>Pisos: ${escapeHtml(floors)}`;
 
   detailsHtml += `<br/>Salas edificio: ${escapeHtml(allRooms.length)}`;
@@ -1140,7 +1140,7 @@ const resetHighlight = (e) => {
 
 export const onEachFeature = (feature, layer) => {
   if (feature.properties.isClickable) {
-    layer.bindPopup("Cargando informaciÃ³n...");
+    layer.bindPopup("Cargando información...");
 
     if (layer.getPopup()) {
       layer.getPopup().options.autoPan = true;

@@ -1,4 +1,4 @@
-﻿/* 
+/* 
     Created on : Aug 31, 2015
     Author     : yeozkaya@gmail.com
     repo       : https://github.com/utahemre/Leaflet.GeoJSONAutocomplete
@@ -366,9 +366,9 @@ setCurrentOpenFeatureId(selectedProps.buildingId || selectedProps.id);
     var link = `${HOST_URL}/?id=${features[index].properties.id}&zoom=20`;
     var copyButtonHtml = `<button class="floorButton copy-button" onclick='
       navigator.clipboard.writeText("${link}")
-        .then(()=>{this.innerHTML="Lien copiÃ© &check;"})
-        .catch(()=>{alert("Impossible de copier le lien : ${link}");});
-      '>Copier le lien</button>`;
+        .then(()=>{this.innerHTML="Copiado ✓"})
+        .catch(()=>{alert("No se pudo copiar el enlace: ${link}");});
+      '>Copiar enlace</button>`;
 
     searchLayer = L.geoJson(features[index].geometry, {
       style: drawStyle,

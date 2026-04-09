@@ -3,82 +3,168 @@
 /////////////////////////////////////////////////////////////////////////////////
 
 import { goTo } from "../utils/goToCampus.js";
+import { map } from "../views/map.js";
+import { setCurrentOpenFeatureId } from "../views/featureDisplay.js";
 
-import { map, HOST_URL } from "../views/map.js";
+const url = new URL(window.location.href);
+const MAX_ATTEMPTS = 48;
+const RETRY_DELAY_MS = 250;
+const DEFAULT_CAMPUS = "sotero";
 
-import { reArrange } from "../utils/tools.js";
-
-let url = new URL(window.location.href);
-
-const findByUrl = (inputType, finder, campusSearch, zoom) => {
-  // make use of search json it's lighter by 1.7 MB (now it s only 651KB)
-  let findMe = null;
-  let floorNumber = "";
-  let button = "b";
-  let elementName = "";
-  if (zoom == null) {
-    zoom = 19;
+const clearDeepLinkFromUrl = () => {
+  if (!window.history?.replaceState) {
+    return;
   }
-  campusSearch.features.map((element) => {
-    if (element.properties[inputType] == finder) {
-      var link = `${HOST_URL}/?id=${element.properties.id}&zoom=20`;
-      var copyButtonHtml = `<button class="floorButton copy-button" onclick='
-        navigator.clipboard.writeText("${link}")
-          .then(()=>{this.innerHTML="Lien copié &check;"})
-          .catch(()=>{alert("Impossible de copier le lien : ${link}");});
-        '>Copier le lien</button>`;
 
-      findMe = { position: element.properties.center, location: element.properties.location };
-      floorNumber = element.properties.floor;
-      elementName =
-        element.properties.name + ", étage "+ floorNumber.toString() + copyButtonHtml;
-      if (element.properties.location === "metz") {
-        // metz has a -1 floor but the buttons id are still b<0 to 4>
-        floorNumber++;
-      }
-      else if (element.properties.location === "rennes") {
-        // rennes starts at floor <1 to 5> but the buttons id are still b<0 to 4>
-        floorNumber--;
-      }
-      button += floorNumber.toString(); // Craft the floor button id
+  window.history.replaceState({}, document.title, window.location.pathname);
+};
+
+const getFeatureLayerById = (featureId) => {
+  let matchedLayer = null;
+
+  map.eachLayer((layer) => {
+    if (matchedLayer) {
+      return;
+    }
+
+    if (layer?.feature?.properties?.id === featureId) {
+      matchedLayer = layer;
+      return;
+    }
+
+    if (typeof layer?.eachLayer === "function") {
+      layer.eachLayer((childLayer) => {
+        if (matchedLayer) {
+          return;
+        }
+
+        if (childLayer?.feature?.properties?.id === featureId) {
+          matchedLayer = childLayer;
+        }
+      });
     }
   });
-  if (findMe !== null) {
-    goTo(findMe.location);
-    document.getElementById(button).click(); // Set current floor to match the searched item's floor
-    L.marker(reArrange(findMe.position))
-      .bindPopup(elementName, { closeOnClick: null })
-      .addTo(map)
-      .togglePopup();
-    map.setView(reArrange(findMe.position), zoom);
-  } else if (finder === null) {
-  } else {
-    alert("Element not found");
-  }
+
+  return matchedLayer;
 };
 
-const searchByUrlJson = () => {
-  /* Get the GeoJSON from the server */
-  $.ajax({
-    url: "data/cs_searchByURL.json",
-    type: "GET",
-    data: {},
-    dataType: "json",
-    success: function (json) {
-      findByUrl(
-        "id",
-        url.searchParams.get("id"),
-        json,
-        url.searchParams.get("zoom")
-      );
-    },
-    error: function () {
-      console.log("ERROR Failed to load JSON");
-    },
+const getFloorButtons = () =>
+  Array.from(document.querySelectorAll("#floorButtons-container .floorButton")).filter(
+    (button) => button.id !== "bLoc"
+  );
+
+const getFloorButtonForValue = (floorValue) => {
+  const normalizedFloor = String(floorValue ?? "0").trim();
+  return (
+    getFloorButtons().find(
+      (button) => String((button.textContent || "").trim()) === normalizedFloor
+    ) || null
+  );
+};
+
+const waitForFloorButtons = (callback, attempt = 0) => {
+  const floorButtons = getFloorButtons();
+  if (floorButtons.length > 0) {
+    callback(floorButtons);
+    return;
+  }
+
+  if (attempt >= MAX_ATTEMPTS) {
+    console.warn("No se encontraron botones de piso para resolver el deep link.");
+    clearDeepLinkFromUrl();
+    return;
+  }
+
+  window.setTimeout(() => waitForFloorButtons(callback, attempt + 1), RETRY_DELAY_MS);
+};
+
+const openFeatureLayer = (featureId, zoom) => {
+  const layer = getFeatureLayerById(featureId);
+  if (!layer) {
+    return false;
+  }
+
+  if (typeof layer.getBounds === "function") {
+    map.fitBounds(layer.getBounds(), {
+      maxZoom: zoom ?? 20,
+      padding: [40, 40],
+    });
+  } else if (typeof layer.getLatLng === "function") {
+    map.setView(layer.getLatLng(), zoom ?? 20);
+  }
+
+  if (typeof layer.openPopup === "function") {
+    layer.openPopup();
+  }
+
+  clearDeepLinkFromUrl();
+  return true;
+};
+
+const waitForFeatureLayer = (featureId, zoom, attempt = 0) => {
+  const opened = openFeatureLayer(featureId, zoom);
+  if (opened) {
+    return;
+  }
+
+  if (attempt >= MAX_ATTEMPTS) {
+    console.warn(`No se encontro el edificio ${featureId} durante el deep link.`);
+    clearDeepLinkFromUrl();
+    return;
+  }
+
+  window.setTimeout(() => {
+    waitForFeatureLayer(featureId, zoom, attempt + 1);
+  }, RETRY_DELAY_MS);
+};
+
+const getRequestedFloor = () => {
+  const rawFloor = url.searchParams.get("floor");
+  const parsedFloor = Number(rawFloor);
+  return Number.isFinite(parsedFloor) ? parsedFloor : 0;
+};
+
+const getRequestedZoom = () => {
+  const rawZoom = Number(url.searchParams.get("zoom") || 20);
+  return Number.isFinite(rawZoom) ? rawZoom : 20;
+};
+
+const loadFeatureFromUrl = () => {
+  const featureId = url.searchParams.get("id");
+  if (!featureId) {
+    return;
+  }
+
+  const requestedFloor = getRequestedFloor();
+  const requestedView = url.searchParams.get("view") || "summary";
+  const requestedRoomId = url.searchParams.get("roomId") || "";
+  const requestedZoom = getRequestedZoom();
+
+  if (typeof window.preparePopupNavigation === "function") {
+    window.preparePopupNavigation(featureId, requestedView, requestedRoomId);
+  }
+
+  setCurrentOpenFeatureId(featureId);
+  goTo(DEFAULT_CAMPUS);
+
+  waitForFloorButtons((floorButtons) => {
+    const fallbackFloorButton = getFloorButtonForValue(0) || floorButtons[0] || null;
+    const requestedFloorButton = getFloorButtonForValue(requestedFloor) || fallbackFloorButton;
+
+    if (!requestedFloorButton) {
+      console.warn("No se pudo resolver un piso para el deep link del mapa.");
+      clearDeepLinkFromUrl();
+      return;
+    }
+
+    requestedFloorButton.click();
+
+    window.setTimeout(() => {
+      waitForFeatureLayer(featureId, requestedZoom);
+    }, RETRY_DELAY_MS);
   });
 };
 
-
 if (url.searchParams.get("id") != null) {
-  searchByUrlJson();
+  loadFeatureFromUrl();
 }

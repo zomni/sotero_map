@@ -16,65 +16,71 @@ var SelectDiv,
 SelectDiv = document.getElementById("custom-select");
 selectElmnts = SelectDiv.getElementsByTagName("select")[0];
 
-for(var campus in campuses) {
+const EMPTY_LABEL = "Campus";
+
+const setCampusBar = () => {
+  const divs = document.getElementById("selected-option");
+  if (!divs) {
+    return;
+  }
+
+  divs.innerHTML = EMPTY_LABEL;
+};
+
+const setSelectValue = (campus) => {
+  const selectedIndex = Array.from(selectElmnts.options).findIndex((option) => option.value === campus);
+  selectElmnts.selectedIndex = selectedIndex >= 0 ? selectedIndex : 0;
+};
+
+const activateCampus = (campus, applyDefaultFloor = true) => {
+  if (!(campus in campuses)) {
+    setSelectValue("");
+    setCampusBar();
+    return;
+  }
+
+  setSelectValue(campus);
+  setCampusBar();
+  goTo(campus);
+
+  if (applyDefaultFloor) {
+    setDefaultFloor(campus);
+  }
+};
+
+for (var campus in campuses) {
   var selec = document.createElement("option");
   selec.value = campus;
   selec.innerHTML = campuses[campus]["fullName"];
   selectElmnts.appendChild(selec);
 }
 numberOfOptions = selectElmnts.length;
-/* For each element, create a new DIV that will act as the selected item */
 selectedOption = document.createElement("DIV");
 selectedOption.setAttribute("class", "select-selected");
-selectedOption.setAttribute("id", "selected-option")
-selectedOption.innerHTML =
-  selectElmnts.options[selectElmnts.selectedIndex].innerHTML;
+selectedOption.setAttribute("id", "selected-option");
+selectedOption.innerHTML = EMPTY_LABEL;
 SelectDiv.appendChild(selectedOption);
-/* For each element, create a new DIV that will contain the option list */
 optionsDiv = document.createElement("DIV");
 optionsDiv.setAttribute("class", "select-items select-hide");
 for (j = 1; j < numberOfOptions; j++) {
-  /* For each option in the original select element,
-    create a new DIV that will act as an option item */
   newSelectDivs = document.createElement("DIV");
   newSelectDivs.innerHTML = selectElmnts.options[j].innerHTML;
-  newSelectDivs.addEventListener("click", function (e) {
-    /* When an item is clicked, update the original select box,
-         the selected item and go to the selected campus */
-    var y, i, k, selectBox, parentDiv, selectlBoxLength, yl;
-    selectBox = this.parentNode.parentNode.getElementsByTagName("select")[0];
-    selectlBoxLength = selectBox.length;
-    parentDiv = this.parentNode.previousSibling;
-    /* Add value to the selected div */
-    Object.keys(selectElmnts.options).map((key) => {
-      if (selectElmnts.options[key].innerHTML == this.innerHTML) {
-        this.setAttribute("value", selectElmnts.options[key].value.toString());
-      }
-    });
-    for (i = 0; i < selectlBoxLength; i++) {
-      if (selectBox.options[i].innerHTML == this.innerHTML) {
-        selectBox.selectedIndex = i;
-        parentDiv.innerHTML = this.innerHTML;
-        y = this.parentNode.getElementsByClassName("same-as-selected");
-        yl = y.length;
-        for (k = 0; k < yl; k++) {
-          y[k].removeAttribute("class");
-        }
-        this.setAttribute("class", "same-as-selected");
-        break;
-      }
-    }
-    parentDiv.click();
-    var campus = this.getAttribute("value")
-    goTo(campus); // Go to the selected campus
-    setDefaultFloor(campus); // set the default floor 
+  newSelectDivs.addEventListener("click", function () {
+    const campusValue = Array.from(selectElmnts.options).find(
+      (option) => option.innerHTML === this.innerHTML
+    )?.value;
+
+    activateCampus(campusValue, true);
+    this.parentNode.previousSibling.click();
+
+    const selectedItems = this.parentNode.getElementsByClassName("same-as-selected");
+    Array.from(selectedItems).forEach((item) => item.removeAttribute("class"));
+    this.setAttribute("class", "same-as-selected");
   });
   optionsDiv.appendChild(newSelectDivs);
 }
 SelectDiv.appendChild(optionsDiv);
 selectedOption.addEventListener("click", function (e) {
-  /* When the select box is clicked, close any other select boxes,
-    and open/close the current select box */
   e.stopPropagation();
   closeAllSelect(this);
   this.nextSibling.classList.toggle("select-hide");
@@ -82,8 +88,6 @@ selectedOption.addEventListener("click", function (e) {
 });
 
 function closeAllSelect(elmnt) {
-  /* A function that will close all select boxes in the document,
-  except the current select box */
   var x,
     y,
     i,
@@ -108,30 +112,11 @@ function closeAllSelect(elmnt) {
   }
 }
 
-/* If the user clicks anywhere outside the select box,
-then close all select boxes */
 document.addEventListener("click", closeAllSelect);
-
-/* Remember last campus */
-
-const campusToText = (campus) => {
-
-  if(campus in campuses){
-      return campuses[campus].fullName
-  }
-  return "Campus :";
-}
-
-const setCampusBar = (campus) => {
-  var divs = document.getElementById("selected-option")
-  divs.innerHTML = campusToText(campus)
-};
 
 const rememberCampus = () => {
   var campus = getCookie("location");
-  goTo(campus);
-  setDefaultFloor(campus);
-  setCampusBar(campus);
+  activateCampus(campus, true);
 };
 
 rememberCampus();
