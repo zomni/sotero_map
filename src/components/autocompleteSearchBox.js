@@ -6,62 +6,341 @@
     Adapted for this project by commenting, keeping the good stuff (JQuery), removing paging and adding Fuse JS to search
 */
 
-import { map, HOST_URL } from "../views/map.js";
+import { map, HOST_URL, BACKEND_API_URL } from "../views/map.js";
 import campuses from "../data/campuses.js";
-import { setCurrentOpenFeatureId } from "../views/featureDisplay.js";
+import { setCurrentOpenFeatureId } from "../views/featureDisplay.js?v=20260413q";
 import { mergeGeoJsonWithSoteroSearch } from "../utils/soteroSearchMetadata.js";
 
 // import "../lib/jquery/jquery-3.6.0.min.js"; // Not working with webpack
 
 import Fuse from "../lib/fuse/fuse.basic.esm.min.js";
 
-(function ($) {
-  const normalizeSearchValue = (value) =>
-    String(value ?? "")
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "")
-      .toLowerCase()
+(function ($) {  const stripDiacritics = (value) =>
+    String(value ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+  const normalizeLower = (value) => stripDiacritics(value).toLowerCase().trim();
+
+  const normalizeCompact = (value) =>
+    normalizeLower(value)
+      .replace(/\s+/g, " ")
+      .replace(/[^a-z0-9\s]/gi, "")
+      .replace(/\s+/g, " ")
       .trim();
+
+  const normalizeDense = (value) =>
+    normalizeLower(value).replace(/[^a-z0-9]+/gi, "").trim();
+
+  const toTokens = (value) =>
+    normalizeCompact(value)
+      .split(" ")
+      .filter(Boolean);
+
+  const buildSearchProfile = (value) => {
+    const raw = String(value ?? "").trim();
+    const lower = raw.toLowerCase();
+    const lowerNoDiacritics = normalizeLower(raw);
+    const compact = normalizeCompact(raw);
+    const dense = normalizeDense(raw);
+
+    return {
+      raw,
+      lower,
+      lowerNoDiacritics,
+      compact,
+      dense,
+      tokens: toTokens(raw),
+    };
+  };
 
   const buildNormalizedFeature = (feature) => {
     const properties = feature?.properties || {};
+    const combined = [
+      properties.title,
+      properties.searchText,
+      properties.name,
+      properties.description,
+      properties.id,
+    ]
+      .filter(Boolean)
+      .join(" ");
 
     return {
       ...feature,
       properties: {
         ...properties,
-        normalizedTitle: normalizeSearchValue(properties.title),
-        normalizedSearchText: normalizeSearchValue(properties.searchText),
-        normalizedName: normalizeSearchValue(properties.name),
-        normalizedDescription: normalizeSearchValue(properties.description),
-        normalizedId: normalizeSearchValue(properties.id),
+        searchProfiles: {
+          title: buildSearchProfile(properties.title),
+          searchText: buildSearchProfile(properties.searchText),
+          name: buildSearchProfile(properties.name),
+          description: buildSearchProfile(properties.description),
+          id: buildSearchProfile(properties.id),
+          combined: buildSearchProfile(combined),
+        },
       },
     };
   };
 
+  const includesAllTokens = (haystackTokens, needleTokens) => {
+    if (!needleTokens.length) return false;
+    return needleTokens.every((token) => haystackTokens.includes(token));
+  };
+
+  const includesAllTokensLoose = (haystackDense, needleTokens) => {
+    if (!needleTokens.length) return false;
+    return needleTokens.every((token) => haystackDense.includes(token));
+  };
+
+  const isSubsequence = (needle, haystack) => {
+    if (!needle) return false;
+    let i = 0;
+    for (let j = 0; j < haystack.length && i < needle.length; j += 1) {
+      if (haystack[j] === needle[i]) {
+        i += 1;
+      }
+    }
+    return i === needle.length;
+  };
+
+  const scoreProfile = (profile, queryProfile) => {
+    if (!profile?.raw) {
+      return 0;
+    }
+
+    const raw = profile.raw;
+    const lower = profile.lower;
+    const lowerNo = profile.lowerNoDiacritics;
+    const compact = profile.compact;
+    const dense = profile.dense;
+    const tokens = profile.tokens;
+
+    const qRaw = queryProfile.raw;
+    const qLower = queryProfile.lower;
+    const qLowerNo = queryProfile.lowerNoDiacritics;
+    const qCompact = queryProfile.compact;
+    const qDense = queryProfile.dense;
+    const qTokens = queryProfile.tokens;
+
+    if (!qRaw) {
+      return 0;
+    }
+
+    let score = 0;
+
+    if (raw === qRaw) score = Math.max(score, 100);
+    if (lower === qLower) score = Math.max(score, 96);
+    if (lowerNo === qLowerNo) score = Math.max(score, 92);
+
+    if (raw.startsWith(qRaw)) score = Math.max(score, 88);
+    if (lower.startsWith(qLower)) score = Math.max(score, 84);
+    if (lowerNo.startsWith(qLowerNo)) score = Math.max(score, 82);
+
+    if (raw.endsWith(qRaw)) score = Math.max(score, 78);
+    if (lower.endsWith(qLower)) score = Math.max(score, 76);
+    if (lowerNo.endsWith(qLowerNo)) score = Math.max(score, 74);
+
+    if (raw.includes(qRaw)) score = Math.max(score, 70);
+    if (lower.includes(qLower)) score = Math.max(score, 66);
+    if (lowerNo.includes(qLowerNo)) score = Math.max(score, 64);
+    if (compact.includes(qCompact)) score = Math.max(score, 62);
+    if (dense.includes(qDense)) score = Math.max(score, 60);
+
+    if (includesAllTokens(tokens, qTokens)) {
+      score = Math.max(score, 60 + Math.min(qTokens.length, 3));
+    }
+
+    if (includesAllTokensLoose(dense, qTokens)) {
+      score = Math.max(score, 58 + Math.min(qTokens.length, 3));
+    }
+
+    if (qRaw.match(/\d/)) {
+      if (raw.includes(qRaw) || lower.includes(qLower)) {
+        score = Math.max(score, 90);
+      } else if (compact.includes(qCompact) || dense.includes(qDense)) {
+        score = Math.max(score, 80);
+      }
+    }
+
+    return score;
+  };
+
   const fuseSearch = (geoJson, pattern, resultLimit) => {
-    const normalizedPattern = normalizeSearchValue(pattern);
-    if (!normalizedPattern) {
+    const queryProfile = buildSearchProfile(pattern);
+    if (!queryProfile.raw) {
       return [];
     }
 
-    const options = {
+    const searchableFeatures = (geoJson?.features || []).map(buildNormalizedFeature);
+
+    const directMatches = searchableFeatures.filter((feature) => {
+      const profile = feature?.properties?.searchProfiles?.combined;
+      if (!profile) return false;
+
+      const hayLowerNo = profile.lowerNoDiacritics || "";
+      const hayDense = profile.dense || "";
+      const queryLowerNo = queryProfile.lowerNoDiacritics || "";
+      const queryDense = queryProfile.dense || "";
+      const queryTokens = queryProfile.tokens || [];
+
+      if (!queryLowerNo) return false;
+
+      if (hayLowerNo.includes(queryLowerNo)) return true;
+      if (queryDense && hayDense.includes(queryDense)) return true;
+      if (includesAllTokensLoose(hayDense, queryTokens)) return true;
+      if (isSubsequence(queryDense, hayDense)) return true;
+
+      return false;
+    });
+
+    if (directMatches.length > 0) {
+      return directMatches.slice(0, resultLimit).map((entry) => entry);
+    }
+
+    const weightedResults = searchableFeatures
+      .map((feature) => {
+        const profiles = feature?.properties?.searchProfiles;
+        if (!profiles) {
+          return { feature, score: 0 };
+        }
+
+        const score =
+          scoreProfile(profiles.title, queryProfile) * 1.0 +
+          scoreProfile(profiles.searchText, queryProfile) * 0.9 +
+          scoreProfile(profiles.name, queryProfile) * 0.75 +
+          scoreProfile(profiles.id, queryProfile) * 0.9 +
+          scoreProfile(profiles.description, queryProfile) * 0.4 +
+          scoreProfile(profiles.combined, queryProfile) * 0.85;
+
+        return { feature, score };
+      })
+      .filter((entry) => entry.score > 0)
+      .sort((a, b) => b.score - a.score);
+
+    if (weightedResults.length > 0) {
+      return weightedResults.slice(0, resultLimit).map((entry) => entry.feature);
+    }
+
+    const tolerantResults = searchableFeatures
+      .map((feature) => {
+        const profile = feature?.properties?.searchProfiles?.combined;
+        if (!profile) {
+          return { feature, score: 0 };
+        }
+
+        const dense = profile.dense;
+        const qDense = queryProfile.dense;
+        const tokens = queryProfile.tokens;
+        let score = 0;
+
+        if (dense.includes(qDense)) score = Math.max(score, 55);
+        if (includesAllTokensLoose(dense, tokens)) score = Math.max(score, 52);
+        if (isSubsequence(qDense, dense)) score = Math.max(score, 45);
+
+        return { feature, score };
+      })
+      .filter((entry) => entry.score > 0)
+      .sort((a, b) => b.score - a.score);
+
+    if (tolerantResults.length > 0) {
+      return tolerantResults.slice(0, resultLimit).map((entry) => entry.feature);
+    }
+
+    const fallbackOptions = {
       includeScore: true,
-      threshold: 0.18,
+      threshold: 0.4,
       ignoreLocation: true,
       keys: [
-        { name: "properties.normalizedTitle", weight: 0.42 },
-        { name: "properties.normalizedSearchText", weight: 0.33 },
-        { name: "properties.normalizedName", weight: 0.15 },
-        { name: "properties.normalizedDescription", weight: 0.05 },
-        { name: "properties.normalizedId", weight: 0.05 },
+        { name: "properties.searchProfiles.title.lowerNoDiacritics", weight: 0.4 },
+        { name: "properties.searchProfiles.searchText.lowerNoDiacritics", weight: 0.3 },
+        { name: "properties.searchProfiles.name.lowerNoDiacritics", weight: 0.2 },
+        { name: "properties.searchProfiles.id.lowerNoDiacritics", weight: 0.1 },
       ],
     };
 
-    const searchableFeatures = (geoJson?.features || []).map(buildNormalizedFeature);
-    const fuse = new Fuse(searchableFeatures, options);
+    const fuse = new Fuse(searchableFeatures, fallbackOptions);
+    return fuse.search(queryProfile.lowerNoDiacritics, { limit: resultLimit }).map((item) => item.item);
+  };
 
-    return fuse.search(normalizedPattern, { limit: resultLimit }).map((item) => item.item);
+  const buildEquipmentFeatures = (items, buildingLookup, resultLimit) => {
+    if (!Array.isArray(items)) {
+      return [];
+    }
+
+    const results = [];
+
+    for (const item of items) {
+      const buildingId = item?.assignedBuildingExternalId || "";
+      if (!buildingId) {
+        continue;
+      }
+
+      const buildingFeature = buildingLookup.get(buildingId);
+      if (!buildingFeature) {
+        continue;
+      }
+
+      const serial = item?.serialNumber || "";
+      const deviceKey = serial || item?.itemNumber || item?.id || "";
+      const title = serial ? `S/N: ${serial}` : (item?.description || "Equipo");
+      const floorValue = Number.isFinite(Number(item?.assignedFloor)) ? Number(item.assignedFloor) : 0;
+      const roomId = item?.assignedRoomExternalId || "";
+      const view = "devices";
+      const descriptionParts = [];
+
+      if (item?.description) descriptionParts.push(item.description);
+      if (roomId) descriptionParts.push(roomId);
+      if (Number.isFinite(floorValue)) descriptionParts.push(`Piso ${floorValue}`);
+
+      const description = descriptionParts.join(" · ");
+      const searchText = `${title} ${description} ${buildingId} ${roomId}`.trim();
+
+      results.push({
+        type: "Feature",
+        geometry: buildingFeature.geometry,
+        properties: {
+          ...buildingFeature.properties,
+          title,
+          description,
+          searchText,
+          id: buildingId,
+          buildingId,
+          floor: floorValue,
+          view,
+          roomId,
+          deviceKey,
+          deviceSerial: serial,
+          image: buildingFeature.properties?.image,
+        },
+      });
+
+      if (results.length >= resultLimit) {
+        break;
+      }
+    }
+
+    return results;
+  };
+
+  const fetchEquipmentMatches = async (query, buildingLookup, resultLimit) => {
+    if (!query) {
+      return [];
+    }
+
+    try {
+      const response = await fetch(
+        `${BACKEND_API_URL}/api/inventory-import/items?search=${encodeURIComponent(query)}`,
+        { cache: "no-store" }
+      );
+
+      if (!response.ok) {
+        return [];
+      }
+
+      const items = await response.json();
+      return buildEquipmentFeatures(items, buildingLookup, resultLimit);
+    } catch (error) {
+      console.warn("No se pudo cargar inventario para busqueda avanzada.", error);
+      return [];
+    }
   };
 
   var options = {
@@ -84,6 +363,104 @@ import Fuse from "../lib/fuse/fuse.basic.esm.min.js";
   var searchLayer; // A layer to show the search results
   var features = [];
   var collapseOnBlur = true;
+  const MAX_ATTEMPTS = 40;
+  const RETRY_DELAY_MS = 250;
+
+  const getFeatureLayerById = (featureId) => {
+    let matchedLayer = null;
+
+    map.eachLayer((layer) => {
+      if (matchedLayer) {
+        return;
+      }
+
+      if (layer?.feature?.properties?.id === featureId) {
+        matchedLayer = layer;
+        return;
+      }
+
+      if (typeof layer?.eachLayer === "function") {
+        layer.eachLayer((childLayer) => {
+          if (matchedLayer) {
+            return;
+          }
+
+          if (childLayer?.feature?.properties?.id === featureId) {
+            matchedLayer = childLayer;
+          }
+        });
+      }
+    });
+
+    return matchedLayer;
+  };
+
+  const getFloorButtons = () =>
+    Array.from(document.querySelectorAll("#floorButtons-container .floorButton")).filter(
+      (button) => button.id !== "bLoc"
+    );
+
+  const getFloorButtonForValue = (floorValue) => {
+    const normalizedFloor = String(floorValue ?? "0").trim();
+    return (
+      getFloorButtons().find(
+        (button) => String((button.textContent || "").trim()) === normalizedFloor
+      ) || null
+    );
+  };
+
+  const waitForFloorButtons = (callback, attempt = 0) => {
+    const floorButtons = getFloorButtons();
+    if (floorButtons.length > 0) {
+      callback(floorButtons);
+      return;
+    }
+
+    if (attempt >= MAX_ATTEMPTS) {
+      console.warn("No se encontraron botones de piso para el buscador.");
+      return;
+    }
+
+    window.setTimeout(() => waitForFloorButtons(callback, attempt + 1), RETRY_DELAY_MS);
+  };
+
+  const openFeatureLayer = (featureId, zoom) => {
+    const layer = getFeatureLayerById(featureId);
+    if (!layer) {
+      return false;
+    }
+
+    if (typeof layer.getBounds === "function") {
+      map.fitBounds(layer.getBounds(), {
+        maxZoom: zoom ?? 20,
+        padding: [40, 40],
+      });
+    } else if (typeof layer.getLatLng === "function") {
+      map.setView(layer.getLatLng(), zoom ?? 20);
+    }
+
+    if (typeof layer.openPopup === "function") {
+      layer.openPopup();
+    }
+
+    return true;
+  };
+
+  const waitForFeatureLayer = (featureId, zoom, attempt = 0) => {
+    const opened = openFeatureLayer(featureId, zoom);
+    if (opened) {
+      return;
+    }
+
+    if (attempt >= MAX_ATTEMPTS) {
+      console.warn(`No se encontro el edificio ${featureId} desde el buscador.`);
+      return;
+    }
+
+    window.setTimeout(() => {
+      waitForFeatureLayer(featureId, zoom, attempt + 1);
+    }, RETRY_DELAY_MS);
+  };
 
   // fn literally refers to the jquery prototype.
   $.fn.GeoJsonAutocomplete = function (userDefinedOptions) {
@@ -224,15 +601,39 @@ import Fuse from "../lib/fuse/fuse.basic.esm.min.js";
       dataType: "json",
       success: async function (json) {
         const enrichedJson = await mergeGeoJsonWithSoteroSearch(json);
+        const query = String(lastSearch ?? "").trim().toLowerCase();
+        const rawFeatures = enrichedJson?.features || [];
 
-        if (enrichedJson.type === "Feature") {
-          resultCount = 1;
-          features[0] = enrichedJson;
-        } else {
-          const matchedFeatures = fuseSearch(enrichedJson, lastSearch, options.limit);
-          resultCount = matchedFeatures.length;
-          features = matchedFeatures;
-        }
+        const simpleMatches = query
+          ? rawFeatures.filter((feature) => {
+              const properties = feature?.properties || {};
+              const haystack = [
+                properties.title,
+                properties.searchText,
+                properties.id,
+                properties.description,
+                properties.popupContent,
+              ]
+                .filter(Boolean)
+                .join(" ")
+                .toLowerCase();
+
+              return haystack.includes(query);
+            })
+          : [];
+
+        const matchedFeatures = simpleMatches.length > 0
+          ? simpleMatches.slice(0, options.limit)
+          : fuseSearch(enrichedJson, lastSearch, options.limit);
+
+        const buildingLookup = new Map(
+          (enrichedJson?.features || []).map((feature) => [feature?.properties?.id, feature])
+        );
+        const equipmentFeatures = await fetchEquipmentMatches(lastSearch, buildingLookup, options.limit);
+
+        const combined = [...equipmentFeatures, ...matchedFeatures];
+        resultCount = combined.length;
+        features = combined;
         createDropDown();
       },
       error: function () {
@@ -329,73 +730,49 @@ import Fuse from "../lib/fuse/fuse.basic.esm.min.js";
   }
 
   function drawGeoJson(index) {
-    // Draws the selected feature on the map
+    if (index === -1) return;
 
-    let floorNumber = features[index].properties.floor; // Get floor number for the selected item
-    const selectedProps = features[index].properties || {};
+    const selectedProps = features[index]?.properties || {};
+    const featureId = selectedProps.buildingId || selectedProps.id;
 
-    if (window.preparePopupNavigation) {
-      window.preparePopupNavigation(
-        selectedProps.buildingId || selectedProps.id,
-        selectedProps.view || "summary",
-        selectedProps.roomId || ""
-      );
+    if (!featureId) {
+      console.warn("No se pudo resolver el edificio para el resultado del buscador.");
+      return;
     }
 
-setCurrentOpenFeatureId(selectedProps.buildingId || selectedProps.id);
-    let resetFloorNumber = campuses[options.place]["floors"].indexOf(
-      floorNumber.toString()
-    );
-    let button = "b" + resetFloorNumber.toString(); // Craft the floor button id
-    document.getElementById(button).click();
+    const requestedFloor = Number.isFinite(Number(selectedProps.floor))
+      ? Number(selectedProps.floor)
+      : 0;
+    const requestedView = selectedProps.view || "summary";
+    const requestedRoomId = selectedProps.roomId || "";
+    const requestedDeviceKey =
+      selectedProps.deviceSerial || selectedProps.deviceKey || selectedProps.serialNumber || "";
+
+    if (window.preparePopupNavigation) {
+      window.preparePopupNavigation(featureId, requestedView, requestedRoomId, requestedDeviceKey);
+    }
+
+    setCurrentOpenFeatureId(featureId);
+
+    waitForFloorButtons((floorButtons) => {
+      const fallbackFloorButton = getFloorButtonForValue(0) || floorButtons[0] || null;
+      const requestedFloorButton = getFloorButtonForValue(requestedFloor) || fallbackFloorButton;
+
+      if (!requestedFloorButton) {
+        console.warn("No se pudo resolver un piso para el resultado del buscador.");
+        return;
+      }
+
+      requestedFloorButton.click();
+
+      window.setTimeout(() => {
+        waitForFeatureLayer(featureId, 20);
+      }, RETRY_DELAY_MS);
+    });
 
     if (searchLayer !== undefined) {
       map.removeLayer(searchLayer);
       searchLayer = undefined;
-    }
-
-    if (index === -1) return;
-
-    var drawStyle = {
-      color: options.drawColor,
-      weight: 5,
-      opacity: 0.65,
-      fill: false,
-    };
-
-    var link = `${HOST_URL}/?id=${features[index].properties.id}&zoom=20`;
-    var copyButtonHtml = `<button class="floorButton copy-button" onclick='
-      navigator.clipboard.writeText("${link}")
-        .then(()=>{this.innerHTML="Copiado ✓"})
-        .catch(()=>{alert("No se pudo copiar el enlace: ${link}");});
-      '>Copiar enlace</button>`;
-
-    searchLayer = L.geoJson(features[index].geometry, {
-      style: drawStyle,
-      onEachFeature: function (feature, layer) {
-        layer
-          .bindPopup(features[index].properties.popupContent + copyButtonHtml, {
-            closeOnClick: null,
-          })
-          .addTo(map)
-          .togglePopup();
-      },
-    });
-    map.addLayer(searchLayer);
-
-    if (
-      features[index].geometry.type === "Point" &&
-      options.pointGeometryZoomLevel !== -1
-    ) {
-      map.setView(
-        [
-          features[index].geometry.coordinates[1],
-          features[index].geometry.coordinates[0],
-        ],
-        options.pointGeometryZoomLevel
-      );
-    } else {
-      map.fitBounds(L.geoJson(features[index].geometry).getBounds());
     }
   }
 
@@ -533,6 +910,10 @@ export const showSearch = (location, school) => {
     location
   );
 };
+
+
+
+
 
 
 

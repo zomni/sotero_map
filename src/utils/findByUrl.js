@@ -4,7 +4,7 @@
 
 import { goTo } from "../utils/goToCampus.js";
 import { map } from "../views/map.js";
-import { setCurrentOpenFeatureId } from "../views/featureDisplay.js";
+import { setCurrentOpenFeatureId } from "../views/featureDisplay.js?v=20260413q";
 
 const url = new URL(window.location.href);
 const MAX_ATTEMPTS = 48;
@@ -136,12 +136,13 @@ const loadFeatureFromUrl = () => {
   }
 
   const requestedFloor = getRequestedFloor();
-  const requestedView = url.searchParams.get("view") || "summary";
+  const requestedDeviceKey = url.searchParams.get("deviceKey") || "";
+  const requestedView = url.searchParams.get("view") || (requestedDeviceKey ? "devices" : "summary");
   const requestedRoomId = url.searchParams.get("roomId") || "";
   const requestedZoom = getRequestedZoom();
 
   if (typeof window.preparePopupNavigation === "function") {
-    window.preparePopupNavigation(featureId, requestedView, requestedRoomId);
+    window.preparePopupNavigation(featureId, requestedView, requestedRoomId, requestedDeviceKey);
   }
 
   setCurrentOpenFeatureId(featureId);
@@ -168,3 +169,7 @@ const loadFeatureFromUrl = () => {
 if (url.searchParams.get("id") != null) {
   loadFeatureFromUrl();
 }
+
+
+
+

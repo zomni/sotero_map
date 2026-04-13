@@ -11,7 +11,7 @@ import {
   style,
   onEachFeature,
   currentOpenFeatureId,
-} from "../views/featureDisplay.js"; // GeoJSON options + popup state
+} from "../views/featureDisplay.js?v=20260413q"; // GeoJSON options + popup state
 
 import { createMarkers } from "../components/markers.js"; // Create markers for the map
 
@@ -214,3 +214,7 @@ export const addDataToMap = (school, floorNumber, location) => {
 export const resetBuildingsCatalogCache = () => {
   buildingsCatalogCache = null;
 };
+
+
+
+

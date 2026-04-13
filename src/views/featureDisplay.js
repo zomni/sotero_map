@@ -22,6 +22,13 @@ export const setPopupRoomForFeature = (featureId, roomId) => {
   popupRoomState[featureId] = roomId || null;
 };
 
+export const setPopupDeviceForFeature = (featureId, deviceKey) => {
+  if (!featureId) return;
+  popupDeviceState[featureId] = deviceKey || null;
+};
+
+
+
 export const setCurrentOpenFeatureId = (featureId) => {
   currentOpenFeatureId = featureId || null;
 };
@@ -115,6 +122,10 @@ const clearHoveredLayer = () => {
 
 const popupViewState = {};
 const popupRoomState = {};
+const popupDeviceState = {};
+const popupDeviceQueryState = {};
+const popupDevicePageSizeState = {};
+const popupDeviceSearchOpenState = {};
 let loadedEquipmentRevision = null;
 let pendingEquipmentRevision = null;
 let latestEquipmentSyncState = null;
@@ -499,6 +510,99 @@ const escapeHtml = (value) => {
     .replaceAll("'", "&#039;");
 };
 
+const normalizeDeviceKey = (value) => String(value ?? "").trim().toLowerCase();
+
+const matchesDeviceKey = (device, targetKey) => {
+  const target = normalizeDeviceKey(targetKey);
+  if (!target) return false;
+
+  const candidates = [
+    device?.serialNumber,
+    device?.deviceId,
+    device?.name,
+    device?.inventoryCode,
+  ];
+
+  return candidates.some((value) => {
+    const normalized = normalizeDeviceKey(value);
+    if (!normalized) return false;
+    return normalized === target || normalized.includes(target) || target.includes(normalized);
+  });
+};
+
+const stripDiacritics = (value) =>
+  String(value ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+const normalizeSearchText = (value) => stripDiacritics(value).toLowerCase().trim();
+
+const deviceMatchesQuery = (device, query, roomsMap) => {
+  const normalizedQuery = normalizeSearchText(query);
+  if (!normalizedQuery) return true;
+
+  const tokens = normalizedQuery.split(/\s+/).filter(Boolean);
+  const room = roomsMap.get(device?.roomId);
+  const haystack = normalizeSearchText([
+    device?.serialNumber,
+    device?.description,
+    device?.name,
+    device?.deviceId,
+    device?.inventoryCode,
+    device?.ip,
+    device?.roomId,
+    room?.name,
+    room?.shortName,
+    room?.unit,
+    room?.service,
+  ]
+    .filter(Boolean)
+    .join(" "));
+
+  if (!haystack) return false;
+  return tokens.every((token) => haystack.includes(token));
+};
+
+const buildDeviceControlsHtml = (featureId, query, isOpen, pageSize) => {
+  const sizeOptions = [5, 10, 20, 50];
+  const resolvedSize = Math.max(5, Number(pageSize) || 5);
+  const buttonLabel = isOpen ? "Cerrar" : "Buscar";
+  const inputHtml = isOpen
+    ? `<input type="text" value="${escapeHtml(query || "")}" placeholder="Buscar equipo..."`
+        + ` oninput="window.setDeviceSearch && window.setDeviceSearch('${escapeHtml(featureId)}', this.value)"`
+        + ` style="flex:1; min-width:160px; padding:8px 10px; border:1px solid #cbd5f5; border-radius:10px; font-size:12px;" />`
+    : "";
+
+  let sizeButtons = "";
+  for (const size of sizeOptions) {
+    const isActive = resolvedSize === size;
+    sizeButtons += `
+      <button
+        class="floorButton"
+        style="${getChipButtonStyle(isActive, true)}"
+        onclick="window.setDevicePageSize && window.setDevicePageSize('${escapeHtml(featureId)}', ${size})"
+      >
+        ${size}
+      </button>`;
+  }
+
+  return `
+    <div style="margin-top:8px; display:flex; gap:6px; align-items:center; flex-wrap:wrap;">
+      <button
+        class="floorButton"
+        style="${getActionButtonStyle()}"
+        onclick="window.toggleDeviceSearch && window.toggleDeviceSearch('${escapeHtml(featureId)}')"
+      >
+        ${buttonLabel}
+      </button>
+      ${inputHtml}
+    </div>
+    <div style="margin-top:8px; display:flex; gap:6px; align-items:center; flex-wrap:wrap;">
+      <div style="font-size:12px; color:#475569;">Mostrar</div>
+      ${sizeButtons}
+    </div>
+  `;
+};
+
+
 const countDevicesByType = (devices) => {
   const counts = { pc: 0, printer: 0, scanner: 0, other: 0 };
 
@@ -646,6 +750,28 @@ const getActionButtonStyle = () => `
   box-sizing: border-box;
 `;
 
+const DASHBOARD_INVENTORY_URL = "http://localhost:5000/admin/inventory";
+
+const buildDashboardEquipmentLink = (identifier) => {
+  const value = String(identifier || "").trim();
+  if (!value) {
+    return "";
+  }
+
+  const url = `${DASHBOARD_INVENTORY_URL}?search=${encodeURIComponent(value)}`;
+  return `
+    <button
+      class="floorButton"
+      style="${getActionButtonStyle()}"
+      title="Ver en dashboard"
+      aria-label="Ver en dashboard"
+      onclick="window.open('${url}', 'sotero-dashboard'); return false;"
+    >
+      &#9776;
+    </button>
+  `;
+};
+
 const buildKeyValueRow = (label, value) => {
   return `<div style="margin-bottom:3px;"><b>${escapeHtml(label)}:</b> ${escapeHtml(value)}</div>`;
 };
@@ -697,37 +823,74 @@ const buildDevicesSummaryHtml = (devices, floorLabel) => {
   `;
 };
 
-const buildDevicesListHtml = (devices, rooms, floorLabel) => {
-  if (!devices.length) {
-    return `No hay equipos destacados para el piso ${escapeHtml(floorLabel)}.`;
+const buildDevicesListHtml = (devicesInFloor, roomsInFloor, allDevices, allRooms, floorLabel, highlightKey, query, pageSize) => {
+  const roomsMap = buildRoomsMap(allRooms);
+  const activeQuery = String(query || "").trim();
+  const sourceDevices = activeQuery ? allDevices : devicesInFloor;
+
+  if (!sourceDevices.length) {
+    return `No hay equipos cargados para el piso ${escapeHtml(floorLabel)}.`;
   }
 
-  const roomsMap = buildRoomsMap(rooms);
-  const firstDevices = devices.slice(0, 10);
+  const filteredDevices = activeQuery
+    ? sourceDevices.filter((device) => deviceMatchesQuery(device, activeQuery, roomsMap))
+    : sourceDevices;
 
-  let html = "";
+  if (activeQuery && filteredDevices.length === 0) {
+    return `No hay resultados para "${escapeHtml(activeQuery)}".`;
+  }
 
-  for (const device of firstDevices) {
+  const resolvedPageSize = Math.max(5, Number(pageSize) || 5);
+  let displayDevices = filteredDevices.slice(0, resolvedPageSize);
+  const highlightDevice = highlightKey
+    ? filteredDevices.find((device) => matchesDeviceKey(device, highlightKey))
+    : null;
+
+  if (highlightDevice && !displayDevices.includes(highlightDevice)) {
+    displayDevices = [highlightDevice, ...displayDevices.slice(0, Math.max(0, resolvedPageSize - 1))];
+  }
+
+  let html = `
+    <div style="margin-bottom:6px; font-size:12px; color:#475569;">
+      Mostrando ${Math.min(displayDevices.length, filteredDevices.length)} de ${filteredDevices.length}
+    </div>
+  `;
+
+  for (const device of displayDevices) {
     const room = roomsMap.get(device.roomId);
     const roomName = room?.name || room?.shortName || "Sin sala";
     const title = device.serialNumber || device.name || device.deviceId || "Sin S/N";
-    const description = device.description || device.name || "Sin descripción";
+    const description = device.description || device.name || "Sin descripcion";
+    const isHighlighted = highlightDevice === device;
+    const deviceFloor = getDeviceFloor(device, roomsMap);
+    const floorText = Number.isFinite(deviceFloor) ? `Piso ${deviceFloor}` : "";
+    const cardStyle = isHighlighted
+      ? "margin-bottom:8px; padding:8px 10px; border:2px solid #2f7ea8; border-radius:8px; background:#f0f7fb;"
+      : "margin-bottom:8px; padding:8px 10px; border:1px solid #ddd; border-radius:8px; background:#fafafa;";
 
     html += `
-      <div style="margin-bottom:8px; padding:8px 10px; border:1px solid #ddd; border-radius:8px; background:#fafafa;">
+      <div style="${cardStyle}">
+        ${
+          isHighlighted
+            ? `<div style="font-size:11px; font-weight:700; color:#1f2937; margin-bottom:4px;">Equipo buscado</div>`
+            : ""
+        }
         <div style="font-weight:600;">${escapeHtml(title)}</div>
         <div style="margin-top:2px; font-size:12px;">
           ${escapeHtml(description)}
         </div>
         <div style="margin-top:2px; font-size:12px;">
-          ${escapeHtml(device.type || "sin_tipo")} · ${escapeHtml(roomName)} · IP: ${escapeHtml(device.ip || "sin IP")} · ${escapeHtml(device.status || "sin estado")}
+          ${escapeHtml(device.type || "sin_tipo")} · ${escapeHtml(floorText)}${floorText ? " · " : ""}${escapeHtml(roomName)} · IP: ${escapeHtml(device.ip || "sin IP")} · ${escapeHtml(device.status || "sin estado")}
+        </div>
+        <div style="margin-top:6px;">
+          ${buildDashboardEquipmentLink(device.serialNumber || device.deviceId || device.name)}
         </div>
       </div>
     `;
   }
 
-  if (devices.length > 10) {
-    html += `... y ${devices.length - 10} equipo(s) más<br/>`;
+  if (filteredDevices.length > resolvedPageSize) {
+    html += `... y ${filteredDevices.length - resolvedPageSize} equipo(s) mas<br/>`;
   }
 
   return html;
@@ -826,11 +989,17 @@ const refreshCurrentPopup = async () => {
   currentOpenLayer.setPopupContent(popupHtml);
 };
 
-window.preparePopupNavigation = (featureId, viewKey, roomId = "") => {
+window.preparePopupNavigation = (featureId, viewKey, roomId = "", deviceKey = "") => {
   if (!featureId) return;
 
   popupViewState[featureId] = viewKey || "summary";
   popupRoomState[featureId] = roomId || null;
+  popupDeviceState[featureId] = deviceKey || null;
+
+  if (deviceKey) {
+    popupDeviceSearchOpenState[featureId] = true;
+    popupDeviceQueryState[featureId] = deviceKey;
+  }
 };
 
 window.setPopupView = (featureId, viewKey) => {
@@ -838,6 +1007,28 @@ window.setPopupView = (featureId, viewKey) => {
 
   popupViewState[featureId] = viewKey;
   popupRoomState[featureId] = null;
+  refreshCurrentPopup();
+};
+
+window.toggleDeviceSearch = (featureId) => {
+  if (!featureId) return;
+  popupDeviceSearchOpenState[featureId] = !popupDeviceSearchOpenState[featureId];
+  if (!popupDeviceSearchOpenState[featureId]) {
+    popupDeviceQueryState[featureId] = "";
+  }
+  refreshCurrentPopup();
+};
+
+window.setDeviceSearch = (featureId, value) => {
+  if (!featureId) return;
+  popupDeviceQueryState[featureId] = value || "";
+  refreshCurrentPopup();
+};
+
+window.setDevicePageSize = (featureId, size) => {
+  if (!featureId) return;
+  const resolved = Math.max(5, Number(size) || 5);
+  popupDevicePageSizeState[featureId] = resolved;
   refreshCurrentPopup();
 };
 
@@ -946,6 +1137,9 @@ const buildRoomDetailHtml = (featureId, room, roomDevices) => {
           <div style="font-size:12px; margin-top:2px;">
             ${escapeHtml(device.type || "sin_tipo")} · IP: ${escapeHtml(device.ip || "sin IP")} · ${escapeHtml(device.status || "sin estado")}
           </div>
+        <div style="margin-top:6px;">
+          ${buildDashboardEquipmentLink(device.serialNumber || device.deviceId || device.name)}
+        </div>
         </div>
       `;
     }
@@ -970,6 +1164,9 @@ const getFeaturePopupHtml = async (feature) => {
   const currentFloor = feature?.properties?.floor ?? 0;
   const floorLabel = currentFloor;
   const currentView = popupViewState[featureId] || "summary";
+  const deviceQuery = popupDeviceQueryState[featureId] || "";
+  const devicePageSize = popupDevicePageSizeState[featureId] || 5;
+  const deviceSearchOpen = popupDeviceSearchOpenState[featureId] || false;
   const selectedRoomId = popupRoomState[featureId] || null;
 
   const link = `${HOST_URL}/?id=${featureId}&zoom=20`;
@@ -1070,8 +1267,9 @@ const getFeaturePopupHtml = async (feature) => {
         <div style="font-weight:600; margin-bottom:6px;">Equipos por tipo</div>
         ${buildDevicesSummaryHtml(devicesInFloor, floorLabel)}
         <div style="margin-top:10px; font-weight:600;">Equipos destacados</div>
+        ${buildDeviceControlsHtml(featureId, deviceQuery, deviceSearchOpen, devicePageSize)}
         <div style="margin-top:4px;">
-          ${buildDevicesListHtml(devicesInFloor, roomsInFloor, floorLabel)}
+          ${buildDevicesListHtml(devicesInFloor, roomsInFloor, allDevices, allRooms, floorLabel, popupDeviceState[featureId], deviceQuery, devicePageSize)}
         </div>
       </div>
     `;
@@ -1187,12 +1385,15 @@ export const onEachFeature = (feature, layer) => {
       });
     }
   }
-};
+};
+
 if (document.readyState === "loading") {
   window.addEventListener("DOMContentLoaded", startEquipmentSyncMonitor, { once: true });
 } else {
   startEquipmentSyncMonitor();
 }
+
+
 
 
 

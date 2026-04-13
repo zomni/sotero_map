@@ -3,7 +3,7 @@
 /////////////////////////////////////////////////////////////////////////////////
 
 import { getCookie } from "../utils/locationCookie.js";
-import { goTo, setDefaultFloor } from "../utils/goToCampus.js";
+import { goTo, setDefaultFloor } from "../utils/goToCampus.js?v=20260413q";
 import campuses from "../data/campuses.js";
 
 var SelectDiv,
@@ -120,3 +120,6 @@ const rememberCampus = () => {
 };
 
 rememberCampus();
+
+
+

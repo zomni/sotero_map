@@ -1,4 +1,4 @@
-﻿/////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
 /////////////////// Create buttons to choose campus location ////////////////////
 /////////////////////////////////////////////////////////////////////////////////
 
@@ -11,12 +11,12 @@ import { setCookie } from "../utils/locationCookie.js";
 import {
   showSearch,
   removeSearchContainerElements,
-} from "../components/autocompleteSearchBox.js";
+} from "../components/autocompleteSearchBox.js?v=20260413q";
 
 import { addDataToMap, resetBuildingsCatalogCache } from "./addData.js";
 
 import campuses from "../data/campuses.js";
-import { resetSoteroSearchMetadataCaches } from "./soteroSearchMetadata.js";
+import { resetSoteroSearchMetadataCaches } from "./soteroSearchMetadata.js?v=20260413q";
 
 const selectFloor = (floorButtonId) => {
   var floorButtonsId = document.querySelectorAll("[id^='b']");
@@ -129,3 +129,7 @@ export const refreshCurrentMapData = () => {
   showSearch(location, campusInfo["school"]);
   addDataToMap(campusInfo["school"], currentFloor, location);
 };
+
+
+
+
