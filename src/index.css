@@ -1,4 +1,4 @@
-﻿/* Import leaflet's CSS */
+/* Import leaflet's CSS */
 @import url("lib/leaflet/leaflet.css");
 
 /* Import leaflet.draw css */
@@ -36,10 +36,17 @@
 }
 
 #top-actions {
+    position: relative;
     display: flex;
     flex-direction: column;
-    align-items: stretch;
+    align-items: flex-end;
     gap: 8px;
+}
+
+#custom-select,
+.dashboard-link,
+.route-planner-toggle {
+    align-self: flex-end;
 }
 
 .dashboard-link {
@@ -184,7 +191,13 @@
         gap: 6px;
     }
 
-    .dashboard-link {
+    #custom-select,
+.dashboard-link,
+.route-planner-toggle {
+    align-self: flex-end;
+}
+
+.dashboard-link {
         min-height: 36px;
         padding: 0 10px;
         font-size: 12px;
@@ -198,5 +211,143 @@
         right: 8px;
         flex-direction: column;
         align-items: flex-end;
+    }
+}
+
+.route-planner-toggle {
+    width: auto;
+    white-space: nowrap;
+}
+
+.route-planner-panel {
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;
+    z-index: 1205;
+    width: min(280px, calc(100vw - 32px));
+    padding: 12px;
+    border-radius: 14px;
+    border: 1px solid rgba(15, 23, 42, 0.12);
+    background: rgba(255, 255, 255, 0.97);
+    box-shadow: 0 14px 32px rgba(15, 23, 42, 0.18);
+    color: #1f2937;
+    font-family: sans-serif;
+}
+
+.route-planner-title {
+    margin-bottom: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #154860;
+}
+
+.route-planner-field {
+    display: grid;
+    gap: 6px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #475569;
+}
+
+.route-planner-select {
+    width: 100%;
+    min-height: 40px;
+    padding: 0 10px;
+    border: 1px solid rgba(45, 121, 160, 0.28);
+    border-radius: 10px;
+    background: #ffffff;
+    color: #0f172a;
+    font: 500 13px/1.2 sans-serif;
+}
+
+.route-planner-select:focus {
+    outline: 2px solid rgba(45, 121, 160, 0.2);
+    border-color: #2d79a0;
+}
+
+.route-planner-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 2px;
+}
+
+.route-primary-button,
+.route-secondary-button {
+    flex: 1;
+    min-height: 38px;
+    border-radius: 10px;
+    border: 1px solid rgba(45, 121, 160, 0.28);
+    font: 700 12px/1.1 sans-serif;
+    cursor: pointer;
+}
+
+.route-primary-button {
+    background: #154860;
+    color: #ffffff;
+}
+
+.route-primary-button:hover:not(:disabled) {
+    background: #10384c;
+}
+
+.route-primary-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+}
+
+.route-secondary-button {
+    background: #ffffff;
+    color: #154860;
+}
+
+.route-secondary-button:hover {
+    background: #f2f9fc;
+}
+
+.route-planner-status {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(148, 163, 184, 0.3);
+    color: #334155;
+    font-size: 12px;
+    line-height: 1.4;
+    min-height: 28px;
+}
+
+.route-planner-status[data-tone="success"] {
+    color: #0f766e;
+}
+
+.route-planner-status[data-tone="warning"] {
+    color: #b45309;
+}
+
+.route-planner-status[data-tone="error"] {
+    color: #b91c1c;
+}
+
+.route-arrow-icon-container {
+    background: transparent;
+    border: none;
+}
+
+.route-arrow-marker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    filter: drop-shadow(0 4px 10px rgba(15, 118, 110, 0.22));
+}
+
+.route-arrow-marker svg {
+    display: block;
+}
+
+@media (max-width: 700px) {
+    .route-planner-panel {
+        width: min(248px, calc(100vw - 20px));
+        padding: 10px;
     }
 }

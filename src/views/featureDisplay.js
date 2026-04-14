@@ -3,14 +3,16 @@
 /////////////////////////////////////////////////////////////////////////////////
 
 import { map, HOST_URL, BACKEND_API_URL } from "../views/map.js";
-import { mergeCatalogWithSoteroSearch, resetSoteroSearchMetadataCaches } from "../utils/soteroSearchMetadata.js";
-import { refreshCurrentMapData } from "../utils/goToCampus.js";
+import { mergeCatalogWithSoteroSearch, resetSoteroSearchMetadataCaches } from "../utils/soteroSearchMetadata.js?v=20260414b";
+import { refreshCurrentMapData } from "../utils/goToCampus.js?v=20260414b";
 import { resetBuildingsCatalogCache } from "../utils/addData.js";
 
 export let currentOpenFeatureId = null;
 let currentOpenLayer = null;
 let currentHoveredLayer = null;
 let currentSelectedLayer = null;
+let routeOriginFeatureId = null;
+let routeDestinationFeatureId = null;
 
 export const setPopupViewForFeature = (featureId, viewKey) => {
   if (!featureId || !viewKey) return;
@@ -83,12 +85,16 @@ const applyDefaultStyle = (layer) => {
     return;
   }
 
+  if (applyRouteHighlightedStyle(layer)) {
+    return;
+  }
+
   layer.setStyle(style(layer.feature));
 };
 
 const setSelectedLayer = (layer) => {
   if (currentSelectedLayer && currentSelectedLayer !== layer) {
-    currentSelectedLayer.setStyle(style(currentSelectedLayer.feature));
+    applyDefaultStyle(currentSelectedLayer);
   }
 
   currentSelectedLayer = layer || null;
@@ -111,13 +117,77 @@ const clearSelectedLayer = (layer = currentSelectedLayer) => {
     currentSelectedLayer = null;
   }
 
-  layer.setStyle(style(layer.feature));
+  applyDefaultStyle(layer);
 };
 
 const clearHoveredLayer = () => {
   if (!currentHoveredLayer) return;
   applyDefaultStyle(currentHoveredLayer);
   currentHoveredLayer = null;
+};
+
+const getFeatureIdFromLayer = (layer) => layer?.feature?.properties?.id || null;
+
+const getRouteHighlightRole = (featureId) => {
+  if (!featureId) return null;
+  if (routeOriginFeatureId === featureId) return "origin";
+  if (routeDestinationFeatureId === featureId) return "destination";
+  return null;
+};
+
+const applyRouteHighlightedStyle = (layer, role = getRouteHighlightRole(getFeatureIdFromLayer(layer))) => {
+  if (!layer?.feature || typeof layer?.setStyle !== "function" || !role) return false;
+
+  const baseStyle = style(layer.feature) || {};
+  const baseWeight = Number(baseStyle.weight);
+  const baseFillOpacity = Number(baseStyle.fillOpacity);
+  const borderColor = role === "origin" ? "#f97316" : "#2563eb";
+  const fillColor = role === "origin" ? "#fed7aa" : "#bfdbfe";
+
+  layer.setStyle({
+    ...baseStyle,
+    weight: Number.isFinite(baseWeight) ? Math.max(baseWeight, 6) : 6,
+    color: borderColor,
+    fillColor,
+    dashArray: "",
+    fillOpacity: Number.isFinite(baseFillOpacity) ? Math.max(baseFillOpacity, 0.8) : 0.8,
+  });
+
+  return true;
+};
+
+const forEachVisibleFeatureLayer = (callback) => {
+  map.eachLayer((mapLayer) => {
+    if (mapLayer?.feature?.properties?.id) {
+      callback(mapLayer);
+    }
+
+    if (typeof mapLayer?.eachLayer === "function") {
+      mapLayer.eachLayer((childLayer) => {
+        if (childLayer?.feature?.properties?.id) {
+          callback(childLayer);
+        }
+      });
+    }
+  });
+};
+
+const refreshRouteHighlightedLayers = () => {
+  forEachVisibleFeatureLayer((layer) => {
+    applyDefaultStyle(layer);
+  });
+};
+
+export const setRouteHighlight = (originFeatureId, destinationFeatureId) => {
+  routeOriginFeatureId = originFeatureId || null;
+  routeDestinationFeatureId = destinationFeatureId || null;
+  refreshRouteHighlightedLayers();
+};
+
+export const clearRouteHighlight = () => {
+  routeOriginFeatureId = null;
+  routeDestinationFeatureId = null;
+  refreshRouteHighlightedLayers();
 };
 
 const popupViewState = {};
@@ -230,6 +300,9 @@ const ensureBackendStatusPanel = () => {
     resetSoteroSearchMetadataCaches();
     resetBuildingsCatalogCache();
     refreshCurrentMapData();
+    if (typeof window.refreshRoutePlannerBuildings === "function") {
+      await window.refreshRoutePlannerBuildings();
+    }
     updateBackendStatusPanel(latestEquipmentSyncState);
     await refreshCurrentPopup();
   });
@@ -1388,6 +1461,11 @@ export const onEachFeature = (feature, layer) => {
 
       clearSelectedLayer(layer);
     });
+
+    const routeRole = getRouteHighlightRole(feature?.properties?.id);
+    if (routeRole) {
+      applyRouteHighlightedStyle(layer, routeRole);
+    }
 
     if (feature.geometry.type == "Polygon") {
       layer.on({

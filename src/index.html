@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="index.css" />
 
     <script src="lib/jquery/jquery-3.6.0.min.js"></script>
-    <script type="module" src="index.js?v=20260414a"></script>
+    <script type="module" src="index.js?v=20260414b"></script>
   </head>
 
   <body>
@@ -60,6 +60,29 @@
           <a id="dashboard-link" class="dashboard-link" href="http://localhost:5000/admin" target="_blank" rel="noreferrer">
             Ir al dashboard
           </a>
+          <button id="route-planner-toggle" class="dashboard-link route-planner-toggle" type="button" aria-expanded="false">
+            &iquest;A donde quieres?
+          </button>
+          <div id="route-planner-panel" class="route-planner-panel" hidden>
+            <div class="route-planner-title">Ruta entre edificios</div>
+            <label class="route-planner-field" for="route-origin-select">
+              <span>Estoy en</span>
+              <select id="route-origin-select" class="route-planner-select">
+                <option value="">Selecciona un edificio</option>
+              </select>
+            </label>
+            <label class="route-planner-field" for="route-destination-select">
+              <span>Quiero ir a</span>
+              <select id="route-destination-select" class="route-planner-select">
+                <option value="">Selecciona un edificio</option>
+              </select>
+            </label>
+            <div class="route-planner-actions">
+              <button id="route-planner-submit" class="route-primary-button" type="button">Ir</button>
+              <button id="route-planner-clear" class="route-secondary-button" type="button">Limpiar</button>
+            </div>
+            <div id="route-planner-status" class="route-planner-status">Selecciona origen y destino.</div>
+          </div>
         </div>
       </div>
       <div id="buttons-container">
@@ -70,8 +93,3 @@
     </div>
   </body>
 </html>
-
-
-
-
-

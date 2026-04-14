@@ -11,12 +11,12 @@ import { setCookie } from "../utils/locationCookie.js";
 import {
   showSearch,
   removeSearchContainerElements,
-} from "../components/autocompleteSearchBox.js?v=20260413q";
+} from "../components/autocompleteSearchBox.js?v=20260414b";
 
 import { addDataToMap, resetBuildingsCatalogCache } from "./addData.js";
 
 import campuses from "../data/campuses.js";
-import { resetSoteroSearchMetadataCaches } from "./soteroSearchMetadata.js?v=20260413q";
+import { resetSoteroSearchMetadataCaches } from "./soteroSearchMetadata.js?v=20260414b";
 
 const selectFloor = (floorButtonId) => {
   var floorButtonsId = document.querySelectorAll("[id^='b']");
@@ -61,15 +61,18 @@ document.getElementById("bLoc").onclick = function () {
 ////////////////// Export functions to go to a specific campus //////////////////
 /////////////////////////////////////////////////////////////////////////////////
 
-export const goTo = (campus) => {
+export const goTo = (campus, options = {}) => {
   if(!(campus in campuses)) {
     return;
   }
 
+  const preserveView = !!options.preserveView;
   var campus_info = campuses[campus];
   location = campus;
   removeSearchContainerElements();
-  map.setView(campus_info["center"], campus_info["zoom"]);
+  if (!preserveView) {
+    map.setView(campus_info["center"], campus_info["zoom"]);
+  }
   // select in js all elements with id b*
   var floorButtons = document.querySelectorAll("[id^='b']");
   

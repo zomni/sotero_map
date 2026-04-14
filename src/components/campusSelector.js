@@ -3,7 +3,7 @@
 /////////////////////////////////////////////////////////////////////////////////
 
 import { getCookie } from "../utils/locationCookie.js";
-import { goTo, setDefaultFloor } from "../utils/goToCampus.js?v=20260413q";
+import { goTo, setDefaultFloor } from "../utils/goToCampus.js?v=20260414b";
 import campuses from "../data/campuses.js";
 
 var SelectDiv,
