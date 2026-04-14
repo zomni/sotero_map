@@ -11,12 +11,12 @@ import { setCookie } from "../utils/locationCookie.js";
 import {
   showSearch,
   removeSearchContainerElements,
-} from "../components/autocompleteSearchBox.js?v=20260414b";
+} from "@app/autocompleteSearchBox";
 
 import { addDataToMap, resetBuildingsCatalogCache } from "./addData.js";
 
 import campuses from "../data/campuses.js";
-import { resetSoteroSearchMetadataCaches } from "./soteroSearchMetadata.js?v=20260414b";
+import { resetSoteroSearchMetadataCaches } from "@app/soteroSearchMetadata";
 
 const selectFloor = (floorButtonId) => {
   var floorButtonsId = document.querySelectorAll("[id^='b']");

@@ -2,9 +2,9 @@
 ////////////////// Url search by id redirection to map feature //////////////////
 /////////////////////////////////////////////////////////////////////////////////
 
-import { goTo } from "../utils/goToCampus.js?v=20260414b";
+import { goTo } from "@app/goToCampus";
 import { map } from "../views/map.js";
-import { setCurrentOpenFeatureId } from "../views/featureDisplay.js?v=20260414b";
+import { setCurrentOpenFeatureId } from "@app/featureDisplay";
 
 const url = new URL(window.location.href);
 const MAX_ATTEMPTS = 48;

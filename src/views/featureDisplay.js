@@ -3,9 +3,9 @@
 /////////////////////////////////////////////////////////////////////////////////
 
 import { map, HOST_URL, BACKEND_API_URL } from "../views/map.js";
-import { mergeCatalogWithSoteroSearch, resetSoteroSearchMetadataCaches } from "../utils/soteroSearchMetadata.js?v=20260414b";
-import { refreshCurrentMapData } from "../utils/goToCampus.js?v=20260414b";
-import { resetBuildingsCatalogCache } from "../utils/addData.js";
+import { mergeCatalogWithSoteroSearch, resetSoteroSearchMetadataCaches } from "@app/soteroSearchMetadata";
+import { refreshCurrentMapData } from "@app/goToCampus";
+import { resetBuildingsCatalogCache } from "@app/addData";
 
 export let currentOpenFeatureId = null;
 let currentOpenLayer = null;
@@ -845,7 +845,7 @@ const getActionButtonStyle = () => `
   box-sizing: border-box;
 `;
 
-const DASHBOARD_INVENTORY_URL = "http://localhost:5000/admin/inventory";
+const DASHBOARD_INVENTORY_URL = `${BACKEND_API_URL}/admin/inventory`;
 
 const buildDashboardEquipmentLink = (identifier) => {
   const value = String(identifier || "").trim();

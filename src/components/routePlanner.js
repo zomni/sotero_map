@@ -1,8 +1,8 @@
 import campuses from "../data/campuses.js";
 import { map } from "../views/map.js";
-import { goTo } from "../utils/goToCampus.js?v=20260414b";
-import { mergeCatalogWithSoteroSearch } from "../utils/soteroSearchMetadata.js?v=20260414b";
-import { clearRouteHighlight, closeCurrentPopup, setRouteHighlight } from "../views/featureDisplay.js?v=20260414b";
+import { goTo } from "@app/goToCampus";
+import { mergeCatalogWithSoteroSearch } from "@app/soteroSearchMetadata";
+import { clearRouteHighlight, closeCurrentPopup, setRouteHighlight } from "@app/featureDisplay";
 
 const DEFAULT_CAMPUS = Object.keys(campuses)[0] || "sotero";
 const MAX_ATTEMPTS = 48;

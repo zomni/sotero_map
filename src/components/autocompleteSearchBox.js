@@ -8,8 +8,8 @@
 
 import { map, HOST_URL, BACKEND_API_URL } from "../views/map.js";
 import campuses from "../data/campuses.js";
-import { setCurrentOpenFeatureId } from "../views/featureDisplay.js?v=20260414b";
-import { mergeGeoJsonWithSoteroSearch } from "../utils/soteroSearchMetadata.js?v=20260414b";
+import { setCurrentOpenFeatureId } from "@app/featureDisplay";
+import { mergeGeoJsonWithSoteroSearch } from "@app/soteroSearchMetadata";
 
 // import "../lib/jquery/jquery-3.6.0.min.js"; // Not working with webpack
 

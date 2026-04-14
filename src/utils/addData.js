@@ -11,7 +11,7 @@ import {
   style,
   onEachFeature,
   currentOpenFeatureId,
-} from "../views/featureDisplay.js?v=20260414b"; // GeoJSON options + popup state
+} from "@app/featureDisplay"; // GeoJSON options + popup state
 
 import { createMarkers } from "../components/markers.js"; // Create markers for the map
 
@@ -21,7 +21,7 @@ import { createSvgElement } from "../utils/tools.js"; // Create SVG empty elemen
 import {
   mergeCatalogWithSoteroSearch,
   mergeGeoJsonWithSoteroSearch,
-} from "../utils/soteroSearchMetadata.js?v=20260414b";
+} from "@app/soteroSearchMetadata";
 
 // Create a layer group
 var layerGroup = L.layerGroup().addTo(map);

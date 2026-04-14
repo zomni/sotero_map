@@ -19,7 +19,24 @@
     <link rel="stylesheet" href="index.css" />
 
     <script src="lib/jquery/jquery-3.6.0.min.js"></script>
-    <script type="module" src="index.js?v=20260414b"></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "@app/index": "./index.js?v=20260414e",
+          "@app/campusSelector": "./components/campusSelector.js?v=20260414e",
+          "@app/findByUrl": "./utils/findByUrl.js?v=20260414e",
+          "@app/routePlanner": "./components/routePlanner.js?v=20260414e",
+          "@app/featureDisplay": "./views/featureDisplay.js?v=20260414e",
+          "@app/goToCampus": "./utils/goToCampus.js?v=20260414e",
+          "@app/soteroSearchMetadata": "./utils/soteroSearchMetadata.js?v=20260414e",
+          "@app/addData": "./utils/addData.js?v=20260414e",
+          "@app/autocompleteSearchBox": "./components/autocompleteSearchBox.js?v=20260414e"
+        }
+      }
+    </script>
+    <script type="module">
+      import "@app/index";
+    </script>
   </head>
 
   <body>
@@ -57,7 +74,7 @@
               <option value="">Campus</option>
             </select>
           </div>
-          <a id="dashboard-link" class="dashboard-link" href="http://localhost:5000/admin" target="_blank" rel="noreferrer">
+          <a id="dashboard-link" class="dashboard-link" href="http://10.8.93.101:5000/admin" target="_blank" rel="noreferrer">
             Ir al dashboard
           </a>
           <button id="route-planner-toggle" class="dashboard-link route-planner-toggle" type="button" aria-expanded="false">

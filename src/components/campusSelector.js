@@ -3,7 +3,7 @@
 /////////////////////////////////////////////////////////////////////////////////
 
 import { getCookie } from "../utils/locationCookie.js";
-import { goTo, setDefaultFloor } from "../utils/goToCampus.js?v=20260414b";
+import { goTo, setDefaultFloor } from "@app/goToCampus";
 import campuses from "../data/campuses.js";
 
 var SelectDiv,
@@ -115,7 +115,9 @@ function closeAllSelect(elmnt) {
 document.addEventListener("click", closeAllSelect);
 
 const rememberCampus = () => {
-  var campus = getCookie("location");
+  const rememberedCampus = getCookie("location");
+  const defaultCampus = Object.keys(campuses)[0] || "";
+  const campus = rememberedCampus && rememberedCampus in campuses ? rememberedCampus : defaultCampus;
   activateCampus(campus, true);
 };
 
