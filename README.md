@@ -1,201 +1,233 @@
-# CampusMap
+﻿# SoteroMap Frontend
 
-- [CampusMap](#campusmap)
-  - [Description](#description)
-  - [Production use](#production-use)
-  - [Install and run locally](#install-and-run-locally)
-  - [Use this project](#use-this-project)
-  - [Add or edit a building](#add-or-edit-a-building)
-  - [License](#license)
-  - [Contributing](#contributing)
-  - [Detailed description](#detailed-description)
-    - [_So how does it work ?_](#so-how-does-it-work-)
-    - [_What type of data is used ?_](#what-type-of-data-is-used-)
-    - [Data structure](#data-structure)
-    - [Repository](#repository)
+Frontend del mapa interactivo del Complejo Asistencial Sotero del Rio.
 
-## Description
+Este proyecto nace a partir del CampusMap original de CentraleSupelec, pero fue adaptado para el contexto de SoteroMap: edificios hospitalarios, salas, navegacion por pisos, integracion con un backend administrativo y visualizacion de equipos reales sincronizados desde la base de datos.
 
-This project developed by a CentraleSupélec's student aims at creating a map for CentraleSupélec's 3 campuses.
+## Resumen
 
-It is a simple static Web Page integrating OpenStreetMap's API and CentraleSupélec's building details into a full screen map, optimized for mobile phones too.
+El frontend se encarga de la experiencia visual del mapa y de la estructura fisica del campus:
 
-_[CentraleSupelec map](http://maps.centralesupelec.fr) example_
-![Home page](docs/assets/visu_website.png)
+- campus y selector de campus
+- edificios y su geometria
+- pisos y salas
+- buscador principal del mapa
+- popups y navegacion visual
+- integracion con el dashboard del backend
 
-## Production use
+El backend complementa esa experiencia con:
 
-In a production environnement, it is crucial to have HTTPS encryption or else the copy button in a feature's popup won't work. (read more about this here <https://stackoverflow.com/questions/51805395/navigator-clipboard-is-undefined>)
+- inventario de equipos
+- autenticacion y roles
+- dashboard administrativo
+- historial de cambios
+- importacion y exportacion de la base de datos
+- sincronizacion del inventario hacia el mapa
 
-## Install and run locally
+En la practica, el frontend mantiene la estructura del mapa y el backend mantiene el inventario.
 
-The Web App runs in a docker container using the _nginxinc/nginx-unprivileged:alpine_ image (for security issues it is best not to run a docker as root and alpine is a very lightweight linux disto perfect for production). The containered form is needed, even if the app is static, because it makes GET calls to the is denied by CORS policy if it's served locally (Cross-Origin Resource Sharing is a standard mechanism that allows JavaScript XMLHttpRequest (XHR) calls executed in a web page to interact with resources from non-origin domains)
+## Que hace este frontend
 
-If you are only interesed in running the app locally without changing the source code, _to see how it feels_, run the following commands:
+- Muestra el mapa del campus sobre Leaflet + OpenStreetMap.
+- Carga edificios, pisos, salas y geometria desde archivos locales del frontend.
+- Consulta el backend para obtener equipos, historial y estado de sincronizacion.
+- Permite buscar edificios, salas y equipos desde un buscador tolerante.
+- Abre popups con vistas de resumen, equipos e historial.
+- Permite navegar por deep links hacia edificio, piso, sala o equipo.
+- Incluye un panel de estado del backend dentro del mapa.
+- Incluye accesos directos al dashboard administrativo.
+- Permite navegar desde el dashboard al mapa y desde el mapa al dashboard.
 
-- `npm run prod`
-- `npm run stop-prod`, _to stop it_
+## Arquitectura actual
 
-If you want to run the app locally and make changes to the code, run `npm run dev` to start the web-server and `npm run stop-dev` to stop it
+La separacion actual del proyecto es la siguiente:
 
-## Use this project
+- Frontend: campus, edificios, pisos, salas, geometria del mapa y experiencia de navegacion.
+- Backend: inventario de equipos, autenticacion, historial, dashboard admin, importacion/exportacion de BDD y sincronizacion.
 
-This project can natively display the maps of CentraleSupélec's 3 campuses, furthermore it can be adapted and used to create a map for any campus or other structures, more details on the potential of Leaflet library [here](https://leafletjs.com/).
+Eso permite seguir editando el mapa desde este repositorio, mientras el inventario real se administra desde el backend.
 
-To add elements to the map, follow the tutorial video `tutorial.webm` (open it with a web browser).
+## Requisitos
 
-To add your campuses :
+- Node.js
+- Docker Desktop
+- Backend SoteroMap levantado en local si quieres ver inventario real
 
-1. please refer to & edit `src/data/campuses.js` for all needed informations ;
-2. you will need svg files of your floors, as in `src/assets/svg`, with the same naming convention ;
-3. please refer to & edit `src/views/buildingsInfo.js` to add last informations needed.
-4. don't forget to build !
+## Inicio rapido
 
-## Add or edit a building
+Instalar dependencias del frontend:
 
-1. Create or edit svg plans of each floors in `src/assets/svg` (respect naming convention) - see `resources/floorPlans/README.md`
-2. Remove data in `src/data` with `draw/draw.py` - see `draw/README.md`
-3. Position them on the map by changing the coordinates of the points in the file `src/views/buildingsInfo.js`
-4. If there are additional floors or floor number changes, adapt the file `src/utils/goToCampus.js`
-5. Draw new rooms on plans with URI `<url>?draw=true`
-6. Add them to `src/data` with the `draw/draw.py` application - consult `draw/README.md`.
-
-Two tutorials have been prepared:
-
-- tutorial.webm : to draw with `draw/draw.py` and `HOST_URL/?draw=true`
-- tutorial2.webm : to remove rooms with `draw/draw.py`
-
-Note that there are two ways of modifying an element:
-
-- Either delete it and redesign it.
-- Either modify the database files directly by hand: **4 FILES NEED TO BE MODIFIED : json `src/data/cs_<campus>_<floor>.json`, josn `src/data/cs_<campus>_search.json`, json `src/data/cs_searchByURL.json` and csv ``src/data/cs_features_data.csv`**.
-
-## License
-
-This project is provided with _MIT license_ and uses 3 open-source JS libraries and 1 Leaflet plugin having the following licenses:
-
-- Leaflet _BSD 2-Clause license_
-- jQuery _MIT license_
-- FuseJS _Apache 2.0 license_
-- Leaflet.GeoJSONAutocomplete _MIT license_
-
-> _For more details refer to [LICENSE.dependencies.md](LICENSE.dependencies.md) file_
-
-## Contributing
-
-Some features that are yet to be implemented :
-
-- Implement scrooling in the search box
-- Improve FuseJS algorithm
-- Fix the floor color bug on Eiffel & Bouygues making floors gray instead of yellow
-- Adapt icons sizes & room names with zoom level (check [this](https://stackoverflow.com/questions/46015066/leaflet-custom-icon-resize-on-zoom-performance-icon-vs-divicon)
-
-## Detailed description
-
-### _So how does it work ?_
-
-This static website is build using HTML, CSS and Vanilla JavaScript with 3 JS libraries:
-
-- [Leaflet](https://leafletjs.com/), a JS library enabling you to call map APIs like [OSM](https://www.openstreetmap.org/), [Mapbox](https://www.mapbox.com/), [Google Maps](https://mapsplatform.google.com/), ... and customize them
-- [JQuery](https://jquery.com/) a JS library designed to simplify HTML DOM tree traversal and manipulation, as well as event handling, CSS animation, and Ajax.
-- [Fuse](https://fusejs.io/) a JS library to implement fusy search
-
-_Remark_ : (Another alternative to Leaflet is [OpenLayers](https://openlayers.org/) which more complex and richer but for our current use, Leaflet is simple, easy and get's the job done, more info on the comparaison between these 2 [here](https://gis.stackexchange.com/questions/33918/choosing-openlayers-or-leaflet)).
-
-The map provider chosen is the only open-source option : OpenStreetMap, more precisely the [french version](https://www.openstreetmap.fr/).
-
-### _What type of data is used ?_
-
-When working on a GIS (_Geographic Information System_), several types of data can be used, such as CSVs, GeoJSONs ... We will be utilizing the GeoJSON format (more details [_here_](https://geojson.org)). It consists of a JSON file following the structure below :
-
-```JSON
-{
-    "type": "FeatureCollection",
-    "features": [
-        {
-            "type": "Feature",
-            "geometry": {
-                "type": "",
-                "coordinates": [],
-            },
-            "properties": {}
-        }
-    ]
-}
+```bash
+npm install
 ```
 
-Each map feature is an element of the "features" array, having a specific geometry (type : Point, Polygon, ... ; coordinates : defined according to the previous type, see [this RFC](https://datatracker.ietf.org/doc/html/rfc7946) for more details) and a set of properties defined by the developper to customize the map feature when displayed with _Leaflet_.
+Levantar el frontend en desarrollo:
 
-### Data structure
-
-Data has been chosen as follows:
-
-- one JSON to search all the elements by URL request
-- one JSON per area to search all elements in that location with the search bar (ps, metz, rennes)
-- one JSON per floor per area that loads the elements of the floor corresponding to that location => have a light http request and not load all floors at once for a specific location or everything at once which cause browser lagging
-
-These are all stored in simple basic json files for performance and simplicity (no database allowed at the start of the project). If we could get a database (MongoDB preferably) we could store the data in a more structured way and make it easier to add/remove new data ...
-
-### Repository
-
-The repo is organized as following :
-
-```TXT
-campusmap
-├── draw/                 -> Draw App directory, see draw/README.md for more details
-├── node_modules/         -> node modules for webpack, ignored by git
-├── resources/            -> Resources folder for the whole project
-│   ├── data/               -> see resources/data/README.md for more details
-│   ├── floorPlans/         -> Floor plans for the 3 campuses, see resources/floorPlans/README.md for more details
-│   └── icons/              -> Icons for the map features
-├── src/                    -> Source code project
-│   ├── assets/             -> Assets folder
-|   |   ├── icons/                   -> A copy of ../../ressources/icons
-│   |   └── svg/                     -> A modified version of ../../ressources/floorPlans
-|   ├──components/          -> Map components
-|   |   ├── autocompleteSearchBox.js -> Autocomplete search box
-|   |   ├── campusSelector.js        -> Campus selector
-|   |   └── markers.js               -> Features markers
-│   ├── data/*              -> Data generated by /draw/draw.py
-|   ├── lib/                -> Libraries used in the web app
-|   |   ├── fuse/                    -> FuseJS library
-|   |   ├── jquery/                  -> JQuery library
-|   |   └── leaflet/                 -> Leaflet library
-|   ├── styles/             -> Stylesheets used in web app
-|   |   ├── image/                   -> Images for the search box
-|   |   ├── campusSelection.css      -> Stylesheet for the component y
-|   |   ├── floorButtons.css         -> //
-|   |   ├── footer.css               -> //
-|   |   ├── map.css                  -> //
-|   |   └── searchBox.css            -> //
-│   ├── utils/              -> Utils functions
-|   |   ├── addaData.js              -> Add data to the map
-|   |   ├── downloadDrawData.js      -> Define how drawn data is downloaded
-|   |   ├── findByUrl.js             -> Find a feature by its URL
-|   |   ├── goToCampus.js            -> Go to a campus
-|   |   ├── locationCookie.js        -> Location cookie
-│   |   └── tools.js                 -> Tools
-│   ├── views/              -> Views elemnents
-|   |   ├── buildingPosition.js      -> Define building position
-|   |   ├── draw.js                  -> Define Leaflet Draw component
-|   |   ├── featureDisplay.js        -> Display the features on the map
-│   |   └── map.js                   -> Display the map
-|   ├── index.css           -> Main stylesheet
-|   ├── index.html          -> Main HTML file
-|   └── index.js            -> Main JS file
-├── .gitignore               -> gitignore file
-├── create_dist.sh           -> Script to create the distribution folder
-├── docker-compose.dev.yaml  -> Docker-compose config for development server
-├── docker-compose.prod.yaml -> Docker-compose config for production server
-├── Dockerfile               -> Dockerfile for the K8s image
-├── LICENSE.md               -> Licenses for the project
-├── LICENSE.dependencies.md  -> Licenses for the project
-├── package-lock.json        -> Package lock file
-├── package.json             -> NPM packages
-├── README.md                -> Project information
-└── webpack.config.js        -> Webpack config
+```bash
+npm run dev
 ```
 
-## Documentation
+Detener el frontend:
 
-To edit the documentation website, you can serve a local mkdocs instance : `docker run --rm -it -p 8000:8000 -v ${PWD}:/docs squidfunk/mkdocs-material`
+```bash
+npm run stop-dev
+```
+
+Frontend disponible en:
+
+```text
+http://localhost:8080
+```
+
+## Uso junto al backend
+
+Para la experiencia completa, el backend debe estar corriendo en:
+
+```text
+http://localhost:5000
+```
+
+En el repositorio del backend, el flujo actual de desarrollo es:
+
+```bash
+docker compose up -d --build
+```
+
+Con el backend activo, el mapa puede:
+
+- mostrar equipos reales por edificio
+- reflejar asignaciones hechas desde el dashboard
+- mostrar version de la API y ultima modificacion de la BDD
+- detectar cambios pendientes y permitir refrescar el mapa
+- abrir el dashboard desde el mapa
+- recibir navegacion directa desde inventario y ubicaciones del dashboard
+
+## Comandos utiles
+
+Desarrollo local del frontend:
+
+```bash
+npm run dev
+npm run stop-dev
+```
+
+Servidor tipo produccion local:
+
+```bash
+npm run prod
+npm run stop-prod
+```
+
+## URLs utiles
+
+- Frontend: `http://localhost:8080`
+- Backend admin: `http://localhost:5000/admin`
+- Backend login: `http://localhost:5000/Auth/Login`
+- Swagger backend: `http://localhost:5000/swagger`
+
+## Flujo recomendado de trabajo
+
+### Cambios visuales o estructurales del mapa
+
+1. Editar archivos de datos o vistas del frontend.
+2. Levantar el frontend con `npm run dev`.
+3. Verificar el resultado en `http://localhost:8080`.
+
+### Cambios de inventario
+
+1. Levantar el backend.
+2. Importar o restaurar la base de datos desde el dashboard.
+3. Asignar equipos a edificios, pisos o salas desde el admin.
+4. Refrescar el mapa cuando el panel indique cambios pendientes.
+
+### Cambio de equipo o migracion a otro PC
+
+1. Clonar el frontend y el backend.
+2. Levantar el frontend con `npm run dev`.
+3. Levantar el backend con `docker compose up -d --build`.
+4. Importar la base de datos desde el dashboard del backend.
+5. Verificar el mapa en `http://localhost:8080`.
+
+Nota importante:
+
+- Este repositorio no necesita guardar la BDD del backend.
+- La BDD se mueve mediante exportacion e importacion desde el dashboard.
+
+## Busqueda y navegacion
+
+El mapa soporta:
+
+- busqueda tolerante por edificios, salas y equipos
+- coincidencias por fragmentos, mayusculas/minusculas y texto parcial
+- deep links por URL
+- apertura automatica del popup correcto al llegar desde enlaces internos
+- navegacion entre mapa y dashboard sin perder contexto
+
+Ejemplo de deep link:
+
+```text
+http://localhost:8080/?id=SR-BLD-001&zoom=20&floor=1
+```
+
+## Panel de estado del backend
+
+La esquina superior izquierda del mapa muestra:
+
+- si la API esta activa
+- version actual del backend
+- ultima modificacion relevante de la BDD
+- estado de sincronizacion
+- aviso de cambios pendientes
+- boton para actualizar el mapa cuando corresponde
+
+## Estructura importante del proyecto
+
+Configuracion general:
+
+- `src/data/campuses.js`: campus disponibles, centro del mapa y zoom.
+- `src/index.html`: estructura principal del mapa y panel superior.
+- `src/index.js`: punto de entrada del frontend.
+- `src/index.css`: layout global.
+
+Datos del campus Sotero:
+
+- `src/data/cs_sotero_0.json`: geometria principal del mapa.
+- `src/data/cs_sotero_search.json`: indice de busqueda de edificios, salas y elementos relacionados.
+- `src/data/cs_searchByURL.json`: soporte para deep links.
+- `src/data/sotero_buildings_catalog.json`: catalogo auxiliar de edificios y metadatos.
+- `src/data/cs_features_data.csv`: datos auxiliares del mapa.
+
+Logica principal:
+
+- `src/components/autocompleteSearchBox.js`: buscador avanzado del mapa.
+- `src/components/campusSelector.js`: selector de campus.
+- `src/views/map.js`: inicializacion de Leaflet e integracion base con el backend.
+- `src/views/featureDisplay.js`: popups, panel de estado, equipos, historial y sincronizacion.
+- `src/utils/findByUrl.js`: navegacion por URL hacia edificios, pisos, salas y equipos.
+
+## Cambios principales respecto al proyecto original
+
+Sobre la base original de CampusMap, este proyecto incorpora:
+
+- adaptacion completa al Complejo Asistencial Sotero del Rio
+- edificios hospitalarios y datos propios del campus
+- integracion con backend ASP.NET Core
+- inventario de equipos sincronizado desde base de datos
+- dashboard administrativo enlazado al mapa
+- historial de cambios visible en popups
+- panel de estado del backend dentro del frontend
+- buscador mas tolerante para uso real con inventario
+- navegacion cruzada entre mapa, ubicaciones e inventario
+
+## Licencias y creditos
+
+El proyecto original se apoyaba en bibliotecas open source como Leaflet, jQuery, FuseJS y otras dependencias del ecosistema web.
+
+Archivos relacionados:
+
+- `LICENSE.md`
+- `LICENSE.dependencies.md`
+
+## Nota final
+
+Si solo levantas el frontend, el mapa seguira funcionando con sus datos locales de edificios y salas. Las funciones que dependen del backend quedaran sin inventario real o mostraran estado sin conexion hasta que la API este disponible.
