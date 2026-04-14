@@ -146,6 +146,28 @@ const formatSyncTimestamp = (value) => {
   });
 };
 
+const formatBackendVersion = (value) => {
+  if (!value) return "Sin datos";
+
+  const raw = String(value).trim();
+  if (!raw) return "Sin datos";
+
+  const parts = raw.split("+");
+  if (parts.length < 2) {
+    return raw.length > 18 ? `${raw.slice(0, 15)}...` : raw;
+  }
+
+  const [version, hash] = parts;
+  const cleanHash = (hash || "").trim();
+  if (!cleanHash) {
+    return version.trim() || raw;
+  }
+
+  const shortHash = cleanHash.length > 8 ? cleanHash.slice(0, 8) : cleanHash;
+  const compact = `${version.trim()}+${shortHash}`;
+  return compact.length > 18 ? `${compact.slice(0, 15)}...` : compact;
+};
+
 const getBackendStatusPanelMarkup = () => `
   <div class="backend-status-header">
     <div class="backend-status-title-row">
@@ -236,7 +258,7 @@ const updateBackendStatusPanel = (syncState) => {
   }
 
   panel.statusText.textContent = hasPendingChanges ? "API activa con cambios pendientes" : "API activa";
-  panel.version.textContent = syncState.backendVersion || "Sin datos";
+  panel.version.textContent = formatBackendVersion(syncState.backendVersion);
   panel.lastChange.textContent = formatSyncTimestamp(syncState.latestChangeUtc);
   panel.message.textContent = hasPendingChanges
     ? `Hay cambios pendientes. ${syncState.assignedItems ?? 0} equipo(s) asignados esperan refresco. Usa Actualizar mapa.`
