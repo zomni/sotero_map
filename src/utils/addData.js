@@ -155,17 +155,72 @@ const addSVG = (floorNumber, building, location, expectedRenderSequence) => {
   });
 };
 
+const buildFloorGeoJsonUrl = (school, location, floorNumber) => {
+  return `data/${school}_${location}_${floorNumber.toString()}.json?v=${Date.now()}`;
+};
+
+const loadFloorGeoJson = async (school, location, floorNumber) => {
+  const response = await fetch(buildFloorGeoJsonUrl(school, location, floorNumber), {
+    cache: "no-store",
+  });
+
+  if (!response.ok) {
+    throw new Error(`No se pudo cargar el piso ${floorNumber}`);
+  }
+
+  return response.json();
+};
+
+const cloneFeatureForFloor = (feature, floorNumber) => {
+  return {
+    ...feature,
+    properties: {
+      ...(feature?.properties || {}),
+      floor: Number(floorNumber),
+      footprintFloor: feature?.properties?.floor ?? 0,
+    },
+  };
+};
+
+const addBaseFootprintsForMissingBuildings = async (
+  school,
+  location,
+  floorNumber,
+  filteredJson,
+  allowedBuildingIds
+) => {
+  if (Number(floorNumber) === 0) {
+    return filteredJson;
+  }
+
+  const currentFeatures = Array.isArray(filteredJson.features) ? filteredJson.features : [];
+  const currentIds = new Set(currentFeatures.map((feature) => feature?.properties?.id).filter(Boolean));
+  const missingIds = new Set([...allowedBuildingIds].filter((id) => !currentIds.has(id)));
+
+  if (missingIds.size === 0) {
+    return filteredJson;
+  }
+
+  try {
+    const baseJson = await loadFloorGeoJson(school, location, 0);
+    const enrichedBaseJson = await mergeGeoJsonWithSoteroSearch(baseJson);
+    const fallbackFeatures = (enrichedBaseJson.features || [])
+      .filter((feature) => missingIds.has(feature?.properties?.id))
+      .map((feature) => cloneFeatureForFloor(feature, floorNumber));
+
+    return {
+      ...filteredJson,
+      features: [...currentFeatures, ...fallbackFeatures],
+    };
+  } catch (error) {
+    console.error("Error cargando huellas base de edificios:", error);
+    return filteredJson;
+  }
+};
+
 const addFeatures = (school, floorNumber, location, expectedRenderSequence) => {
   $.ajax({
-    url:
-      "data/" +
-      school +
-      "_" +
-      location +
-      "_" +
-      floorNumber.toString() +
-      ".json?v=" +
-      Date.now(),
+    url: buildFloorGeoJsonUrl(school, location, floorNumber),
     type: "GET",
     data: {},
     dataType: "json",
@@ -190,7 +245,19 @@ const addFeatures = (school, floorNumber, location, expectedRenderSequence) => {
         }),
       };
 
-      featuresLayerGroup(filteredJson, expectedRenderSequence);
+      const renderJson = await addBaseFootprintsForMissingBuildings(
+        school,
+        location,
+        floorNumber,
+        filteredJson,
+        allowedBuildingIds
+      );
+
+      if (expectedRenderSequence !== renderSequence) {
+        return;
+      }
+
+      featuresLayerGroup(renderJson, expectedRenderSequence);
     },
     error: function () {
       console.log("ERROR Failed to load JSON");

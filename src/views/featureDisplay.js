@@ -14,6 +14,23 @@ let currentSelectedLayer = null;
 let routeOriginFeatureId = null;
 let routeDestinationFeatureId = null;
 
+window.openSoteroDashboard = (event, url) => {
+  event?.preventDefault?.();
+  event?.stopPropagation?.();
+
+  if (!url) return false;
+
+  const dashboardWindow = window.open("", "sotero-dashboard");
+  if (dashboardWindow) {
+    dashboardWindow.location.href = url;
+    dashboardWindow.focus?.();
+  } else {
+    window.location.href = url;
+  }
+
+  return false;
+};
+
 export const setPopupViewForFeature = (featureId, viewKey) => {
   if (!featureId || !viewKey) return;
   popupViewState[featureId] = viewKey;
@@ -846,6 +863,7 @@ const getActionButtonStyle = () => `
 `;
 
 const DASHBOARD_INVENTORY_URL = `${BACKEND_API_URL}/admin/inventory`;
+const DASHBOARD_BUILDING_EDIT_URL = `${BACKEND_API_URL}/admin/editsyncedbuilding`;
 
 const buildDashboardEquipmentLink = (identifier) => {
   const value = String(identifier || "").trim();
@@ -855,15 +873,41 @@ const buildDashboardEquipmentLink = (identifier) => {
 
   const url = `${DASHBOARD_INVENTORY_URL}?search=${encodeURIComponent(value)}`;
   return `
-    <button
+    <a
+      href="${url}"
+      target="sotero-dashboard"
+      rel="noreferrer"
       class="floorButton"
       style="${getActionButtonStyle()}"
       title="Ver en dashboard"
       aria-label="Ver en dashboard"
-      onclick="window.open('${url}', 'sotero-dashboard'); return false;"
+      onclick="return window.openSoteroDashboard(event, this.href)"
     >
       &#9776;
-    </button>
+    </a>
+  `;
+};
+
+const buildDashboardBuildingEditLink = (buildingId) => {
+  const value = String(buildingId || "").trim();
+  if (!value) {
+    return "";
+  }
+
+  const url = `${DASHBOARD_BUILDING_EDIT_URL}/${encodeURIComponent(value)}`;
+  return `
+    <a
+      href="${url}"
+      target="sotero-dashboard"
+      rel="noreferrer"
+      class="floorButton"
+      style="${getActionButtonStyle()}"
+      title="Editar edificio en dashboard"
+      aria-label="Editar edificio en dashboard"
+      onclick="return window.openSoteroDashboard(event, this.href)"
+    >
+      Editar edificio
+    </a>
   `;
 };
 
@@ -1379,7 +1423,12 @@ const getFeaturePopupHtml = async (feature) => {
     `;
   }
 
-  detailsHtml += `<div style="margin-top:12px;">${copyButtonHtml}</div>`;
+  detailsHtml += `
+    <div style="margin-top:12px; display:flex; flex-wrap:wrap; gap:8px;">
+      ${copyButtonHtml}
+      ${buildDashboardBuildingEditLink(featureId)}
+    </div>
+  `;
   detailsHtml += `</div>`;
 
   return detailsHtml;
