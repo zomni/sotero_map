@@ -341,7 +341,7 @@ const ensureBackendStatusPanel = () => {
   };
 
   if (panel.dashboardLink) {
-    panel.dashboardLink.href = `${BACKEND_API_URL}/admin`;
+    panel.dashboardLink.href = `${BACKEND_API_URL}/dashboard`;
   }
 
   panel.refreshButton?.addEventListener("click", async () => {
@@ -895,8 +895,8 @@ const getActionButtonStyle = () => `
   box-sizing: border-box;
 `;
 
-const DASHBOARD_INVENTORY_URL = `${BACKEND_API_URL}/admin/inventory`;
-const DASHBOARD_BUILDING_EDIT_URL = `${BACKEND_API_URL}/admin/editsyncedbuilding`;
+const DASHBOARD_INVENTORY_URL = `${BACKEND_API_URL}/dashboard/inventory`;
+const DASHBOARD_BUILDING_EDIT_URL = `${BACKEND_API_URL}/dashboard/editsyncedbuilding`;
 
 const buildDashboardEquipmentLink = (identifier) => {
   const value = String(identifier || "").trim();
