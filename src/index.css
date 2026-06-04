@@ -45,7 +45,8 @@
 
 #custom-select,
 .dashboard-link,
-.route-planner-toggle {
+.route-planner-toggle,
+.map-equipment-type-filter {
     align-self: flex-end;
 }
 
@@ -66,6 +67,36 @@
 
 .dashboard-link:hover {
     background: #f2f9fc;
+}
+
+.map-equipment-type-filter {
+    display: grid;
+    gap: 4px;
+    min-width: 150px;
+    padding: 8px 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(45, 121, 160, 0.28);
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.14);
+    color: #154860;
+    font: 600 12px/1.2 sans-serif;
+}
+
+.map-equipment-type-filter span {
+    color: #64748b;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.map-equipment-type-filter-select {
+    min-height: 30px;
+    border: 0;
+    background: transparent;
+    color: #154860;
+    cursor: pointer;
+    font: 700 13px/1.2 sans-serif;
+    outline: none;
 }
 
 .session-mode-badge {
@@ -232,6 +263,28 @@
     background: #ffffff;
 }
 
+.building-equipment-bubble {
+    pointer-events: auto;
+}
+
+.building-equipment-bubble button {
+    width: 34px;
+    height: 34px;
+    border: 2px solid rgba(255, 255, 255, 0.95);
+    border-radius: 999px;
+    background: #2d79a0;
+    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.26);
+    color: #ffffff;
+    cursor: pointer;
+    font: 800 12px/1 sans-serif;
+    text-align: center;
+}
+
+.building-equipment-bubble button:hover {
+    background: #256b8d;
+    transform: translateY(-1px);
+}
+
 #map-status-panel {
     position: fixed;
     top: 12px;
@@ -363,7 +416,8 @@
 
     #custom-select,
 .dashboard-link,
-.route-planner-toggle {
+.route-planner-toggle,
+.map-equipment-type-filter {
     align-self: flex-end;
 }
 

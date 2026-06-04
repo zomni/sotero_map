@@ -213,12 +213,18 @@ const popupDeviceState = {};
 const popupDeviceQueryState = {};
 const popupDevicePageSizeState = {};
 const popupDeviceSearchOpenState = {};
+const popupDeviceTypeFilterState = {};
+const popupDeviceScopeState = {};
 let loadedEquipmentRevision = null;
 let pendingEquipmentRevision = null;
 let latestEquipmentSyncState = null;
 let backendStatusPanel = null;
 let backendSessionCache = null;
 let backendSessionCacheAt = 0;
+let buildingEquipmentSummaryCache = null;
+let buildingEquipmentSummaryPromise = null;
+let globalEquipmentTypeFilter = "";
+const buildingEquipmentBubbleEntries = new Map();
 const EQUIPMENT_SYNC_POLL_MS = 30000;
 const BACKEND_SESSION_CACHE_MS = 15000;
 
@@ -250,6 +256,58 @@ const loadBackendSession = async () => {
 
   backendSessionCacheAt = now;
   return backendSessionCache;
+};
+
+const resetBuildingEquipmentSummaryCache = () => {
+  buildingEquipmentSummaryCache = null;
+  buildingEquipmentSummaryPromise = null;
+  buildingEquipmentBubbleEntries.forEach((entry) => {
+    if (entry.marker && map.hasLayer(entry.marker)) {
+      map.removeLayer(entry.marker);
+    }
+  });
+  buildingEquipmentBubbleEntries.clear();
+};
+
+const loadBuildingEquipmentSummary = async () => {
+  if (buildingEquipmentSummaryCache) {
+    return buildingEquipmentSummaryCache;
+  }
+
+  if (buildingEquipmentSummaryPromise) {
+    return buildingEquipmentSummaryPromise;
+  }
+
+  buildingEquipmentSummaryPromise = fetch(`${BACKEND_API_URL}/api/inventory-import/building-summary`, {
+    cache: "no-store",
+  })
+    .then((response) => (response.ok ? response.json() : []))
+    .then((items) => {
+      const map = new Map();
+      if (Array.isArray(items)) {
+        for (const item of items) {
+          if (item?.buildingExternalId) {
+            map.set(item.buildingExternalId, {
+              total: Number(item.total) || 0,
+              byType: item.byType || {},
+            });
+          }
+        }
+      }
+
+      buildingEquipmentSummaryCache = map;
+      return map;
+    })
+    .catch((error) => {
+      console.error("Error cargando resumen de equipos por edificio:", error);
+      buildingEquipmentSummaryCache = new Map();
+      return buildingEquipmentSummaryCache;
+    })
+    .finally(() => {
+      buildingEquipmentSummaryPromise = null;
+    });
+
+  return buildingEquipmentSummaryPromise;
 };
 
 const formatSyncTimestamp = (value) => {
@@ -347,6 +405,7 @@ const ensureBackendStatusPanel = () => {
   panel.refreshButton?.addEventListener("click", async () => {
     loadedEquipmentRevision = pendingEquipmentRevision || loadedEquipmentRevision;
     pendingEquipmentRevision = null;
+    resetBuildingEquipmentSummaryCache();
     resetSoteroSearchMetadataCaches();
     resetBuildingsCatalogCache();
     refreshCurrentMapData();
@@ -763,6 +822,129 @@ const countDevicesByType = (devices) => {
   return counts;
 };
 
+const normalizeDeviceType = (value) => {
+  const type = String(value || "other").trim().toLowerCase();
+  return type || "other";
+};
+
+const getDeviceTypeLabel = (type) => {
+  const labels = {
+    all: "Todos",
+    pc: "PC",
+    printer: "Impresoras",
+    scanner: "Escaneres",
+    other: "Otros",
+  };
+
+  return labels[type] || type;
+};
+
+const getDeviceTypeCount = (byType, type) => Number(byType?.[type]) || 0;
+
+const getSummaryCountForType = (summary, type = globalEquipmentTypeFilter) => {
+  if (!summary) return 0;
+  const normalizedType = normalizeDeviceType(type || "all");
+  if (!normalizedType || normalizedType === "all") {
+    return Number(summary.total) || 0;
+  }
+
+  return getDeviceTypeCount(summary.byType, normalizedType);
+};
+
+const getAvailableDeviceTypes = (devices) => {
+  const types = Array.from(new Set(devices.map((device) => normalizeDeviceType(device?.type))));
+  const preferredOrder = ["pc", "printer", "scanner", "other"];
+  return types.sort((a, b) => {
+    const indexA = preferredOrder.includes(a) ? preferredOrder.indexOf(a) : preferredOrder.length;
+    const indexB = preferredOrder.includes(b) ? preferredOrder.indexOf(b) : preferredOrder.length;
+    if (indexA !== indexB) return indexA - indexB;
+    return a.localeCompare(b);
+  });
+};
+
+const getAvailableSummaryTypes = (summaryMap) => {
+  const types = new Set();
+  summaryMap.forEach((summary) => {
+    Object.keys(summary?.byType || {}).forEach((type) => {
+      const normalized = normalizeDeviceType(type);
+      if (normalized) {
+        types.add(normalized);
+      }
+    });
+  });
+
+  return getAvailableDeviceTypes(Array.from(types).map((type) => ({ type })));
+};
+
+const createEquipmentBubbleIcon = (count) =>
+  L.divIcon({
+    className: "building-equipment-bubble",
+    html: `<button type="button" aria-label="${count} equipo(s) asignados">${count}</button>`,
+    iconSize: [34, 34],
+    iconAnchor: [17, 17],
+  });
+
+const updateBuildingEquipmentBubbles = () => {
+  buildingEquipmentBubbleEntries.forEach((entry) => {
+    const count = getSummaryCountForType(entry.summary);
+
+    if (count <= 0) {
+      if (entry.marker && map.hasLayer(entry.marker)) {
+        map.removeLayer(entry.marker);
+      }
+      return;
+    }
+
+    entry.marker.setIcon(createEquipmentBubbleIcon(count));
+    entry.marker.options.title = `${count} equipo(s) asignados`;
+
+    if (!map.hasLayer(entry.marker) && entry.layer?._map) {
+      entry.marker.addTo(map);
+    }
+  });
+};
+
+const ensureMapEquipmentTypeFilter = (summaryMap) => {
+  const topActions = document.getElementById("top-actions");
+  if (!topActions || document.getElementById("map-equipment-type-filter")) return;
+
+  const types = ["all", ...getAvailableSummaryTypes(summaryMap)];
+  if (types.length <= 1) return;
+
+  const wrapper = document.createElement("label");
+  wrapper.className = "map-equipment-type-filter";
+  wrapper.htmlFor = "map-equipment-type-filter";
+
+  const label = document.createElement("span");
+  label.textContent = "Equipos";
+
+  const select = document.createElement("select");
+  select.id = "map-equipment-type-filter";
+  select.className = "map-equipment-type-filter-select";
+
+  for (const type of types) {
+    const option = document.createElement("option");
+    option.value = type === "all" ? "" : type;
+    option.textContent = getDeviceTypeLabel(type);
+    select.appendChild(option);
+  }
+
+  select.addEventListener("change", () => {
+    globalEquipmentTypeFilter = select.value || "";
+    updateBuildingEquipmentBubbles();
+  });
+
+  wrapper.appendChild(label);
+  wrapper.appendChild(select);
+
+  const routeToggle = document.getElementById("route-planner-toggle");
+  if (routeToggle) {
+    topActions.insertBefore(wrapper, routeToggle);
+  } else {
+    topActions.appendChild(wrapper);
+  }
+};
+
 const buildRoomsMap = (rooms) => {
   const roomMap = new Map();
   for (const room of rooms) {
@@ -982,7 +1164,7 @@ const buildBuildingDetailHtml = (buildingDetail) => {
 
 const buildDevicesSummaryHtml = (devices, floorLabel) => {
   if (!devices.length) {
-    return `No hay equipos cargados para el piso ${escapeHtml(floorLabel)}.`;
+    return `No hay equipos cargados para ${escapeHtml(floorLabel)}.`;
   }
 
   const counts = countDevicesByType(devices);
@@ -995,21 +1177,30 @@ const buildDevicesSummaryHtml = (devices, floorLabel) => {
   `;
 };
 
-const buildDevicesListHtml = (devicesInFloor, roomsInFloor, allDevices, allRooms, floorLabel, highlightKey, query, pageSize) => {
+const buildDevicesListHtml = (devicesInFloor, roomsInFloor, allDevices, allRooms, floorLabel, highlightKey, query, pageSize, typeFilter) => {
   const roomsMap = buildRoomsMap(allRooms);
   const activeQuery = String(query || "").trim();
+  const activeType = String(typeFilter || "all").trim().toLowerCase();
   const sourceDevices = activeQuery ? allDevices : devicesInFloor;
 
   if (!sourceDevices.length) {
-    return `No hay equipos cargados para el piso ${escapeHtml(floorLabel)}.`;
+    return `No hay equipos cargados para ${escapeHtml(floorLabel)}.`;
   }
 
-  const filteredDevices = activeQuery
+  const queryFilteredDevices = activeQuery
     ? sourceDevices.filter((device) => deviceMatchesQuery(device, activeQuery, roomsMap))
     : sourceDevices;
 
-  if (activeQuery && filteredDevices.length === 0) {
+  const filteredDevices = activeType && activeType !== "all"
+    ? queryFilteredDevices.filter((device) => normalizeDeviceType(device?.type) === activeType)
+    : queryFilteredDevices;
+
+  if (activeQuery && queryFilteredDevices.length === 0) {
     return `No hay resultados para "${escapeHtml(activeQuery)}".`;
+  }
+
+  if (filteredDevices.length === 0) {
+    return `No hay equipos del tipo ${escapeHtml(getDeviceTypeLabel(activeType))}.`;
   }
 
   const resolvedPageSize = Math.max(5, Number(pageSize) || 5);
@@ -1179,6 +1370,9 @@ window.setPopupView = (featureId, viewKey) => {
 
   popupViewState[featureId] = viewKey;
   popupRoomState[featureId] = null;
+  if (viewKey === "devices" && popupDeviceScopeState[featureId] !== "building") {
+    popupDeviceScopeState[featureId] = "";
+  }
   refreshCurrentPopup();
 };
 
@@ -1201,6 +1395,13 @@ window.setDevicePageSize = (featureId, size) => {
   if (!featureId) return;
   const resolved = Math.max(5, Number(size) || 5);
   popupDevicePageSizeState[featureId] = resolved;
+  refreshCurrentPopup();
+};
+
+window.setDeviceTypeFilter = (featureId, type) => {
+  if (!featureId) return;
+  popupDeviceTypeFilterState[featureId] = type && type !== "all" ? type : "";
+  popupViewState[featureId] = "devices";
   refreshCurrentPopup();
 };
 
@@ -1339,6 +1540,8 @@ const getFeaturePopupHtml = async (feature) => {
   const deviceQuery = popupDeviceQueryState[featureId] || "";
   const devicePageSize = popupDevicePageSizeState[featureId] || 5;
   const deviceSearchOpen = popupDeviceSearchOpenState[featureId] || false;
+  const deviceTypeFilter = popupDeviceTypeFilterState[featureId] || "";
+  const deviceScope = popupDeviceScopeState[featureId] || "";
   const selectedRoomId = popupRoomState[featureId] || null;
 
   const link = `${HOST_URL}/?id=${featureId}&zoom=20`;
@@ -1437,14 +1640,17 @@ const getFeaturePopupHtml = async (feature) => {
   }
 
   if (currentView === "devices") {
+    const devicesForView = deviceScope === "building" ? allDevices : devicesInFloor;
+    const devicesScopeLabel = deviceScope === "building" ? "edificio completo" : `piso ${floorLabel}`;
+
     detailsHtml += `
-      <div style="${sectionBoxStyle}">
-        <div style="font-weight:600; margin-bottom:6px;">Equipos por tipo</div>
-        ${buildDevicesSummaryHtml(devicesInFloor, floorLabel)}
+        <div style="${sectionBoxStyle}">
+        <div style="font-weight:600; margin-bottom:6px;">Equipos por tipo (${escapeHtml(devicesScopeLabel)})</div>
+        ${buildDevicesSummaryHtml(devicesForView, devicesScopeLabel)}
         <div style="margin-top:10px; font-weight:600;">Equipos destacados</div>
         ${buildDeviceControlsHtml(featureId, deviceQuery, deviceSearchOpen, devicePageSize)}
         <div style="margin-top:4px;">
-          ${buildDevicesListHtml(devicesInFloor, roomsInFloor, allDevices, allRooms, floorLabel, popupDeviceState[featureId], deviceQuery, devicePageSize)}
+          ${buildDevicesListHtml(devicesForView, roomsInFloor, allDevices, allRooms, devicesScopeLabel, popupDeviceState[featureId], deviceQuery, devicePageSize, deviceTypeFilter)}
         </div>
       </div>
     `;
@@ -1509,6 +1715,48 @@ const handleFeatureClick = (e) => {
   }
 
   zoomToFeature(e);
+};
+
+const createEquipmentBubbleForLayer = async (feature, layer) => {
+  const featureId = feature?.properties?.id;
+  if (!featureId || typeof layer?.getBounds !== "function") return;
+
+  const summaryMap = await loadBuildingEquipmentSummary();
+  if (!layer?._map) return;
+  ensureMapEquipmentTypeFilter(summaryMap);
+
+  const summary = summaryMap.get(featureId);
+  const total = getSummaryCountForType(summary);
+  if ((Number(summary?.total) || 0) <= 0) return;
+
+  const center = layer.getBounds().getCenter();
+  const marker = L.marker(center, {
+    interactive: true,
+    keyboard: true,
+    title: `${total} equipo(s) asignados`,
+    icon: createEquipmentBubbleIcon(total),
+  });
+
+  marker.on("click", (event) => {
+    event?.originalEvent?.preventDefault?.();
+    event?.originalEvent?.stopPropagation?.();
+    L.DomEvent.stop(event);
+    popupViewState[featureId] = "devices";
+    popupDeviceTypeFilterState[featureId] = globalEquipmentTypeFilter || "";
+    popupDeviceScopeState[featureId] = "building";
+    popupRoomState[featureId] = null;
+    layer.openPopup();
+  });
+
+  buildingEquipmentBubbleEntries.set(featureId, { layer, marker, summary });
+  updateBuildingEquipmentBubbles();
+
+  layer.on("remove", () => {
+    if (map.hasLayer(marker)) {
+      map.removeLayer(marker);
+    }
+    buildingEquipmentBubbleEntries.delete(featureId);
+  });
 };
 
 const highlightFeature = (e) => {
@@ -1583,6 +1831,8 @@ export const onEachFeature = (feature, layer) => {
         mouseout: resetHighlight,
         click: handleFeatureClick,
       });
+
+      createEquipmentBubbleForLayer(feature, layer);
 
       layer.on("remove", () => {
         if (currentHoveredLayer === layer) {
