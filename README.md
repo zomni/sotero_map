@@ -1,73 +1,55 @@
-﻿# SoteroMap Frontend
+# SoteroMap Frontend
 
 Frontend del mapa interactivo del Complejo Asistencial Sotero del Rio.
 
-Este proyecto nace a partir del CampusMap original de CentraleSupelec, pero fue adaptado para el contexto de SoteroMap: edificios hospitalarios, salas, navegacion por pisos, integracion con un backend administrativo y visualizacion de equipos reales sincronizados desde la base de datos.
+Este proyecto nace desde CampusMap, pero fue adaptado para SoteroMap: edificios hospitalarios, pisos, salas, buscador avanzado, integracion con backend, inventario real, historial, dashboard y herramientas de edicion para administradores.
 
 ## Resumen
 
-El frontend se encarga de la experiencia visual del mapa y de la estructura fisica del campus:
+El frontend se encarga de la experiencia visual del mapa y de la estructura fisica:
 
 - campus y selector de campus
-- edificios y su geometria
+- edificios, poligonos y geometria visual
 - pisos y salas
 - buscador principal del mapa
-- popups y navegacion visual
-- integracion con el dashboard del backend
+- popups de edificio con resumen, salas, equipos e historial
+- navegacion directa por URL
+- panel de estado de la API
+- herramientas admin para crear, editar forma y mover edificios
 
 El backend complementa esa experiencia con:
 
-- inventario de equipos
+- inventario real de equipos
 - autenticacion y roles
-- dashboard administrativo
+- dashboard en `/dashboard`
 - historial de cambios
-- importacion y exportacion de la base de datos
-- sincronizacion del inventario hacia el mapa
+- formularios PDF de entrega
+- importacion/exportacion de BDD
+- sincronizacion de equipos hacia el mapa
 
-En la practica, el frontend mantiene la estructura del mapa y el backend mantiene el inventario.
-
-## Que hace este frontend
-
-- Muestra el mapa del campus sobre Leaflet + OpenStreetMap.
-- Carga edificios, pisos, salas y geometria desde archivos locales del frontend.
-- Consulta el backend para obtener equipos, historial y estado de sincronizacion.
-- Permite buscar edificios, salas y equipos desde un buscador tolerante.
-- Abre popups con vistas de resumen, equipos e historial.
-- Permite navegar por deep links hacia edificio, piso, sala o equipo.
-- Incluye un panel de estado del backend dentro del mapa.
-- Incluye accesos directos al dashboard administrativo.
-- Permite navegar desde el dashboard al mapa y desde el mapa al dashboard.
-
-## Arquitectura actual
-
-La separacion actual del proyecto es la siguiente:
-
-- Frontend: campus, edificios, pisos, salas, geometria del mapa y experiencia de navegacion.
-- Backend: inventario de equipos, autenticacion, historial, dashboard admin, importacion/exportacion de BDD y sincronizacion.
-
-Eso permite seguir editando el mapa desde este repositorio, mientras el inventario real se administra desde el backend.
-
-## Requisitos
-
-- Node.js
-- Docker Desktop
-- Backend SoteroMap levantado en local si quieres ver inventario real
+En la practica, el frontend mantiene el mapa y la experiencia visual; el backend mantiene los datos operativos.
 
 ## Inicio rapido
 
-Instalar dependencias del frontend:
+Requisitos:
+
+- Node.js
+- Docker Desktop
+- Backend SoteroMap si quieres ver inventario real
+
+Instalar dependencias:
 
 ```bash
 npm install
 ```
 
-Levantar el frontend en desarrollo:
+Levantar frontend en desarrollo:
 
 ```bash
 npm run dev
 ```
 
-Detener el frontend:
+Detener frontend:
 
 ```bash
 npm run stop-dev
@@ -87,137 +69,218 @@ Para la experiencia completa, el backend debe estar corriendo en:
 http://localhost:5000
 ```
 
-En el repositorio del backend, el flujo actual de desarrollo es:
+En el repositorio del backend:
 
-```bash
+```powershell
 docker compose up -d --build
 ```
 
-Con el backend activo, el mapa puede:
+URLs principales:
 
-- mostrar equipos reales por edificio
-- reflejar asignaciones hechas desde el dashboard
-- mostrar version de la API y ultima modificacion de la BDD
-- detectar cambios pendientes y permitir refrescar el mapa
-- abrir el dashboard desde el mapa
-- recibir navegacion directa desde inventario y ubicaciones del dashboard
+- Mapa: `http://localhost:8080`
+- Dashboard: `http://localhost:5000/dashboard`
+- Login backend: `http://localhost:5000/Auth/Login`
+- Swagger backend: `http://localhost:5000/swagger`
+
+## Funciones del mapa
+
+- Muestra el campus sobre Leaflet + OpenStreetMap.
+- Carga edificios, pisos, salas y geometria desde archivos locales.
+- Mezcla datos locales con overrides del backend.
+- Consulta equipos reales desde el backend por edificio.
+- Muestra historial reciente por edificio.
+- Detecta estado de la API y ultima modificacion de la BDD.
+- Avisa cuando hay cambios pendientes y permite refrescar el mapa manualmente.
+- Permite ir desde inventario/ubicaciones del dashboard al edificio exacto.
+- Permite ir desde el mapa al inventario filtrando por serie de equipo.
+- Soporta deep links hacia edificios, pisos, salas y equipos.
+
+## Buscador
+
+El buscador principal del mapa permite buscar:
+
+- edificios
+- salas
+- equipos
+- series
+- fragmentos parciales
+- texto con o sin tildes
+- mayusculas o minusculas
+
+Cuando el resultado es un edificio, abre el popup en resumen. Cuando el resultado es un equipo, abre el edificio en la seccion Equipos y destaca el equipo buscado.
+
+## Popups de edificios
+
+Cada edificio puede mostrar:
+
+- resumen
+- pisos disponibles
+- salas del piso
+- equipos del piso
+- buscador interno de equipos del edificio
+- paginacion simple de equipos
+- historial reciente
+- boton de editar edificio para administradores
+- enlace al dashboard/inventario segun corresponda
+
+## Herramientas admin en el mapa
+
+Si la sesion del backend corresponde a un usuario admin, el mapa muestra un panel de herramientas:
+
+- Agregar edificio
+- Cerrar poligono
+- Editar forma
+- Mover edificio
+
+El flujo de agregar edificio:
+
+1. Click en `Agregar edificio`.
+2. Marcar puntos en el mapa.
+3. Cerrar el poligono.
+4. Completar datos del edificio.
+5. Guardar.
+
+El flujo de editar o mover:
+
+1. Click en `Editar forma` o `Mover edificio`.
+2. Click directo sobre el edificio.
+3. Ajustar vertices o arrastrar el marcador.
+4. Guardar forma.
+
+Los cambios quedan guardados en el backend y se aplican sobre la geometria del mapa.
+
+## Panel de estado del backend
+
+La esquina superior izquierda muestra:
+
+- API activa o desconectada
+- version corta del backend
+- ultima modificacion de la BDD
+- estado de sincronizacion
+- aviso de cambios pendientes
+- boton para actualizar mapa cuando corresponde
+
+Debajo aparece el modo de sesion:
+
+- Modo vista
+- Modo Administrador
+- usuario conectado
+- cerrar sesion
+
+El mapa detecta cambios de sesion sin recargar completamente la pagina.
+
+## Navegacion cruzada
+
+Desde el dashboard:
+
+- inventario puede abrir el mapa en el edificio y equipo asignado
+- ubicaciones puede abrir el mapa en el edificio exacto
+
+Desde el mapa:
+
+- el popup puede abrir el dashboard
+- cada equipo puede abrir el inventario filtrado por su serie
+- el boton dashboard abre `http://localhost:5000/dashboard`
+
+Se intenta reutilizar la pestana abierta del mapa o dashboard cuando ya existe.
+
+## Rutas y deep links
+
+Ejemplos:
+
+```text
+http://localhost:8080/?id=SR-BLD-001&zoom=20
+http://localhost:8080/?id=SR-BLD-001&zoom=20&floor=1
+```
+
+Tambien se usan parametros internos para abrir secciones especificas del popup, por ejemplo equipos o salas cuando el enlace viene desde el dashboard.
+
+## Flujo recomendado de trabajo
+
+### Cambios visuales o de mapa
+
+1. Editar archivos del frontend.
+2. Ejecutar `npm run dev`.
+3. Verificar en `http://localhost:8080`.
+
+### Cambios de inventario
+
+1. Levantar backend.
+2. Entrar a `http://localhost:5000/dashboard`.
+3. Importar o restaurar la BDD si corresponde.
+4. Editar inventario/ubicaciones desde el dashboard.
+5. Refrescar mapa cuando el panel indique cambios pendientes.
+
+### Migrar a otro PC
+
+1. Clonar frontend y backend.
+2. En frontend: `npm install` y `npm run dev`.
+3. En backend: `docker compose up -d --build`.
+4. Entrar al dashboard.
+5. Subir/restaurar la DB exportada.
+6. Verificar mapa y dashboard.
+
+La BDD real no debe guardarse en el repositorio. Se mueve mediante exportacion/importacion desde el dashboard.
 
 ## Comandos utiles
 
-Desarrollo local del frontend:
+Desarrollo:
 
 ```bash
 npm run dev
 npm run stop-dev
 ```
 
-Servidor tipo produccion local:
+Modo produccion local:
 
 ```bash
 npm run prod
 npm run stop-prod
 ```
 
-## URLs utiles
-
-- Frontend: `http://localhost:8080`
-- Backend admin: `http://localhost:5000/admin`
-- Backend login: `http://localhost:5000/Auth/Login`
-- Swagger backend: `http://localhost:5000/swagger`
-
-## Flujo recomendado de trabajo
-
-### Cambios visuales o estructurales del mapa
-
-1. Editar archivos de datos o vistas del frontend.
-2. Levantar el frontend con `npm run dev`.
-3. Verificar el resultado en `http://localhost:8080`.
-
-### Cambios de inventario
-
-1. Levantar el backend.
-2. Importar o restaurar la base de datos desde el dashboard.
-3. Asignar equipos a edificios, pisos o salas desde el admin.
-4. Refrescar el mapa cuando el panel indique cambios pendientes.
-
-### Cambio de equipo o migracion a otro PC
-
-1. Clonar el frontend y el backend.
-2. Levantar el frontend con `npm run dev`.
-3. Levantar el backend con `docker compose up -d --build`.
-4. Importar la base de datos desde el dashboard del backend.
-5. Verificar el mapa en `http://localhost:8080`.
-
-Nota importante:
-
-- Este repositorio no necesita guardar la BDD del backend.
-- La BDD se mueve mediante exportacion e importacion desde el dashboard.
-
-## Busqueda y navegacion
-
-El mapa soporta:
-
-- busqueda tolerante por edificios, salas y equipos
-- coincidencias por fragmentos, mayusculas/minusculas y texto parcial
-- deep links por URL
-- apertura automatica del popup correcto al llegar desde enlaces internos
-- navegacion entre mapa y dashboard sin perder contexto
-
-Ejemplo de deep link:
-
-```text
-http://localhost:8080/?id=SR-BLD-001&zoom=20&floor=1
-```
-
-## Panel de estado del backend
-
-La esquina superior izquierda del mapa muestra:
-
-- si la API esta activa
-- version actual del backend
-- ultima modificacion relevante de la BDD
-- estado de sincronizacion
-- aviso de cambios pendientes
-- boton para actualizar el mapa cuando corresponde
-
-## Estructura importante del proyecto
+## Estructura importante
 
 Configuracion general:
 
-- `src/data/campuses.js`: campus disponibles, centro del mapa y zoom.
-- `src/index.html`: estructura principal del mapa y panel superior.
-- `src/index.js`: punto de entrada del frontend.
-- `src/index.css`: layout global.
+- `src/data/campuses.js`: campus disponibles, centro y zoom.
+- `src/index.html`: estructura principal e import map.
+- `src/index.js`: punto de entrada.
+- `src/index.css`: estilos globales.
 
 Datos del campus Sotero:
 
-- `src/data/cs_sotero_0.json`: geometria principal del mapa.
-- `src/data/cs_sotero_search.json`: indice de busqueda de edificios, salas y elementos relacionados.
-- `src/data/cs_searchByURL.json`: soporte para deep links.
-- `src/data/sotero_buildings_catalog.json`: catalogo auxiliar de edificios y metadatos.
-- `src/data/cs_features_data.csv`: datos auxiliares del mapa.
+- `src/data/cs_sotero_0.json`: geometria principal.
+- `src/data/cs_sotero_search.json`: indice de busqueda.
+- `src/data/cs_searchByURL.json`: soporte de deep links.
+- `src/data/sotero_buildings_catalog.json`: catalogo auxiliar.
+- `src/data/interiors/`: detalles, pisos y salas.
 
-Logica principal:
+Componentes principales:
 
-- `src/components/autocompleteSearchBox.js`: buscador avanzado del mapa.
+- `src/components/autocompleteSearchBox.js`: buscador avanzado.
 - `src/components/campusSelector.js`: selector de campus.
-- `src/views/map.js`: inicializacion de Leaflet e integracion base con el backend.
-- `src/views/featureDisplay.js`: popups, panel de estado, equipos, historial y sincronizacion.
-- `src/utils/findByUrl.js`: navegacion por URL hacia edificios, pisos, salas y equipos.
+- `src/components/routePlanner.js`: ruta visual entre edificios.
+- `src/components/sessionModeBadge.js`: sesion visible del backend.
+- `src/components/manualBuildingEditor.js`: crear edificios desde mapa.
+- `src/components/buildingGeometryEditor.js`: editar/mover geometria.
+- `src/components/adminMapToolsPanel.js`: panel admin unificado.
+- `src/views/map.js`: inicializacion Leaflet y URL base backend.
+- `src/views/featureDisplay.js`: popups, equipos, historial y sincronizacion.
+- `src/utils/findByUrl.js`: navegacion por URL.
+- `src/utils/soteroSearchMetadata.js`: mezcla data local con backend.
 
 ## Cambios principales respecto al proyecto original
 
-Sobre la base original de CampusMap, este proyecto incorpora:
-
-- adaptacion completa al Complejo Asistencial Sotero del Rio
-- edificios hospitalarios y datos propios del campus
-- integracion con backend ASP.NET Core
-- inventario de equipos sincronizado desde base de datos
-- dashboard administrativo enlazado al mapa
-- historial de cambios visible en popups
-- panel de estado del backend dentro del frontend
-- buscador mas tolerante para uso real con inventario
-- navegacion cruzada entre mapa, ubicaciones e inventario
+- Adaptacion al Complejo Asistencial Sotero del Rio.
+- Integracion con backend ASP.NET Core.
+- Inventario real sincronizado desde SQLite.
+- Dashboard conectado al mapa.
+- Busqueda tolerante para edificios, salas y equipos.
+- Popups con resumen, salas, equipos e historial.
+- Panel de API activa y sincronizacion.
+- Herramientas admin para crear, editar y mover edificios.
+- Navegacion cruzada mapa-dashboard.
+- Soporte de equipos destacados, busqueda interna y paginacion dentro del popup.
 
 ## Licencias y creditos
 
@@ -230,4 +293,4 @@ Archivos relacionados:
 
 ## Nota final
 
-Si solo levantas el frontend, el mapa seguira funcionando con sus datos locales de edificios y salas. Las funciones que dependen del backend quedaran sin inventario real o mostraran estado sin conexion hasta que la API este disponible.
+Si levantas solo el frontend, el mapa puede cargar sus datos locales. Las funciones que dependen del backend, como inventario real, estado de API, historial y herramientas admin con permisos, requieren que la API este disponible.
