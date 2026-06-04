@@ -6,3 +6,12 @@ import "@app/findByUrl";
 
 // Building-to-building route planner
 import "@app/routePlanner";
+
+// Backend session mode indicator
+import { initSessionModeBadge } from "@app/sessionModeBadge";
+
+// Manual building polygon editor for admins
+import { initManualBuildingEditor } from "@app/manualBuildingEditor";
+
+initSessionModeBadge();
+initManualBuildingEditor();

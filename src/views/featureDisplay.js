@@ -217,7 +217,35 @@ let loadedEquipmentRevision = null;
 let pendingEquipmentRevision = null;
 let latestEquipmentSyncState = null;
 let backendStatusPanel = null;
+let backendSessionCache = null;
+let backendSessionCacheAt = 0;
 const EQUIPMENT_SYNC_POLL_MS = 30000;
+const BACKEND_SESSION_CACHE_MS = 15000;
+
+const loadBackendSession = async () => {
+  const now = Date.now();
+  if (backendSessionCache && now - backendSessionCacheAt < BACKEND_SESSION_CACHE_MS) {
+    return backendSessionCache;
+  }
+
+  try {
+    const response = await fetch(`${BACKEND_API_URL}/api/auth/session`, {
+      credentials: "include",
+      cache: "no-store",
+    });
+
+    if (!response.ok) {
+      backendSessionCache = { isAuthenticated: false, isAdmin: false };
+    } else {
+      backendSessionCache = await response.json();
+    }
+  } catch {
+    backendSessionCache = { isAuthenticated: false, isAdmin: false };
+  }
+
+  backendSessionCacheAt = now;
+  return backendSessionCache;
+};
 
 const formatSyncTimestamp = (value) => {
   if (!value) return "Sin registros";
@@ -1326,11 +1354,12 @@ const getFeaturePopupHtml = async (feature) => {
     `;
   }
 
-  const [buildingDetail, allRooms, backendInventoryItems, buildingActivityItems] = await Promise.all([
+  const [buildingDetail, allRooms, backendInventoryItems, buildingActivityItems, backendSession] = await Promise.all([
     loadBuildingDetail(building),
     loadRoomsForBuilding(building),
     loadBackendInventoryForBuilding(building),
     loadBuildingActivity(building),
+    loadBackendSession(),
   ]);
 
   loadedEquipmentRevision = pendingEquipmentRevision || loadedEquipmentRevision;
@@ -1347,6 +1376,8 @@ const getFeaturePopupHtml = async (feature) => {
   const responsibleArea = building?.responsibleArea || "";
   const floors = Array.isArray(building?.floors) ? building.floors.join(", ") : "";
   const searchPopupContent = building?.searchPopupContent || "";
+  const isBackendAdmin = Boolean(backendSession?.isAdmin);
+  const adminActionsHtml = isBackendAdmin ? buildDashboardBuildingEditLink(featureId) : "";
 
   let detailsHtml = `
     <div style="${popupShellStyle}">
@@ -1426,7 +1457,7 @@ const getFeaturePopupHtml = async (feature) => {
   detailsHtml += `
     <div style="margin-top:12px; display:flex; flex-wrap:wrap; gap:8px;">
       ${copyButtonHtml}
-      ${buildDashboardBuildingEditLink(featureId)}
+      ${adminActionsHtml}
     </div>
   `;
   detailsHtml += `</div>`;

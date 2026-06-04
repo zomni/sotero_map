@@ -4,6 +4,7 @@ const SOTERO_SEARCH_PATH = `data/cs_sotero_search.json?v=${Date.now()}`;
 
 let soteroSearchMetadataCache = null;
 let backendBuildingOverridesCache = null;
+let manualBuildingsCache = null;
 
 const isBuildingId = (id) => /^SR-BLD-\d+$/.test(String(id || ""));
 const DEFAULT_FLOOR = 0;
@@ -114,9 +115,37 @@ const parseFloorsJson = (floorsJson) => {
   }
 };
 
+export const loadManualBuildings = async () => {
+  if (manualBuildingsCache) {
+    return manualBuildingsCache;
+  }
+
+  try {
+    const response = await fetch(`${BACKEND_API_URL}/api/manual-buildings`, {
+      cache: "no-store",
+    });
+
+    if (!response.ok) {
+      throw new Error("No se pudieron cargar edificios manuales");
+    }
+
+    const items = await response.json();
+    manualBuildingsCache = Array.isArray(items) ? items : [];
+    return manualBuildingsCache;
+  } catch (error) {
+    console.error("Error cargando edificios manuales:", error);
+    manualBuildingsCache = [];
+    return manualBuildingsCache;
+  }
+};
+
 const applyBackendOverrideToBuilding = (building, backendOverride) => {
   if (!backendOverride) {
     return building;
+  }
+
+  if (backendOverride.isDeleted) {
+    return null;
   }
 
   const backendDisplayName = backendOverride.displayName || building.displayName || building.realName || building.id;
@@ -151,6 +180,18 @@ const applyBackendOverrideToFeature = (feature, backendOverride) => {
   }
 
   const properties = feature?.properties || {};
+  if (backendOverride.isDeleted) {
+    return {
+      ...feature,
+      properties: {
+        ...properties,
+        isVisible: false,
+        isPublished: false,
+        isDeleted: true,
+      },
+    };
+  }
+
   const backendDisplayName = backendOverride.displayName || properties.title || properties.name || properties.id;
   const mergedSearchText = [
     backendDisplayName,
@@ -211,6 +252,7 @@ export const loadSoteroSearchMetadata = async () => {
 export const mergeCatalogWithSoteroSearch = async (catalog) => {
   const metadataById = await loadSoteroSearchMetadata();
   const backendOverridesById = await loadBackendBuildingOverrides();
+  const manualBuildings = await loadManualBuildings();
   const buildings = Array.isArray(catalog?.buildings) ? catalog.buildings : [];
   const mergedBuildings = buildings.map((building) => {
     const metadata = metadataById.get(building.id);
@@ -228,36 +270,68 @@ export const mergeCatalogWithSoteroSearch = async (catalog) => {
         };
 
     return applyBackendOverrideToBuilding(mergedWithSearch, backendOverridesById.get(building.id));
-  });
+  }).filter(Boolean);
 
   const existingIds = new Set(mergedBuildings.map((building) => building.id));
 
   for (const metadata of metadataById.values()) {
     if (existingIds.has(metadata.id)) continue;
 
-    mergedBuildings.push(
-      applyBackendOverrideToBuilding(
-        {
-          id: metadata.id,
-          slug: metadata.id.toLowerCase().replaceAll("_", "-"),
-          displayName: metadata.title || metadata.id,
-          shortName: metadata.id.replace("SR-", ""),
-          realName: metadata.title || "",
-          type: "unknown",
-          floors: metadata.floors || [DEFAULT_FLOOR],
-          hasInteriorMap: false,
-          hasInventory: false,
-          responsibleArea: "",
-          notes: "",
-          sourceId: "",
-          centroid: null,
-          searchTitle: metadata.title || "",
-          searchDescription: metadata.description || "",
-          searchPopupContent: metadata.popupContent || "",
-        },
-        backendOverridesById.get(metadata.id)
-      )
+    const mergedMetadataBuilding = applyBackendOverrideToBuilding(
+      {
+        id: metadata.id,
+        slug: metadata.id.toLowerCase().replaceAll("_", "-"),
+        displayName: metadata.title || metadata.id,
+        shortName: metadata.id.replace("SR-", ""),
+        realName: metadata.title || "",
+        type: "unknown",
+        floors: metadata.floors || [DEFAULT_FLOOR],
+        hasInteriorMap: false,
+        hasInventory: false,
+        responsibleArea: "",
+        notes: "",
+        sourceId: "",
+        centroid: null,
+        searchTitle: metadata.title || "",
+        searchDescription: metadata.description || "",
+        searchPopupContent: metadata.popupContent || "",
+      },
+      backendOverridesById.get(metadata.id)
     );
+
+    if (mergedMetadataBuilding) {
+      mergedBuildings.push(mergedMetadataBuilding);
+    }
+  }
+
+  for (const manualBuilding of manualBuildings) {
+    if (existingIds.has(manualBuilding.externalId)) continue;
+
+    const floors = parseFloorsJson(manualBuilding.floorsJson);
+    mergedBuildings.push({
+      id: manualBuilding.externalId,
+      slug: manualBuilding.externalId.toLowerCase().replaceAll("_", "-"),
+      displayName: manualBuilding.displayName || manualBuilding.externalId,
+      shortName: manualBuilding.externalId,
+      realName: manualBuilding.displayName || "",
+      type: manualBuilding.type || "manual",
+      floors: floors.length ? floors : [DEFAULT_FLOOR],
+      hasInteriorMap: false,
+      hasInventory: false,
+      responsibleArea: "",
+      notes: manualBuilding.notes || "",
+      sourceId: "manual",
+      centroid:
+        manualBuilding.centroidLongitude && manualBuilding.centroidLatitude
+          ? [manualBuilding.centroidLongitude, manualBuilding.centroidLatitude]
+          : null,
+      searchTitle: manualBuilding.displayName || manualBuilding.externalId,
+      searchDescription: [manualBuilding.displayName, manualBuilding.externalId, manualBuilding.notes]
+        .filter(Boolean)
+        .join(" "),
+      searchPopupContent: manualBuilding.notes || "",
+      campus: manualBuilding.campus || "sotero",
+    });
   }
 
   return {
@@ -299,5 +373,6 @@ export const mergeGeoJsonWithSoteroSearch = async (geoJson) => {
 export const resetSoteroSearchMetadataCaches = () => {
   soteroSearchMetadataCache = null;
   backendBuildingOverridesCache = null;
+  manualBuildingsCache = null;
 };
 

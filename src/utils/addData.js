@@ -4,7 +4,7 @@
 
 import "../views/draw.js";
 
-import { map } from "../views/map.js";
+import { BACKEND_API_URL, map } from "../views/map.js";
 
 import {
   filter,
@@ -19,6 +19,7 @@ import { latlngBuildings, campusBuildings } from "../views/buildingsInfo.js"; //
 
 import { createSvgElement } from "../utils/tools.js"; // Create SVG empty element
 import {
+  loadManualBuildings,
   mergeCatalogWithSoteroSearch,
   mergeGeoJsonWithSoteroSearch,
 } from "@app/soteroSearchMetadata";
@@ -218,6 +219,68 @@ const addBaseFootprintsForMissingBuildings = async (
   }
 };
 
+const parseManualFloors = (floorsJson) => {
+  try {
+    const floors = JSON.parse(floorsJson || "[]");
+    return Array.isArray(floors) ? floors.map(Number).filter((floor) => Number.isFinite(floor)) : [];
+  } catch {
+    return [];
+  }
+};
+
+const manualBuildingToFeature = (building, floorNumber) => {
+  let geometry = null;
+  try {
+    geometry = JSON.parse(building.geometryJson || "{}");
+  } catch {
+    geometry = null;
+  }
+
+  if (!geometry?.type || !geometry?.coordinates) {
+    return null;
+  }
+
+  return {
+    type: "Feature",
+    properties: {
+      id: building.externalId,
+      name: building.displayName || building.externalId,
+      kind: "building",
+      buildingType: building.type || "manual",
+      sourceId: "manual",
+      floor: Number(floorNumber),
+      isClickable: true,
+      showLabel: false,
+      slug: String(building.externalId || "").toLowerCase().replaceAll("_", "-"),
+      centroid:
+        building.centroidLongitude && building.centroidLatitude
+          ? [building.centroidLongitude, building.centroidLatitude]
+          : null,
+      isVisible: true,
+      isPublished: true,
+      style: {
+        color: "#3388ff",
+        weight: 2,
+        opacity: 1,
+        fillColor: "#3388ff",
+        fillOpacity: 0.2,
+      },
+    },
+    geometry,
+  };
+};
+
+const loadManualFeaturesForFloor = async (floorNumber) => {
+  const manualBuildings = await loadManualBuildings();
+  return manualBuildings
+    .filter((building) => {
+      const floors = parseManualFloors(building.floorsJson);
+      return floors.length ? floors.includes(Number(floorNumber)) : Number(floorNumber) === 0;
+    })
+    .map((building) => manualBuildingToFeature(building, floorNumber))
+    .filter(Boolean);
+};
+
 const addFeatures = (school, floorNumber, location, expectedRenderSequence) => {
   $.ajax({
     url: buildFloorGeoJsonUrl(school, location, floorNumber),
@@ -252,12 +315,19 @@ const addFeatures = (school, floorNumber, location, expectedRenderSequence) => {
         filteredJson,
         allowedBuildingIds
       );
+      const manualFeatures = await loadManualFeaturesForFloor(floorNumber);
 
       if (expectedRenderSequence !== renderSequence) {
         return;
       }
 
-      featuresLayerGroup(renderJson, expectedRenderSequence);
+      featuresLayerGroup(
+        {
+          ...renderJson,
+          features: [...(renderJson.features || []), ...manualFeatures],
+        },
+        expectedRenderSequence
+      );
     },
     error: function () {
       console.log("ERROR Failed to load JSON");
