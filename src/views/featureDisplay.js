@@ -222,6 +222,11 @@ let backendSessionCacheAt = 0;
 const EQUIPMENT_SYNC_POLL_MS = 30000;
 const BACKEND_SESSION_CACHE_MS = 15000;
 
+const updateBackendSessionCache = (session) => {
+  backendSessionCache = session || { isAuthenticated: false, isAdmin: false };
+  backendSessionCacheAt = Date.now();
+};
+
 const loadBackendSession = async () => {
   const now = Date.now();
   if (backendSessionCache && now - backendSessionCacheAt < BACKEND_SESSION_CACHE_MS) {
@@ -1481,6 +1486,31 @@ const zoomToFeaturePoint = (e) => {
   map.setView([e.latlng.lat, e.latlng.lng], 19);
 };
 
+const handleFeatureClick = (e) => {
+  const featureId = e?.target?.feature?.properties?.id || null;
+  const event = new CustomEvent("sotero-building-layer-click", {
+    cancelable: true,
+    detail: {
+      featureId,
+      feature: e?.target?.feature || null,
+      layer: e?.target || null,
+      originalEvent: e,
+    },
+  });
+
+  const shouldContinue = window.dispatchEvent(event);
+  if (!shouldContinue) {
+    e?.originalEvent?.preventDefault?.();
+    e?.originalEvent?.stopPropagation?.();
+    e?.target?.closePopup?.();
+    map.closePopup?.();
+    L.DomEvent.stop(e);
+    return;
+  }
+
+  zoomToFeature(e);
+};
+
 const highlightFeature = (e) => {
   var layer = e.target;
 
@@ -1551,7 +1581,7 @@ export const onEachFeature = (feature, layer) => {
       layer.on({
         mouseover: highlightFeature,
         mouseout: resetHighlight,
-        click: zoomToFeature,
+        click: handleFeatureClick,
       });
 
       layer.on("remove", () => {
@@ -1572,6 +1602,11 @@ if (document.readyState === "loading") {
 } else {
   startEquipmentSyncMonitor();
 }
+
+window.addEventListener("sotero-session-changed", (event) => {
+  updateBackendSessionCache(event.detail || {});
+  refreshCurrentPopup();
+});
 
 
 

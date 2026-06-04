@@ -5,6 +5,7 @@ const SOTERO_SEARCH_PATH = `data/cs_sotero_search.json?v=${Date.now()}`;
 let soteroSearchMetadataCache = null;
 let backendBuildingOverridesCache = null;
 let manualBuildingsCache = null;
+let buildingGeometryOverridesCache = null;
 
 const isBuildingId = (id) => /^SR-BLD-\d+$/.test(String(id || ""));
 const DEFAULT_FLOOR = 0;
@@ -99,6 +100,46 @@ const loadBackendBuildingOverrides = async () => {
     console.error("Error cargando overrides de edificios desde backend:", error);
     backendBuildingOverridesCache = new Map();
     return backendBuildingOverridesCache;
+  }
+};
+
+export const loadBuildingGeometryOverrides = async () => {
+  if (buildingGeometryOverridesCache) {
+    return buildingGeometryOverridesCache;
+  }
+
+  try {
+    const response = await fetch(`${BACKEND_API_URL}/api/building-geometry-overrides`, {
+      cache: "no-store",
+    });
+
+    if (!response.ok) {
+      throw new Error("No se pudieron cargar overrides de geometria");
+    }
+
+    const items = await response.json();
+    const overrides = new Map();
+
+    for (const item of Array.isArray(items) ? items : []) {
+      try {
+        const geometry = JSON.parse(item.geometryJson || "{}");
+        if (item.buildingExternalId && geometry?.type && geometry?.coordinates) {
+          overrides.set(item.buildingExternalId, {
+            ...item,
+            geometry,
+          });
+        }
+      } catch {
+        // Ignore invalid geometry rows and keep rendering the original map.
+      }
+    }
+
+    buildingGeometryOverridesCache = overrides;
+    return buildingGeometryOverridesCache;
+  } catch (error) {
+    console.error("Error cargando overrides de geometria:", error);
+    buildingGeometryOverridesCache = new Map();
+    return buildingGeometryOverridesCache;
   }
 };
 
@@ -343,6 +384,7 @@ export const mergeCatalogWithSoteroSearch = async (catalog) => {
 export const mergeGeoJsonWithSoteroSearch = async (geoJson) => {
   const metadataById = await loadSoteroSearchMetadata();
   const backendOverridesById = await loadBackendBuildingOverrides();
+  const geometryOverridesById = await loadBuildingGeometryOverrides();
   const features = Array.isArray(geoJson?.features) ? geoJson.features : [];
 
   return {
@@ -350,6 +392,7 @@ export const mergeGeoJsonWithSoteroSearch = async (geoJson) => {
     features: features.map((feature) => {
       const properties = feature?.properties || {};
       const metadata = metadataById.get(properties.id);
+      const geometryOverride = geometryOverridesById.get(properties.id);
 
       const enrichedFeature = !metadata
         ? feature
@@ -365,7 +408,21 @@ export const mergeGeoJsonWithSoteroSearch = async (geoJson) => {
             },
           };
 
-      return applyBackendOverrideToFeature(enrichedFeature, backendOverridesById.get(properties.id));
+      const overriddenFeature = geometryOverride
+        ? {
+            ...enrichedFeature,
+            geometry: geometryOverride.geometry,
+            properties: {
+              ...(enrichedFeature.properties || {}),
+              centroid:
+                geometryOverride.centroidLongitude && geometryOverride.centroidLatitude
+                  ? [geometryOverride.centroidLongitude, geometryOverride.centroidLatitude]
+                  : enrichedFeature.properties?.centroid,
+            },
+          }
+        : enrichedFeature;
+
+      return applyBackendOverrideToFeature(overriddenFeature, backendOverridesById.get(properties.id));
     }),
   };
 };
@@ -374,5 +431,6 @@ export const resetSoteroSearchMetadataCaches = () => {
   soteroSearchMetadataCache = null;
   backendBuildingOverridesCache = null;
   manualBuildingsCache = null;
+  buildingGeometryOverridesCache = null;
 };
 

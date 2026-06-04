@@ -2,6 +2,12 @@ import { map, BACKEND_API_URL } from "../views/map.js";
 import { refreshCurrentMapData } from "@app/goToCampus";
 import { resetBuildingsCatalogCache } from "@app/addData";
 import { resetSoteroSearchMetadataCaches } from "@app/soteroSearchMetadata";
+import {
+  getAdminMapToolsButtons,
+  removeAdminMapToolsPanelIfEmpty,
+  requestAdminMapToolMode,
+  setAdminMapToolsStatus,
+} from "@app/adminMapToolsPanel";
 
 let isDrawing = false;
 let points = [];
@@ -13,12 +19,10 @@ const editorStatusId = "manual-building-editor-status";
 const editorButtonId = "manual-building-editor-toggle";
 
 const getEditorButton = () => document.getElementById(editorButtonId);
-const getEditorStatus = () => document.getElementById(editorStatusId);
 const getEditorControls = () => document.getElementById("manual-building-editor-controls");
 
 const setStatus = (message) => {
-  const status = getEditorStatus();
-  if (status) status.textContent = message;
+  setAdminMapToolsStatus(message);
 };
 
 const clearPreview = () => {
@@ -206,6 +210,7 @@ function handleMapClick(event) {
 }
 
 const startDrawing = () => {
+  requestAdminMapToolMode("manual-building");
   stopDrawing();
   isDrawing = true;
   points = [];
@@ -227,12 +232,12 @@ const toggleDrawing = () => {
 };
 
 const createEditorControls = () => {
-  const actions = document.getElementById("top-actions");
-  if (!actions || getEditorButton()) return;
+  const buttons = getAdminMapToolsButtons();
+  if (!buttons || getEditorButton()) return;
 
   const wrapper = document.createElement("div");
   wrapper.id = "manual-building-editor-controls";
-  wrapper.className = "manual-building-editor-controls";
+  wrapper.className = "admin-map-tools-group";
 
   const button = document.createElement("button");
   button.id = editorButtonId;
@@ -251,20 +256,16 @@ const createEditorControls = () => {
   finishButton.textContent = "Cerrar poligono";
   finishButton.addEventListener("click", finishPolygon);
 
-  const status = document.createElement("div");
-  status.id = editorStatusId;
-  status.className = "route-planner-status manual-building-editor-status";
-
   wrapper.appendChild(button);
   wrapper.appendChild(finishButton);
-  wrapper.appendChild(status);
-  actions.appendChild(wrapper);
+  buttons.appendChild(wrapper);
 };
 
 const removeEditorControls = () => {
   stopDrawing();
   removeModal();
   getEditorControls()?.remove();
+  removeAdminMapToolsPanelIfEmpty();
 };
 
 const loadSession = async () => {
@@ -295,4 +296,10 @@ export const syncManualBuildingEditorForSession = (session) => {
 
 window.addEventListener("sotero-session-changed", (event) => {
   syncManualBuildingEditorForSession(event.detail || {});
+});
+
+window.addEventListener("sotero-admin-map-tool-mode", (event) => {
+  if (event.detail?.mode !== "manual-building" && isDrawing) {
+    stopDrawing();
+  }
 });

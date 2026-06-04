@@ -13,5 +13,9 @@ import { initSessionModeBadge } from "@app/sessionModeBadge";
 // Manual building polygon editor for admins
 import { initManualBuildingEditor } from "@app/manualBuildingEditor";
 
+// Existing building geometry editor for admins
+import { initBuildingGeometryEditor } from "@app/buildingGeometryEditor";
+
 initSessionModeBadge();
 initManualBuildingEditor();
+initBuildingGeometryEditor();
