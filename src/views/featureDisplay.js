@@ -499,7 +499,7 @@ const updateBackendStatusPanel = (syncState) => {
   panel.version.textContent = getFrontendCacheVersion();
   panel.lastChange.textContent = formatSyncTimestamp(syncState.latestChangeUtc);
   panel.message.textContent = hasPendingChanges
-    ? `Hay cambios pendientes. ${syncState.assignedItems ?? 0} equipo(s) asignados esperan refresco. Usa Actualizar mapa.`
+    ? "Hay cambios pendientes en el mapa o inventario. Usa Actualizar mapa."
     : "No hay actualizaciones pendientes.";
   panel.refreshButton.hidden = !hasPendingChanges;
 };
@@ -551,6 +551,14 @@ const startEquipmentSyncMonitor = () => {
   ensureBackendStatusPanel();
   updateBackendStatusPanel(latestEquipmentSyncState);
   checkEquipmentSyncState();
+
+  window.addEventListener("focus", checkEquipmentSyncState);
+  document.addEventListener("visibilitychange", () => {
+    if (!document.hidden) {
+      checkEquipmentSyncState();
+    }
+  });
+
   window.setInterval(() => {
     backendStatusPanel = null;
     checkEquipmentSyncState();
@@ -1821,6 +1829,13 @@ export const openBuildingPopupLayer = (layer, options = {}) => {
     maxZoom = 20,
     padding = [40, 40],
   } = options;
+  const minZoom = typeof map.getMinZoom === "function" ? map.getMinZoom() : null;
+  const currentZoom = typeof map.getZoom === "function" ? map.getZoom() : null;
+  const shouldZoom =
+    !!zoom &&
+    Number.isFinite(Number(minZoom)) &&
+    Number.isFinite(Number(currentZoom)) &&
+    Number(currentZoom) <= Number(minZoom) + 0.05;
 
   if (rememberView) {
     popupReturnView = {
@@ -1831,12 +1846,12 @@ export const openBuildingPopupLayer = (layer, options = {}) => {
 
   suspendMapBoundsForPopup();
 
-  if (zoom && typeof layer.getBounds === "function") {
+  if (shouldZoom && typeof layer.getBounds === "function") {
     map.fitBounds(layer.getBounds(), {
       maxZoom,
       padding,
     });
-  } else if (zoom && typeof layer.getLatLng === "function") {
+  } else if (shouldZoom && typeof layer.getLatLng === "function") {
     map.setView(layer.getLatLng(), maxZoom);
   }
 

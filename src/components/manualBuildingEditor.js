@@ -6,6 +6,7 @@ import {
   getAdminMapToolsButtons,
   removeAdminMapToolsPanelIfEmpty,
   requestAdminMapToolMode,
+  setAdminMapToolActiveMode,
   setAdminMapToolsStatus,
 } from "@app/adminMapToolsPanel";
 
@@ -17,12 +18,42 @@ let modalRoot = null;
 
 const editorStatusId = "manual-building-editor-status";
 const editorButtonId = "manual-building-editor-toggle";
+const activeActionsClass = "manual-building-active-actions";
 
 const getEditorButton = () => document.getElementById(editorButtonId);
 const getEditorControls = () => document.getElementById("manual-building-editor-controls");
 
 const setStatus = (message) => {
   setAdminMapToolsStatus(message);
+};
+
+const removeActiveControls = () => {
+  document.querySelector(`.${activeActionsClass}`)?.remove();
+};
+
+const buildActionButtons = () => {
+  const wrapper = document.createElement("div");
+  wrapper.className = `${activeActionsClass} building-geometry-active-actions`;
+  wrapper.innerHTML = `
+    <button type="button" class="dashboard-link manual-building-editor-button" data-manual-building-save-shape>Guardar forma</button>
+    <button type="button" class="dashboard-link" data-manual-building-cancel-shape>Cancelar</button>
+  `;
+
+  wrapper.querySelector("[data-manual-building-save-shape]")?.addEventListener("click", finishPolygon);
+  wrapper.querySelector("[data-manual-building-cancel-shape]")?.addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    stopDrawing();
+    setStatus("");
+  });
+
+  return wrapper;
+};
+
+const setActiveControls = () => {
+  const buttons = getAdminMapToolsButtons();
+  if (!buttons || buttons.querySelector(`.${activeActionsClass}`)) return;
+  buttons.appendChild(buildActionButtons());
 };
 
 const clearPreview = () => {
@@ -177,7 +208,7 @@ const openManualBuildingForm = () => {
   modalRoot.querySelector("[data-manual-building-cancel]")?.addEventListener("click", removeModal);
 };
 
-const stopDrawing = () => {
+const stopDrawing = ({ clearActiveTool = true } = {}) => {
   isDrawing = false;
   points = [];
   clearPreview();
@@ -185,6 +216,10 @@ const stopDrawing = () => {
   map.off("dblclick", finishPolygon);
   map.doubleClickZoom.enable();
   getEditorButton()?.classList.remove("is-active");
+  removeActiveControls();
+  if (clearActiveTool) {
+    setAdminMapToolActiveMode(null);
+  }
 };
 
 async function finishPolygon(event) {
@@ -194,7 +229,7 @@ async function finishPolygon(event) {
   event?.originalEvent?.stopPropagation?.();
 
   if (!isDrawing || points.length < 3) {
-    setStatus("Marca al menos 3 puntos para cerrar el poligono.");
+    setStatus("Marca al menos 3 puntos para guardar la forma.");
     return;
   }
 
@@ -206,18 +241,19 @@ function handleMapClick(event) {
 
   points.push(event.latlng);
   redrawPreview();
-  setStatus(`${points.length} punto(s). Doble clic o Cerrar poligono para terminar.`);
+  setStatus(`${points.length} punto(s). Usa Guardar forma para continuar.`);
 }
 
 const startDrawing = () => {
-  requestAdminMapToolMode("manual-building");
   stopDrawing();
+  requestAdminMapToolMode("manual-building");
   isDrawing = true;
   points = [];
   map.doubleClickZoom.disable();
   map.on("click", handleMapClick);
   map.on("dblclick", finishPolygon);
   getEditorButton()?.classList.add("is-active");
+  setActiveControls();
   setStatus("Modo agregar edificio: marca puntos en el mapa.");
 };
 
@@ -250,14 +286,7 @@ const createEditorControls = () => {
     toggleDrawing();
   });
 
-  const finishButton = document.createElement("button");
-  finishButton.className = "dashboard-link manual-building-editor-button";
-  finishButton.type = "button";
-  finishButton.textContent = "Cerrar poligono";
-  finishButton.addEventListener("click", finishPolygon);
-
   wrapper.appendChild(button);
-  wrapper.appendChild(finishButton);
   buttons.appendChild(wrapper);
 };
 
@@ -300,6 +329,6 @@ window.addEventListener("sotero-session-changed", (event) => {
 
 window.addEventListener("sotero-admin-map-tool-mode", (event) => {
   if (event.detail?.mode !== "manual-building" && isDrawing) {
-    stopDrawing();
+    stopDrawing({ clearActiveTool: false });
   }
 });

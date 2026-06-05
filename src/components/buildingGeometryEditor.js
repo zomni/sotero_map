@@ -10,6 +10,7 @@ import {
   getAdminMapToolsButtons,
   removeAdminMapToolsPanelIfEmpty,
   requestAdminMapToolMode,
+  setAdminMapToolActiveMode,
   setAdminMapToolsStatus,
 } from "@app/adminMapToolsPanel";
 
@@ -173,7 +174,7 @@ const removeActiveControls = () => {
   document.querySelector(".building-geometry-active-actions")?.remove();
 };
 
-export const stopGeometryEditor = () => {
+export const stopGeometryEditor = ({ clearActiveTool = true } = {}) => {
   activeMode = null;
   activeBuildingId = null;
   originalLatLngs = [];
@@ -181,6 +182,9 @@ export const stopGeometryEditor = () => {
   removeActiveControls();
   document.getElementById(editButtonId)?.classList.remove("is-active");
   document.getElementById(moveButtonId)?.classList.remove("is-active");
+  if (clearActiveTool) {
+    setAdminMapToolActiveMode(null);
+  }
   setStatus("");
 };
 
@@ -190,7 +194,7 @@ const beginShapeEdit = (layer, featureId) => {
     return;
   }
 
-  stopGeometryEditor();
+  stopGeometryEditor({ clearActiveTool: false });
   activeMode = "shape";
   activeBuildingId = featureId || layer?.feature?.properties?.id || "";
   originalLatLngs = normalizePolygonLatLngs(layer);
@@ -198,6 +202,7 @@ const beginShapeEdit = (layer, featureId) => {
   if (originalLatLngs.length < 3) {
     activeMode = null;
     activeBuildingId = null;
+    setAdminMapToolActiveMode(null);
     setStatus("Este edificio no tiene un poligono editable.");
     return;
   }
@@ -234,6 +239,7 @@ const beginShapeEdit = (layer, featureId) => {
 };
 
 const startShapeEdit = () => {
+  stopGeometryEditor();
   requestAdminMapToolMode("geometry-shape");
   const layer = findFeatureLayerById(currentOpenFeatureId);
   if (layer) {
@@ -241,8 +247,8 @@ const startShapeEdit = () => {
     return;
   }
 
-  stopGeometryEditor();
   activeMode = "shape-pending";
+  setAdminMapToolActiveMode("geometry-shape");
   document.getElementById(editButtonId)?.classList.add("is-active");
   setStatus("Haz click sobre el edificio que quieres editar.");
 };
@@ -259,7 +265,7 @@ const beginMoveEdit = (layer, featureId) => {
     return;
   }
 
-  stopGeometryEditor();
+  stopGeometryEditor({ clearActiveTool: false });
   activeMode = "move";
   activeBuildingId = featureId || layer?.feature?.properties?.id || "";
   originalLatLngs = normalizePolygonLatLngs(layer);
@@ -267,6 +273,7 @@ const beginMoveEdit = (layer, featureId) => {
   if (originalLatLngs.length < 3) {
     activeMode = null;
     activeBuildingId = null;
+    setAdminMapToolActiveMode(null);
     setStatus("Este edificio no tiene un poligono editable.");
     return;
   }
@@ -302,6 +309,7 @@ const beginMoveEdit = (layer, featureId) => {
 };
 
 const startMoveEdit = () => {
+  stopGeometryEditor();
   requestAdminMapToolMode("geometry-move");
   const layer = findFeatureLayerById(currentOpenFeatureId);
   if (layer) {
@@ -309,8 +317,8 @@ const startMoveEdit = () => {
     return;
   }
 
-  stopGeometryEditor();
   activeMode = "move-pending";
+  setAdminMapToolActiveMode("geometry-move");
   document.getElementById(moveButtonId)?.classList.add("is-active");
   setStatus("Haz click sobre el edificio que quieres mover.");
 };
@@ -383,7 +391,7 @@ window.addEventListener("sotero-session-changed", (event) => {
 
 window.addEventListener("sotero-admin-map-tool-mode", (event) => {
   if (!["geometry-shape", "geometry-move"].includes(event.detail?.mode) && activeMode) {
-    stopGeometryEditor();
+    stopGeometryEditor({ clearActiveTool: false });
   }
 });
 

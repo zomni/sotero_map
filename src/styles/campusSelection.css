@@ -59,7 +59,6 @@
     left: 0;
     right: 0;
     z-index: 1000;
-    /* Setting the select box in the forefront */
     border-radius: 5px;
 }
 
@@ -80,6 +79,11 @@
     color: white;
     transition-duration: 0.4s;
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.select-items div.same-as-selected {
+    background-color: #2d79a0;
+    color: white;
 }
 
 /* Hide the items when the select box is closed: */
