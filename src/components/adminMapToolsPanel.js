@@ -5,6 +5,8 @@ const activeModes = new Map([
   ["manual-building", "manual-building-editor-toggle"],
   ["geometry-shape", "building-shape-editor-button"],
   ["geometry-move", "building-move-editor-button"],
+  ["walking-routes", "walking-route-editor-toggle"],
+  ["walking-route-delete", "walking-route-delete-toggle"],
 ]);
 
 export const ensureAdminMapToolsPanel = () => {
@@ -64,6 +66,9 @@ export const setAdminMapToolsStatus = (message) => {
 };
 
 export const setAdminMapToolActiveMode = (mode) => {
+  window.soteroAdminMapToolMode = mode || null;
+  document.documentElement.dataset.adminMapToolMode = mode || "";
+
   document
     .querySelectorAll(".admin-map-tools-panel .dashboard-link")
     .forEach((button) => button.classList.remove("is-active", "is-working"));

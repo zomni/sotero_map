@@ -16,6 +16,14 @@ import { initManualBuildingEditor } from "@app/manualBuildingEditor";
 // Existing building geometry editor for admins
 import { initBuildingGeometryEditor } from "@app/buildingGeometryEditor";
 
+// Walking route network editor for admins
+import { initWalkingRouteEditor } from "@app/walkingRouteEditor";
+
+// Persistent walking route visibility layer
+import { initWalkingRouteLayer } from "@app/walkingRouteLayer";
+
 initSessionModeBadge();
+initWalkingRouteLayer();
 initManualBuildingEditor();
 initBuildingGeometryEditor();
+initWalkingRouteEditor();

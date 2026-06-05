@@ -6,6 +6,7 @@ import { map, HOST_URL, BACKEND_API_URL } from "../views/map.js";
 import { mergeCatalogWithSoteroSearch, resetSoteroSearchMetadataCaches } from "@app/soteroSearchMetadata";
 import { refreshCurrentMapData } from "@app/goToCampus";
 import { resetBuildingsCatalogCache } from "@app/addData";
+import { bindWalkingRouteToggleButton } from "@app/walkingRouteLayer";
 
 export let currentOpenFeatureId = null;
 let currentOpenLayer = null;
@@ -468,6 +469,9 @@ const ensureBackendStatusPanel = () => {
     if (typeof window.refreshRoutePlannerBuildings === "function") {
       await window.refreshRoutePlannerBuildings();
     }
+    if (typeof window.refreshVisibleWalkingRoutes === "function") {
+      await window.refreshVisibleWalkingRoutes();
+    }
     updateBackendStatusPanel(latestEquipmentSyncState);
     await refreshCurrentPopup();
   });
@@ -546,6 +550,20 @@ const checkEquipmentSyncState = async () => {
   pendingEquipmentRevision = revision !== loadedEquipmentRevision ? revision : null;
   updateBackendStatusPanel(syncState);
 };
+
+const acknowledgeCurrentMapSyncState = async () => {
+  const syncState = await loadEquipmentSyncState();
+  const revision = syncState?.revision;
+
+  if (syncState && revision) {
+    loadedEquipmentRevision = revision;
+    pendingEquipmentRevision = null;
+  }
+
+  updateBackendStatusPanel(syncState);
+};
+
+window.acknowledgeCurrentMapSyncState = acknowledgeCurrentMapSyncState;
 
 const startEquipmentSyncMonitor = () => {
   ensureBackendStatusPanel();
@@ -1072,6 +1090,15 @@ const ensureMapEquipmentTypeFilter = (summaryMap) => {
   wrapper.appendChild(labelToggle);
   bindBuildingLabelToggleButton(labelToggle);
   setBuildingLabelsVisible(buildingLabelsVisible);
+
+  const routeVisibilityToggle = document.createElement("button");
+  routeVisibilityToggle.id = "walking-route-toggle";
+  routeVisibilityToggle.className = "dashboard-link building-label-toggle is-muted";
+  routeVisibilityToggle.type = "button";
+  routeVisibilityToggle.setAttribute("aria-pressed", "false");
+  routeVisibilityToggle.textContent = "Mostrar rutas";
+  wrapper.appendChild(routeVisibilityToggle);
+  bindWalkingRouteToggleButton(routeVisibilityToggle);
 
   const routeToggle = document.getElementById("route-planner-toggle");
   if (routeToggle) {
@@ -1920,6 +1947,21 @@ const createEquipmentBubbleForLayer = async (feature, layer) => {
     event?.originalEvent?.preventDefault?.();
     event?.originalEvent?.stopPropagation?.();
     L.DomEvent.stop(event);
+
+    if (["geometry-shape", "geometry-move"].includes(window.soteroAdminMapToolMode)) {
+      const buildingEvent = new CustomEvent("sotero-building-layer-click", {
+        cancelable: true,
+        detail: {
+          featureId,
+          feature,
+          layer,
+          originalEvent: event,
+        },
+      });
+      window.dispatchEvent(buildingEvent);
+      return;
+    }
+
     popupViewState[featureId] = "devices";
     popupDeviceTypeFilterState[featureId] = globalEquipmentTypeFilter || "";
     popupDeviceScopeState[featureId] = "building";

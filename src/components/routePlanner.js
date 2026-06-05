@@ -1,5 +1,5 @@
 import campuses from "../data/campuses.js";
-import { map } from "../views/map.js";
+import { BACKEND_API_URL, map } from "../views/map.js";
 import { goTo } from "@app/goToCampus";
 import { mergeCatalogWithSoteroSearch } from "@app/soteroSearchMetadata";
 import { clearRouteHighlight, closeCurrentPopup, setRouteHighlight } from "@app/featureDisplay";
@@ -11,6 +11,7 @@ const RETRY_DELAY_MS = 250;
 let plannerElements = null;
 let routeOverlayLayer = null;
 let buildingsCache = null;
+let walkingRoutesCache = null;
 let activeRoute = {
   originId: "",
   destinationId: "",
@@ -128,6 +129,158 @@ const loadBuildingsCatalog = async () => {
 const findBuildingById = async (buildingId) => {
   const buildings = await loadBuildingsCatalog();
   return buildings.find((building) => building.id === buildingId) || null;
+};
+
+const normalizeRouteStatus = (status) => String(status || "open").trim().toLowerCase();
+
+const loadWalkingRoutes = async () => {
+  if (walkingRoutesCache) {
+    return walkingRoutesCache;
+  }
+
+  try {
+    const response = await fetch(`${BACKEND_API_URL}/api/walking-routes?campus=${encodeURIComponent(DEFAULT_CAMPUS)}`, {
+      cache: "no-store",
+    });
+
+    if (!response.ok) {
+      throw new Error("No se pudo cargar la red caminable.");
+    }
+
+    const data = await response.json();
+    const nodes = Array.isArray(data?.nodes) ? data.nodes : [];
+    const edges = Array.isArray(data?.edges) ? data.edges : [];
+    const nodesById = new Map(nodes.map((node) => [node.externalId, node]));
+
+    walkingRoutesCache = { nodes, edges, nodesById };
+    return walkingRoutesCache;
+  } catch (error) {
+    console.error("Error cargando rutas caminables:", error);
+    walkingRoutesCache = { nodes: [], edges: [], nodesById: new Map() };
+    return walkingRoutesCache;
+  }
+};
+
+const resetWalkingRoutesCache = () => {
+  walkingRoutesCache = null;
+};
+
+window.refreshWalkingRoutesCache = resetWalkingRoutesCache;
+
+const nodeToLatLng = (node) => L.latLng(Number(node.latitude), Number(node.longitude));
+
+const findNearestRouteNode = (latlng, nodes) => {
+  let best = null;
+  let bestDistance = Number.POSITIVE_INFINITY;
+
+  for (const node of nodes) {
+    const nodeLatLng = nodeToLatLng(node);
+    const distance = map.distance(latlng, nodeLatLng);
+    if (distance < bestDistance) {
+      best = node;
+      bestDistance = distance;
+    }
+  }
+
+  return best ? { node: best, distance: bestDistance } : null;
+};
+
+const buildRouteGraph = (network) => {
+  const graph = new Map();
+
+  for (const node of network.nodes) {
+    graph.set(node.externalId, []);
+  }
+
+  for (const edge of network.edges) {
+    const status = normalizeRouteStatus(edge.status);
+    if (status === "closed") {
+      continue;
+    }
+
+    const from = edge.fromNodeExternalId;
+    const to = edge.toNodeExternalId;
+    if (!graph.has(from) || !graph.has(to)) {
+      continue;
+    }
+
+    const baseWeight = Number(edge.distanceMeters) || 1;
+    const weight = status === "restricted" ? baseWeight * 1.8 : baseWeight;
+    const entry = { to, edge, weight };
+    const reverseEntry = { to: from, edge, weight };
+    graph.get(from).push(entry);
+    graph.get(to).push(reverseEntry);
+  }
+
+  return graph;
+};
+
+const calculateShortestRoute = (network, originNodeId, destinationNodeId) => {
+  const graph = buildRouteGraph(network);
+  const distances = new Map();
+  const previous = new Map();
+  const visited = new Set();
+  const queue = new Set(graph.keys());
+
+  graph.forEach((_, nodeId) => distances.set(nodeId, Number.POSITIVE_INFINITY));
+  distances.set(originNodeId, 0);
+
+  while (queue.size > 0) {
+    let current = null;
+    let currentDistance = Number.POSITIVE_INFINITY;
+
+    for (const nodeId of queue) {
+      const distance = distances.get(nodeId) ?? Number.POSITIVE_INFINITY;
+      if (distance < currentDistance) {
+        current = nodeId;
+        currentDistance = distance;
+      }
+    }
+
+    if (!current || currentDistance === Number.POSITIVE_INFINITY) {
+      break;
+    }
+
+    queue.delete(current);
+    visited.add(current);
+
+    if (current === destinationNodeId) {
+      break;
+    }
+
+    for (const next of graph.get(current) || []) {
+      if (visited.has(next.to)) {
+        continue;
+      }
+
+      const candidate = currentDistance + next.weight;
+      if (candidate < (distances.get(next.to) ?? Number.POSITIVE_INFINITY)) {
+        distances.set(next.to, candidate);
+        previous.set(next.to, { nodeId: current, edge: next.edge });
+      }
+    }
+  }
+
+  if (!previous.has(destinationNodeId) && originNodeId !== destinationNodeId) {
+    return null;
+  }
+
+  const nodeIds = [destinationNodeId];
+  const edges = [];
+  let cursor = destinationNodeId;
+
+  while (cursor !== originNodeId) {
+    const step = previous.get(cursor);
+    if (!step) {
+      return null;
+    }
+
+    edges.unshift(step.edge);
+    cursor = step.nodeId;
+    nodeIds.unshift(cursor);
+  }
+
+  return { nodeIds, edges, distance: distances.get(destinationNodeId) || 0 };
 };
 
 const setStatus = (message, tone = "neutral") => {
@@ -350,11 +503,67 @@ const resolveRouteGeometry = async (originId, destinationId, originLayer, destin
     return null;
   }
 
+  const network = await loadWalkingRoutes();
+  const nearestOrigin = findNearestRouteNode(originLatLng, network.nodes);
+  const nearestDestination = findNearestRouteNode(destinationLatLng, network.nodes);
+  const shortestRoute =
+    nearestOrigin && nearestDestination
+      ? calculateShortestRoute(network, nearestOrigin.node.externalId, nearestDestination.node.externalId)
+      : null;
+
+  if (shortestRoute) {
+    const routeLatLngs = [
+      originLatLng,
+      ...shortestRoute.nodeIds
+        .map((nodeId) => network.nodesById.get(nodeId))
+        .filter(Boolean)
+        .map(nodeToLatLng),
+      destinationLatLng,
+    ];
+    const bounds = L.latLngBounds(routeLatLngs);
+    const hasRestrictedSegments = shortestRoute.edges.some(
+      (edge) => normalizeRouteStatus(edge.status) === "restricted"
+    );
+
+    return {
+      originBuilding,
+      destinationBuilding,
+      originLatLng,
+      destinationLatLng,
+      routeLatLngs,
+      routeEdges: shortestRoute.edges,
+      hasWalkingNetwork: true,
+      routeUnavailable: false,
+      hasRestrictedSegments,
+      bounds,
+    };
+  }
+
+  if (network.nodes.length > 0 && nearestOrigin && nearestDestination) {
+    return {
+      originBuilding,
+      destinationBuilding,
+      originLatLng,
+      destinationLatLng,
+      routeLatLngs: [originLatLng, destinationLatLng],
+      routeEdges: [],
+      hasWalkingNetwork: true,
+      routeUnavailable: true,
+      hasRestrictedSegments: false,
+      bounds: buildRouteBounds(originLatLng, destinationLatLng, originLayer, destinationLayer),
+    };
+  }
+
   return {
     originBuilding,
     destinationBuilding,
     originLatLng,
     destinationLatLng,
+    routeLatLngs: [originLatLng, destinationLatLng],
+    routeEdges: [],
+    hasWalkingNetwork: false,
+    routeUnavailable: false,
+    hasRestrictedSegments: false,
     bounds: buildRouteBounds(originLatLng, destinationLatLng, originLayer, destinationLayer),
   };
 };
@@ -405,29 +614,52 @@ const renderRoute = async (originId, destinationId, originLayer, destinationLaye
     return;
   }
 
-  const { originLatLng, destinationLatLng } = routeGeometry;
+  const {
+    originLatLng,
+    destinationLatLng,
+    routeLatLngs,
+    hasWalkingNetwork,
+    routeUnavailable,
+    hasRestrictedSegments,
+  } = routeGeometry;
 
   clearRouteOverlay();
   const overlay = ensureRouteOverlayLayer();
 
-  L.polyline([originLatLng, destinationLatLng], {
-    color: "#0f766e",
+  L.polyline(routeLatLngs, {
+    color: routeUnavailable ? "#dc2626" : "#0f766e",
     weight: 5,
     opacity: 0.95,
-    dashArray: "12 10",
+    dashArray: !hasWalkingNetwork || routeUnavailable ? "12 10" : null,
     lineCap: "round",
     interactive: false,
   }).addTo(overlay);
 
-  const rotation = getArrowRotation(originLatLng, destinationLatLng);
-  [0.28, 0.52, 0.76].forEach((fraction) => {
-    createArrowMarker(interpolateLatLng(originLatLng, destinationLatLng, fraction), rotation).addTo(overlay);
+  const arrowSegments = routeLatLngs.length > 1 ? routeLatLngs.slice(0, -1) : [originLatLng];
+  [0.25, 0.5, 0.75].forEach((fraction) => {
+    const segmentIndex = Math.min(
+      arrowSegments.length - 1,
+      Math.max(0, Math.floor((routeLatLngs.length - 1) * fraction))
+    );
+    const start = routeLatLngs[segmentIndex] || originLatLng;
+    const end = routeLatLngs[segmentIndex + 1] || destinationLatLng;
+    if (!routeUnavailable) {
+      createArrowMarker(interpolateLatLng(start, end, 0.5), getArrowRotation(start, end)).addTo(overlay);
+    }
   });
 
   const description = await buildRouteDescription(originId, destinationId);
   routeRequestInFlight = false;
   updateSubmitState();
-  setStatus(`Ruta activa: ${description}.`, "success");
+  if (routeUnavailable) {
+    setStatus(`No hay camino disponible entre ${description}. Revisa tramos cerrados o dibuja una alternativa.`, "error");
+  } else if (!hasWalkingNetwork) {
+    setStatus(`Ruta directa: ${description}. Dibuja rutas caminables para calcular un camino real.`, "warning");
+  } else if (hasRestrictedSegments) {
+    setStatus(`Ruta activa: ${description}. Incluye tramo(s) restringidos.`, "warning");
+  } else {
+    setStatus(`Ruta activa: ${description}.`, "success");
+  }
 };
 
 const handleSubmit = async () => {
@@ -515,6 +747,7 @@ const initializeRoutePlanner = async () => {
 
   window.refreshRoutePlannerBuildings = async () => {
     buildingsCache = null;
+    resetWalkingRoutesCache();
     await populateBuildingSelectors(true);
 
     if (activeRoute.originId && activeRoute.destinationId) {

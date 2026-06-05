@@ -215,6 +215,7 @@ const beginShapeEdit = (layer, featureId) => {
     originalLatLngs.map((point, index) => {
       const marker = L.marker(point, {
         draggable: true,
+        zIndexOffset: 2000,
         icon: L.divIcon({
           className: "building-geometry-vertex-marker",
           html: "",
@@ -285,6 +286,7 @@ const beginMoveEdit = (layer, featureId) => {
   let previousCenter = getPolygonCenter(originalLatLngs);
   moveMarker = L.marker(previousCenter, {
     draggable: true,
+    zIndexOffset: 2500,
     title: "Arrastra para mover el edificio",
     icon: L.divIcon({
       className: "building-geometry-move-marker",

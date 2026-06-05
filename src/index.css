@@ -235,6 +235,19 @@
     background: #256b8d;
 }
 
+.building-geometry-active-actions .manual-building-editor-button,
+.manual-building-primary {
+    border-color: #0f3a52;
+    background: #0f3a52;
+    color: #ffffff;
+    box-shadow: 0 10px 24px rgba(15, 58, 82, 0.25);
+}
+
+.building-geometry-active-actions .manual-building-editor-button:hover,
+.manual-building-primary:hover {
+    background: #0b2e42;
+}
+
 .admin-map-tools-panel .dashboard-link.is-working {
     position: relative;
     border-color: #154860;
@@ -346,6 +359,11 @@
 
 .building-equipment-bubble {
     pointer-events: auto;
+}
+
+html[data-admin-map-tool-mode="geometry-shape"] .building-equipment-bubble,
+html[data-admin-map-tool-mode="geometry-move"] .building-equipment-bubble {
+    display: none;
 }
 
 .building-equipment-bubble button {
@@ -786,6 +804,7 @@
 }
 
 .manual-building-form input,
+.manual-building-form select,
 .manual-building-form textarea {
     width: 100%;
     box-sizing: border-box;
@@ -797,6 +816,7 @@
 }
 
 .manual-building-form input:focus,
+.manual-building-form select:focus,
 .manual-building-form textarea:focus {
     outline: 2px solid rgba(45, 121, 160, 0.18);
     border-color: #2d79a0;
@@ -819,8 +839,10 @@
 }
 
 .manual-building-primary {
-    background: #154860;
+    border-color: #0f3a52;
+    background: #0f3a52;
     color: #ffffff;
+    box-shadow: 0 10px 24px rgba(15, 58, 82, 0.25);
 }
 
 .manual-building-secondary {
