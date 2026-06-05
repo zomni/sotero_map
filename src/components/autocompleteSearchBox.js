@@ -8,7 +8,7 @@
 
 import { map, HOST_URL, BACKEND_API_URL } from "../views/map.js";
 import campuses from "../data/campuses.js";
-import { setCurrentOpenFeatureId } from "@app/featureDisplay";
+import { openBuildingPopupLayer, setCurrentOpenFeatureId } from "@app/featureDisplay";
 import { mergeGeoJsonWithSoteroSearch } from "@app/soteroSearchMetadata";
 
 // import "../lib/jquery/jquery-3.6.0.min.js"; // Not working with webpack
@@ -430,18 +430,12 @@ import Fuse from "../lib/fuse/fuse.basic.esm.min.js";
       return false;
     }
 
-    if (typeof layer.getBounds === "function") {
-      map.fitBounds(layer.getBounds(), {
-        maxZoom: zoom ?? 20,
-        padding: [40, 40],
-      });
-    } else if (typeof layer.getLatLng === "function") {
-      map.setView(layer.getLatLng(), zoom ?? 20);
-    }
-
-    if (typeof layer.openPopup === "function") {
-      layer.openPopup();
-    }
+    openBuildingPopupLayer(layer, {
+      zoom: true,
+      rememberView: true,
+      maxZoom: zoom ?? 20,
+      padding: [40, 40],
+    });
 
     return true;
   };

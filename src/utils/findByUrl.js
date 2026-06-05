@@ -3,8 +3,7 @@
 /////////////////////////////////////////////////////////////////////////////////
 
 import { goTo } from "@app/goToCampus";
-import { map } from "../views/map.js";
-import { setCurrentOpenFeatureId } from "@app/featureDisplay";
+import { openBuildingPopupLayer, setCurrentOpenFeatureId } from "@app/featureDisplay";
 
 const url = new URL(window.location.href);
 const MAX_ATTEMPTS = 48;
@@ -84,18 +83,12 @@ const openFeatureLayer = (featureId, zoom) => {
     return false;
   }
 
-  if (typeof layer.getBounds === "function") {
-    map.fitBounds(layer.getBounds(), {
-      maxZoom: zoom ?? 20,
-      padding: [40, 40],
-    });
-  } else if (typeof layer.getLatLng === "function") {
-    map.setView(layer.getLatLng(), zoom ?? 20);
-  }
-
-  if (typeof layer.openPopup === "function") {
-    layer.openPopup();
-  }
+  openBuildingPopupLayer(layer, {
+    zoom: true,
+    rememberView: true,
+    maxZoom: zoom ?? 20,
+    padding: [40, 40],
+  });
 
   clearDeepLinkFromUrl();
   return true;

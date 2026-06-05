@@ -11,6 +11,7 @@ import {
   style,
   onEachFeature,
   currentOpenFeatureId,
+  openBuildingPopupLayer,
 } from "@app/featureDisplay"; // GeoJSON options + popup state
 
 import { createMarkers } from "../components/markers.js"; // Create markers for the map
@@ -107,7 +108,12 @@ const reopenPopupIfNeeded = (geoJsonLayers) => {
     geoJsonLayer.eachLayer((layer) => {
       const featureId = layer?.feature?.properties?.id;
       if (featureId === currentOpenFeatureId) {
-        layer.openPopup();
+        openBuildingPopupLayer(layer, {
+          zoom: true,
+          rememberView: false,
+          maxZoom: 20,
+          padding: [40, 40],
+        });
       }
     });
   });

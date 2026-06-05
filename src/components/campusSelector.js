@@ -115,8 +115,14 @@ function closeAllSelect(elmnt) {
 document.addEventListener("click", closeAllSelect);
 
 const rememberCampus = () => {
+  const campusKeys = Object.keys(campuses);
+  const defaultCampus = campusKeys[0] || "";
+  if (campusKeys.length === 1) {
+    activateCampus(defaultCampus, true);
+    return;
+  }
+
   const rememberedCampus = getCookie("location");
-  const defaultCampus = Object.keys(campuses)[0] || "";
   const campus = rememberedCampus && rememberedCampus in campuses ? rememberedCampus : defaultCampus;
   activateCampus(campus, true);
 };

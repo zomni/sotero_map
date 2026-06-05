@@ -49,6 +49,28 @@ const forceChange = (school, button, location) => {
   selectFloor(button);
 };
 
+const applyCampusMapBounds = (campusInfo, preserveView = false) => {
+  if (!Array.isArray(campusInfo?.bounds) || campusInfo.bounds.length < 2) {
+    map.setMaxBounds(null);
+    return;
+  }
+
+  const bounds = L.latLngBounds(campusInfo.bounds);
+  map.setMaxBounds(bounds.pad(0.02));
+  map.options.maxBoundsViscosity = 1.0;
+
+  if (!preserveView) {
+    map.fitBounds(bounds, {
+      animate: false,
+      padding: [20, 20],
+      maxZoom: campusInfo.zoom,
+    });
+    map.setMinZoom(map.getZoom());
+  } else {
+    map.panInsideBounds(bounds, { animate: false });
+  }
+};
+
 /////////////////////////////////////////////////////////////////////////////////
 /////////////////// Create buttons for displaying each floor ////////////////////
 /////////////////////////////////////////////////////////////////////////////////
@@ -70,7 +92,9 @@ export const goTo = (campus, options = {}) => {
   var campus_info = campuses[campus];
   location = campus;
   removeSearchContainerElements();
-  if (!preserveView) {
+  if (Array.isArray(campus_info?.bounds)) {
+    applyCampusMapBounds(campus_info, preserveView);
+  } else if (!preserveView) {
     map.setView(campus_info["center"], campus_info["zoom"]);
   }
   // select in js all elements with id b*

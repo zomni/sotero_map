@@ -5,9 +5,14 @@ import "../lib/leaflet/leaflet.js";
 import campuses from "../data/campuses.js";
 // Par défaut, le campus montré lors de l'ouverture de l'appli est le premier indiqué en config
 var firstCampus = Object.keys(campuses)[0];
+const firstCampusBounds = Array.isArray(campuses[firstCampus]?.bounds)
+  ? L.latLngBounds(campuses[firstCampus].bounds)
+  : null;
 export var map = L.map("map", {
   zoomControl: false,
   attributionControl: false,
+  maxBounds: firstCampusBounds ? firstCampusBounds.pad(0.02) : undefined,
+  maxBoundsViscosity: 1.0,
 }).setView(campuses[firstCampus]["center"], campuses[firstCampus]["zoom"]);
 // Import the tile from OSM, has to be replaced by our own tiles
 L.tileLayer("https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png", {

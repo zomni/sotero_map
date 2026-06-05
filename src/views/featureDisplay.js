@@ -11,6 +11,8 @@ export let currentOpenFeatureId = null;
 let currentOpenLayer = null;
 let currentHoveredLayer = null;
 let currentSelectedLayer = null;
+let popupReturnView = null;
+let popupBoundsState = null;
 let routeOriginFeatureId = null;
 let routeDestinationFeatureId = null;
 
@@ -207,6 +209,31 @@ export const clearRouteHighlight = () => {
   refreshRouteHighlightedLayers();
 };
 
+const suspendMapBoundsForPopup = () => {
+  if (popupBoundsState) return;
+
+  popupBoundsState = {
+    maxBounds: map.options.maxBounds || null,
+    maxBoundsViscosity: map.options.maxBoundsViscosity,
+  };
+
+  map.setMaxBounds(null);
+  map.options.maxBoundsViscosity = 0;
+};
+
+const restoreMapBoundsAfterPopup = () => {
+  if (!popupBoundsState) return;
+
+  const { maxBounds, maxBoundsViscosity } = popupBoundsState;
+  popupBoundsState = null;
+
+  if (maxBounds) {
+    map.setMaxBounds(maxBounds);
+  }
+
+  map.options.maxBoundsViscosity = maxBoundsViscosity ?? 1.0;
+};
+
 const popupViewState = {};
 const popupRoomState = {};
 const popupDeviceState = {};
@@ -359,26 +386,20 @@ const formatSyncTimestamp = (value) => {
   });
 };
 
-const formatBackendVersion = (value) => {
-  if (!value) return "Sin datos";
+const getFrontendCacheVersion = () => {
+  const candidates = [
+    document.querySelector('script[type="importmap"]')?.textContent || "",
+    ...Array.from(document.querySelectorAll("link[rel='stylesheet']")).map((link) => link.href || ""),
+  ];
 
-  const raw = String(value).trim();
-  if (!raw) return "Sin datos";
-
-  const parts = raw.split("+");
-  if (parts.length < 2) {
-    return raw.length > 18 ? `${raw.slice(0, 15)}...` : raw;
+  for (const value of candidates) {
+    const match = String(value).match(/[?&]v=([a-zA-Z0-9._-]+)/);
+    if (match?.[1]) {
+      return `Mapa ${match[1]}`;
+    }
   }
 
-  const [version, hash] = parts;
-  const cleanHash = (hash || "").trim();
-  if (!cleanHash) {
-    return version.trim() || raw;
-  }
-
-  const shortHash = cleanHash.length > 8 ? cleanHash.slice(0, 8) : cleanHash;
-  const compact = `${version.trim()}+${shortHash}`;
-  return compact.length > 18 ? `${compact.slice(0, 15)}...` : compact;
+  return "Mapa actual";
 };
 
 const getBackendStatusPanelMarkup = () => `
@@ -395,7 +416,7 @@ const getBackendStatusPanelMarkup = () => `
   </div>
   <div class="backend-status-body">
     <div class="backend-status-line">
-      <span class="backend-status-label">Version</span>
+      <span class="backend-status-label">Cache</span>
       <span id="backend-version">Sin datos</span>
     </div>
     <div class="backend-status-line">
@@ -475,7 +496,7 @@ const updateBackendStatusPanel = (syncState) => {
   }
 
   panel.statusText.textContent = hasPendingChanges ? "API activa con cambios pendientes" : "API activa";
-  panel.version.textContent = formatBackendVersion(syncState.backendVersion);
+  panel.version.textContent = getFrontendCacheVersion();
   panel.lastChange.textContent = formatSyncTimestamp(syncState.latestChangeUtc);
   panel.message.textContent = hasPendingChanges
     ? `Hay cambios pendientes. ${syncState.assignedItems ?? 0} equipo(s) asignados esperan refresco. Usa Actualizar mapa.`
@@ -1791,8 +1812,39 @@ export const style = (feature) => {
   return feature.properties.style;
 };
 
-const zoomToFeature = (e) => {
-  map.fitBounds(e.target.getBounds());
+export const openBuildingPopupLayer = (layer, options = {}) => {
+  if (!layer) return false;
+
+  const {
+    zoom = true,
+    rememberView = true,
+    maxZoom = 20,
+    padding = [40, 40],
+  } = options;
+
+  if (rememberView) {
+    popupReturnView = {
+      center: map.getCenter(),
+      zoom: map.getZoom(),
+    };
+  }
+
+  suspendMapBoundsForPopup();
+
+  if (zoom && typeof layer.getBounds === "function") {
+    map.fitBounds(layer.getBounds(), {
+      maxZoom,
+      padding,
+    });
+  } else if (zoom && typeof layer.getLatLng === "function") {
+    map.setView(layer.getLatLng(), maxZoom);
+  }
+
+  if (typeof layer.openPopup === "function") {
+    layer.openPopup();
+  }
+
+  return true;
 };
 
 const zoomToFeaturePoint = (e) => {
@@ -1821,7 +1873,12 @@ const handleFeatureClick = (e) => {
     return;
   }
 
-  zoomToFeature(e);
+  openBuildingPopupLayer(e?.target, {
+    zoom: true,
+    rememberView: true,
+    maxZoom: 20,
+    padding: [40, 40],
+  });
 };
 
 const createEquipmentBubbleForLayer = async (feature, layer) => {
@@ -1852,7 +1909,12 @@ const createEquipmentBubbleForLayer = async (feature, layer) => {
     popupDeviceTypeFilterState[featureId] = globalEquipmentTypeFilter || "";
     popupDeviceScopeState[featureId] = "building";
     popupRoomState[featureId] = null;
-    layer.openPopup();
+    openBuildingPopupLayer(layer, {
+      zoom: true,
+      rememberView: true,
+      maxZoom: 20,
+      padding: [40, 40],
+    });
   });
 
   buildingEquipmentBubbleEntries.set(featureId, { layer, marker, summary });
@@ -1907,6 +1969,7 @@ export const onEachFeature = (feature, layer) => {
     }
 
         layer.on("popupopen", async () => {
+      suspendMapBoundsForPopup();
       setCurrentOpenFeatureId(feature?.properties?.id || null);
       currentOpenLayer = layer;
       setSelectedLayer(layer);
@@ -1925,6 +1988,26 @@ export const onEachFeature = (feature, layer) => {
       }
 
       clearSelectedLayer(layer);
+
+      if (popupReturnView) {
+        const view = popupReturnView;
+        popupReturnView = null;
+        let didRestoreBounds = false;
+        const restoreOnce = () => {
+          if (didRestoreBounds) return;
+          didRestoreBounds = true;
+          restoreMapBoundsAfterPopup();
+        };
+        map.once("moveend", restoreOnce);
+        map.flyTo(view.center, view.zoom, {
+          animate: true,
+          duration: 0.45,
+          easeLinearity: 0.25,
+        });
+        window.setTimeout(restoreOnce, 650);
+      } else {
+        restoreMapBoundsAfterPopup();
+      }
     });
 
     const routeRole = getRouteHighlightRole(feature?.properties?.id);
