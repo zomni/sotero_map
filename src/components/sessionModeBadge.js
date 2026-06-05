@@ -1,6 +1,7 @@
 import { BACKEND_API_URL } from "../views/map.js";
 
 const rootId = "session-mode-badge";
+const inventoryLinkId = "session-inventory-link";
 const sessionPollMs = 10000;
 let lastSessionKey = "";
 let pollHandle = null;
@@ -89,6 +90,41 @@ const ensureBadge = () => {
   return badge;
 };
 
+const ensureInventoryLink = () => {
+  const badge = document.getElementById(rootId);
+  if (!badge) return null;
+
+  let link = document.getElementById(inventoryLinkId);
+  if (link) return link;
+
+  link = document.createElement("a");
+  link.id = inventoryLinkId;
+  link.className = "dashboard-link session-inventory-link";
+  link.href = `${BACKEND_API_URL}/dashboard`;
+  link.target = "sotero-dashboard";
+  link.rel = "noreferrer";
+  link.textContent = "Inventario";
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    const dashboardWindow = window.open(link.href, "sotero-dashboard");
+    dashboardWindow?.focus?.();
+  });
+
+  badge.insertAdjacentElement("afterend", link);
+  positionInventoryLink();
+  return link;
+};
+
+const positionInventoryLink = () => {
+  const badge = document.getElementById(rootId);
+  const link = document.getElementById(inventoryLinkId);
+  if (!badge || !link) return;
+
+  const badgeRect = badge.getBoundingClientRect();
+  link.style.top = `${Math.round(badgeRect.bottom + 6)}px`;
+};
+
 const refreshSessionBadge = async () => {
   const badge = ensureBadge();
   if (!badge) return;
@@ -99,6 +135,8 @@ const refreshSessionBadge = async () => {
 
   lastSessionKey = sessionKey;
   renderBadge(badge, session);
+  ensureInventoryLink();
+  requestAnimationFrame(positionInventoryLink);
   window.dispatchEvent(new CustomEvent("sotero-session-changed", { detail: session || {} }));
 };
 
@@ -106,6 +144,7 @@ export const initSessionModeBadge = async () => {
   await refreshSessionBadge();
 
   window.addEventListener("focus", refreshSessionBadge);
+  window.addEventListener("resize", positionInventoryLink);
 
   if (!pollHandle) {
     pollHandle = window.setInterval(refreshSessionBadge, sessionPollMs);

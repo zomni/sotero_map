@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="building-labels-hidden">
   <head>
     <title>sotero_map</title>
     <link
@@ -16,25 +16,25 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <link rel="stylesheet" href="index.css?v=20260604p" />
+    <link rel="stylesheet" href="index.css?v=20260605g" />
 
     <script src="lib/jquery/jquery-3.6.0.min.js"></script>
     <script type="importmap">
       {
         "imports": {
-          "@app/index": "./index.js?v=20260604p",
-          "@app/campusSelector": "./components/campusSelector.js?v=20260604p",
-          "@app/findByUrl": "./utils/findByUrl.js?v=20260604p",
-          "@app/routePlanner": "./components/routePlanner.js?v=20260604p",
-          "@app/featureDisplay": "./views/featureDisplay.js?v=20260604p",
-          "@app/goToCampus": "./utils/goToCampus.js?v=20260604p",
-          "@app/soteroSearchMetadata": "./utils/soteroSearchMetadata.js?v=20260604p",
-          "@app/addData": "./utils/addData.js?v=20260604p",
-          "@app/autocompleteSearchBox": "./components/autocompleteSearchBox.js?v=20260604p",
-          "@app/manualBuildingEditor": "./components/manualBuildingEditor.js?v=20260604p",
-          "@app/sessionModeBadge": "./components/sessionModeBadge.js?v=20260604p",
-          "@app/buildingGeometryEditor": "./components/buildingGeometryEditor.js?v=20260604p",
-          "@app/adminMapToolsPanel": "./components/adminMapToolsPanel.js?v=20260604p"
+          "@app/index": "./index.js?v=20260605g",
+          "@app/campusSelector": "./components/campusSelector.js?v=20260605g",
+          "@app/findByUrl": "./utils/findByUrl.js?v=20260605g",
+          "@app/routePlanner": "./components/routePlanner.js?v=20260605g",
+          "@app/featureDisplay": "./views/featureDisplay.js?v=20260605g",
+          "@app/goToCampus": "./utils/goToCampus.js?v=20260605g",
+          "@app/soteroSearchMetadata": "./utils/soteroSearchMetadata.js?v=20260605g",
+          "@app/addData": "./utils/addData.js?v=20260605g",
+          "@app/autocompleteSearchBox": "./components/autocompleteSearchBox.js?v=20260605g",
+          "@app/manualBuildingEditor": "./components/manualBuildingEditor.js?v=20260605g",
+          "@app/sessionModeBadge": "./components/sessionModeBadge.js?v=20260605g",
+          "@app/buildingGeometryEditor": "./components/buildingGeometryEditor.js?v=20260605g",
+          "@app/adminMapToolsPanel": "./components/adminMapToolsPanel.js?v=20260605g"
         }
       }
     </script>
@@ -78,16 +78,6 @@
               <option value="">Campus</option>
             </select>
           </div>
-          <a
-            id="dashboard-link"
-            class="dashboard-link"
-            href="#"
-            target="_blank"
-            rel="noreferrer"
-            onclick="window.open(window.location.protocol + '//' + window.location.hostname + ':5000/dashboard', 'sotero-dashboard'); return false;"
-          >
-            Ir al dashboard
-          </a>
           <button id="route-planner-toggle" class="dashboard-link route-planner-toggle" type="button" aria-expanded="false">
             &iquest;A donde quieres ir?
           </button>

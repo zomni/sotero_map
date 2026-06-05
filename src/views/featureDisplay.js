@@ -227,6 +227,41 @@ let globalEquipmentTypeFilter = "";
 const buildingEquipmentBubbleEntries = new Map();
 const EQUIPMENT_SYNC_POLL_MS = 30000;
 const BACKEND_SESSION_CACHE_MS = 15000;
+const BUILDING_LABELS_STORAGE_KEY = "sotero_map_building_labels_visible";
+let buildingLabelsVisible = window.sessionStorage?.getItem(BUILDING_LABELS_STORAGE_KEY) === "true";
+
+const setBuildingLabelsVisible = (isVisible) => {
+  buildingLabelsVisible = Boolean(isVisible);
+  document.documentElement.classList.toggle("building-labels-hidden", !isVisible);
+
+  const button = document.getElementById("building-label-toggle");
+  if (button) {
+    button.textContent = isVisible ? "Ocultar nombres" : "Mostrar nombres";
+    button.setAttribute("aria-pressed", String(isVisible));
+    button.classList.toggle("is-muted", !isVisible);
+  }
+};
+
+const bindBuildingLabelToggleButton = (button) => {
+  if (!button || button.dataset.bound === "true") return;
+
+  button.dataset.bound = "true";
+  L.DomEvent.disableClickPropagation(button);
+
+  button.addEventListener("mousedown", (event) => event.stopPropagation());
+  button.addEventListener("dblclick", (event) => event.stopPropagation());
+  button.addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    setBuildingLabelsVisible(!buildingLabelsVisible);
+    window.sessionStorage?.setItem(BUILDING_LABELS_STORAGE_KEY, String(buildingLabelsVisible));
+  });
+};
+
+const initBuildingLabelToggle = () => {
+  setBuildingLabelsVisible(buildingLabelsVisible);
+  bindBuildingLabelToggleButton(document.getElementById("building-label-toggle"));
+};
 
 const updateBackendSessionCache = (session) => {
   backendSessionCache = session || { isAuthenticated: false, isAdmin: false };
@@ -705,6 +740,58 @@ const getFeatureDisplayName = (feature, building) => {
   );
 };
 
+const getFeatureMapLabel = (feature) => {
+  const properties = feature?.properties || {};
+  return (
+    properties.mapLabel ||
+    properties.title ||
+    properties.name ||
+    properties.realName ||
+    properties.displayName ||
+    properties.sourceId ||
+    properties.id ||
+    "Edificio"
+  );
+};
+
+const compactMapLabel = (value) => {
+  const label = String(value || "Edificio").replace(/\s+/g, " ").trim();
+  const maxLength = 34;
+
+  if (label.length <= maxLength) {
+    return label;
+  }
+
+  const words = label.split(" ");
+  let compact = "";
+
+  for (const word of words) {
+    const next = compact ? `${compact} ${word}` : word;
+    if (next.length > maxLength - 3) {
+      break;
+    }
+    compact = next;
+  }
+
+  return `${compact || label.slice(0, maxLength - 3)}...`;
+};
+
+const bindBuildingNameLabel = (feature, layer) => {
+  const fullLabel = getFeatureMapLabel(feature);
+  const compactLabel = compactMapLabel(fullLabel);
+
+  layer.bindTooltip(
+    `<span title="${escapeHtml(fullLabel)}">${escapeHtml(compactLabel)}</span>`,
+    {
+      permanent: true,
+      direction: "center",
+      className: "building-name-label",
+      opacity: 1,
+      interactive: false,
+    }
+  );
+};
+
 const escapeHtml = (value) => {
   return String(value ?? "")
     .replaceAll("&", "&amp;")
@@ -909,18 +996,26 @@ const ensureMapEquipmentTypeFilter = (summaryMap) => {
   if (!topActions || document.getElementById("map-equipment-type-filter")) return;
 
   const types = ["all", ...getAvailableSummaryTypes(summaryMap)];
-  if (types.length <= 1) return;
 
-  const wrapper = document.createElement("label");
+  const wrapper = document.createElement("div");
   wrapper.className = "map-equipment-type-filter";
-  wrapper.htmlFor = "map-equipment-type-filter";
+  L.DomEvent.disableClickPropagation(wrapper);
+  L.DomEvent.disableScrollPropagation(wrapper);
 
   const label = document.createElement("span");
-  label.textContent = "Equipos";
+  label.textContent = "Filtros";
+
+  const typeLabel = document.createElement("label");
+  typeLabel.className = "map-equipment-type-filter-field";
+  typeLabel.htmlFor = "map-equipment-type-filter";
+
+  const typeText = document.createElement("small");
+  typeText.textContent = "Tipo de equipo";
 
   const select = document.createElement("select");
   select.id = "map-equipment-type-filter";
   select.className = "map-equipment-type-filter-select";
+  select.disabled = types.length <= 1;
 
   for (const type of types) {
     const option = document.createElement("option");
@@ -935,7 +1030,19 @@ const ensureMapEquipmentTypeFilter = (summaryMap) => {
   });
 
   wrapper.appendChild(label);
-  wrapper.appendChild(select);
+  typeLabel.appendChild(typeText);
+  typeLabel.appendChild(select);
+  wrapper.appendChild(typeLabel);
+
+  const labelToggle = document.createElement("button");
+  labelToggle.id = "building-label-toggle";
+  labelToggle.className = "dashboard-link building-label-toggle is-muted";
+  labelToggle.type = "button";
+  labelToggle.setAttribute("aria-pressed", "false");
+  labelToggle.textContent = "Mostrar nombres";
+  wrapper.appendChild(labelToggle);
+  bindBuildingLabelToggleButton(labelToggle);
+  setBuildingLabelsVisible(buildingLabelsVisible);
 
   const routeToggle = document.getElementById("route-planner-toggle");
   if (routeToggle) {
@@ -1826,6 +1933,8 @@ export const onEachFeature = (feature, layer) => {
     }
 
     if (feature.geometry.type == "Polygon") {
+      bindBuildingNameLabel(feature, layer);
+
       layer.on({
         mouseover: highlightFeature,
         mouseout: resetHighlight,
@@ -1848,8 +1957,16 @@ export const onEachFeature = (feature, layer) => {
 };
 
 if (document.readyState === "loading") {
-  window.addEventListener("DOMContentLoaded", startEquipmentSyncMonitor, { once: true });
+  window.addEventListener(
+    "DOMContentLoaded",
+    () => {
+      initBuildingLabelToggle();
+      startEquipmentSyncMonitor();
+    },
+    { once: true }
+  );
 } else {
+  initBuildingLabelToggle();
   startEquipmentSyncMonitor();
 }
 

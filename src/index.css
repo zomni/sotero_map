@@ -69,10 +69,21 @@
     background: #f2f9fc;
 }
 
+.building-label-toggle.is-muted {
+    color: #64748b;
+}
+
+.building-label-toggle {
+    display: inline-flex !important;
+    width: 150px;
+    box-sizing: border-box;
+    flex: 0 0 auto;
+}
+
 .map-equipment-type-filter {
     display: grid;
-    gap: 4px;
-    min-width: 150px;
+    gap: 7px;
+    min-width: 170px;
     padding: 8px 10px;
     border-radius: 10px;
     border: 1px solid rgba(45, 121, 160, 0.28);
@@ -89,6 +100,18 @@
     letter-spacing: 0.03em;
 }
 
+.map-equipment-type-filter-field {
+    display: grid;
+    gap: 3px;
+}
+
+.map-equipment-type-filter-field small {
+    color: #64748b;
+    font: 700 10px/1.2 sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
 .map-equipment-type-filter-select {
     min-height: 30px;
     border: 0;
@@ -97,6 +120,15 @@
     cursor: pointer;
     font: 700 13px/1.2 sans-serif;
     outline: none;
+}
+
+.map-equipment-type-filter .building-label-toggle {
+    width: 100%;
+    min-height: 32px;
+    padding: 0 10px;
+    border-radius: 8px;
+    box-shadow: none;
+    font-size: 12px;
 }
 
 .session-mode-badge {
@@ -170,6 +202,22 @@
 
 .session-mode-badge[data-authenticated="true"] .session-mode-logout {
     width: 100%;
+}
+
+.session-inventory-link {
+    position: fixed;
+    top: 214px;
+    left: 12px;
+    z-index: 1200;
+    width: min(250px, calc(100vw - 24px));
+    box-sizing: border-box;
+    background: #2d79a0;
+    color: #ffffff;
+    box-shadow: 0 10px 24px rgba(45, 121, 160, 0.22);
+}
+
+.session-inventory-link:hover {
+    background: #256b8d;
 }
 
 .manual-building-editor-button {
@@ -283,6 +331,41 @@
 .building-equipment-bubble button:hover {
     background: #256b8d;
     transform: translateY(-1px);
+}
+
+.building-name-label {
+    width: auto;
+    min-width: 56px;
+    max-width: 150px;
+    padding: 3px 6px;
+    border: 1px solid rgba(21, 72, 96, 0.22);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.84);
+    box-shadow: 0 5px 14px rgba(15, 23, 42, 0.12);
+    color: #154860;
+    font: 700 10.5px/1.12 sans-serif;
+    letter-spacing: -0.01em;
+    text-align: center;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.building-name-label::before {
+    display: none;
+}
+
+.building-name-label span {
+    display: block;
+    max-width: 138px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.building-labels-hidden .building-name-label {
+    display: none;
+    visibility: hidden;
+    opacity: 0 !important;
 }
 
 #map-status-panel {
