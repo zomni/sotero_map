@@ -17,6 +17,7 @@ import {
 const controlsId = "building-geometry-editor-controls";
 const editButtonId = "building-shape-editor-button";
 const moveButtonId = "building-move-editor-button";
+const activeActionsClass = "geometry-active-actions";
 
 let activeMode = null;
 let activeBuildingId = null;
@@ -149,7 +150,7 @@ const saveGeometry = async () => {
 
 const buildActionButtons = () => {
   const wrapper = document.createElement("div");
-  wrapper.className = "building-geometry-active-actions";
+  wrapper.className = `${activeActionsClass} building-geometry-active-actions`;
   wrapper.innerHTML = `
     <button type="button" class="dashboard-link manual-building-editor-button is-icon-only" data-geometry-save title="Guardar forma" aria-label="Guardar forma"><span class="map-tool-button-icon" aria-hidden="true">✓</span></button>
     <button type="button" class="dashboard-link is-icon-only" data-geometry-cancel title="Cancelar" aria-label="Cancelar"><span class="map-tool-button-icon" aria-hidden="true">&times;</span></button>
@@ -171,13 +172,21 @@ const buildActionButtons = () => {
 };
 
 const setActiveControls = () => {
-  const controls = document.getElementById(controlsId);
-  if (!controls || controls.querySelector(".building-geometry-active-actions")) return;
-  controls.appendChild(buildActionButtons());
+  const routeControls = document.getElementById("walking-route-editor-controls");
+  const undoButton = document.getElementById("walking-route-undo-toggle");
+  const target = undoButton?.parentElement === routeControls ? routeControls : document.getElementById(controlsId);
+  if (!target) return;
+
+  const actionButtons = document.querySelector(`.${activeActionsClass}`) || buildActionButtons();
+  if (undoButton?.parentElement === target) {
+    target.insertBefore(actionButtons, undoButton);
+  } else {
+    target.appendChild(actionButtons);
+  }
 };
 
 const removeActiveControls = () => {
-  document.querySelector(".building-geometry-active-actions")?.remove();
+  document.querySelector(`.${activeActionsClass}`)?.remove();
 };
 
 export const stopGeometryEditor = ({ clearActiveTool = true } = {}) => {
@@ -405,6 +414,13 @@ export const initBuildingGeometryEditor = async () => {
 
 window.addEventListener("sotero-session-changed", (event) => {
   syncBuildingGeometryEditorForSession(event.detail || {});
+});
+
+window.addEventListener("sotero-map-data-refreshed", () => {
+  window.setTimeout(() => {
+    if (document.getElementById(controlsId)) return;
+    void initBuildingGeometryEditor();
+  }, 80);
 });
 
 window.addEventListener("sotero-admin-map-tool-mode", (event) => {

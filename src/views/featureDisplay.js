@@ -16,6 +16,7 @@ let popupReturnView = null;
 let popupBoundsState = null;
 let routeOriginFeatureId = null;
 let routeDestinationFeatureId = null;
+let backendSessionIsAdmin = false;
 
 window.openSoteroDashboard = (event, url) => {
   event?.preventDefault?.();
@@ -294,6 +295,8 @@ const initBuildingLabelToggle = () => {
 const updateBackendSessionCache = (session) => {
   backendSessionCache = session || { isAuthenticated: false, isAdmin: false };
   backendSessionCacheAt = Date.now();
+  backendSessionIsAdmin = !!backendSessionCache.isAdmin;
+  updateExportBackupButtonVisibility();
 };
 
 const loadBackendSession = async () => {
@@ -411,9 +414,14 @@ const getBackendStatusPanelMarkup = () => `
         <div id="backend-status-text" class="backend-status-subtitle backend-status-inline">Consultando estado...</div>
       </div>
     </div>
-    <button id="backend-refresh-button" type="button" class="backend-refresh-button" data-backend-refresh hidden>
-      Actualizar mapa
-    </button>
+    <div class="backend-status-actions">
+      <button id="backend-refresh-button" type="button" class="backend-refresh-button" data-backend-refresh hidden>
+        Actualizar mapa
+      </button>
+      <button id="backend-export-backup-button" type="button" class="backend-refresh-button backend-export-backup-button" data-backend-export hidden>
+        Guardar respaldo
+      </button>
+    </div>
   </div>
   <div class="backend-status-body">
     <div class="backend-status-line">
@@ -452,6 +460,7 @@ const ensureBackendStatusPanel = () => {
     lastChange: root.querySelector("#backend-last-change"),
     message: root.querySelector("#backend-sync-message"),
     refreshButton: root.querySelector("#backend-refresh-button"),
+    exportBackupButton: root.querySelector("#backend-export-backup-button"),
     dashboardLink: document.getElementById("dashboard-link"),
   };
 
@@ -476,8 +485,63 @@ const ensureBackendStatusPanel = () => {
     await refreshCurrentPopup();
   });
 
+  panel.exportBackupButton?.addEventListener("click", () => {
+    void handleExportStaticBackup();
+  });
+
   backendStatusPanel = panel;
   return panel;
+};
+
+const handleExportStaticBackup = async () => {
+  const panel = ensureBackendStatusPanel();
+  if (!panel?.exportBackupButton) return;
+
+  const originalText = panel.exportBackupButton.textContent;
+  panel.exportBackupButton.disabled = true;
+  panel.exportBackupButton.textContent = "Guardando...";
+  panel.message.textContent = "Guardando respaldo estatico en src/data...";
+
+  try {
+    const response = await fetch(`${BACKEND_API_URL}/api/frontend-static-backup/save?campus=sotero`, {
+      method: "POST",
+      credentials: "include",
+      cache: "no-store",
+    });
+
+    const result = await response.json().catch(() => null);
+    if (!response.ok) {
+      throw new Error(result?.message || `API respondio ${response.status}`);
+    }
+
+    resetSoteroSearchMetadataCaches();
+    resetBuildingsCatalogCache();
+    if (typeof window.refreshVisibleWalkingRoutes === "function") {
+      await window.refreshVisibleWalkingRoutes();
+    }
+
+    panel.message.textContent =
+      `Respaldo guardado: ${result?.routes?.nodes ?? 0} nodos, ${result?.routes?.edges ?? 0} tramos, ${result?.buildings?.synced ?? 0} edificios.`;
+  } catch (error) {
+    console.error("Error guardando respaldo estatico del mapa:", error);
+    panel.message.textContent = error?.message || "No se pudo guardar el respaldo. Revisa la consola.";
+  } finally {
+    panel.exportBackupButton.disabled = false;
+    panel.exportBackupButton.textContent = originalText || "Guardar respaldo";
+  }
+};
+
+const updateExportBackupButtonVisibility = () => {
+  const panel = ensureBackendStatusPanel();
+  if (!panel?.exportBackupButton) return;
+
+  panel.exportBackupButton.hidden = !(backendSessionIsAdmin && panel.root.dataset.backendState === "online");
+};
+
+const refreshBackendSessionForExport = async () => {
+  const session = await loadBackendSession();
+  backendSessionIsAdmin = !!session?.isAdmin;
+  updateExportBackupButtonVisibility();
 };
 
 const updateBackendStatusPanel = (syncState) => {
@@ -496,6 +560,7 @@ const updateBackendStatusPanel = (syncState) => {
     panel.lastChange.textContent = "Sin registros";
     panel.message.textContent = "No hay actualizaciones pendientes.";
     panel.refreshButton.hidden = true;
+    updateExportBackupButtonVisibility();
     return;
   }
 
@@ -506,6 +571,7 @@ const updateBackendStatusPanel = (syncState) => {
     ? "Hay cambios pendientes en el mapa o inventario. Usa Actualizar mapa."
     : "No hay actualizaciones pendientes.";
   panel.refreshButton.hidden = !hasPendingChanges;
+  updateExportBackupButtonVisibility();
 };
 
 const loadEquipmentSyncState = async () => {
@@ -568,6 +634,7 @@ window.acknowledgeCurrentMapSyncState = acknowledgeCurrentMapSyncState;
 const startEquipmentSyncMonitor = () => {
   ensureBackendStatusPanel();
   updateBackendStatusPanel(latestEquipmentSyncState);
+  void refreshBackendSessionForExport();
   checkEquipmentSyncState();
 
   window.addEventListener("focus", checkEquipmentSyncState);

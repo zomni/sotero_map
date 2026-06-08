@@ -1,4 +1,5 @@
-import { BACKEND_API_URL, map } from "../views/map.js";
+import { map } from "../views/map.js";
+import { loadWalkingRouteNetwork } from "../utils/walkingRouteStorage.js?v=20260608b";
 
 const ROUTE_VISIBILITY_STORAGE_KEY = "sotero_map_walking_routes_visible";
 
@@ -24,15 +25,7 @@ const edgeColor = (status) => {
 const loadRoutes = async () => {
   if (routesCache) return routesCache;
 
-  const response = await fetch(`${BACKEND_API_URL}/api/walking-routes?campus=sotero`, {
-    cache: "no-store",
-  });
-
-  if (!response.ok) {
-    throw new Error("No se pudieron cargar las rutas caminables.");
-  }
-
-  routesCache = await response.json();
+  routesCache = await loadWalkingRouteNetwork("sotero");
   return routesCache;
 };
 

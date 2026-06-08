@@ -251,9 +251,12 @@ Datos del campus Sotero:
 
 - `src/data/cs_sotero_0.json`: geometria principal.
 - `src/data/cs_sotero_search.json`: indice de busqueda.
-- `src/data/cs_searchByURL.json`: soporte de deep links.
 - `src/data/sotero_buildings_catalog.json`: catalogo auxiliar.
+- `src/data/walking_routes_backup.json`: respaldo estatico de rutas caminables para uso sin API.
+- `src/data/sotero_buildings_backend_backup.json`: respaldo estatico de edificios editados, manuales y geometria para uso sin API.
 - `src/data/interiors/`: detalles, pisos y salas.
+
+Desde el panel `API activa`, el boton admin `Guardar respaldo` llama al backend y reemplaza directamente los dos JSON de respaldo en esta carpeta.
 
 Componentes principales:
 
@@ -266,8 +269,9 @@ Componentes principales:
 - `src/components/adminMapToolsPanel.js`: panel admin unificado.
 - `src/views/map.js`: inicializacion Leaflet y URL base backend.
 - `src/views/featureDisplay.js`: popups, equipos, historial y sincronizacion.
-- `src/utils/findByUrl.js`: navegacion por URL.
+- `src/utils/findByUrl.js`: navegacion por URL con parametros `id`, `floor`, `view`, `roomId` y `deviceKey`.
 - `src/utils/soteroSearchMetadata.js`: mezcla data local con backend.
+- `src/utils/walkingRouteStorage.js`: carga rutas desde API, respaldo local o respaldo estatico.
 
 ## Cambios principales respecto al proyecto original
 

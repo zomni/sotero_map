@@ -544,6 +544,12 @@ html[data-admin-map-tool-mode="geometry-move"] .building-equipment-bubble {
     gap: 10px;
 }
 
+.backend-status-actions {
+    display: grid;
+    gap: 6px;
+    justify-items: end;
+}
+
 .backend-status-indicator {
     width: 12px;
     height: 12px;
@@ -609,7 +615,7 @@ html[data-admin-map-tool-mode="geometry-move"] .building-equipment-bubble {
 }
 
 .backend-refresh-button {
-    width: 100%;
+    width: auto;
     padding: 8px 12px;
     border-radius: 999px;
     border: 1px solid #2d79a0;
@@ -735,20 +741,80 @@ html[data-admin-map-tool-mode="geometry-move"] .building-equipment-bubble {
     color: #475569;
 }
 
-.route-planner-select {
+.route-planner-search {
     width: 100%;
-    min-height: 40px;
-    padding: 0 10px;
-    border: 1px solid rgba(45, 121, 160, 0.28);
+    min-height: 38px;
+    padding: 0 12px;
+    border: 1px solid rgba(45, 121, 160, 0.22);
     border-radius: 10px;
-    background: #ffffff;
+    background: #f8fbfd;
     color: #0f172a;
-    font: 500 13px/1.2 sans-serif;
+    font: 500 12px/1.2 sans-serif;
+    box-sizing: border-box;
 }
 
-.route-planner-select:focus {
-    outline: 2px solid rgba(45, 121, 160, 0.2);
-    border-color: #2d79a0;
+.backend-export-backup-button {
+    border-color: rgba(45, 121, 160, 0.55);
+    background: #f8fbfd;
+}
+
+.route-planner-search::placeholder {
+    color: #94a3b8;
+}
+
+.route-planner-search:focus {
+    outline: 2px solid rgba(239, 68, 68, 0.14);
+    border-color: rgba(239, 68, 68, 0.42);
+    background: #ffffff;
+}
+
+.route-building-combobox {
+    position: relative;
+}
+
+.route-building-options {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    z-index: 1220;
+    max-height: 210px;
+    overflow-y: auto;
+    padding: 5px;
+    border: 1px solid rgba(45, 121, 160, 0.22);
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 14px 28px rgba(15, 23, 42, 0.16);
+}
+
+.route-building-option {
+    display: block;
+    width: 100%;
+    min-height: 34px;
+    padding: 8px 9px;
+    border: 0;
+    border-radius: 9px;
+    background: transparent;
+    color: #0f172a;
+    font: 600 12px/1.25 sans-serif;
+    text-align: left;
+    cursor: pointer;
+}
+
+.route-building-option:hover,
+.route-building-option:focus {
+    outline: none;
+    background: #edf7fb;
+}
+
+.route-building-option[aria-selected="true"] {
+    background: #dff0f7;
+    color: #154860;
+}
+
+.route-building-option-empty {
+    cursor: default;
+    color: #64748b;
 }
 
 .route-planner-actions {

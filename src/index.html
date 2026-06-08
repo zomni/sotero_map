@@ -16,27 +16,27 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-    <link rel="stylesheet" href="index.css?v=20260605ax" />
+    <link rel="stylesheet" href="index.css?v=20260608b" />
 
     <script src="lib/jquery/jquery-3.6.0.min.js"></script>
     <script type="importmap">
       {
         "imports": {
-          "@app/index": "./index.js?v=20260605ax",
-          "@app/campusSelector": "./components/campusSelector.js?v=20260605ax",
-          "@app/findByUrl": "./utils/findByUrl.js?v=20260605ax",
-          "@app/routePlanner": "./components/routePlanner.js?v=20260605ax",
-          "@app/featureDisplay": "./views/featureDisplay.js?v=20260605ax",
-          "@app/goToCampus": "./utils/goToCampus.js?v=20260605ax",
-          "@app/soteroSearchMetadata": "./utils/soteroSearchMetadata.js?v=20260605ax",
-          "@app/addData": "./utils/addData.js?v=20260605ax",
-          "@app/autocompleteSearchBox": "./components/autocompleteSearchBox.js?v=20260605ax",
-          "@app/manualBuildingEditor": "./components/manualBuildingEditor.js?v=20260605ax",
-          "@app/sessionModeBadge": "./components/sessionModeBadge.js?v=20260605ax",
-          "@app/buildingGeometryEditor": "./components/buildingGeometryEditor.js?v=20260605ax",
-          "@app/walkingRouteEditor": "./components/walkingRouteEditor.js?v=20260605ax",
-          "@app/walkingRouteLayer": "./components/walkingRouteLayer.js?v=20260605ax",
-          "@app/adminMapToolsPanel": "./components/adminMapToolsPanel.js?v=20260605ax"
+          "@app/index": "./index.js?v=20260608b",
+          "@app/campusSelector": "./components/campusSelector.js?v=20260608b",
+          "@app/findByUrl": "./utils/findByUrl.js?v=20260608b",
+          "@app/routePlanner": "./components/routePlanner.js?v=20260608b",
+          "@app/featureDisplay": "./views/featureDisplay.js?v=20260608b",
+          "@app/goToCampus": "./utils/goToCampus.js?v=20260608b",
+          "@app/soteroSearchMetadata": "./utils/soteroSearchMetadata.js?v=20260608b",
+          "@app/addData": "./utils/addData.js?v=20260608b",
+          "@app/autocompleteSearchBox": "./components/autocompleteSearchBox.js?v=20260608b",
+          "@app/manualBuildingEditor": "./components/manualBuildingEditor.js?v=20260608b",
+          "@app/sessionModeBadge": "./components/sessionModeBadge.js?v=20260608b",
+          "@app/buildingGeometryEditor": "./components/buildingGeometryEditor.js?v=20260608b",
+          "@app/walkingRouteEditor": "./components/walkingRouteEditor.js?v=20260608b",
+          "@app/walkingRouteLayer": "./components/walkingRouteLayer.js?v=20260608b",
+          "@app/adminMapToolsPanel": "./components/adminMapToolsPanel.js?v=20260608b"
         }
       }
     </script>
@@ -54,9 +54,14 @@
             <div id="backend-status-text" class="backend-status-subtitle backend-status-inline">Consultando estado...</div>
           </div>
         </div>
-        <button id="backend-refresh-button" type="button" class="backend-refresh-button" data-backend-refresh hidden>
-          Actualizar mapa
-        </button>
+        <div class="backend-status-actions">
+          <button id="backend-refresh-button" type="button" class="backend-refresh-button" data-backend-refresh hidden>
+            Actualizar mapa
+          </button>
+          <button id="backend-export-backup-button" type="button" class="backend-refresh-button backend-export-backup-button" data-backend-export hidden>
+            Guardar respaldo
+          </button>
+        </div>
       </div>
       <div class="backend-status-body">
         <div class="backend-status-line">
@@ -85,17 +90,21 @@
           </button>
           <div id="route-planner-panel" class="route-planner-panel" hidden>
             <div class="route-planner-title">Ruta entre edificios</div>
-            <label class="route-planner-field" for="route-origin-select">
+            <label class="route-planner-field" for="route-origin-search">
               <span>Estoy en</span>
-              <select id="route-origin-select" class="route-planner-select">
-                <option value="">Selecciona un edificio</option>
-              </select>
+              <div class="route-building-combobox">
+                <input id="route-origin-search" class="route-planner-search" type="search" placeholder="Buscar y seleccionar edificio..." autocomplete="off" role="combobox" aria-expanded="false" aria-controls="route-origin-options" />
+                <input id="route-origin-select" type="hidden" value="" />
+                <div id="route-origin-options" class="route-building-options" role="listbox" hidden></div>
+              </div>
             </label>
-            <label class="route-planner-field" for="route-destination-select">
+            <label class="route-planner-field" for="route-destination-search">
               <span>Quiero ir a</span>
-              <select id="route-destination-select" class="route-planner-select">
-                <option value="">Selecciona un edificio</option>
-              </select>
+              <div class="route-building-combobox">
+                <input id="route-destination-search" class="route-planner-search" type="search" placeholder="Buscar y seleccionar edificio..." autocomplete="off" role="combobox" aria-expanded="false" aria-controls="route-destination-options" />
+                <input id="route-destination-select" type="hidden" value="" />
+                <div id="route-destination-options" class="route-building-options" role="listbox" hidden></div>
+              </div>
             </label>
             <div class="route-planner-actions">
               <button id="route-planner-submit" class="route-primary-button" type="button">Ir</button>

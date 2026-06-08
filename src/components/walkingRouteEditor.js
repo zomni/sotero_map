@@ -7,6 +7,7 @@ import {
   setAdminMapToolsStatus,
 } from "@app/adminMapToolsPanel";
 import { refreshWalkingRoutesLayer } from "@app/walkingRouteLayer";
+import { loadWalkingRouteNetwork } from "../utils/walkingRouteStorage.js?v=20260608b";
 
 const controlsId = "walking-route-editor-controls";
 const editorButtonId = "walking-route-editor-toggle";
@@ -333,21 +334,29 @@ const redrawPreview = () => {
 const loadRoutes = async () => {
   if (routeNetworkCache) return routeNetworkCache;
 
-  const response = await fetch(`${BACKEND_API_URL}/api/walking-routes?campus=sotero`, {
-    cache: "no-store",
-  });
-
-  if (!response.ok) {
-    throw new Error("No se pudieron cargar las rutas caminables.");
-  }
-
-  routeNetworkCache = await response.json();
+  routeNetworkCache = await loadWalkingRouteNetwork("sotero");
   return routeNetworkCache;
 };
 
 const resetRoutesCache = () => {
   routeNetworkCache = null;
   window.refreshWalkingRoutesCache?.();
+};
+
+const throwRouteSaveError = async (response, fallbackMessage) => {
+  const error = await response.json().catch(() => ({}));
+  const message = error?.message || fallbackMessage;
+  console.error("[walking-routes] error al guardar rutas en API:", message);
+  throw new Error(message);
+};
+
+const syncRoutesBackupAfterMutation = async () => {
+  try {
+    routeNetworkCache = null;
+    routeNetworkCache = await loadWalkingRouteNetwork("sotero");
+  } catch (error) {
+    console.error("[walking-routes] error al guardar rutas en respaldo local despues de modificar:", error);
+  }
 };
 
 const cloneNetwork = (network) => ({
@@ -390,14 +399,14 @@ const restoreRouteUndoSnapshot = async () => {
   });
 
   if (!response.ok) {
-    const error = await response.json().catch(() => ({}));
-    throw new Error(error?.message || "No se pudo deshacer la ultima accion.");
+    await throwRouteSaveError(response, "No se pudo deshacer la ultima accion.");
   }
 
   const actionType = lastRouteUndoActionType;
   lastRouteUndoSnapshot = null;
   lastRouteUndoActionType = "";
   updateUndoButtonState();
+  await syncRoutesBackupAfterMutation();
   resetRoutesCache();
   await refreshWalkingRoutesLayer();
   if (actionType === "building-connection") {
@@ -501,8 +510,7 @@ const updateNode = async (nodeExternalId, latlng) => {
   });
 
   if (!response.ok) {
-    const error = await response.json().catch(() => ({}));
-    throw new Error(error?.message || "No se pudo mover el vertice.");
+    await throwRouteSaveError(response, "No se pudo mover el vertice.");
   }
 
   return response.json();
@@ -521,8 +529,7 @@ const splitNode = async (nodeExternalId) => {
   });
 
   if (!response.ok) {
-    const error = await response.json().catch(() => ({}));
-    throw new Error(error?.message || "No se pudo separar el vertice.");
+    await throwRouteSaveError(response, "No se pudo separar el vertice.");
   }
 
   return response.json();
@@ -579,6 +586,7 @@ const connectSelectedNodeToBuilding = async (layer, featureId) => {
     }
   );
   selectedBuildingConnectNode = null;
+  await syncRoutesBackupAfterMutation();
   resetRoutesCache();
   await refreshWalkingRoutesLayer();
   await window.acknowledgeCurrentMapSyncState?.();
@@ -593,6 +601,8 @@ function renderExistingRouteNodes(
   if (!routeNodesLayer) return;
 
   for (const node of nodes) {
+    let wasDragged = false;
+    let dragEndedAt = 0;
     const marker = L.marker([Number(node.latitude), Number(node.longitude)], {
       draggable: !buildingConnectMode && !splitMode,
       zIndexOffset: 2700,
@@ -629,6 +639,7 @@ function renderExistingRouteNodes(
         stopEvent(event);
         try {
           await splitNode(node.externalId);
+          await syncRoutesBackupAfterMutation();
           resetRoutesCache();
           await refreshWalkingRoutesLayer();
           await startDrawing();
@@ -644,10 +655,21 @@ function renderExistingRouteNodes(
 
     marker.on("dragstart", (event) => {
       stopEvent(event);
+      wasDragged = true;
       setStatus("Moviendo vertice. Sueltalo cerca de otro para unirlos.");
     });
 
-    marker.on("click", stopEvent);
+    marker.on("click", (event) => {
+      stopEvent(event);
+      if (wasDragged || Date.now() - dragEndedAt < 250) {
+        wasDragged = false;
+        return;
+      }
+
+      points = [L.latLng(Number(node.latitude), Number(node.longitude))];
+      redrawPreview();
+      setStatus("Ruta iniciada desde este vertice. Haz click en el mapa para agregar el siguiente punto.");
+    });
     marker.on("drag", (event) => {
       updateConnectedRouteLines(node.externalId, event.latlng);
       const mergeTarget = findMergePreviewNode(node.externalId, event.latlng);
@@ -662,9 +684,11 @@ function renderExistingRouteNodes(
 
     marker.on("dragend", async (event) => {
       stopEvent(event);
+      dragEndedAt = Date.now();
       event.target.getElement?.()?.classList.remove("is-fusion-preview");
       try {
         const result = await updateNode(node.externalId, event.target.getLatLng());
+        await syncRoutesBackupAfterMutation();
         resetRoutesCache();
         await refreshWalkingRoutesLayer();
         await renderRoutesLayer();
@@ -707,9 +731,10 @@ const createPathFromLatLngs = async (latlngs, status, notes, options = {}) => {
   });
 
   if (!response.ok) {
-    const error = await response.json().catch(() => ({}));
-    throw new Error(error?.message || "No se pudo guardar la ruta.");
+    await throwRouteSaveError(response, "No se pudo guardar la ruta.");
   }
+
+  await syncRoutesBackupAfterMutation();
 };
 
 const savePath = async (status, notes) => {
@@ -793,9 +818,10 @@ const updateEdge = async (edgeExternalId, status, notes) => {
   });
 
   if (!response.ok) {
-    const error = await response.json().catch(() => ({}));
-    throw new Error(error?.message || "No se pudo actualizar el tramo.");
+    await throwRouteSaveError(response, "No se pudo actualizar el tramo.");
   }
+
+  await syncRoutesBackupAfterMutation();
 };
 
 const deleteEdge = async (edgeExternalId) => {
@@ -807,9 +833,10 @@ const deleteEdge = async (edgeExternalId) => {
   });
 
   if (!response.ok) {
-    const error = await response.json().catch(() => ({}));
-    throw new Error(error?.message || "No se pudo eliminar el tramo.");
+    await throwRouteSaveError(response, "No se pudo eliminar el tramo.");
   }
+
+  await syncRoutesBackupAfterMutation();
 };
 
 const confirmDeleteEdge = async (edge) => {

@@ -1,5 +1,7 @@
 ﻿import { BACKEND_API_URL } from "../views/map.js";
 
+import { loadBuildingBackupBundle, resetBuildingBackupCache } from "./buildingBackupStorage.js?v=20260608b";
+
 const SOTERO_SEARCH_PATH = `data/cs_sotero_search.json?v=${Date.now()}`;
 
 let soteroSearchMetadataCache = null;
@@ -79,15 +81,8 @@ const loadBackendBuildingOverrides = async () => {
   }
 
   try {
-    const response = await fetch(`${BACKEND_API_URL}/api/synced-buildings`, {
-      cache: "no-store",
-    });
-
-    if (!response.ok) {
-      throw new Error("No se pudo cargar synced-buildings");
-    }
-
-    const items = await response.json();
+    const backup = await loadBuildingBackupBundle("sotero");
+    const items = backup.syncedBuildings;
     const overrides = new Map();
 
     for (const item of Array.isArray(items) ? items : []) {
@@ -109,15 +104,8 @@ export const loadBuildingGeometryOverrides = async () => {
   }
 
   try {
-    const response = await fetch(`${BACKEND_API_URL}/api/building-geometry-overrides`, {
-      cache: "no-store",
-    });
-
-    if (!response.ok) {
-      throw new Error("No se pudieron cargar overrides de geometria");
-    }
-
-    const items = await response.json();
+    const backup = await loadBuildingBackupBundle("sotero");
+    const items = backup.geometryOverrides;
     const overrides = new Map();
 
     for (const item of Array.isArray(items) ? items : []) {
@@ -162,15 +150,8 @@ export const loadManualBuildings = async () => {
   }
 
   try {
-    const response = await fetch(`${BACKEND_API_URL}/api/manual-buildings`, {
-      cache: "no-store",
-    });
-
-    if (!response.ok) {
-      throw new Error("No se pudieron cargar edificios manuales");
-    }
-
-    const items = await response.json();
+    const backup = await loadBuildingBackupBundle("sotero");
+    const items = backup.manualBuildings;
     manualBuildingsCache = Array.isArray(items) ? items : [];
     return manualBuildingsCache;
   } catch (error) {
@@ -432,5 +413,6 @@ export const resetSoteroSearchMetadataCaches = () => {
   backendBuildingOverridesCache = null;
   manualBuildingsCache = null;
   buildingGeometryOverridesCache = null;
+  resetBuildingBackupCache();
 };
 

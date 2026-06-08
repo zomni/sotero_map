@@ -1,0 +1,4699 @@
+{
+  "nodes": [
+    {
+      "externalId": "WRN-20260608160654479-a095ac44b2",
+      "campus": "sotero",
+      "latitude": -33.57752088967809,
+      "longitude": -70.58192521333696,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608160654480-07f924489f",
+      "campus": "sotero",
+      "latitude": -33.57767731510881,
+      "longitude": -70.58155775070192,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608160654480-102576b78b",
+      "campus": "sotero",
+      "latitude": -33.577552174786916,
+      "longitude": -70.57893991470338,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608160654480-1a38707274",
+      "campus": "sotero",
+      "latitude": -33.577254965795234,
+      "longitude": -70.57963460683824,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608160654480-21a9642bcb",
+      "campus": "sotero",
+      "latitude": -33.57760580637566,
+      "longitude": -70.58160066604616,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608160654480-2cb4a03433",
+      "campus": "sotero",
+      "latitude": -33.578586811639816,
+      "longitude": -70.57929396629335,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608160654480-30e9c3c8bb",
+      "campus": "sotero",
+      "latitude": -33.578642677207675,
+      "longitude": -70.57970434427263,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608160654480-351d127d6d",
+      "campus": "sotero",
+      "latitude": -33.57779575131777,
+      "longitude": -70.57897746562959,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608160654480-366a665eb4",
+      "campus": "sotero",
+      "latitude": -33.57823820967959,
+      "longitude": -70.5800423026085,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608160654480-39ca4c1a82",
+      "campus": "sotero",
+      "latitude": -33.577489604557925,
+      "longitude": -70.58161675930025,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608160654480-41e74b7d21",
+      "campus": "sotero",
+      "latitude": -33.57728848565754,
+      "longitude": -70.57907402515413,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608160654480-4c0cc3ed92",
+      "campus": "sotero",
+      "latitude": -33.57721697660224,
+      "longitude": -70.57915449142457,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608160654480-525603fab8",
+      "campus": "sotero",
+      "latitude": -33.57777563952016,
+      "longitude": -70.58137267827989,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608160654480-681c328dfb",
+      "campus": "sotero",
+      "latitude": -33.578117539442225,
+      "longitude": -70.57906329631807,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608160654480-6b4884d123",
+      "campus": "sotero",
+      "latitude": -33.57837228752324,
+      "longitude": -70.57914376258852,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608160654480-8a97dedb81",
+      "campus": "sotero",
+      "latitude": -33.57818234384994,
+      "longitude": -70.58028638362886,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608160654480-939caa128f",
+      "campus": "sotero",
+      "latitude": -33.57713652884421,
+      "longitude": -70.57929933071138,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608160654480-9455904349",
+      "campus": "sotero",
+      "latitude": -33.57787843310318,
+      "longitude": -70.5811232328415,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608160654480-a8a77e2714",
+      "campus": "sotero",
+      "latitude": -33.57868513501504,
+      "longitude": -70.57942003011705,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608160654480-a8e243c116",
+      "campus": "sotero",
+      "latitude": -33.57855552690603,
+      "longitude": -70.57997792959215,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608160654480-adaa9d8ed1",
+      "campus": "sotero",
+      "latitude": -33.57834323734146,
+      "longitude": -70.58010935783388,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608160654480-c1337b1a03",
+      "campus": "sotero",
+      "latitude": -33.577987930480845,
+      "longitude": -70.58086305856706,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608160654480-c6ce264ca2",
+      "campus": "sotero",
+      "latitude": -33.57718122205237,
+      "longitude": -70.57947099208833,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608160654480-d59c0703f6",
+      "campus": "sotero",
+      "latitude": -33.57738681051183,
+      "longitude": -70.57898283004762,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608160855171-06fe456671",
+      "campus": "sotero",
+      "latitude": -33.57900691982357,
+      "longitude": -70.57762563228609,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608160855171-16648e3cf6",
+      "campus": "sotero",
+      "latitude": -33.57856223077851,
+      "longitude": -70.57866632938386,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608160855171-272066fe40",
+      "campus": "sotero",
+      "latitude": -33.578539884534884,
+      "longitude": -70.57810574769975,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608160855171-42925aa914",
+      "campus": "sotero",
+      "latitude": -33.57792089128651,
+      "longitude": -70.57722598314287,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608160855171-4d1c0a823b",
+      "campus": "sotero",
+      "latitude": -33.57884602756928,
+      "longitude": -70.57874947786333,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608160855171-53c438619a",
+      "campus": "sotero",
+      "latitude": -33.578106366263555,
+      "longitude": -70.5781325697899,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608160855171-542be3d141",
+      "campus": "sotero",
+      "latitude": -33.57816893604544,
+      "longitude": -70.5789077281952,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608160855171-5dd9560515",
+      "campus": "sotero",
+      "latitude": -33.578989042921236,
+      "longitude": -70.57716965675355,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608160855171-6d9a03f1f0",
+      "campus": "sotero",
+      "latitude": -33.57787619846137,
+      "longitude": -70.57736009359361,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608160855171-72ecdfea83",
+      "campus": "sotero",
+      "latitude": -33.57859351550987,
+      "longitude": -70.57891577482225,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608160855171-7d51b67e62",
+      "campus": "sotero",
+      "latitude": -33.57796558408852,
+      "longitude": -70.57814598083498,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608160855171-aea1c38bbb",
+      "campus": "sotero",
+      "latitude": -33.578778989041474,
+      "longitude": -70.57711601257326,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608160855171-d78b5ab91c",
+      "campus": "sotero",
+      "latitude": -33.57844156099418,
+      "longitude": -70.57718843221666,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608160855171-e6736459f6",
+      "campus": "sotero",
+      "latitude": -33.57821809798508,
+      "longitude": -70.5787977576256,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608160855171-e8af9a889e",
+      "campus": "sotero",
+      "latitude": -33.578741000519265,
+      "longitude": -70.57893455028535,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608160855171-ed7096250b",
+      "campus": "sotero",
+      "latitude": -33.57838569529614,
+      "longitude": -70.57810842990877,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608160855171-edfcb615f8",
+      "campus": "sotero",
+      "latitude": -33.57822480188376,
+      "longitude": -70.57812184095384,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608160855171-ff9255a67c",
+      "campus": "sotero",
+      "latitude": -33.577894075594195,
+      "longitude": -70.57796359062196,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608160952807-66993eb3c6",
+      "campus": "sotero",
+      "latitude": -33.57909406966941,
+      "longitude": -70.57814061641695,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608161012801-116c4f7b46",
+      "campus": "sotero",
+      "latitude": -33.578005807590536,
+      "longitude": -70.5782586336136,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608161012801-8ff02830d8",
+      "campus": "sotero",
+      "latitude": -33.57791195272333,
+      "longitude": -70.57858854532243,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608161114388-77df3892ac",
+      "campus": "sotero",
+      "latitude": -33.578877312197775,
+      "longitude": -70.57806819677354,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608161114388-7d7683207f",
+      "campus": "sotero",
+      "latitude": -33.57902474289337,
+      "longitude": -70.57813620537188,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608161114388-ab6efc796d",
+      "campus": "sotero",
+      "latitude": -33.57901362366098,
+      "longitude": -70.57798504829408,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608161524899-b6eb4a71de",
+      "campus": "sotero",
+      "latitude": -33.577822567040634,
+      "longitude": -70.57983040809633,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608161524899-ebb4f340d4",
+      "campus": "sotero",
+      "latitude": -33.57813541652507,
+      "longitude": -70.57996720075609,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608161524899-ebf4b6c2d1",
+      "campus": "sotero",
+      "latitude": -33.577547705486346,
+      "longitude": -70.57972043752672,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608161524899-f2a3473ca9",
+      "campus": "sotero",
+      "latitude": -33.57738010654805,
+      "longitude": -70.57963192462923,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608161616531-818c23554a",
+      "campus": "sotero",
+      "latitude": -33.577603272775,
+      "longitude": -70.5795539967781,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608161616534-aa3ecb3464",
+      "campus": "sotero",
+      "latitude": -33.5775231243291,
+      "longitude": -70.57950854301454,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608161616534-d3776a92bc",
+      "campus": "sotero",
+      "latitude": -33.57743820755018,
+      "longitude": -70.57948976755144,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608161712079-fb813c4769",
+      "campus": "sotero",
+      "latitude": -33.578814742929445,
+      "longitude": -70.5807074904442,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608161712080-10774154d5",
+      "campus": "sotero",
+      "latitude": -33.577733181265366,
+      "longitude": -70.58038830757143,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608161712080-267a0c8467",
+      "campus": "sotero",
+      "latitude": -33.57839239918182,
+      "longitude": -70.58047950267793,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608161722222-72754da0e7",
+      "campus": "sotero",
+      "latitude": -33.57794530408956,
+      "longitude": -70.58047743945085,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608161722222-7bdb1f8c6b",
+      "campus": "sotero",
+      "latitude": -33.578010276867374,
+      "longitude": -70.58028370141984,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608161722222-fb94ceefa7",
+      "campus": "sotero",
+      "latitude": -33.57808625453834,
+      "longitude": -70.58008253574373,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608161905510-014a8c79ee",
+      "campus": "sotero",
+      "latitude": -33.577970053367444,
+      "longitude": -70.5810856819153,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608161905510-64d239d8cd",
+      "campus": "sotero",
+      "latitude": -33.57842591860236,
+      "longitude": -70.58102399110795,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608161905510-711783830e",
+      "campus": "sotero",
+      "latitude": -33.578197986285886,
+      "longitude": -70.581211745739,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608161905510-8092ebd225",
+      "campus": "sotero",
+      "latitude": -33.57848401890049,
+      "longitude": -70.58082818984987,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608161905510-fd764e5a86",
+      "campus": "sotero",
+      "latitude": -33.578311952519364,
+      "longitude": -70.58098375797273,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608161952230-7e180990b2",
+      "campus": "sotero",
+      "latitude": -33.57770860016093,
+      "longitude": -70.58037489652635,
+      "notes": "Entrada edificio SR-BLD-012",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162034739-555de67a39",
+      "campus": "sotero",
+      "latitude": -33.57701809173066,
+      "longitude": -70.58139950037004,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162034739-8057a9a296",
+      "campus": "sotero",
+      "latitude": -33.5773063629121,
+      "longitude": -70.58154702186586,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162034740-5ca71a25e4",
+      "campus": "sotero",
+      "latitude": -33.57655104567995,
+      "longitude": -70.58209955692293,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162034740-9126634f64",
+      "campus": "sotero",
+      "latitude": -33.57671864622811,
+      "longitude": -70.58154165744783,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162034740-eab3025146",
+      "campus": "sotero",
+      "latitude": -33.576591269841195,
+      "longitude": -70.58194398880006,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162034740-fc2fc3f9eb",
+      "campus": "sotero",
+      "latitude": -33.576803563714954,
+      "longitude": -70.58128952980043,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162101870-4215fc5498",
+      "campus": "sotero",
+      "latitude": -33.57696445977672,
+      "longitude": -70.58167576789857,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162101870-4755b041a5",
+      "campus": "sotero",
+      "latitude": -33.5769242357894,
+      "longitude": -70.58116883039476,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162101870-5f75709c97",
+      "campus": "sotero",
+      "latitude": -33.576848257095534,
+      "longitude": -70.58143168687822,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162101870-fdf39bca6c",
+      "campus": "sotero",
+      "latitude": -33.57680132904533,
+      "longitude": -70.58159530162813,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162101870-ff726a5a3d",
+      "campus": "sotero",
+      "latitude": -33.577243792504916,
+      "longitude": -70.58161675930025,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162117442-a76b94b769",
+      "campus": "sotero",
+      "latitude": -33.57698925106056,
+      "longitude": -70.5811987208212,
+      "notes": "Entrada edificio SR-BLD-012",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162133987-0463a889cf",
+      "campus": "sotero",
+      "latitude": -33.57763262215753,
+      "longitude": -70.58106958866121,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162133987-7232bedfdc",
+      "campus": "sotero",
+      "latitude": -33.57774435449234,
+      "longitude": -70.58103740215303,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162133988-fc5f86743c",
+      "campus": "sotero",
+      "latitude": -33.57753429758327,
+      "longitude": -70.5813565850258,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162344932-1a47b38bc6",
+      "campus": "sotero",
+      "latitude": -33.577567817337076,
+      "longitude": -70.58072358369829,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162344932-95a90868db",
+      "campus": "sotero",
+      "latitude": -33.577623683564504,
+      "longitude": -70.58046609163286,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162344932-c6c5fbb2da",
+      "campus": "sotero",
+      "latitude": -33.57754547083598,
+      "longitude": -70.58097571134569,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162344932-f91131869e",
+      "campus": "sotero",
+      "latitude": -33.57740692240005,
+      "longitude": -70.58138340711595,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162404413-41492ea8d5",
+      "campus": "sotero",
+      "latitude": -33.57748794969165,
+      "longitude": -70.58114497436974,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162404413-b4ef4b18ce",
+      "campus": "sotero",
+      "latitude": -33.57732647481907,
+      "longitude": -70.58109641075136,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162408391-950acba897",
+      "campus": "sotero",
+      "latitude": -33.57721899050379,
+      "longitude": -70.58103795898089,
+      "notes": "Entrada edificio SR-BLD-012",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162448036-4f4bd9b4a5",
+      "campus": "sotero",
+      "latitude": -33.576980102433396,
+      "longitude": -70.58066457509996,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162448036-c9ddae0d8f",
+      "campus": "sotero",
+      "latitude": -33.577076192976484,
+      "longitude": -70.58066457509996,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162448037-6581fd2d9e",
+      "campus": "sotero",
+      "latitude": -33.57710524358472,
+      "longitude": -70.58056533336641,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162448037-ed12d46931",
+      "campus": "sotero",
+      "latitude": -33.57699797975184,
+      "longitude": -70.5805090069771,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162518311-28471a3612",
+      "campus": "sotero",
+      "latitude": -33.5771700487525,
+      "longitude": -70.58034539222719,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162518311-65f9e4f3ce",
+      "campus": "sotero",
+      "latitude": -33.57706725432582,
+      "longitude": -70.58029174804689,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162530315-cbd96d4974",
+      "campus": "sotero",
+      "latitude": -33.577249857293566,
+      "longitude": -70.58038208388878,
+      "notes": "Entrada edificio SR-BLD-012",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162542917-7f9c342cc2",
+      "campus": "sotero",
+      "latitude": -33.57715664079074,
+      "longitude": -70.58024346828462,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162542917-9d12dd110e",
+      "campus": "sotero",
+      "latitude": -33.5773130668816,
+      "longitude": -70.57970434427263,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162542917-ccb6ed9847",
+      "campus": "sotero",
+      "latitude": -33.57729072031456,
+      "longitude": -70.57983845472337,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162553796-271ef87e9a",
+      "campus": "sotero",
+      "latitude": -33.57676333965265,
+      "longitude": -70.58023542165758,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162553796-4f5e64c699",
+      "campus": "sotero",
+      "latitude": -33.57686389977327,
+      "longitude": -70.58030247688295,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162553796-e45092b91c",
+      "campus": "sotero",
+      "latitude": -33.57670747286836,
+      "longitude": -70.58012008666994,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162605730-911ecc41a4",
+      "campus": "sotero",
+      "latitude": -33.57688113718702,
+      "longitude": -70.58062634535298,
+      "notes": "Entrada edificio SR-BLD-001",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162624929-3e5dfdab4a",
+      "campus": "sotero",
+      "latitude": -33.5771767527326,
+      "longitude": -70.57984113693239,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162624929-7d147fb5b5",
+      "campus": "sotero",
+      "latitude": -33.57721517647817,
+      "longitude": -70.58006664973284,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162624929-b232cacfc4",
+      "campus": "sotero",
+      "latitude": -33.57713652884421,
+      "longitude": -70.57998061180116,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162631509-7646c2cedd",
+      "campus": "sotero",
+      "latitude": -33.57708289696386,
+      "longitude": -70.57973116636278,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162637290-1f6db7166a",
+      "campus": "sotero",
+      "latitude": -33.57682591040814,
+      "longitude": -70.57996183633806,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162637290-90017ebf3e",
+      "campus": "sotero",
+      "latitude": -33.57703149971394,
+      "longitude": -70.57992964982988,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162659613-ae1c54d981",
+      "campus": "sotero",
+      "latitude": -33.57662478996124,
+      "longitude": -70.580130815506,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162659614-1859d1f0f5",
+      "campus": "sotero",
+      "latitude": -33.57611975210643,
+      "longitude": -70.58080404996873,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162659614-32bf8875f4",
+      "campus": "sotero",
+      "latitude": -33.57598120138193,
+      "longitude": -70.58130562305452,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162659614-4ec689646c",
+      "campus": "sotero",
+      "latitude": -33.57620913955258,
+      "longitude": -70.58046877384187,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162659614-88557dc934",
+      "campus": "sotero",
+      "latitude": -33.57626947602642,
+      "longitude": -70.58030515909196,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162659614-ada72cb0bc",
+      "campus": "sotero",
+      "latitude": -33.57591639532155,
+      "longitude": -70.582112967968,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162659614-c06f4a77bd",
+      "campus": "sotero",
+      "latitude": -33.57598120138193,
+      "longitude": -70.58147728443147,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162659614-ec6f613e38",
+      "campus": "sotero",
+      "latitude": -33.575929803475965,
+      "longitude": -70.58181792497636,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162659614-f9a73c082b",
+      "campus": "sotero",
+      "latitude": -33.57643260776301,
+      "longitude": -70.58020055294038,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162824641-038ae226b0",
+      "campus": "sotero",
+      "latitude": -33.576747696956694,
+      "longitude": -70.57981699705125,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162824641-24dd4f189c",
+      "campus": "sotero",
+      "latitude": -33.57657339243851,
+      "longitude": -70.5796265602112,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162824641-8094c364b0",
+      "campus": "sotero",
+      "latitude": -33.576446015837234,
+      "longitude": -70.57948708534242,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162824642-13e7ee8723",
+      "campus": "sotero",
+      "latitude": -33.57626947602642,
+      "longitude": -70.57902038097383,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162824642-515253fd33",
+      "campus": "sotero",
+      "latitude": -33.576153272409584,
+      "longitude": -70.5789425969124,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162824642-730c300d78",
+      "campus": "sotero",
+      "latitude": -33.57637227140321,
+      "longitude": -70.57929664850236,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162824642-a2beb642e4",
+      "campus": "sotero",
+      "latitude": -33.57606611959429,
+      "longitude": -70.57890504598619,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162824642-ebd6516b17",
+      "campus": "sotero",
+      "latitude": -33.576332047139914,
+      "longitude": -70.57917058467866,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162843224-3554d463cb",
+      "campus": "sotero",
+      "latitude": -33.57628511880905,
+      "longitude": -70.57938784360887,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162843224-7bd13ee6a5",
+      "campus": "sotero",
+      "latitude": -33.576012487048835,
+      "longitude": -70.57900696992876,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162843224-b4117ac9cb",
+      "campus": "sotero",
+      "latitude": -33.576240425136874,
+      "longitude": -70.5792135000229,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162843224-cd3869e7eb",
+      "campus": "sotero",
+      "latitude": -33.5761264561681,
+      "longitude": -70.57907670736314,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162853761-166475a7d1",
+      "campus": "sotero",
+      "latitude": -33.576376740764644,
+      "longitude": -70.57964342892839,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608162853761-cc9caa24d8",
+      "campus": "sotero",
+      "latitude": -33.57661808593827,
+      "longitude": -70.58000206947328,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163001616-9bb2310dd9",
+      "campus": "sotero",
+      "latitude": -33.576486240047416,
+      "longitude": -70.5798250436783,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163001616-e6882c76f6",
+      "campus": "sotero",
+      "latitude": -33.57711852884421,
+      "longitude": -70.58164894580842,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163107015-3f212a6391",
+      "campus": "sotero",
+      "latitude": -33.57679462503607,
+      "longitude": -70.57921081781389,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163107015-860426624a",
+      "campus": "sotero",
+      "latitude": -33.576890715785645,
+      "longitude": -70.57893991470338,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163107015-896932cb07",
+      "campus": "sotero",
+      "latitude": -33.57666724876127,
+      "longitude": -70.57946026325227,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163107015-d4dbb1a0ea",
+      "campus": "sotero",
+      "latitude": -33.5769756331032,
+      "longitude": -70.57897210121156,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163107015-e1c701a139",
+      "campus": "sotero",
+      "latitude": -33.577123120877246,
+      "longitude": -70.57907938957216,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163200225-1b0e3f3502",
+      "campus": "sotero",
+      "latitude": -33.57709853959906,
+      "longitude": -70.57809233665468,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163200225-b5ed5065bb",
+      "campus": "sotero",
+      "latitude": -33.57702926505019,
+      "longitude": -70.57835519313814,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163200226-ee93b33aef",
+      "campus": "sotero",
+      "latitude": -33.57713876350516,
+      "longitude": -70.5779340863228,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163222409-32fd046b0e",
+      "campus": "sotero",
+      "latitude": -33.57752982828177,
+      "longitude": -70.5781674385071,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163222409-5c18428c89",
+      "campus": "sotero",
+      "latitude": -33.57744044220333,
+      "longitude": -70.5784383416176,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163222409-8aaee842fe",
+      "campus": "sotero",
+      "latitude": -33.57769072298968,
+      "longitude": -70.57808160781862,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163222409-c7a05a89e2",
+      "campus": "sotero",
+      "latitude": -33.57736893327394,
+      "longitude": -70.57878434658052,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163222410-0ecfa3135a",
+      "campus": "sotero",
+      "latitude": -33.57789063799602,
+      "longitude": -70.57784754403326,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163222410-3c537e5df4",
+      "campus": "sotero",
+      "latitude": -33.577757762362786,
+      "longitude": -70.57802259922029,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163222410-6f167f925b",
+      "campus": "sotero",
+      "latitude": -33.57779575131777,
+      "longitude": -70.57792872190477,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163247361-6eb5ca4aab",
+      "campus": "sotero",
+      "latitude": -33.57893988142073,
+      "longitude": -70.57919740676881,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163247361-f142e1ecae",
+      "campus": "sotero",
+      "latitude": -33.57910300811016,
+      "longitude": -70.5791410803795,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163254459-0fb6f9d69a",
+      "campus": "sotero",
+      "latitude": -33.579002450598324,
+      "longitude": -70.57906597852708,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163254459-91297919b4",
+      "campus": "sotero",
+      "latitude": -33.578984573695074,
+      "longitude": -70.57887285947801,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163254459-c555c676ca",
+      "campus": "sotero",
+      "latitude": -33.57904267361712,
+      "longitude": -70.57869851589204,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163254459-cd386d2b2d",
+      "campus": "sotero",
+      "latitude": -33.579024796722194,
+      "longitude": -70.57844102382661,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163338718-04fac3ede8",
+      "campus": "sotero",
+      "latitude": -33.57912088498888,
+      "longitude": -70.57652592658998,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163338718-2fa4523033",
+      "campus": "sotero",
+      "latitude": -33.57912311959846,
+      "longitude": -70.5771240592003,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163338718-8607202c7e",
+      "campus": "sotero",
+      "latitude": -33.579015858273344,
+      "longitude": -70.57641863822938,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163338718-a05499d5c5",
+      "campus": "sotero",
+      "latitude": -33.579015858273344,
+      "longitude": -70.57623088359834,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163338718-c95faf30de",
+      "campus": "sotero",
+      "latitude": -33.579015858273344,
+      "longitude": -70.57632207870485,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163426669-41797cb23e",
+      "campus": "sotero",
+      "latitude": -33.57826725989673,
+      "longitude": -70.57683974504472,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163426669-7a0cd5173e",
+      "campus": "sotero",
+      "latitude": -33.57847954964818,
+      "longitude": -70.5769068002701,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163426669-c457e452ac",
+      "campus": "sotero",
+      "latitude": -33.57835887974824,
+      "longitude": -70.57685047388078,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163426669-cfedccd4a4",
+      "campus": "sotero",
+      "latitude": -33.578197986285886,
+      "longitude": -70.57691752910615,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163426669-e7301fd6a2",
+      "campus": "sotero",
+      "latitude": -33.57912229791998,
+      "longitude": -70.57690412248378,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163426669-f1514cf8b3",
+      "campus": "sotero",
+      "latitude": -33.57872982742132,
+      "longitude": -70.57690948247911,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163426670-b0a09d8e28",
+      "campus": "sotero",
+      "latitude": -33.577956645529966,
+      "longitude": -70.57710260152818,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163426670-e4eee3377a",
+      "campus": "sotero",
+      "latitude": -33.57796558408852,
+      "longitude": -70.57694971561433,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:49:07.6198267"
+    },
+    {
+      "externalId": "WRN-20260608163525904-0fe8a0cb52",
+      "campus": "sotero",
+      "latitude": -33.57768178440267,
+      "longitude": -70.57846248149873,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163525904-1f1d2eadc4",
+      "campus": "sotero",
+      "latitude": -33.57763262215753,
+      "longitude": -70.57860732078554,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163525904-8e9323885d",
+      "campus": "sotero",
+      "latitude": -33.57759016383238,
+      "longitude": -70.57877093553545,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163608626-03812cf69c",
+      "campus": "sotero",
+      "latitude": -33.57438338260115,
+      "longitude": -70.58228194713594,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163608626-0ed375e081",
+      "campus": "sotero",
+      "latitude": -33.57415320487101,
+      "longitude": -70.58247774839403,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163608626-99fa0a37f3",
+      "campus": "sotero",
+      "latitude": -33.575422526849366,
+      "longitude": -70.58143168687822,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163608626-a46c599917",
+      "campus": "sotero",
+      "latitude": -33.575156596501635,
+      "longitude": -70.58150678873064,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163608626-a4e0b870c5",
+      "campus": "sotero",
+      "latitude": -33.57466719313218,
+      "longitude": -70.58198422193529,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163608626-b88eef49ad",
+      "campus": "sotero",
+      "latitude": -33.57495547216511,
+      "longitude": -70.58164894580842,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163608626-c49ebac771",
+      "campus": "sotero",
+      "latitude": -33.57483479733824,
+      "longitude": -70.5818071961403,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163643110-7ea2fe4944",
+      "campus": "sotero",
+      "latitude": -33.57460015135864,
+      "longitude": -70.58165162801744,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163643110-8a604917f6",
+      "campus": "sotero",
+      "latitude": -33.5745308748046,
+      "longitude": -70.58194130659105,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163643110-92bcaf1168",
+      "campus": "sotero",
+      "latitude": -33.57475881680515,
+      "longitude": -70.58170527219774,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163700285-caddae4567",
+      "campus": "sotero",
+      "latitude": -33.574966645751644,
+      "longitude": -70.5812653899193,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163700285-e5dee37f50",
+      "campus": "sotero",
+      "latitude": -33.57488818327238,
+      "longitude": -70.58173718699246,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163700286-2a366f1552",
+      "campus": "sotero",
+      "latitude": -33.576077293037066,
+      "longitude": -70.58003962039949,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163700286-2c5bea3df2",
+      "campus": "sotero",
+      "latitude": -33.57582030348729,
+      "longitude": -70.58069944381715,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163700286-5aafda231e",
+      "campus": "sotero",
+      "latitude": -33.57595215039536,
+      "longitude": -70.58021932840349,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163700286-983948aadd",
+      "campus": "sotero",
+      "latitude": -33.57568622167932,
+      "longitude": -70.58102399110795,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163700286-b9d88b42c1",
+      "campus": "sotero",
+      "latitude": -33.57546275153652,
+      "longitude": -70.58101058006288,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163700286-fd25a13800",
+      "campus": "sotero",
+      "latitude": -33.576224782346145,
+      "longitude": -70.57957559823991,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163721783-414744e858",
+      "campus": "sotero",
+      "latitude": -33.57624489450514,
+      "longitude": -70.57947903871538,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163810813-5a77712a84",
+      "campus": "sotero",
+      "latitude": -33.57423311289705,
+      "longitude": -70.58240977443312,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163810814-0a468cdb72",
+      "campus": "sotero",
+      "latitude": -33.57448394549447,
+      "longitude": -70.58081746101381,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163810814-2b09c54b9e",
+      "campus": "sotero",
+      "latitude": -33.57435880054273,
+      "longitude": -70.58130025863649,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163810814-52d5d3ffee",
+      "campus": "sotero",
+      "latitude": -33.574586742997674,
+      "longitude": -70.58074772357942,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163810814-6906518bbc",
+      "campus": "sotero",
+      "latitude": -33.57431187113906,
+      "longitude": -70.5816274881363,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163810814-6fdeb07b08",
+      "campus": "sotero",
+      "latitude": -33.57429846273332,
+      "longitude": -70.58199495077135,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163810814-9fe8c300b1",
+      "campus": "sotero",
+      "latitude": -33.57442137304128,
+      "longitude": -70.58105885982515,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163810814-f071d66cef",
+      "campus": "sotero",
+      "latitude": -33.574740939022945,
+      "longitude": -70.58066993951799,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163820637-8be0403bc5",
+      "campus": "sotero",
+      "latitude": -33.57560129194738,
+      "longitude": -70.58101889424603,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163820637-b828a01cba",
+      "campus": "sotero",
+      "latitude": -33.57567504818592,
+      "longitude": -70.58082818984987,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163820638-2ac7d4c83e",
+      "campus": "sotero",
+      "latitude": -33.57548733328054,
+      "longitude": -70.58075845241548,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163820638-3bfd9fe03d",
+      "campus": "sotero",
+      "latitude": -33.57533984271137,
+      "longitude": -70.58070480823518,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163820638-855ec63c82",
+      "campus": "sotero",
+      "latitude": -33.57509625924988,
+      "longitude": -70.58064311742784,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163820638-9fcfc8f7cd",
+      "campus": "sotero",
+      "latitude": -33.57506497325089,
+      "longitude": -70.58077454566957,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163820638-df6a03eac0",
+      "campus": "sotero",
+      "latitude": -33.575201290734995,
+      "longitude": -70.58066725730897,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163837062-4c4cfa8903",
+      "campus": "sotero",
+      "latitude": -33.57485044038088,
+      "longitude": -70.58078259229661,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163837062-d4c556c896",
+      "campus": "sotero",
+      "latitude": -33.57504709553208,
+      "longitude": -70.58091133832933,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163919995-00c7f70bcb",
+      "campus": "sotero",
+      "latitude": -33.574754347359956,
+      "longitude": -70.58038830757143,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163929555-6df2d77d9d",
+      "campus": "sotero",
+      "latitude": -33.57486384870087,
+      "longitude": -70.58061093091966,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163929555-7485e3d236",
+      "campus": "sotero",
+      "latitude": -33.57510519810466,
+      "longitude": -70.58054119348527,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163929555-96bbed0301",
+      "campus": "sotero",
+      "latitude": -33.574964411034465,
+      "longitude": -70.58054119348527,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608163935775-4bb99d6cad",
+      "campus": "sotero",
+      "latitude": -33.574964411034465,
+      "longitude": -70.58073699474336,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608164001573-cd245d54d2",
+      "campus": "sotero",
+      "latitude": -33.574600395453395,
+      "longitude": -70.58205429457229,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608164016296-0580a842b1",
+      "campus": "sotero",
+      "latitude": -33.575927568783705,
+      "longitude": -70.58008253574373,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608164016297-b040c06d9a",
+      "campus": "sotero",
+      "latitude": -33.57611081335671,
+      "longitude": -70.57950586080553,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608164047892-07db284895",
+      "campus": "sotero",
+      "latitude": -33.57520576015707,
+      "longitude": -70.58053582906724,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608164047892-850e36fe64",
+      "campus": "sotero",
+      "latitude": -33.57555437436504,
+      "longitude": -70.58044731616975,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608164047892-bbd43f4793",
+      "campus": "sotero",
+      "latitude": -33.575333138588604,
+      "longitude": -70.58052241802217,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608164047892-c0df64f860",
+      "campus": "sotero",
+      "latitude": -33.5754448739001,
+      "longitude": -70.580492913723,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608164047893-2481f143cd",
+      "campus": "sotero",
+      "latitude": -33.57587617084581,
+      "longitude": -70.57983040809633,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608164047893-2afbe58120",
+      "campus": "sotero",
+      "latitude": -33.57573091563846,
+      "longitude": -70.58023810386659,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608164047893-58f6a212f3",
+      "campus": "sotero",
+      "latitude": -33.575795721838084,
+      "longitude": -70.5800583958626,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608164047893-c76cf344a7",
+      "campus": "sotero",
+      "latitude": -33.5759186300141,
+      "longitude": -70.57967752218248,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608164047893-d950200c1a",
+      "campus": "sotero",
+      "latitude": -33.575994609526276,
+      "longitude": -70.57946026325227,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608164047893-ec42f911f2",
+      "campus": "sotero",
+      "latitude": -33.57565493589416,
+      "longitude": -70.58035343885423,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608164127645-4ee0a2aa6f",
+      "campus": "sotero",
+      "latitude": -33.578582342392835,
+      "longitude": -70.58044463396074,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608164127645-53308ad107",
+      "campus": "sotero",
+      "latitude": -33.57832759493182,
+      "longitude": -70.58027029037477,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608164142338-5feda6ff01",
+      "campus": "sotero",
+      "latitude": -33.5788527314192,
+      "longitude": -70.58024346828462,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608164145977-4013813b71",
+      "campus": "sotero",
+      "latitude": -33.57847508039562,
+      "longitude": -70.58013349771501,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608164145977-f427a3e929",
+      "campus": "sotero",
+      "latitude": -33.578582342392835,
+      "longitude": -70.58012545108797,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608164535990-44ad01c790",
+      "campus": "sotero",
+      "latitude": -33.578796865987314,
+      "longitude": -70.57635426521303,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608164535991-1f649b6d81",
+      "campus": "sotero",
+      "latitude": -33.57827843305456,
+      "longitude": -70.57646155357362,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608164535991-42a16f67f3",
+      "campus": "sotero",
+      "latitude": -33.57751418572473,
+      "longitude": -70.57658493518831,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608164535991-57898a1d43",
+      "campus": "sotero",
+      "latitude": -33.57772424268275,
+      "longitude": -70.57651519775392,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608164535991-b64c88bbc7",
+      "campus": "sotero",
+      "latitude": -33.577194630010304,
+      "longitude": -70.57670831680299,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:45.9854501"
+    },
+    {
+      "externalId": "WRN-20260608164535991-de1d93b72c",
+      "campus": "sotero",
+      "latitude": -33.577322005506815,
+      "longitude": -70.57657957077028,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608164545406-5bdb34208f",
+      "campus": "sotero",
+      "latitude": -33.57763485680565,
+      "longitude": -70.5769068002701,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:49:09.3728029"
+    },
+    {
+      "externalId": "WRN-20260608164545406-8063870996",
+      "campus": "sotero",
+      "latitude": -33.57728625100045,
+      "longitude": -70.57687461376192,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608164650956-4577d797e8",
+      "campus": "sotero",
+      "latitude": -33.57912152634385,
+      "longitude": -70.57669759654267,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608164650956-f540909a6d",
+      "campus": "sotero",
+      "latitude": -33.5778002206055,
+      "longitude": -70.57671904563905,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608164702659-21cdd97377",
+      "campus": "sotero",
+      "latitude": -33.577178987392514,
+      "longitude": -70.5766198039055,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608164702659-af95c933a3",
+      "campus": "sotero",
+      "latitude": -33.577310778085696,
+      "longitude": -70.57670122354891,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRN-20260608164755435-7ceb5e3ad8",
+      "campus": "sotero",
+      "latitude": -33.57716781409235,
+      "longitude": -70.57652324438097,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:55.4330205"
+    },
+    {
+      "externalId": "WRN-20260608181252126-8e82fd096a",
+      "campus": "sotero",
+      "latitude": -33.578113070170936,
+      "longitude": -70.58051437139513,
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T18:13:08.6009553"
+    }
+  ],
+  "edges": [
+    {
+      "externalId": "WRE-20260608160654480-0b19da95d0",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608160654480-21a9642bcb",
+      "toNodeExternalId": "WRN-20260608160654480-07f924489f",
+      "distanceMeters": 8.889944779313149,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608160654480-a16102666a",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608160654480-39ca4c1a82",
+      "toNodeExternalId": "WRN-20260608160654480-21a9642bcb",
+      "distanceMeters": 13.006781127252179,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608160654480-c3831ef96d",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608160654479-a095ac44b2",
+      "toNodeExternalId": "WRN-20260608160654480-39ca4c1a82",
+      "distanceMeters": 28.786389843506278,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608160654481-001a4acdd8",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608160654480-c6ce264ca2",
+      "toNodeExternalId": "WRN-20260608160654480-1a38707274",
+      "distanceMeters": 17.233311869458923,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608160654481-011820a1da",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608181252126-8e82fd096a",
+      "toNodeExternalId": "WRN-20260608160654480-8a97dedb81",
+      "distanceMeters": 22.48160959649904,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T18:13:08.6009553"
+    },
+    {
+      "externalId": "WRE-20260608160654481-06d7bb9947",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608160654480-8a97dedb81",
+      "toNodeExternalId": "WRN-20260608160654480-366a665eb4",
+      "distanceMeters": 23.449444670166848,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608160654481-09d7ed2909",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608160654480-a8e243c116",
+      "toNodeExternalId": "WRN-20260608160654480-30e9c3c8bb",
+      "distanceMeters": 27.134289492706554,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608160654481-0de790c5a9",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608160654480-a8a77e2714",
+      "toNodeExternalId": "WRN-20260608160654480-2cb4a03433",
+      "distanceMeters": 15.997471390616363,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608160654481-28ce5c19e0",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608160654480-4c0cc3ed92",
+      "toNodeExternalId": "WRN-20260608160654480-939caa128f",
+      "distanceMeters": 16.12651773629216,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608160654481-296fa6638e",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608160654480-525603fab8",
+      "toNodeExternalId": "WRN-20260608160654480-9455904349",
+      "distanceMeters": 25.781023949857346,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608160654481-2a6fc397e7",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608160654480-30e9c3c8bb",
+      "toNodeExternalId": "WRN-20260608160654480-a8a77e2714",
+      "distanceMeters": 26.758499889271977,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608160654481-4e1f02edb5",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608160654480-6b4884d123",
+      "toNodeExternalId": "WRN-20260608160654480-681c328dfb",
+      "distanceMeters": 29.29111778822149,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608160654481-56c5cbae45",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608160654480-102576b78b",
+      "toNodeExternalId": "WRN-20260608160654480-d59c0703f6",
+      "distanceMeters": 18.81256593953873,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608160654481-58dca79ec5",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608160654480-366a665eb4",
+      "toNodeExternalId": "WRN-20260608160654480-adaa9d8ed1",
+      "distanceMeters": 13.227894880053341,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608160654481-6b179a48fb",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608164145977-4013813b71",
+      "toNodeExternalId": "WRN-20260608160654480-a8e243c116",
+      "distanceMeters": 16.962217992480277,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608160654481-7eb3761057",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608160654480-2cb4a03433",
+      "toNodeExternalId": "WRN-20260608160654480-6b4884d123",
+      "distanceMeters": 27.61585561070765,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608160654481-8b6b4b3b58",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608160654480-adaa9d8ed1",
+      "toNodeExternalId": "WRN-20260608164145977-4013813b71",
+      "distanceMeters": 14.82986418061948,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608160654481-90d187029d",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608160654480-351d127d6d",
+      "toNodeExternalId": "WRN-20260608160654480-102576b78b",
+      "distanceMeters": 27.30696593895441,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608160654481-9d86336694",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608160654480-41e74b7d21",
+      "toNodeExternalId": "WRN-20260608160654480-4c0cc3ed92",
+      "distanceMeters": 10.899299053595925,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608160654481-a51e2ae74b",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608160654480-681c328dfb",
+      "toNodeExternalId": "WRN-20260608160654480-351d127d6d",
+      "distanceMeters": 36.65404752120532,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608160654481-b0cd6b87a9",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608160654480-9455904349",
+      "toNodeExternalId": "WRN-20260608160654480-c1337b1a03",
+      "distanceMeters": 27.003344678908675,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608160654481-b3d8889ded",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608160654480-d59c0703f6",
+      "toNodeExternalId": "WRN-20260608160654480-41e74b7d21",
+      "distanceMeters": 13.817050672585397,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608160654481-bfe1aa8a73",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608160654480-07f924489f",
+      "toNodeExternalId": "WRN-20260608160654480-525603fab8",
+      "distanceMeters": 20.33451416775152,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608160654481-e79eefd5e1",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608160654480-c1337b1a03",
+      "toNodeExternalId": "WRN-20260608181252126-8e82fd096a",
+      "distanceMeters": 35.172037886500306,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T18:13:08.6009553"
+    },
+    {
+      "externalId": "WRE-20260608160654481-e99d47222f",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608160654480-939caa128f",
+      "toNodeExternalId": "WRN-20260608160654480-c6ce264ca2",
+      "distanceMeters": 16.66132970380314,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608160855171-054b9ae406",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608160855171-542be3d141",
+      "toNodeExternalId": "WRN-20260608160855171-e6736459f6",
+      "distanceMeters": 11.561661538586957,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608160855171-1793707b88",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608160855171-42925aa914",
+      "toNodeExternalId": "WRN-20260608160855171-6d9a03f1f0",
+      "distanceMeters": 13.381099015785471,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608160855171-330f97e2bf",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608160855171-ff9255a67c",
+      "toNodeExternalId": "WRN-20260608160855171-7d51b67e62",
+      "distanceMeters": 18.674112550767635,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608160855171-5d6fdd9e26",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608160855171-272066fe40",
+      "toNodeExternalId": "WRN-20260608161114388-77df3892ac",
+      "distanceMeters": 37.681163295594125,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608160855171-68a42e5a62",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608160855171-d78b5ab91c",
+      "toNodeExternalId": "WRN-20260608160855171-42925aa914",
+      "distanceMeters": 58.00024667419268,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608160855171-6ccef3e917",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608160855171-53c438619a",
+      "toNodeExternalId": "WRN-20260608160855171-edfcb615f8",
+      "distanceMeters": 13.20689325925287,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608160855171-893f61cbef",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608160855171-72ecdfea83",
+      "toNodeExternalId": "WRN-20260608160855171-e8af9a889e",
+      "distanceMeters": 16.49156510818231,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608160855171-8beb0bace3",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608160855171-ed7096250b",
+      "toNodeExternalId": "WRN-20260608160855171-272066fe40",
+      "distanceMeters": 17.1468615703068,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608160855171-94c4c259f7",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608160855171-16648e3cf6",
+      "toNodeExternalId": "WRN-20260608160855171-272066fe40",
+      "distanceMeters": 51.99149918171105,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608160855171-bb17f84415",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608160855171-e8af9a889e",
+      "toNodeExternalId": "WRN-20260608160855171-4d1c0a823b",
+      "distanceMeters": 20.744581175902717,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608160855171-bd358600c3",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608160855171-06fe456671",
+      "toNodeExternalId": "WRN-20260608160855171-5dd9560515",
+      "distanceMeters": 42.28793931050553,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608160855171-bebd332605",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608160855171-7d51b67e62",
+      "toNodeExternalId": "WRN-20260608160855171-53c438619a",
+      "distanceMeters": 15.70348789591802,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608160855171-c16004b476",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608160855171-edfcb615f8",
+      "toNodeExternalId": "WRN-20260608160855171-ed7096250b",
+      "distanceMeters": 17.933618121835437,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608160855171-c5a574f2d3",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608160654480-681c328dfb",
+      "toNodeExternalId": "WRN-20260608160855171-542be3d141",
+      "distanceMeters": 15.503642879459601,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608160855171-d51d5d9264",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608161114388-ab6efc796d",
+      "toNodeExternalId": "WRN-20260608160855171-06fe456671",
+      "distanceMeters": 33.30433773540188,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608160855171-da1c94e561",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608160855171-aea1c38bbb",
+      "toNodeExternalId": "WRN-20260608160855171-d78b5ab91c",
+      "distanceMeters": 38.11537242669277,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608160855171-e6df940f79",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608160855171-e6736459f6",
+      "toNodeExternalId": "WRN-20260608160855171-72ecdfea83",
+      "distanceMeters": 43.15249406750728,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608160855171-e912382c62",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608160855171-4d1c0a823b",
+      "toNodeExternalId": "WRN-20260608160855171-16648e3cf6",
+      "distanceMeters": 32.483271582266354,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608160855171-f670c5a51e",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608160855171-5dd9560515",
+      "toNodeExternalId": "WRN-20260608160855171-aea1c38bbb",
+      "distanceMeters": 23.879750709413475,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608160952807-de1c728dd7",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608160952807-66993eb3c6",
+      "toNodeExternalId": "WRN-20260608161114388-7d7683207f",
+      "distanceMeters": 7.719608857427794,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608161012801-22cdc8749d",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608161012801-8ff02830d8",
+      "toNodeExternalId": "WRN-20260608161012801-116c4f7b46",
+      "distanceMeters": 32.29578705409769,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608161012801-548f98b13d",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608160654480-351d127d6d",
+      "toNodeExternalId": "WRN-20260608161012801-8ff02830d8",
+      "distanceMeters": 38.27654489568566,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608161012801-6c4bc0912d",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608161012801-116c4f7b46",
+      "toNodeExternalId": "WRN-20260608160855171-7d51b67e62",
+      "distanceMeters": 11.354227559846219,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608161244718-595ba53952",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608161114388-7d7683207f",
+      "toNodeExternalId": "WRN-20260608161114388-77df3892ac",
+      "distanceMeters": 17.5625068555588,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608161244718-7f7d5f5df2",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608161114388-ab6efc796d",
+      "toNodeExternalId": "WRN-20260608161114388-7d7683207f",
+      "distanceMeters": 14.057540316500162,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608161524899-3ec6c3b90a",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608161524899-b6eb4a71de",
+      "toNodeExternalId": "WRN-20260608161524899-ebf4b6c2d1",
+      "distanceMeters": 32.21645245495528,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608161524899-5c6b01c93e",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608161524899-ebf4b6c2d1",
+      "toNodeExternalId": "WRN-20260608161524899-f2a3473ca9",
+      "distanceMeters": 20.3603688233579,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608161524899-aefd593f6a",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608160654480-366a665eb4",
+      "toNodeExternalId": "WRN-20260608161524899-ebb4f340d4",
+      "distanceMeters": 13.381054323972512,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608161524899-d3125bb12b",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608161524899-ebb4f340d4",
+      "toNodeExternalId": "WRN-20260608161524899-b6eb4a71de",
+      "distanceMeters": 37.02360032466165,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608161524899-e74db8681c",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608161524899-f2a3473ca9",
+      "toNodeExternalId": "WRN-20260608160654480-1a38707274",
+      "distanceMeters": 13.917235245854913,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608161616533-2b5c816b97",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608161524899-ebf4b6c2d1",
+      "toNodeExternalId": "WRN-20260608161616531-818c23554a",
+      "distanceMeters": 16.61110714171724,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608161616533-5acc786fd2",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608161616531-818c23554a",
+      "toNodeExternalId": "WRN-20260608160654480-351d127d6d",
+      "distanceMeters": 57.5388473132661,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608161616534-61e340e4ab",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608161616534-d3776a92bc",
+      "toNodeExternalId": "WRN-20260608161524899-f2a3473ca9",
+      "distanceMeters": 14.668869303657363,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608161616534-aa0bb26b4e",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608161616534-aa3ecb3464",
+      "toNodeExternalId": "WRN-20260608161616534-d3776a92bc",
+      "distanceMeters": 9.601183983250353,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608161616534-e83e695f64",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608161616531-818c23554a",
+      "toNodeExternalId": "WRN-20260608161616534-aa3ecb3464",
+      "distanceMeters": 9.856822609437986,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608161712080-2de9c41fed",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608161712079-fb813c4769",
+      "toNodeExternalId": "WRN-20260608161712080-267a0c8467",
+      "distanceMeters": 51.49328491066511,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608161712080-b02373e9d5",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608161712080-267a0c8467",
+      "toNodeExternalId": "WRN-20260608181252126-8e82fd096a",
+      "distanceMeters": 31.227489429619713,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T18:13:08.6009553"
+    },
+    {
+      "externalId": "WRE-20260608161722222-232a9bb376",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608161722222-72754da0e7",
+      "toNodeExternalId": "WRN-20260608161722222-7bdb1f8c6b",
+      "distanceMeters": 19.34745673049189,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608161722222-36ef2e6332",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608161722222-72754da0e7",
+      "toNodeExternalId": "WRN-20260608161712080-10774154d5",
+      "distanceMeters": 24.99054408893532,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608161722222-839dbb9f25",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608181252126-8e82fd096a",
+      "toNodeExternalId": "WRN-20260608161722222-72754da0e7",
+      "distanceMeters": 18.96589248470104,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T18:13:08.6009553"
+    },
+    {
+      "externalId": "WRE-20260608161722222-88a8e6f6f4",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608161722222-7bdb1f8c6b",
+      "toNodeExternalId": "WRN-20260608161722222-fb94ceefa7",
+      "distanceMeters": 20.46156766844373,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608161722222-e55377ba05",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608161722222-fb94ceefa7",
+      "toNodeExternalId": "WRN-20260608161524899-ebb4f340d4",
+      "distanceMeters": 12.001874649304147,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608161905510-03bef4e4f9",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608161905510-014a8c79ee",
+      "toNodeExternalId": "WRN-20260608160654480-9455904349",
+      "distanceMeters": 10.765266670477615,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608161905510-413de935bc",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608161905510-711783830e",
+      "toNodeExternalId": "WRN-20260608161905510-014a8c79ee",
+      "distanceMeters": 27.906222333088053,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608161905510-642ee1e0a1",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608161905510-8092ebd225",
+      "toNodeExternalId": "WRN-20260608161905510-64d239d8cd",
+      "distanceMeters": 19.255131610806245,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608161905510-e1c9beac45",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608161905510-64d239d8cd",
+      "toNodeExternalId": "WRN-20260608161905510-fd764e5a86",
+      "distanceMeters": 13.209199432658437,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608161905510-e5ec00f0a0",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608161905510-fd764e5a86",
+      "toNodeExternalId": "WRN-20260608161905510-711783830e",
+      "distanceMeters": 24.63084843486384,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608161952230-929abbb7f5",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608161712080-10774154d5",
+      "toNodeExternalId": "WRN-20260608161952230-7e180990b2",
+      "distanceMeters": 3.002410756440707,
+      "status": "open",
+      "notes": "Entrada edificio SR-BLD-012",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162034740-189ac75f83",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162034739-8057a9a296",
+      "toNodeExternalId": "WRN-20260608162034739-555de67a39",
+      "distanceMeters": 34.8461264121886,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162034740-3d14b58615",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162034740-9126634f64",
+      "toNodeExternalId": "WRN-20260608162034740-eab3025146",
+      "distanceMeters": 39.87302879994675,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162034740-48611bdd1b",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162034740-fc2fc3f9eb",
+      "toNodeExternalId": "WRN-20260608162034740-9126634f64",
+      "distanceMeters": 25.193880555319286,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162034740-50eba642bf",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608160654480-39ca4c1a82",
+      "toNodeExternalId": "WRN-20260608162034739-8057a9a296",
+      "distanceMeters": 21.37524808822683,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162034740-b8a94f4c5a",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162034739-555de67a39",
+      "toNodeExternalId": "WRN-20260608162034740-fc2fc3f9eb",
+      "distanceMeters": 25.93888064573252,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162034740-f1a29fc962",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162034740-eab3025146",
+      "toNodeExternalId": "WRN-20260608162034740-5ca71a25e4",
+      "distanceMeters": 15.090197388622393,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162101870-002a3295bc",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162101870-fdf39bca6c",
+      "toNodeExternalId": "WRN-20260608162101870-5f75709c97",
+      "distanceMeters": 16.03057964546883,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162101870-54b04662dd",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162034739-8057a9a296",
+      "toNodeExternalId": "WRN-20260608162101870-ff726a5a3d",
+      "distanceMeters": 9.494505500413485,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162101870-6a58f370fa",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163001616-e6882c76f6",
+      "toNodeExternalId": "WRN-20260608162101870-4215fc5498",
+      "distanceMeters": 17.310964469555422,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162101870-6ae935506a",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162101870-ff726a5a3d",
+      "toNodeExternalId": "WRN-20260608163001616-e6882c76f6",
+      "distanceMeters": 14.244273286487863,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162101870-9b9f861925",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162101870-5f75709c97",
+      "toNodeExternalId": "WRN-20260608162101870-4755b041a5",
+      "distanceMeters": 25.77531697050404,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162101870-b001997aac",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162101870-4215fc5498",
+      "toNodeExternalId": "WRN-20260608162101870-fdf39bca6c",
+      "distanceMeters": 19.611330618391467,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162117442-f5d7494208",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162101870-4755b041a5",
+      "toNodeExternalId": "WRN-20260608162117442-a76b94b769",
+      "distanceMeters": 7.741551760545844,
+      "status": "open",
+      "notes": "Entrada edificio SR-BLD-012",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162133988-4c5495c81d",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162133988-fc5f86743c",
+      "toNodeExternalId": "WRN-20260608160654480-39ca4c1a82",
+      "distanceMeters": 24.609744108558036,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162133988-5313cded7c",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162133987-0463a889cf",
+      "toNodeExternalId": "WRN-20260608162133988-fc5f86743c",
+      "distanceMeters": 28.74773008740425,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162133988-b49ef128e7",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608160654480-9455904349",
+      "toNodeExternalId": "WRN-20260608162133987-7232bedfdc",
+      "distanceMeters": 16.89670946979727,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162133988-f7a96c2cf0",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162133987-7232bedfdc",
+      "toNodeExternalId": "WRN-20260608162133987-0463a889cf",
+      "distanceMeters": 12.776872700294485,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162344933-19abb60146",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162344932-95a90868db",
+      "toNodeExternalId": "WRN-20260608161712080-10774154d5",
+      "distanceMeters": 14.148174193071666,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162344933-a5f32caab5",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162344932-c6c5fbb2da",
+      "toNodeExternalId": "WRN-20260608162344932-1a47b38bc6",
+      "distanceMeters": 23.489084262098434,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162344933-a75f5ea391",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162344932-1a47b38bc6",
+      "toNodeExternalId": "WRN-20260608162344932-95a90868db",
+      "distanceMeters": 24.64982979843306,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162352332-58a070fe3e",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162133987-0463a889cf",
+      "toNodeExternalId": "WRN-20260608162344932-c6c5fbb2da",
+      "distanceMeters": 13.02100810365826,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162404413-25853fbe66",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162404413-41492ea8d5",
+      "toNodeExternalId": "WRN-20260608162404413-b4ef4b18ce",
+      "distanceMeters": 18.510254223642587,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162404413-2c0305d10b",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162404413-41492ea8d5",
+      "toNodeExternalId": "WRN-20260608162344932-c6c5fbb2da",
+      "distanceMeters": 16.934949076759512,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162404413-6942711503",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162344932-f91131869e",
+      "toNodeExternalId": "WRN-20260608162404413-41492ea8d5",
+      "distanceMeters": 23.855471191061085,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162408391-4b4cf9573a",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162404413-b4ef4b18ce",
+      "toNodeExternalId": "WRN-20260608162408391-950acba897",
+      "distanceMeters": 13.121202353808979,
+      "status": "open",
+      "notes": "Entrada edificio SR-BLD-012",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162448037-018e4fdf21",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162518311-65f9e4f3ce",
+      "toNodeExternalId": "WRN-20260608162448037-ed12d46931",
+      "distanceMeters": 21.550820374439763,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162448037-0e065c0fb4",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162448036-c9ddae0d8f",
+      "toNodeExternalId": "WRN-20260608162448037-6581fd2d9e",
+      "distanceMeters": 9.744846845035743,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162448037-2086798347",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162034740-fc2fc3f9eb",
+      "toNodeExternalId": "WRN-20260608162448036-4f4bd9b4a5",
+      "distanceMeters": 61.13405282369091,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162448037-b46ae65b7b",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162448036-4f4bd9b4a5",
+      "toNodeExternalId": "WRN-20260608162448036-c9ddae0d8f",
+      "distanceMeters": 10.68478088998139,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162448037-eca01ab394",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162448037-6581fd2d9e",
+      "toNodeExternalId": "WRN-20260608162518311-28471a3612",
+      "distanceMeters": 21.61230462385773,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162448037-ee62437b58",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162448037-ed12d46931",
+      "toNodeExternalId": "WRN-20260608162448037-6581fd2d9e",
+      "distanceMeters": 13.018718046090084,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162530315-8927fe23eb",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162518311-28471a3612",
+      "toNodeExternalId": "WRN-20260608162530315-cbd96d4974",
+      "distanceMeters": 9.50302814490334,
+      "status": "open",
+      "notes": "Entrada edificio SR-BLD-012",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162542917-3e5d4d59bb",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162542917-9d12dd110e",
+      "toNodeExternalId": "WRN-20260608161524899-f2a3473ca9",
+      "distanceMeters": 10.028964751504088,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162542917-84571607fe",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162542917-ccb6ed9847",
+      "toNodeExternalId": "WRN-20260608162542917-9d12dd110e",
+      "distanceMeters": 12.67017057202415,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162542917-c1e94c7478",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162518311-28471a3612",
+      "toNodeExternalId": "WRN-20260608162542917-7f9c342cc2",
+      "distanceMeters": 9.55932753948842,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162553796-874836fc5f",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162553796-271ef87e9a",
+      "toNodeExternalId": "WRN-20260608162553796-e45092b91c",
+      "distanceMeters": 12.359431237938292,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162553796-9d317c7b6c",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162448037-ed12d46931",
+      "toNodeExternalId": "WRN-20260608162553796-4f5e64c699",
+      "distanceMeters": 24.256119169130436,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162553796-9faf9cd842",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162553796-4f5e64c699",
+      "toNodeExternalId": "WRN-20260608162553796-271ef87e9a",
+      "distanceMeters": 12.791491349510745,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162605730-1e30f4e6f6",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162448036-4f4bd9b4a5",
+      "toNodeExternalId": "WRN-20260608162605730-911ecc41a4",
+      "distanceMeters": 11.560315076039926,
+      "status": "open",
+      "notes": "Entrada edificio SR-BLD-001",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162615026-56f6dc6def",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162518311-65f9e4f3ce",
+      "toNodeExternalId": "WRN-20260608162542917-7f9c342cc2",
+      "distanceMeters": 10.899316831083956,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162624929-32ad9bc7a5",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162624929-b232cacfc4",
+      "toNodeExternalId": "WRN-20260608162624929-3e5dfdab4a",
+      "distanceMeters": 13.673334989545824,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162624929-47733e1abf",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162624929-7d147fb5b5",
+      "toNodeExternalId": "WRN-20260608162624929-b232cacfc4",
+      "distanceMeters": 11.832586575376599,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162624929-a5d1cb969c",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162624929-7d147fb5b5",
+      "toNodeExternalId": "WRN-20260608162542917-ccb6ed9847",
+      "distanceMeters": 22.74797905742137,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162624929-ae5d02db90",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162624929-3e5dfdab4a",
+      "toNodeExternalId": "WRN-20260608162542917-ccb6ed9847",
+      "distanceMeters": 12.675052786561055,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162624929-cf85aa8dbd",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162542917-7f9c342cc2",
+      "toNodeExternalId": "WRN-20260608162624929-7d147fb5b5",
+      "distanceMeters": 17.62644774920816,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162631510-5b5ed3cef7",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162631509-7646c2cedd",
+      "toNodeExternalId": "WRN-20260608160654480-1a38707274",
+      "distanceMeters": 21.12104405221344,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162631510-a397e8bbe6",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162624929-3e5dfdab4a",
+      "toNodeExternalId": "WRN-20260608162631509-7646c2cedd",
+      "distanceMeters": 14.584490656337456,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162637290-5b3094afc2",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162637290-1f6db7166a",
+      "toNodeExternalId": "WRN-20260608162553796-e45092b91c",
+      "distanceMeters": 19.70714914262297,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162637290-6b9a7b75c5",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162624929-b232cacfc4",
+      "toNodeExternalId": "WRN-20260608162637290-90017ebf3e",
+      "distanceMeters": 12.596893149783144,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162637290-d5d049fed9",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162637290-90017ebf3e",
+      "toNodeExternalId": "WRN-20260608162637290-1f6db7166a",
+      "distanceMeters": 23.054133015102256,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162659615-0fbb9d2e0c",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162659614-f9a73c082b",
+      "toNodeExternalId": "WRN-20260608162659614-88557dc934",
+      "distanceMeters": 20.5658118240747,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162659615-2cc409a650",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162659613-ae1c54d981",
+      "toNodeExternalId": "WRN-20260608162659614-f9a73c082b",
+      "distanceMeters": 22.324937651977876,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162659615-39b9770e85",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162659614-ec6f613e38",
+      "toNodeExternalId": "WRN-20260608162659614-ada72cb0bc",
+      "distanceMeters": 27.37414157618163,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162659615-48c0a5a148",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162659614-32bf8875f4",
+      "toNodeExternalId": "WRN-20260608162659614-c06f4a77bd",
+      "distanceMeters": 15.903122592489245,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162659615-565985c07c",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162659614-4ec689646c",
+      "toNodeExternalId": "WRN-20260608162659614-1859d1f0f5",
+      "distanceMeters": 32.61227727524298,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162659615-835de51332",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162659614-88557dc934",
+      "toNodeExternalId": "WRN-20260608162659614-4ec689646c",
+      "distanceMeters": 16.576053495643723,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162659615-d5d4a9857a",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162659614-1859d1f0f5",
+      "toNodeExternalId": "WRN-20260608162659614-32bf8875f4",
+      "distanceMeters": 48.954282578675176,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162659615-e0a4193005",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162659614-c06f4a77bd",
+      "toNodeExternalId": "WRN-20260608162659614-ec6f613e38",
+      "distanceMeters": 32.07110997229781,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162659615-f8cc166594",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162553796-e45092b91c",
+      "toNodeExternalId": "WRN-20260608162659613-ae1c54d981",
+      "distanceMeters": 9.247490062044493,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162737194-61dc60fc10",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162637290-1f6db7166a",
+      "toNodeExternalId": "WRN-20260608162631509-7646c2cedd",
+      "distanceMeters": 35.6822635994926,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162824642-0578d53a76",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162824642-730c300d78",
+      "toNodeExternalId": "WRN-20260608162824642-ebd6516b17",
+      "distanceMeters": 12.505992423567108,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162824642-2ebaadfeaa",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162824641-24dd4f189c",
+      "toNodeExternalId": "WRN-20260608162824641-8094c364b0",
+      "distanceMeters": 19.172013005506948,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162824642-63d137af7d",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162637290-1f6db7166a",
+      "toNodeExternalId": "WRN-20260608162824641-038ae226b0",
+      "distanceMeters": 15.990093183989432,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162824642-8449a1f302",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162824642-515253fd33",
+      "toNodeExternalId": "WRN-20260608162824642-a2beb642e4",
+      "distanceMeters": 10.29643622600155,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162824642-b697664df5",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162824642-ebd6516b17",
+      "toNodeExternalId": "WRN-20260608162824642-13e7ee8723",
+      "distanceMeters": 15.55764503891765,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162824642-b85fa87335",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162824642-13e7ee8723",
+      "toNodeExternalId": "WRN-20260608162824642-515253fd33",
+      "distanceMeters": 14.794810078039468,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162824642-bad667ca8c",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162824641-038ae226b0",
+      "toNodeExternalId": "WRN-20260608162824641-24dd4f189c",
+      "distanceMeters": 26.208913923548067,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162824642-e094def168",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162824641-8094c364b0",
+      "toNodeExternalId": "WRN-20260608162824642-730c300d78",
+      "distanceMeters": 19.454967824637592,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162843224-8140a8b1f6",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162853761-166475a7d1",
+      "toNodeExternalId": "WRN-20260608162843224-3554d463cb",
+      "distanceMeters": 25.77669868973923,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162843224-931e4bd030",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162659613-ae1c54d981",
+      "toNodeExternalId": "WRN-20260608162853761-cc9caa24d8",
+      "distanceMeters": 11.950526185640014,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162843224-98afb5cb63",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162843224-b4117ac9cb",
+      "toNodeExternalId": "WRN-20260608162843224-cd3869e7eb",
+      "distanceMeters": 17.92200479497694,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162843224-a9c3b34c51",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162843224-cd3869e7eb",
+      "toNodeExternalId": "WRN-20260608162843224-7bd13ee6a5",
+      "distanceMeters": 14.224604802818327,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162843224-be5a0a77ef",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162843224-3554d463cb",
+      "toNodeExternalId": "WRN-20260608162843224-b4117ac9cb",
+      "distanceMeters": 16.898839634744473,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162847181-8ac98f679b",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162843224-3554d463cb",
+      "toNodeExternalId": "WRN-20260608162824642-730c300d78",
+      "distanceMeters": 12.85656263542537,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162940511-482f80683f",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163001616-9bb2310dd9",
+      "toNodeExternalId": "WRN-20260608162853761-166475a7d1",
+      "distanceMeters": 20.76859542639845,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608162940511-4ec05ea723",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608162853761-cc9caa24d8",
+      "toNodeExternalId": "WRN-20260608163001616-9bb2310dd9",
+      "distanceMeters": 21.99755860514208,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163107015-4df30d8acf",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608160654480-4c0cc3ed92",
+      "toNodeExternalId": "WRN-20260608163107015-e1c701a139",
+      "distanceMeters": 12.542848102478054,
+      "status": "closed",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163107015-afa6e7b3fa",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163107015-d4dbb1a0ea",
+      "toNodeExternalId": "WRN-20260608163107015-860426624a",
+      "distanceMeters": 9.90199931478953,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163107015-fe2a12ffeb",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163107015-e1c701a139",
+      "toNodeExternalId": "WRN-20260608163107015-d4dbb1a0ea",
+      "distanceMeters": 19.17672333884312,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163107016-023fb41c4c",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163107015-896932cb07",
+      "toNodeExternalId": "WRN-20260608162824641-24dd4f189c",
+      "distanceMeters": 18.608150912806952,
+      "status": "closed",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163107016-5d0a50cfdf",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163107015-3f212a6391",
+      "toNodeExternalId": "WRN-20260608163107015-896932cb07",
+      "distanceMeters": 27.104140680151342,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163107016-a627650cc0",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163107015-860426624a",
+      "toNodeExternalId": "WRN-20260608163107015-3f212a6391",
+      "distanceMeters": 27.276687097135802,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163200226-065f44f567",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163200225-b5ed5065bb",
+      "toNodeExternalId": "WRN-20260608163200225-1b0e3f3502",
+      "distanceMeters": 25.540637657088737,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163200226-8bfc99a0a0",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163107015-860426624a",
+      "toNodeExternalId": "WRN-20260608163200225-b5ed5065bb",
+      "distanceMeters": 56.31756078082216,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163200226-a323ca2190",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163200225-1b0e3f3502",
+      "toNodeExternalId": "WRN-20260608163200226-ee93b33aef",
+      "distanceMeters": 15.32759583489389,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163222410-11eaf795bf",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163222409-8aaee842fe",
+      "toNodeExternalId": "WRN-20260608163222410-3c537e5df4",
+      "distanceMeters": 9.244037689883141,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163222410-1e959f6fbc",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608160654480-d59c0703f6",
+      "toNodeExternalId": "WRN-20260608163222409-c7a05a89e2",
+      "distanceMeters": 18.49482761296022,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163222410-2474ea09e1",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163222410-3c537e5df4",
+      "toNodeExternalId": "WRN-20260608163222410-6f167f925b",
+      "distanceMeters": 9.668438427670896,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163222410-4b5f7360a3",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163222409-5c18428c89",
+      "toNodeExternalId": "WRN-20260608163222409-32fd046b0e",
+      "distanceMeters": 26.993193677036036,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163222410-4f09653bd5",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608160855171-6d9a03f1f0",
+      "toNodeExternalId": "WRN-20260608163222410-0ecfa3135a",
+      "distanceMeters": 45.1861202498079,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163222410-53e7f234f5",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163222410-6f167f925b",
+      "toNodeExternalId": "WRN-20260608163222410-0ecfa3135a",
+      "distanceMeters": 12.956756236741604,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163222410-63278834c0",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163222409-32fd046b0e",
+      "toNodeExternalId": "WRN-20260608163222409-8aaee842fe",
+      "distanceMeters": 19.578079605862776,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163222410-6bea59067f",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163222410-0ecfa3135a",
+      "toNodeExternalId": "WRN-20260608160855171-ff9255a67c",
+      "distanceMeters": 10.757390172911908,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163222410-cdc00b5db2",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163222409-c7a05a89e2",
+      "toNodeExternalId": "WRN-20260608163222409-5c18428c89",
+      "distanceMeters": 33.0257045441069,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163247361-d705083509",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163247361-6eb5ca4aab",
+      "toNodeExternalId": "WRN-20260608163247361-f142e1ecae",
+      "distanceMeters": 18.87448200608278,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163247361-ece480046a",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608160654480-a8a77e2714",
+      "toNodeExternalId": "WRN-20260608163247361-6eb5ca4aab",
+      "distanceMeters": 35.03894199234449,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163254459-3f980a7aef",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163254459-cd386d2b2d",
+      "toNodeExternalId": "WRN-20260608161114388-7d7683207f",
+      "distanceMeters": 28.238119211683085,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163254459-752f106415",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163254459-0fb6f9d69a",
+      "toNodeExternalId": "WRN-20260608163254459-91297919b4",
+      "distanceMeters": 18.000484254299362,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163254459-bc8f717c9a",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163247361-6eb5ca4aab",
+      "toNodeExternalId": "WRN-20260608163254459-0fb6f9d69a",
+      "distanceMeters": 14.023037853683421,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163254459-e109ee0d3d",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163254459-91297919b4",
+      "toNodeExternalId": "WRN-20260608163254459-c555c676ca",
+      "distanceMeters": 17.395203976010134,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163254459-f58bca4888",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163254459-c555c676ca",
+      "toNodeExternalId": "WRN-20260608163254459-cd386d2b2d",
+      "distanceMeters": 23.93652277482528,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163300576-fd081e65a4",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163254459-c555c676ca",
+      "toNodeExternalId": "WRN-20260608160855171-4d1c0a823b",
+      "distanceMeters": 22.369899479336198,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163338718-3f3bbc0050",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163338718-c95faf30de",
+      "toNodeExternalId": "WRN-20260608163338718-a05499d5c5",
+      "distanceMeters": 8.448236834362682,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163338718-52943b6353",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163338718-8607202c7e",
+      "toNodeExternalId": "WRN-20260608163338718-c95faf30de",
+      "distanceMeters": 8.945191942266334,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163338718-f567e3a455",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163338718-04fac3ede8",
+      "toNodeExternalId": "WRN-20260608163338718-8607202c7e",
+      "distanceMeters": 15.33530384368462,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163348627-ff840292a6",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163338718-2fa4523033",
+      "toNodeExternalId": "WRN-20260608160855171-5dd9560515",
+      "distanceMeters": 15.495512057324452,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163426669-d30048b30e",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163338718-2fa4523033",
+      "toNodeExternalId": "WRN-20260608163426669-e7301fd6a2",
+      "distanceMeters": 20.37492934029093,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163426670-09a8269a95",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163426669-41797cb23e",
+      "toNodeExternalId": "WRN-20260608163426669-cfedccd4a4",
+      "distanceMeters": 10.547960570814261,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163426670-0d473c599c",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163426669-cfedccd4a4",
+      "toNodeExternalId": "WRN-20260608163426670-e4eee3377a",
+      "distanceMeters": 26.013401284572332,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:49:07.6198267"
+    },
+    {
+      "externalId": "WRE-20260608163426670-1d77763e60",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163426670-e4eee3377a",
+      "toNodeExternalId": "WRN-20260608163426670-b0a09d8e28",
+      "distanceMeters": 14.198225300563607,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:49:07.6198267"
+    },
+    {
+      "externalId": "WRE-20260608163426670-3d41c53f12",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163426669-c457e452ac",
+      "toNodeExternalId": "WRN-20260608163426669-41797cb23e",
+      "distanceMeters": 10.236031664609866,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163426670-40745e5cc5",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163426669-f1514cf8b3",
+      "toNodeExternalId": "WRN-20260608163426669-7a0cd5173e",
+      "distanceMeters": 27.830727883126354,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163426670-6b477e864c",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163426669-e7301fd6a2",
+      "toNodeExternalId": "WRN-20260608163426669-f1514cf8b3",
+      "distanceMeters": 43.64355307661674,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163426670-b65804adee",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163426670-b0a09d8e28",
+      "toNodeExternalId": "WRN-20260608160855171-42925aa914",
+      "distanceMeters": 12.101798719712251,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163426670-dc4b62cb9a",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163426669-7a0cd5173e",
+      "toNodeExternalId": "WRN-20260608163426669-c457e452ac",
+      "distanceMeters": 14.396795511828246,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163525904-5d193e7604",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163525904-8e9323885d",
+      "toNodeExternalId": "WRN-20260608163525904-1f1d2eadc4",
+      "distanceMeters": 15.875621295389807,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163525904-748302ed95",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608160654480-102576b78b",
+      "toNodeExternalId": "WRN-20260608163525904-8e9323885d",
+      "distanceMeters": 16.214264796918716,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163525904-d50beb4185",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163525904-1f1d2eadc4",
+      "toNodeExternalId": "WRN-20260608163525904-0fe8a0cb52",
+      "distanceMeters": 14.488834721654584,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163608626-048cc9a08b",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163608626-99fa0a37f3",
+      "toNodeExternalId": "WRN-20260608162659614-32bf8875f4",
+      "distanceMeters": 63.21005707694329,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163608626-0689586058",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163608626-a4e0b870c5",
+      "toNodeExternalId": "WRN-20260608163608626-c49ebac771",
+      "distanceMeters": 24.825365440247108,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163608626-98e22ab88f",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163608626-b88eef49ad",
+      "toNodeExternalId": "WRN-20260608163608626-a46c599917",
+      "distanceMeters": 25.953716629372785,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163608626-b147a9129c",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163608626-a46c599917",
+      "toNodeExternalId": "WRN-20260608163608626-99fa0a37f3",
+      "distanceMeters": 30.377628904037778,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163643110-4279f34856",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163643110-7ea2fe4944",
+      "toNodeExternalId": "WRN-20260608163643110-92bcaf1168",
+      "distanceMeters": 18.32940406355296,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163643110-d5779e7c38",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163643110-8a604917f6",
+      "toNodeExternalId": "WRN-20260608163643110-7ea2fe4944",
+      "distanceMeters": 27.9206322862922,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163643110-da3a2f08b0",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163608626-a4e0b870c5",
+      "toNodeExternalId": "WRN-20260608163643110-8a604917f6",
+      "distanceMeters": 15.670656191899129,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163643110-e12cdf26d6",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163643110-92bcaf1168",
+      "toNodeExternalId": "WRN-20260608163608626-c49ebac771",
+      "distanceMeters": 12.67053829744027,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163700285-85c7d3c098",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163608626-c49ebac771",
+      "toNodeExternalId": "WRN-20260608163700285-e5dee37f50",
+      "distanceMeters": 8.792377509008194,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163700285-8df11049d3",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163700285-e5dee37f50",
+      "toNodeExternalId": "WRN-20260608163608626-b88eef49ad",
+      "distanceMeters": 11.082116132504398,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163700286-26dc706912",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163837062-d4c556c896",
+      "toNodeExternalId": "WRN-20260608163700286-b9d88b42c1",
+      "distanceMeters": 47.12443099470562,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163700286-2a48717378",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163700286-5aafda231e",
+      "toNodeExternalId": "WRN-20260608163700286-2a366f1552",
+      "distanceMeters": 21.69812407053142,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163700286-6252b28168",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163700285-e5dee37f50",
+      "toNodeExternalId": "WRN-20260608163700285-caddae4567",
+      "distanceMeters": 44.571194121691676,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163700286-c895790259",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163700286-983948aadd",
+      "toNodeExternalId": "WRN-20260608163700286-2c5bea3df2",
+      "distanceMeters": 33.560459726167046,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163700286-cf5dd54060",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163700286-2c5bea3df2",
+      "toNodeExternalId": "WRN-20260608163700286-5aafda231e",
+      "distanceMeters": 46.83296087720776,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163700286-d16039535c",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163700286-2a366f1552",
+      "toNodeExternalId": "WRN-20260608163700286-fd25a13800",
+      "distanceMeters": 46.010150642030595,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163700286-e3a845cf0d",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163700285-caddae4567",
+      "toNodeExternalId": "WRN-20260608163837062-d4c556c896",
+      "distanceMeters": 33.998539195814715,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163721783-2254385e4b",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163700286-fd25a13800",
+      "toNodeExternalId": "WRN-20260608163721783-414744e858",
+      "distanceMeters": 9.220789905403915,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163721783-6eff5fbac0",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163721783-414744e858",
+      "toNodeExternalId": "WRN-20260608162843224-3554d463cb",
+      "distanceMeters": 9.559427032275547,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163810814-02b7874d6d",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163810813-5a77712a84",
+      "toNodeExternalId": "WRN-20260608163810814-6fdeb07b08",
+      "distanceMeters": 39.111976653779344,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163810814-091d195343",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163810814-52d5d3ffee",
+      "toNodeExternalId": "WRN-20260608163810814-f071d66cef",
+      "distanceMeters": 18.598615375029787,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163810814-519a74b0fe",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163810813-5a77712a84",
+      "toNodeExternalId": "WRN-20260608163608626-03812cf69c",
+      "distanceMeters": 20.480286288204248,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163810814-5232c8e6c6",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163810814-6fdeb07b08",
+      "toNodeExternalId": "WRN-20260608163810814-6906518bbc",
+      "distanceMeters": 34.07591563571727,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163810814-5e784eb45f",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163810814-6906518bbc",
+      "toNodeExternalId": "WRN-20260608163810814-2b09c54b9e",
+      "distanceMeters": 30.761744117503873,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163810814-5f15101ca1",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163810814-f071d66cef",
+      "toNodeExternalId": "WRN-20260608163837062-4c4cfa8903",
+      "distanceMeters": 16.03673306869252,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163810814-7c57ac14b2",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163810814-9fe8c300b1",
+      "toNodeExternalId": "WRN-20260608163810814-0a468cdb72",
+      "distanceMeters": 23.42148343786455,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163810814-8438b5ef3d",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163608626-0ed375e081",
+      "toNodeExternalId": "WRN-20260608163810813-5a77712a84",
+      "distanceMeters": 10.890684781689513,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163810814-9705ef867e",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163810814-0a468cdb72",
+      "toNodeExternalId": "WRN-20260608163810814-52d5d3ffee",
+      "distanceMeters": 13.130081275584306,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163810814-ea46410fd4",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163810814-2b09c54b9e",
+      "toNodeExternalId": "WRN-20260608163810814-9fe8c300b1",
+      "distanceMeters": 23.42150041583945,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163820637-75aba895c7",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163700286-b9d88b42c1",
+      "toNodeExternalId": "WRN-20260608163820637-8be0403bc5",
+      "distanceMeters": 15.42423506010257,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163820637-dcdf77dbd5",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163820637-8be0403bc5",
+      "toNodeExternalId": "WRN-20260608163700286-983948aadd",
+      "distanceMeters": 9.455552619545454,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163820638-6658f7bfa9",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163820637-b828a01cba",
+      "toNodeExternalId": "WRN-20260608163820638-2ac7d4c83e",
+      "distanceMeters": 21.849946007884874,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163820638-6f1bc4b5c5",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163820638-3bfd9fe03d",
+      "toNodeExternalId": "WRN-20260608163820638-df6a03eac0",
+      "distanceMeters": 15.794165733270535,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163820638-8b567584ba",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163820638-855ec63c82",
+      "toNodeExternalId": "WRN-20260608163820638-9fcfc8f7cd",
+      "distanceMeters": 12.663184626177042,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163820638-b09ffb994b",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163820637-8be0403bc5",
+      "toNodeExternalId": "WRN-20260608163820637-b828a01cba",
+      "distanceMeters": 19.478144039630493,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163820638-c397c05ebc",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163820638-df6a03eac0",
+      "toNodeExternalId": "WRN-20260608163820638-855ec63c82",
+      "distanceMeters": 11.891163819044476,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163820638-d15f0a1f50",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163820638-9fcfc8f7cd",
+      "toNodeExternalId": "WRN-20260608163837062-d4c556c896",
+      "distanceMeters": 12.827903800214438,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163820638-f95aa5c15e",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163820638-2ac7d4c83e",
+      "toNodeExternalId": "WRN-20260608163820638-3bfd9fe03d",
+      "distanceMeters": 17.13666124252522,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163911259-fa3910f41e",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163837062-d4c556c896",
+      "toNodeExternalId": "WRN-20260608163837062-4c4cfa8903",
+      "distanceMeters": 24.90849229323971,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163919995-54fb5357a6",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163810814-f071d66cef",
+      "toNodeExternalId": "WRN-20260608163919995-00c7f70bcb",
+      "distanceMeters": 26.133996912569618,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163929555-003525e473",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163929555-6df2d77d9d",
+      "toNodeExternalId": "WRN-20260608163929555-96bbed0301",
+      "distanceMeters": 12.914276891865494,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163929555-1f4b8135b5",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163929555-7485e3d236",
+      "toNodeExternalId": "WRN-20260608163820638-855ec63c82",
+      "distanceMeters": 9.494744679044508,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163929555-35fcd68a55",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163929555-96bbed0301",
+      "toNodeExternalId": "WRN-20260608163929555-7485e3d236",
+      "distanceMeters": 15.654807942717202,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163929555-97ff8e29b3",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163837062-4c4cfa8903",
+      "toNodeExternalId": "WRN-20260608163929555-6df2d77d9d",
+      "distanceMeters": 15.973064478762154,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163935775-6b8ddf6116",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163935775-4bb99d6cad",
+      "toNodeExternalId": "WRN-20260608163929555-96bbed0301",
+      "distanceMeters": 18.139712886038627,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608163935775-dfb6ca00d9",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163820638-9fcfc8f7cd",
+      "toNodeExternalId": "WRN-20260608163935775-4bb99d6cad",
+      "distanceMeters": 11.71066546916283,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608164001573-0036233139",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608164001573-cd245d54d2",
+      "toNodeExternalId": "WRN-20260608163810814-6fdeb07b08",
+      "distanceMeters": 34.020562101580225,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608164001573-0f4469478b",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608164001573-cd245d54d2",
+      "toNodeExternalId": "WRN-20260608163608626-a4e0b870c5",
+      "distanceMeters": 9.864691809713424,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608164001573-a75b44da69",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163608626-03812cf69c",
+      "toNodeExternalId": "WRN-20260608164001573-cd245d54d2",
+      "distanceMeters": 32.04851529747069,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608164016297-252447c31a",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163820637-b828a01cba",
+      "toNodeExternalId": "WRN-20260608164016296-0580a842b1",
+      "distanceMeters": 74.56798895232656,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608164016297-5f437242b9",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608164016296-0580a842b1",
+      "toNodeExternalId": "WRN-20260608164016297-b040c06d9a",
+      "distanceMeters": 57.17828471622401,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608164016297-657a65825d",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608164016297-b040c06d9a",
+      "toNodeExternalId": "WRN-20260608163700286-fd25a13800",
+      "distanceMeters": 14.224588598606276,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608164047893-474d3e67df",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608164047893-ec42f911f2",
+      "toNodeExternalId": "WRN-20260608164047893-2afbe58120",
+      "distanceMeters": 13.62153722107054,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608164047893-4829340830",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608164047893-58f6a212f3",
+      "toNodeExternalId": "WRN-20260608164047893-2481f143cd",
+      "distanceMeters": 22.937624894829327,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608164047893-4bd7297c7b",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608164047892-c0df64f860",
+      "toNodeExternalId": "WRN-20260608164047892-850e36fe64",
+      "distanceMeters": 12.887865522909308,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608164047893-941491298b",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608164047893-2afbe58120",
+      "toNodeExternalId": "WRN-20260608164047893-58f6a212f3",
+      "distanceMeters": 18.141246880488776,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608164047893-aa4820b668",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608164047892-07db284895",
+      "toNodeExternalId": "WRN-20260608164047892-bbd43f4793",
+      "distanceMeters": 14.218223982415962,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608164047893-c5f8ac7466",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163929555-7485e3d236",
+      "toNodeExternalId": "WRN-20260608164047892-07db284895",
+      "distanceMeters": 11.193028533287926,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608164047893-c618ebdf9c",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608164047893-2481f143cd",
+      "toNodeExternalId": "WRN-20260608164047893-c76cf344a7",
+      "distanceMeters": 14.929884756254824,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608164047893-cd04f793c5",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608164047892-850e36fe64",
+      "toNodeExternalId": "WRN-20260608164047893-ec42f911f2",
+      "distanceMeters": 14.165959893463581,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608164047893-dc77e0082c",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608164047893-d950200c1a",
+      "toNodeExternalId": "WRN-20260608164016297-b040c06d9a",
+      "distanceMeters": 13.594255604476707,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608164047893-e8a8ede815",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608164047893-c76cf344a7",
+      "toNodeExternalId": "WRN-20260608164047893-d950200c1a",
+      "distanceMeters": 21.828646439962032,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608164047893-f04deba031",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608164047892-bbd43f4793",
+      "toNodeExternalId": "WRN-20260608164047892-c0df64f860",
+      "distanceMeters": 12.721517593473072,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608164127645-5266e67fc6",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608164127645-4ee0a2aa6f",
+      "toNodeExternalId": "WRN-20260608164127645-53308ad107",
+      "distanceMeters": 32.60762508432423,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608164127645-91d25774fc",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608164127645-53308ad107",
+      "toNodeExternalId": "WRN-20260608160654480-8a97dedb81",
+      "distanceMeters": 16.219847214489217,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608164142338-f7bf9a9b47",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608164145977-f427a3e929",
+      "toNodeExternalId": "WRN-20260608164142338-5feda6ff01",
+      "distanceMeters": 31.992017820502877,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608164155550-957d964a27",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608164145977-f427a3e929",
+      "toNodeExternalId": "WRN-20260608164145977-4013813b71",
+      "distanceMeters": 11.950262109618228,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608164535991-62b49947c0",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608164535990-44ad01c790",
+      "toNodeExternalId": "WRN-20260608164535991-1f649b6d81",
+      "distanceMeters": 58.49766115046331,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608164535991-85e7ae86f8",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608164535991-1f649b6d81",
+      "toNodeExternalId": "WRN-20260608164535991-57898a1d43",
+      "distanceMeters": 61.82322046306814,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608164535991-df4d36b2f1",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163338718-8607202c7e",
+      "toNodeExternalId": "WRN-20260608164535990-44ad01c790",
+      "distanceMeters": 25.07041962248586,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608164535992-439baca699",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608164535991-de1d93b72c",
+      "toNodeExternalId": "WRN-20260608164702659-21cdd97377",
+      "distanceMeters": 16.333835573526017,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608164535992-525462672e",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608164702659-af95c933a3",
+      "toNodeExternalId": "WRN-20260608164535991-b64c88bbc7",
+      "distanceMeters": 12.931783400114615,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:45.9854501"
+    },
+    {
+      "externalId": "WRE-20260608164535992-640c72833f",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608164535991-42a16f67f3",
+      "toNodeExternalId": "WRN-20260608164535991-de1d93b72c",
+      "distanceMeters": 21.37524310727476,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608164535992-bc4937369d",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608164535991-57898a1d43",
+      "toNodeExternalId": "WRN-20260608164535991-42a16f67f3",
+      "distanceMeters": 24.234279463216048,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608164545406-19b89fd210",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608164545406-8063870996",
+      "toNodeExternalId": "WRN-20260608164535991-b64c88bbc7",
+      "distanceMeters": 18.469801926820605,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:45.9854501"
+    },
+    {
+      "externalId": "WRE-20260608164545406-cfe1027306",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163426670-e4eee3377a",
+      "toNodeExternalId": "WRN-20260608164545406-5bdb34208f",
+      "distanceMeters": 36.98947422226046,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:49:09.3728029"
+    },
+    {
+      "externalId": "WRE-20260608164545406-fafb8d7394",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608164545406-5bdb34208f",
+      "toNodeExternalId": "WRN-20260608164545406-8063870996",
+      "distanceMeters": 38.877711800905566,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:49:09.3728029"
+    },
+    {
+      "externalId": "WRE-20260608164650956-2aa3ef4411",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608164650956-f540909a6d",
+      "toNodeExternalId": "WRN-20260608164702659-af95c933a3",
+      "distanceMeters": 54.44856336750254,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608164650956-3dcdad1007",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608163426669-e7301fd6a2",
+      "toNodeExternalId": "WRN-20260608164650956-4577d797e8",
+      "distanceMeters": 19.132555775535728,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608164650956-7995237a48",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608164650956-4577d797e8",
+      "toNodeExternalId": "WRN-20260608163338718-04fac3ede8",
+      "distanceMeters": 15.90349838914673,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608164650956-bf12f51115",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608164650956-4577d797e8",
+      "toNodeExternalId": "WRN-20260608164650956-f540909a6d",
+      "distanceMeters": 146.9359307904829,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:14.8157691"
+    },
+    {
+      "externalId": "WRE-20260608164755435-e92f3ded06",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608164702659-21cdd97377",
+      "toNodeExternalId": "WRN-20260608164755435-7ceb5e3ad8",
+      "distanceMeters": 9.031249553799185,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:55.4330205"
+    },
+    {
+      "externalId": "WRE-20260608164759739-6b6e08cc70",
+      "campus": "sotero",
+      "fromNodeExternalId": "WRN-20260608164702659-21cdd97377",
+      "toNodeExternalId": "WRN-20260608164535991-b64c88bbc7",
+      "distanceMeters": 8.382382949798894,
+      "status": "open",
+      "notes": "",
+      "updatedAtUtc": "2026-06-08T16:47:59.7367592"
+    }
+  ],
+  "savedAt": "2026-06-08T18:48:26.4632184Z"
+}

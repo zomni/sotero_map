@@ -1,12 +1,13 @@
 import campuses from "../data/campuses.js";
-import { BACKEND_API_URL, map } from "../views/map.js";
-import { goTo } from "@app/goToCampus";
+import { map } from "../views/map.js";
 import { mergeCatalogWithSoteroSearch } from "@app/soteroSearchMetadata";
 import { clearRouteHighlight, closeCurrentPopup, setRouteHighlight } from "@app/featureDisplay";
+import { loadWalkingRouteNetwork } from "../utils/walkingRouteStorage.js?v=20260608b";
 
 const DEFAULT_CAMPUS = Object.keys(campuses)[0] || "sotero";
 const MAX_ATTEMPTS = 48;
 const RETRY_DELAY_MS = 250;
+const SELECTED_ROUTE_COLOR = "#ef4444";
 
 let plannerElements = null;
 let routeOverlayLayer = null;
@@ -52,21 +53,29 @@ const getPlannerElements = () => {
 
   const toggleButton = document.getElementById("route-planner-toggle");
   const panel = document.getElementById("route-planner-panel");
+  const originSearch = document.getElementById("route-origin-search");
   const originSelect = document.getElementById("route-origin-select");
+  const originOptions = document.getElementById("route-origin-options");
+  const destinationSearch = document.getElementById("route-destination-search");
   const destinationSelect = document.getElementById("route-destination-select");
+  const destinationOptions = document.getElementById("route-destination-options");
   const submitButton = document.getElementById("route-planner-submit");
   const clearButton = document.getElementById("route-planner-clear");
   const status = document.getElementById("route-planner-status");
 
-  if (!toggleButton || !panel || !originSelect || !destinationSelect || !submitButton || !clearButton || !status) {
+  if (!toggleButton || !panel || !originSearch || !originSelect || !originOptions || !destinationSearch || !destinationSelect || !destinationOptions || !submitButton || !clearButton || !status) {
     return null;
   }
 
   plannerElements = {
     toggleButton,
     panel,
+    originSearch,
     originSelect,
+    originOptions,
+    destinationSearch,
     destinationSelect,
+    destinationOptions,
     submitButton,
     clearButton,
     status,
@@ -95,6 +104,35 @@ const getBuildingDisplayName = (building) =>
 const getBuildingOptionLabel = (building) => `${getBuildingDisplayName(building)} (${building.id})`;
 
 const buildCollator = () => new Intl.Collator("es", { sensitivity: "base", numeric: true });
+
+const normalizeSearchText = (value) =>
+  String(value || "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+
+const getBuildingSearchHaystack = (building) =>
+  normalizeSearchText([
+    building?.id,
+    building?.displayName,
+    building?.realName,
+    building?.searchTitle,
+    building?.shortName,
+    building?.alias,
+  ].filter(Boolean).join(" "));
+
+const filterBuildings = (buildings, query) => {
+  const normalizedQuery = normalizeSearchText(query);
+  if (!normalizedQuery) return buildings;
+
+  const terms = normalizedQuery.split(/\s+/).filter(Boolean);
+  return buildings.filter((building) => {
+    const haystack = getBuildingSearchHaystack(building);
+    return terms.every((term) => haystack.includes(term));
+  });
+};
 
 const loadBuildingsCatalog = async () => {
   if (Array.isArray(buildingsCache)) {
@@ -139,15 +177,7 @@ const loadWalkingRoutes = async () => {
   }
 
   try {
-    const response = await fetch(`${BACKEND_API_URL}/api/walking-routes?campus=${encodeURIComponent(DEFAULT_CAMPUS)}`, {
-      cache: "no-store",
-    });
-
-    if (!response.ok) {
-      throw new Error("No se pudo cargar la red caminable.");
-    }
-
-    const data = await response.json();
+    const data = await loadWalkingRouteNetwork(DEFAULT_CAMPUS);
     const nodes = Array.isArray(data?.nodes) ? data.nodes : [];
     const edges = Array.isArray(data?.edges) ? data.edges : [];
     const nodesById = new Map(nodes.map((node) => [node.externalId, node]));
@@ -340,16 +370,86 @@ const updateSubmitState = () => {
   ui.submitButton.disabled = routeRequestInFlight || !(hasOrigin && hasDestination);
 };
 
-const fillSelectOptions = (selectElement, buildings, selectedValue) => {
-  if (!selectElement) return;
+const getBuildingById = (buildings, buildingId) =>
+  buildings.find((building) => building.id === buildingId) || null;
 
-  selectElement.innerHTML = "";
-  selectElement.append(new Option("Selecciona un edificio", ""));
+const setComboboxOpen = (searchInput, optionsElement, shouldOpen) => {
+  if (!searchInput || !optionsElement) return;
 
-  for (const building of buildings) {
-    const option = new Option(getBuildingOptionLabel(building), building.id, false, building.id === selectedValue);
-    selectElement.append(option);
+  optionsElement.hidden = !shouldOpen;
+  searchInput.setAttribute("aria-expanded", String(shouldOpen));
+};
+
+const closeComboboxes = () => {
+  const ui = getPlannerElements();
+  if (!ui) return;
+
+  setComboboxOpen(ui.originSearch, ui.originOptions, false);
+  setComboboxOpen(ui.destinationSearch, ui.destinationOptions, false);
+};
+
+const selectComboboxBuilding = (hiddenInput, searchInput, optionsElement, building) => {
+  if (!hiddenInput || !searchInput || !optionsElement || !building) return;
+
+  hiddenInput.value = building.id;
+  searchInput.value = getBuildingOptionLabel(building);
+  setComboboxOpen(searchInput, optionsElement, false);
+  updateSubmitState();
+};
+
+const renderComboboxOptions = (hiddenInput, searchInput, optionsElement, buildings, selectedValue, query = "") => {
+  if (!hiddenInput || !searchInput || !optionsElement) return;
+
+  const filteredBuildings = filterBuildings(buildings, query).slice(0, 80);
+  const selectedBuilding = selectedValue ? getBuildingById(buildings, selectedValue) : null;
+  const visibleBuildings = [...filteredBuildings];
+
+  if (selectedBuilding && !visibleBuildings.some((building) => building.id === selectedBuilding.id)) {
+    visibleBuildings.unshift(selectedBuilding);
   }
+
+  optionsElement.innerHTML = "";
+
+  if (selectedBuilding && !query) {
+    searchInput.value = getBuildingOptionLabel(selectedBuilding);
+  }
+
+  if (visibleBuildings.length === 0) {
+    const emptyOption = document.createElement("div");
+    emptyOption.className = "route-building-option route-building-option-empty";
+    emptyOption.textContent = query ? "Sin resultados" : "Empieza a escribir para buscar";
+    optionsElement.append(emptyOption);
+    return;
+  }
+
+  for (const building of visibleBuildings) {
+    const optionButton = document.createElement("button");
+    optionButton.type = "button";
+    optionButton.className = "route-building-option";
+    optionButton.dataset.value = building.id;
+    optionButton.setAttribute("role", "option");
+    optionButton.setAttribute("aria-selected", String(building.id === selectedValue));
+    optionButton.textContent = getBuildingOptionLabel(building);
+    optionButton.addEventListener("click", () => {
+      selectComboboxBuilding(hiddenInput, searchInput, optionsElement, building);
+    });
+    optionsElement.append(optionButton);
+  }
+};
+
+const getFirstComboboxOption = (optionsElement) =>
+  optionsElement?.querySelector(".route-building-option[data-value]") || null;
+
+const moveComboboxFocus = (optionsElement, direction = 1) => {
+  const options = Array.from(optionsElement?.querySelectorAll(".route-building-option[data-value]") || []);
+  if (options.length === 0) return;
+
+  const currentIndex = options.findIndex((option) => option === document.activeElement);
+  const nextIndex =
+    currentIndex < 0
+      ? 0
+      : (currentIndex + direction + options.length) % options.length;
+  options[nextIndex].focus();
 };
 
 const populateBuildingSelectors = async (preserveSelection = true) => {
@@ -360,9 +460,73 @@ const populateBuildingSelectors = async (preserveSelection = true) => {
   const selectedDestination = preserveSelection ? ui.destinationSelect.value : activeRoute.destinationId || "";
   const buildings = await loadBuildingsCatalog();
 
-  fillSelectOptions(ui.originSelect, buildings, selectedOrigin);
-  fillSelectOptions(ui.destinationSelect, buildings, selectedDestination);
+  renderComboboxOptions(ui.originSelect, ui.originSearch, ui.originOptions, buildings, selectedOrigin, ui.originSearch.value);
+  renderComboboxOptions(ui.destinationSelect, ui.destinationSearch, ui.destinationOptions, buildings, selectedDestination, ui.destinationSearch.value);
   updateSubmitState();
+};
+
+const refreshCombobox = async (hiddenInput, searchInput, optionsElement) => {
+  const buildings = await loadBuildingsCatalog();
+  renderComboboxOptions(hiddenInput, searchInput, optionsElement, buildings, hiddenInput.value, searchInput.value);
+  setComboboxOpen(searchInput, optionsElement, true);
+  updateSubmitState();
+};
+
+const bindComboboxEvents = (hiddenInput, searchInput, optionsElement) => {
+  searchInput.addEventListener("focus", () => {
+    void refreshCombobox(hiddenInput, searchInput, optionsElement);
+  });
+
+  searchInput.addEventListener("input", () => {
+    hiddenInput.value = "";
+    void refreshCombobox(hiddenInput, searchInput, optionsElement);
+  });
+
+  searchInput.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowDown") {
+      event.preventDefault();
+      setComboboxOpen(searchInput, optionsElement, true);
+      moveComboboxFocus(optionsElement, 1);
+      return;
+    }
+
+    if (event.key === "ArrowUp") {
+      event.preventDefault();
+      setComboboxOpen(searchInput, optionsElement, true);
+      moveComboboxFocus(optionsElement, -1);
+      return;
+    }
+
+    if (event.key === "Enter") {
+      event.preventDefault();
+      const firstOption = getFirstComboboxOption(optionsElement);
+      firstOption?.click();
+      return;
+    }
+
+    if (event.key === "Escape") {
+      setComboboxOpen(searchInput, optionsElement, false);
+    }
+  });
+
+  optionsElement.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowDown") {
+      event.preventDefault();
+      moveComboboxFocus(optionsElement, 1);
+      return;
+    }
+
+    if (event.key === "ArrowUp") {
+      event.preventDefault();
+      moveComboboxFocus(optionsElement, -1);
+      return;
+    }
+
+    if (event.key === "Escape") {
+      setComboboxOpen(searchInput, optionsElement, false);
+      searchInput.focus();
+    }
+  });
 };
 
 const togglePanel = async (forceOpen) => {
@@ -375,6 +539,8 @@ const togglePanel = async (forceOpen) => {
 
   if (shouldOpen) {
     await populateBuildingSelectors(true);
+  } else {
+    closeComboboxes();
   }
 };
 
@@ -439,7 +605,6 @@ const waitForFloorButtons = (callback, attempt = 0) => {
 
 const activateOverviewFloor = (requestId, callback) => {
   closeCurrentPopup();
-  goTo(DEFAULT_CAMPUS, { preserveView: true });
 
   waitForFloorButtons((floorButtons) => {
     if (requestId !== activeRouteRequestId) {
@@ -448,7 +613,7 @@ const activateOverviewFloor = (requestId, callback) => {
 
     const overviewButton = getFloorButtonForValue(0) || floorButtons[0] || null;
 
-    if (!overviewButton) {
+    if (!overviewButton || overviewButton.classList.contains("selectedFloorButton")) {
       callback();
       return;
     }
@@ -531,8 +696,8 @@ const createArrowMarker = (latlng, rotation) =>
       html: `
         <div class="route-arrow-marker" style="transform: rotate(${rotation}deg);">
           <svg viewBox="0 0 28 28" width="28" height="28" aria-hidden="true">
-            <path d="M4 14 H18" stroke="#0f766e" stroke-width="3.5" stroke-linecap="round" />
-            <path d="M14 9 L20 14 L14 19" fill="none" stroke="#0f766e" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M4 14 H18" stroke="${SELECTED_ROUTE_COLOR}" stroke-width="3.5" stroke-linecap="round" />
+            <path d="M14 9 L20 14 L14 19" fill="none" stroke="${SELECTED_ROUTE_COLOR}" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
         </div>
       `,
@@ -682,13 +847,22 @@ const renderRoute = async (originId, destinationId, originLayer, destinationLaye
   const overlay = ensureRouteOverlayLayer();
 
   L.polyline(routeLatLngs, {
-    color: routeUnavailable ? "#dc2626" : "#0f766e",
-    weight: 5,
+    color: "#ffffff",
+    weight: 12,
     opacity: 0.95,
+    lineCap: "round",
+    interactive: false,
+  }).addTo(overlay);
+
+  const selectedPolyline = L.polyline(routeLatLngs, {
+    color: SELECTED_ROUTE_COLOR,
+    weight: 8,
+    opacity: 0.98,
     dashArray: !hasWalkingNetwork || routeUnavailable ? "12 10" : null,
     lineCap: "round",
     interactive: false,
   }).addTo(overlay);
+  selectedPolyline.bringToFront?.();
 
   const arrowSegments = routeLatLngs.length > 1 ? routeLatLngs.slice(0, -1) : [originLatLng];
   [0.25, 0.5, 0.75].forEach((fraction) => {
@@ -765,8 +939,11 @@ const handleClear = () => {
   activeRouteRequestId += 1;
   routeRequestInFlight = false;
   activeRoute = { originId: "", destinationId: "" };
+  ui.originSearch.value = "";
+  ui.destinationSearch.value = "";
   ui.originSelect.value = "";
   ui.destinationSelect.value = "";
+  void populateBuildingSelectors(false);
   clearRouteOverlay();
   clearRouteHighlight();
   updateSubmitState();
@@ -783,12 +960,17 @@ const attachPlannerEvents = () => {
   ui.toggleButton.addEventListener("click", () => {
     void togglePanel();
   });
-  ui.originSelect.addEventListener("change", updateSubmitState);
-  ui.destinationSelect.addEventListener("change", updateSubmitState);
+  bindComboboxEvents(ui.originSelect, ui.originSearch, ui.originOptions);
+  bindComboboxEvents(ui.destinationSelect, ui.destinationSearch, ui.destinationOptions);
   ui.submitButton.addEventListener("click", () => {
     void handleSubmit();
   });
   ui.clearButton.addEventListener("click", handleClear);
+  document.addEventListener("click", (event) => {
+    if (!ui.panel.contains(event.target)) {
+      closeComboboxes();
+    }
+  });
 };
 
 const initializeRoutePlanner = async () => {
