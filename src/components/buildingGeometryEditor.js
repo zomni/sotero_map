@@ -29,6 +29,12 @@ const setStatus = (message) => {
   setAdminMapToolsStatus(message);
 };
 
+const setToolButtonContent = (button, icon, label = "") => {
+  const labelMarkup = label ? `<span class="map-tool-button-label">${label}</span>` : "";
+  button.innerHTML = `<span class="map-tool-button-icon" aria-hidden="true">${icon}</span>${labelMarkup}`;
+  button.classList.toggle("is-icon-only", !label);
+};
+
 const cloneLatLng = (latlng) => L.latLng(latlng.lat, latlng.lng);
 
 const normalizePolygonLatLngs = (layer) => {
@@ -145,8 +151,8 @@ const buildActionButtons = () => {
   const wrapper = document.createElement("div");
   wrapper.className = "building-geometry-active-actions";
   wrapper.innerHTML = `
-    <button type="button" class="dashboard-link manual-building-editor-button" data-geometry-save>Guardar forma</button>
-    <button type="button" class="dashboard-link" data-geometry-cancel>Cancelar</button>
+    <button type="button" class="dashboard-link manual-building-editor-button is-icon-only" data-geometry-save title="Guardar forma" aria-label="Guardar forma"><span class="map-tool-button-icon" aria-hidden="true">✓</span></button>
+    <button type="button" class="dashboard-link is-icon-only" data-geometry-cancel title="Cancelar" aria-label="Cancelar"><span class="map-tool-button-icon" aria-hidden="true">&times;</span></button>
   `;
 
   wrapper.querySelector("[data-geometry-save]")?.addEventListener("click", (event) => {
@@ -240,6 +246,11 @@ const beginShapeEdit = (layer, featureId) => {
 };
 
 const startShapeEdit = () => {
+  if (activeMode === "shape" || activeMode === "shape-pending") {
+    stopGeometryEditor();
+    return;
+  }
+
   stopGeometryEditor();
   requestAdminMapToolMode("geometry-shape");
   const layer = findFeatureLayerById(currentOpenFeatureId);
@@ -311,6 +322,11 @@ const beginMoveEdit = (layer, featureId) => {
 };
 
 const startMoveEdit = () => {
+  if (activeMode === "move" || activeMode === "move-pending") {
+    stopGeometryEditor();
+    return;
+  }
+
   stopGeometryEditor();
   requestAdminMapToolMode("geometry-move");
   const layer = findFeatureLayerById(currentOpenFeatureId);
@@ -337,7 +353,7 @@ const createGeometryControls = () => {
   editButton.id = editButtonId;
   editButton.className = "dashboard-link manual-building-editor-button";
   editButton.type = "button";
-  editButton.textContent = "Editar forma";
+  setToolButtonContent(editButton, "▱", "Editar forma");
   editButton.addEventListener("click", (event) => {
     event.preventDefault();
     event.stopPropagation();
@@ -348,7 +364,7 @@ const createGeometryControls = () => {
   moveButton.id = moveButtonId;
   moveButton.className = "dashboard-link manual-building-editor-button";
   moveButton.type = "button";
-  moveButton.textContent = "Mover edificio";
+  setToolButtonContent(moveButton, "↕", "Mover edificio");
   moveButton.addEventListener("click", (event) => {
     event.preventDefault();
     event.stopPropagation();

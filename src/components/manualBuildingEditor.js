@@ -23,6 +23,12 @@ const activeActionsClass = "manual-building-active-actions";
 const getEditorButton = () => document.getElementById(editorButtonId);
 const getEditorControls = () => document.getElementById("manual-building-editor-controls");
 
+const setToolButtonContent = (button, icon, label = "") => {
+  const labelMarkup = label ? `<span class="map-tool-button-label">${label}</span>` : "";
+  button.innerHTML = `<span class="map-tool-button-icon" aria-hidden="true">${icon}</span>${labelMarkup}`;
+  button.classList.toggle("is-icon-only", !label);
+};
+
 const setStatus = (message) => {
   setAdminMapToolsStatus(message);
 };
@@ -35,8 +41,8 @@ const buildActionButtons = () => {
   const wrapper = document.createElement("div");
   wrapper.className = `${activeActionsClass} building-geometry-active-actions`;
   wrapper.innerHTML = `
-    <button type="button" class="dashboard-link manual-building-editor-button" data-manual-building-save-shape>Guardar forma</button>
-    <button type="button" class="dashboard-link" data-manual-building-cancel-shape>Cancelar</button>
+    <button type="button" class="dashboard-link manual-building-editor-button is-icon-only" data-manual-building-save-shape title="Guardar forma" aria-label="Guardar forma"><span class="map-tool-button-icon" aria-hidden="true">✓</span></button>
+    <button type="button" class="dashboard-link is-icon-only" data-manual-building-cancel-shape title="Cancelar" aria-label="Cancelar"><span class="map-tool-button-icon" aria-hidden="true">&times;</span></button>
   `;
 
   wrapper.querySelector("[data-manual-building-save-shape]")?.addEventListener("click", finishPolygon);
@@ -279,7 +285,7 @@ const createEditorControls = () => {
   button.id = editorButtonId;
   button.className = "dashboard-link manual-building-editor-button";
   button.type = "button";
-  button.textContent = "Agregar edificio";
+  setToolButtonContent(button, "+", "Agregar edificio");
   button.addEventListener("click", (event) => {
     event.preventDefault();
     event.stopPropagation();

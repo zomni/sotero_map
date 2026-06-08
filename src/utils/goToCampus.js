@@ -42,6 +42,7 @@ const addFloorData = (school, floorButtonId, location) => {
     parseInt(document.getElementById(floorButtonId).innerHTML),
     location
   );
+  window.dispatchEvent(new CustomEvent("sotero-map-data-refreshed"));
 };
 
 const forceChange = (school, button, location) => {
@@ -155,6 +156,7 @@ export const refreshCurrentMapData = () => {
   removeSearchContainerElements();
   showSearch(location, campusInfo["school"]);
   addDataToMap(campusInfo["school"], currentFloor, location);
+  window.dispatchEvent(new CustomEvent("sotero-map-data-refreshed"));
 };
 
 

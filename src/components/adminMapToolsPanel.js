@@ -7,6 +7,8 @@ const activeModes = new Map([
   ["geometry-move", "building-move-editor-button"],
   ["walking-routes", "walking-route-editor-toggle"],
   ["walking-route-delete", "walking-route-delete-toggle"],
+  ["walking-route-split", "walking-route-split-toggle"],
+  ["walking-route-building", "walking-route-building-toggle"],
 ]);
 
 export const ensureAdminMapToolsPanel = () => {
@@ -26,12 +28,18 @@ export const ensureAdminMapToolsPanel = () => {
   `;
 
   document.body.appendChild(panel);
-  positionAdminMapToolsPanel();
+  scheduleAdminMapToolsPanelPosition();
   window.addEventListener("resize", positionAdminMapToolsPanel);
   window.addEventListener("sotero-session-changed", () => {
-    window.requestAnimationFrame(positionAdminMapToolsPanel);
+    scheduleAdminMapToolsPanelPosition();
   });
   return panel;
+};
+
+const scheduleAdminMapToolsPanelPosition = () => {
+  window.requestAnimationFrame(positionAdminMapToolsPanel);
+  window.setTimeout(positionAdminMapToolsPanel, 80);
+  window.setTimeout(positionAdminMapToolsPanel, 250);
 };
 
 const positionAdminMapToolsPanel = () => {

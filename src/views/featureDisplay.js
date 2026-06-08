@@ -837,6 +837,12 @@ const bindBuildingNameLabel = (feature, layer) => {
       interactive: false,
     }
   );
+
+  if (buildingLabelsVisible) {
+    layer.openTooltip?.();
+  }
+
+  setBuildingLabelsVisible(buildingLabelsVisible);
 };
 
 const escapeHtml = (value) => {
@@ -1948,7 +1954,7 @@ const createEquipmentBubbleForLayer = async (feature, layer) => {
     event?.originalEvent?.stopPropagation?.();
     L.DomEvent.stop(event);
 
-    if (["geometry-shape", "geometry-move"].includes(window.soteroAdminMapToolMode)) {
+    if (["geometry-shape", "geometry-move", "walking-route-building"].includes(window.soteroAdminMapToolMode)) {
       const buildingEvent = new CustomEvent("sotero-building-layer-click", {
         cancelable: true,
         detail: {
@@ -2113,6 +2119,10 @@ if (document.readyState === "loading") {
 window.addEventListener("sotero-session-changed", (event) => {
   updateBackendSessionCache(event.detail || {});
   refreshCurrentPopup();
+});
+
+window.addEventListener("sotero-map-data-refreshed", () => {
+  window.setTimeout(() => setBuildingLabelsVisible(buildingLabelsVisible), 80);
 });
 
 

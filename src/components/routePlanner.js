@@ -169,6 +169,46 @@ window.refreshWalkingRoutesCache = resetWalkingRoutesCache;
 
 const nodeToLatLng = (node) => L.latLng(Number(node.latitude), Number(node.longitude));
 
+const normalizePolygonLatLngs = (layer) => {
+  const latlngs = layer?.getLatLngs?.();
+  if (!Array.isArray(latlngs) || latlngs.length === 0) return [];
+
+  const ring = Array.isArray(latlngs[0]?.[0]) ? latlngs[0][0] : latlngs[0];
+  return Array.isArray(ring) ? ring : [];
+};
+
+const nearestPointOnSegment = (latlng, start, end) => {
+  const point = map.latLngToLayerPoint(latlng);
+  const startPoint = map.latLngToLayerPoint(start);
+  const endPoint = map.latLngToLayerPoint(end);
+  const dx = endPoint.x - startPoint.x;
+  const dy = endPoint.y - startPoint.y;
+  const lengthSquared = dx * dx + dy * dy;
+  const t = lengthSquared <= 0 ? 0 : Math.max(0, Math.min(1, ((point.x - startPoint.x) * dx + (point.y - startPoint.y) * dy) / lengthSquared));
+  return map.layerPointToLatLng(L.point(startPoint.x + t * dx, startPoint.y + t * dy));
+};
+
+const findNearestPointOnPolygonBoundary = (targetLatLng, layer) => {
+  const ring = normalizePolygonLatLngs(layer);
+  if (ring.length < 2) return null;
+
+  let bestPoint = null;
+  let bestDistance = Number.POSITIVE_INFINITY;
+
+  for (let index = 0; index < ring.length; index += 1) {
+    const start = ring[index];
+    const end = ring[(index + 1) % ring.length];
+    const candidate = nearestPointOnSegment(targetLatLng, start, end);
+    const distance = map.distance(targetLatLng, candidate);
+    if (distance < bestDistance) {
+      bestPoint = candidate;
+      bestDistance = distance;
+    }
+  }
+
+  return bestPoint;
+};
+
 const findNearestRouteNode = (latlng, nodes) => {
   let best = null;
   let bestDistance = Number.POSITIVE_INFINITY;
@@ -439,6 +479,21 @@ const getBuildingLatLng = (building, layer) => {
   return null;
 };
 
+const getBuildingAccessLatLng = (building, layer, network) => {
+  const fallback = getBuildingLatLng(building, layer);
+  if (!fallback || !Array.isArray(network?.nodes) || network.nodes.length === 0) {
+    return fallback;
+  }
+
+  const nearestToCenter = findNearestRouteNode(fallback, network.nodes);
+  if (!nearestToCenter) {
+    return fallback;
+  }
+
+  const routeLatLng = nodeToLatLng(nearestToCenter.node);
+  return findNearestPointOnPolygonBoundary(routeLatLng, layer) || fallback;
+};
+
 const buildRouteBounds = (originLatLng, destinationLatLng, originLayer, destinationLayer) => {
   const bounds = L.latLngBounds([originLatLng, destinationLatLng]);
 
@@ -496,14 +551,14 @@ const resolveRouteGeometry = async (originId, destinationId, originLayer, destin
     findBuildingById(destinationId),
   ]);
 
-  const originLatLng = getBuildingLatLng(originBuilding, originLayer);
-  const destinationLatLng = getBuildingLatLng(destinationBuilding, destinationLayer);
+  const network = await loadWalkingRoutes();
+  const originLatLng = getBuildingAccessLatLng(originBuilding, originLayer, network);
+  const destinationLatLng = getBuildingAccessLatLng(destinationBuilding, destinationLayer, network);
 
   if (!originLatLng || !destinationLatLng) {
     return null;
   }
 
-  const network = await loadWalkingRoutes();
   const nearestOrigin = findNearestRouteNode(originLatLng, network.nodes);
   const nearestDestination = findNearestRouteNode(destinationLatLng, network.nodes);
   const shortestRoute =

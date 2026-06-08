@@ -313,6 +313,30 @@
     font: inherit;
 }
 
+.map-tool-button-icon {
+    display: inline-flex;
+    width: 1.55rem;
+    height: 1.55rem;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.45rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.2);
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+.dashboard-link.is-icon-only {
+    justify-content: center;
+}
+
+.dashboard-link.is-icon-only .map-tool-button-icon {
+    margin-right: 0;
+    font-size: 22px;
+}
+
 .admin-map-tools-status {
     min-height: 24px;
     margin-top: 8px;
@@ -329,6 +353,78 @@
     align-items: stretch;
     gap: 8px;
     width: 100%;
+}
+
+.building-geometry-active-actions .dashboard-link.is-active {
+    border-color: #154860;
+    background: #154860;
+    color: #ffffff;
+}
+
+html[data-walking-route-free-draw="true"] .leaflet-container {
+    cursor: crosshair;
+}
+
+html[data-walking-route-free-draw="true"] .walking-route-vertex-marker {
+    cursor: grab;
+}
+
+.walking-route-vertex-marker {
+    width: 16px !important;
+    height: 16px !important;
+    border: 3px solid #0f766e;
+    border-radius: 999px;
+    background: #ccfbf1;
+    box-shadow: 0 5px 14px rgba(15, 23, 42, 0.28);
+    cursor: grab;
+}
+
+.walking-route-vertex-marker:active {
+    cursor: grabbing;
+}
+
+.walking-route-existing-vertex-marker {
+    width: 18px !important;
+    height: 18px !important;
+    border: 3px solid #154860;
+    border-radius: 999px;
+    background: #ffffff;
+    box-shadow:
+        0 0 0 4px rgba(21, 72, 96, 0.18),
+        0 6px 16px rgba(15, 23, 42, 0.3);
+    cursor: grab;
+}
+
+.walking-route-existing-vertex-marker:active {
+    cursor: grabbing;
+}
+
+.walking-route-existing-vertex-marker.is-fusion-preview {
+    border-color: #f97316;
+    background: #fed7aa;
+    box-shadow:
+        0 0 0 6px rgba(249, 115, 22, 0.28),
+        0 8px 18px rgba(15, 23, 42, 0.34);
+}
+
+.walking-route-existing-vertex-marker.is-connect-selected {
+    border-color: #0f766e;
+    background: #99f6e4;
+    box-shadow:
+        0 0 0 7px rgba(15, 118, 110, 0.24),
+        0 8px 18px rgba(15, 23, 42, 0.34);
+}
+
+.route-undo-button {
+    min-height: 34px;
+    font-size: 20px !important;
+    line-height: 1 !important;
+}
+
+.route-undo-button.is-muted,
+.route-undo-button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
 }
 
 .building-geometry-vertex-marker {
