@@ -4,7 +4,7 @@
 
 var location = "";
 
-import { map, locateMe } from "../views/map.js";
+import { map, toggleLocationTracking } from "../views/map.js";
 
 import { setCookie } from "../utils/locationCookie.js";
 
@@ -77,8 +77,12 @@ const applyCampusMapBounds = (campusInfo, preserveView = false) => {
 /////////////////////////////////////////////////////////////////////////////////
 
 document.getElementById("bLoc").onclick = function () {
-  locateMe();
+  toggleLocationTracking();
 };
+
+document.getElementById("bLoc").setAttribute("aria-label", "Activar seguimiento de ubicación");
+document.getElementById("bLoc").setAttribute("aria-pressed", "false");
+document.getElementById("bLoc").title = "Activar seguimiento de ubicación";
 
 /////////////////////////////////////////////////////////////////////////////////
 ////////////////// Export functions to go to a specific campus //////////////////
