@@ -14,7 +14,7 @@ El frontend se encarga de la experiencia visual del mapa y de la estructura fisi
 - buscador principal del mapa
 - popups de edificio con resumen, salas, equipos e historial
 - navegacion directa por URL
-- panel de estado de la API
+- panel de sincronizacion y estado del backend
 - herramientas admin para crear, editar forma y mover edificios
 
 El backend complementa esa experiencia con:
@@ -234,9 +234,34 @@ npm run stop-dev
 Modo produccion local:
 
 ```bash
+npm run build
 npm run prod
 npm run stop-prod
 ```
+
+El build genera la carpeta `dist/`. Esa carpeta contiene los archivos estaticos que puede servir un hosting como IIS, Vercel o un servidor web simple.
+
+## Modo sin API
+
+El mapa puede iniciar usando datos locales cuando el backend no esta disponible:
+
+- edificios base desde `src/data/cs_sotero_0.json`
+- indice de busqueda desde `src/data/cs_sotero_search.json`
+- rutas caminables desde `src/data/walking_routes_backup.json`
+- edificios manuales/overrides desde `src/data/sotero_buildings_backend_backup.json`
+
+Cuando la API responde, el frontend prioriza datos actualizados desde backend. Cuando falla, usa esos respaldos para evitar que el mapa quede vacio.
+
+## Publicacion estatica
+
+Para publicar solo el mapa:
+
+1. Ejecuta `npm install`.
+2. Ejecuta `npm run build`.
+3. Publica la carpeta `dist/`.
+4. Verifica que `dist/data/walking_routes_backup.json` y `dist/data/sotero_buildings_backend_backup.json` esten incluidos.
+
+Para Vercel, la carpeta de salida debe ser `dist`.
 
 ## Estructura importante
 
@@ -256,7 +281,7 @@ Datos del campus Sotero:
 - `src/data/sotero_buildings_backend_backup.json`: respaldo estatico de edificios editados, manuales y geometria para uso sin API.
 - `src/data/interiors/`: detalles, pisos y salas.
 
-Desde el panel `API activa`, el boton admin `Guardar respaldo` llama al backend y reemplaza directamente los dos JSON de respaldo en esta carpeta.
+Desde el panel de sincronizacion, el boton admin `Guardar respaldo` llama al backend y reemplaza directamente los dos JSON de respaldo en esta carpeta.
 
 Componentes principales:
 
@@ -281,7 +306,7 @@ Componentes principales:
 - Dashboard conectado al mapa.
 - Busqueda tolerante para edificios, salas y equipos.
 - Popups con resumen, salas, equipos e historial.
-- Panel de API activa y sincronizacion.
+- Panel de sincronizacion y estado del backend.
 - Herramientas admin para crear, editar y mover edificios.
 - Navegacion cruzada mapa-dashboard.
 - Soporte de equipos destacados, busqueda interna y paginacion dentro del popup.

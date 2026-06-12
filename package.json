@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "/bin/sh create_dist.sh && webpack",
+    "build": "node create_dist.js && webpack",
     "dev": "docker compose -f docker-compose.dev.yaml up -d --build && echo \"\n************************************************\n* Started development server on localhost:8080 *\n************************************************\n\"",
     "stop-dev": "docker compose -f docker-compose.dev.yaml down && echo \"\n****************************\n* Ended development server *\n****************************\n\"",
     "prod": "docker compose -f docker-compose.prod.yaml up -d --build && echo \"\n###############################################\n# Started production server on localhost:8080 #\n###############################################\n\"",
