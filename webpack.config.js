@@ -30,6 +30,7 @@ module.exports = {
       "@app/buildingGeometryEditor": src("components", "buildingGeometryEditor.js"),
       "@app/walkingRouteEditor": src("components", "walkingRouteEditor.js"),
       "@app/adminMapToolsPanel": src("components", "adminMapToolsPanel.js"),
+      "@app/networkTelemetryPanel": src("components", "networkTelemetryPanel.js"),
     },
   },
   module: {

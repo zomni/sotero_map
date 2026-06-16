@@ -4,6 +4,17 @@ Frontend del mapa interactivo del Complejo Asistencial Sotero del Rio.
 
 Este proyecto nace desde CampusMap, pero fue adaptado para SoteroMap: edificios hospitalarios, pisos, salas, buscador avanzado, integracion con backend, inventario real, historial, dashboard y herramientas de edicion para administradores.
 
+## Arquitectura rapida
+
+La base del frontend se reparte asi:
+
+- `src/index.js`: arranque de la app.
+- `src/views/`: mapa principal, popup y pantallas de visualizacion.
+- `src/components/`: buscadores, selector de campus, panel admin, editores de geometria y ruta.
+- `src/utils/`: helpers de busqueda, sincronizacion, rutas y lectura de respaldos.
+- `src/data/`: geometria local, indice de busqueda, rutas caminables y respaldos del backend.
+- `src/index.css`: estilos globales.
+
 ## Resumen
 
 El frontend se encarga de la experiencia visual del mapa y de la estructura fisica:
@@ -16,6 +27,7 @@ El frontend se encarga de la experiencia visual del mapa y de la estructura fisi
 - navegacion directa por URL
 - panel de sincronizacion y estado del backend
 - herramientas admin para crear, editar forma y mover edificios
+- soporte para rutas caminables y restauracion local de datos cuando la API no responde
 
 El backend complementa esa experiencia con:
 
@@ -94,6 +106,7 @@ URLs principales:
 - Permite ir desde inventario/ubicaciones del dashboard al edificio exacto.
 - Permite ir desde el mapa al inventario filtrando por serie de equipo.
 - Soporta deep links hacia edificios, pisos, salas y equipos.
+- Puede operar con respaldo local si el backend no esta disponible.
 
 ## Buscador
 
@@ -252,6 +265,13 @@ El mapa puede iniciar usando datos locales cuando el backend no esta disponible:
 
 Cuando la API responde, el frontend prioriza datos actualizados desde backend. Cuando falla, usa esos respaldos para evitar que el mapa quede vacio.
 
+## Desarrollo diario
+
+- Si cambias geometria, busqueda o rutas, revisa `src/data/` porque ahi quedan los respaldos que alimentan el modo sin API.
+- Si una interfaz no refleja cambios, limpia cache del navegador y vuelve a levantar `npm run dev`.
+- Si necesitas una version publica estatica, usa `npm run build` y publica `dist/`.
+- Si el backend esta caido, el mapa sigue mostrando edificios y rutas locales, pero no inventario real ni historial vivo.
+
 ## Publicacion estatica
 
 Para publicar solo el mapa:
@@ -310,6 +330,7 @@ Componentes principales:
 - Herramientas admin para crear, editar y mover edificios.
 - Navegacion cruzada mapa-dashboard.
 - Soporte de equipos destacados, busqueda interna y paginacion dentro del popup.
+- Respaldo local de edificios, rutas y busqueda para cuando no haya API.
 
 ## Licencias y creditos
 

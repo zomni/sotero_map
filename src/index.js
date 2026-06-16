@@ -22,8 +22,12 @@ import { initWalkingRouteEditor } from "@app/walkingRouteEditor";
 // Persistent walking route visibility layer
 import { initWalkingRouteLayer } from "@app/walkingRouteLayer";
 
+// Network telemetry panel and heat overlay
+import { initNetworkTelemetryPanel } from "@app/networkTelemetryPanel";
+
 initSessionModeBadge();
 initWalkingRouteLayer();
+initNetworkTelemetryPanel();
 initManualBuildingEditor();
 initBuildingGeometryEditor();
 initWalkingRouteEditor();
