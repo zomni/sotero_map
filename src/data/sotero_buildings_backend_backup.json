@@ -553,6 +553,25 @@
       "syncedAtUtc": "2026-04-08T15:31:07.2317126"
     },
     {
+      "id": 111,
+      "externalId": "MAN-BLD-971742",
+      "campus": "sotero",
+      "displayName": "Capacitacion HSR",
+      "shortName": "MAN-BLD-971742",
+      "realName": "Capacitacion HSR",
+      "type": "manual",
+      "responsibleArea": "",
+      "centroidLatitude": -33.57815273493613,
+      "centroidLongitude": -70.58011539280416,
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "mappingStatus": "manual",
+      "inventoryStatus": "",
+      "isDeleted": false,
+      "floorsJson": "[0,1]",
+      "syncedAtUtc": "2026-06-25T15:06:21.1583385"
+    },
+    {
       "id": 24,
       "externalId": "SR-BLD-024",
       "campus": "sotero",
@@ -686,6 +705,25 @@
       "syncedAtUtc": "2026-04-08T15:31:07.2317126"
     },
     {
+      "id": 109,
+      "externalId": "MAN-BLD-537372",
+      "campus": "sotero",
+      "displayName": "Comercializacion",
+      "shortName": "MAN-BLD-537372",
+      "realName": "Comercializacion",
+      "type": "manual",
+      "responsibleArea": "",
+      "centroidLatitude": -33.5776298288385,
+      "centroidLongitude": -70.57918936014177,
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "mappingStatus": "manual",
+      "inventoryStatus": "",
+      "isDeleted": false,
+      "floorsJson": "[0,1]",
+      "syncedAtUtc": "2026-06-25T13:19:15.9253294"
+    },
+    {
       "id": 37,
       "externalId": "SR-BLD-037",
       "campus": "sotero",
@@ -703,6 +741,25 @@
       "isDeleted": false,
       "floorsJson": "[0,1]",
       "syncedAtUtc": "2026-04-08T15:31:07.2317126"
+    },
+    {
+      "id": 110,
+      "externalId": "MAN-BLD-567278",
+      "campus": "sotero",
+      "displayName": "Container Juridica",
+      "shortName": "MAN-BLD-567278",
+      "realName": "Container Juridica",
+      "type": "manual",
+      "responsibleArea": "",
+      "centroidLatitude": -33.57614377498541,
+      "centroidLongitude": -70.58037489652635,
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "mappingStatus": "manual",
+      "inventoryStatus": "",
+      "isDeleted": false,
+      "floorsJson": "[0,1]",
+      "syncedAtUtc": "2026-06-25T14:59:35.0111638"
     },
     {
       "id": 76,
@@ -1218,6 +1275,44 @@
       "syncedAtUtc": "2026-04-08T15:31:07.2317126"
     },
     {
+      "id": 112,
+      "externalId": "MAN-BLD-478311",
+      "campus": "sotero",
+      "displayName": "Gimnasio NINEAS",
+      "shortName": "MAN-BLD-478311",
+      "realName": "Nuevo edificio manual",
+      "type": "manual",
+      "responsibleArea": "",
+      "centroidLatitude": -33.574767755569454,
+      "centroidLongitude": -70.58197550475599,
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "mappingStatus": "manual",
+      "inventoryStatus": "",
+      "isDeleted": true,
+      "floorsJson": "[0,1]",
+      "syncedAtUtc": "2026-06-25T17:31:46.7823176"
+    },
+    {
+      "id": 113,
+      "externalId": "MAN-BLD-728103",
+      "campus": "sotero",
+      "displayName": "Gimnasio NINEAS",
+      "shortName": "MAN-BLD-728103",
+      "realName": "Gimnasio NINEAS",
+      "type": "manual",
+      "responsibleArea": "",
+      "centroidLatitude": -33.57481766439182,
+      "centroidLongitude": -70.5820456147194,
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "mappingStatus": "manual",
+      "inventoryStatus": "",
+      "isDeleted": false,
+      "floorsJson": "[0,1]",
+      "syncedAtUtc": "2026-06-25T17:32:16.8197356"
+    },
+    {
       "id": 25,
       "externalId": "SR-BLD-025",
       "campus": "sotero",
@@ -1674,6 +1769,25 @@
       "syncedAtUtc": "2026-06-04T14:19:34.4150224"
     },
     {
+      "id": 98,
+      "externalId": "SR-BLD-098",
+      "campus": "sotero",
+      "displayName": "Procuramiento HSR",
+      "shortName": "BLD-098",
+      "realName": "SSMSO0",
+      "type": "unknown",
+      "responsibleArea": "",
+      "centroidLatitude": null,
+      "centroidLongitude": null,
+      "hasInteriorMap": false,
+      "hasInventory": false,
+      "mappingStatus": "",
+      "inventoryStatus": "",
+      "isDeleted": false,
+      "floorsJson": "[0,1]",
+      "syncedAtUtc": "2026-04-08T15:31:07.2317126"
+    },
+    {
       "id": 70,
       "externalId": "SR-BLD-070",
       "campus": "sotero",
@@ -1788,25 +1902,6 @@
       "syncedAtUtc": "2026-04-08T15:31:07.2317126"
     },
     {
-      "id": 98,
-      "externalId": "SR-BLD-098",
-      "campus": "sotero",
-      "displayName": "SSMSO0",
-      "shortName": "BLD-098",
-      "realName": "SSMSO0",
-      "type": "unknown",
-      "responsibleArea": "",
-      "centroidLatitude": null,
-      "centroidLongitude": null,
-      "hasInteriorMap": false,
-      "hasInventory": false,
-      "mappingStatus": "",
-      "inventoryStatus": "",
-      "isDeleted": false,
-      "floorsJson": "[0,1]",
-      "syncedAtUtc": "2026-04-08T15:31:07.2317126"
-    },
-    {
       "id": 6,
       "externalId": "SR-BLD-006",
       "campus": "sotero",
@@ -1910,8 +2005,8 @@
       "realName": "Servicio Social",
       "type": "unknown",
       "responsibleArea": "",
-      "centroidLatitude": -33.57809871908114,
-      "centroidLongitude": -70.58007878591766,
+      "centroidLatitude": -33.578083179354195,
+      "centroidLongitude": -70.58033843199273,
       "hasInteriorMap": false,
       "hasInventory": false,
       "mappingStatus": "",
@@ -1986,8 +2081,8 @@
       "realName": "Urgencia Adulto",
       "type": "urgencia",
       "responsibleArea": "Urgencia",
-      "centroidLatitude": -33.57481081248237,
-      "centroidLongitude": -70.58206723897977,
+      "centroidLatitude": -33.57710993632574,
+      "centroidLongitude": -70.58137133717538,
       "hasInteriorMap": false,
       "hasInventory": false,
       "mappingStatus": "pendiente",
@@ -2037,6 +2132,51 @@
   ],
   "manualBuildings": [
     {
+      "id": 11,
+      "externalId": "MAN-BLD-971742",
+      "campus": "sotero",
+      "displayName": "Capacitacion HSR",
+      "type": "manual",
+      "notes": "",
+      "floorsJson": "[0,1]",
+      "geometryJson": "{\u0022type\u0022:\u0022Polygon\u0022,\u0022coordinates\u0022:[[[-70.58021664619447,-33.578151058969524],[-70.58003425598146,-33.578209159452676],[-70.58001011610033,-33.57815552823885],[-70.58020055294038,-33.57809519308346],[-70.58021664619447,-33.578151058969524]]]}",
+      "centroidLatitude": -33.57815273493613,
+      "centroidLongitude": -70.58011539280416,
+      "createdByUsername": "admin",
+      "createdAtUtc": "2026-06-25T15:06:21.1583385",
+      "updatedAtUtc": "2026-06-25T15:06:36.1389732"
+    },
+    {
+      "id": 9,
+      "externalId": "MAN-BLD-537372",
+      "campus": "sotero",
+      "displayName": "Comercializacion",
+      "type": "manual",
+      "notes": "",
+      "floorsJson": "[0,1]",
+      "geometryJson": "{\u0022type\u0022:\u0022Polygon\u0022,\u0022coordinates\u0022:[[[-70.57928323745729,-33.57763709145371],[-70.57913303375246,-33.577684019049514],[-70.57909548282625,-33.577623683564504],[-70.57924568653108,-33.57757452128628],[-70.57928323745729,-33.57763709145371]]]}",
+      "centroidLatitude": -33.5776298288385,
+      "centroidLongitude": -70.57918936014177,
+      "createdByUsername": "admin",
+      "createdAtUtc": "2026-06-25T13:19:15.9253294",
+      "updatedAtUtc": "2026-06-25T13:19:15.9253294"
+    },
+    {
+      "id": 10,
+      "externalId": "MAN-BLD-567278",
+      "campus": "sotero",
+      "displayName": "Container Juridica",
+      "type": "manual",
+      "notes": "",
+      "floorsJson": "[0,1]",
+      "geometryJson": "{\u0022type\u0022:\u0022Polygon\u0022,\u0022coordinates\u0022:[[[-70.5803480744362,-33.57618679269972],[-70.58043926954271,-33.576162211154895],[-70.58039903640748,-33.57610187460608],[-70.58031320571901,-33.57612422148094],[-70.5803480744362,-33.57618679269972]]]}",
+      "centroidLatitude": -33.57614377498541,
+      "centroidLongitude": -70.58037489652635,
+      "createdByUsername": "admin",
+      "createdAtUtc": "2026-06-25T14:59:35.0111638",
+      "updatedAtUtc": "2026-06-25T14:59:35.0111638"
+    },
+    {
       "id": 1,
       "externalId": "MAN-BLD-725412",
       "campus": "sotero",
@@ -2050,6 +2190,36 @@
       "createdByUsername": "admin",
       "createdAtUtc": "2026-06-03T21:22:23.3156266",
       "updatedAtUtc": "2026-06-03T21:22:23.3156266"
+    },
+    {
+      "id": 12,
+      "externalId": "MAN-BLD-478311",
+      "campus": "sotero",
+      "displayName": "Gimnasio NINEAS",
+      "type": "manual",
+      "notes": "",
+      "floorsJson": "[0,1]",
+      "geometryJson": "{\u0022type\u0022:\u0022Polygon\u0022,\u0022coordinates\u0022:[[[-70.58187156915666,-33.574937594423616],[-70.58179646730424,-33.57488843061545],[-70.58207541704179,-33.57460015135864],[-70.58215856552125,-33.574644845880115],[-70.58187156915666,-33.574937594423616]]]}",
+      "centroidLatitude": -33.574767755569454,
+      "centroidLongitude": -70.58197550475599,
+      "createdByUsername": "admin",
+      "createdAtUtc": "2026-06-25T17:27:59.4487601",
+      "updatedAtUtc": "2026-06-25T17:30:52.8729504"
+    },
+    {
+      "id": 13,
+      "externalId": "MAN-BLD-728103",
+      "campus": "sotero",
+      "displayName": "Gimnasio NINEAS",
+      "type": "manual",
+      "notes": "",
+      "floorsJson": "[0,1]",
+      "geometryJson": "{\u0022type\u0022:\u0022Polygon\u0022,\u0022coordinates\u0022:[[[-70.58179646730424,-33.57488843061545],[-70.58208078145982,-33.57459791663196],[-70.58213710784914,-33.57463814170337],[-70.58220416307451,-33.57476775569487],[-70.58220684528352,-33.57494653329482],[-70.58208078145982,-33.57494653329482],[-70.58207005262376,-33.57482138901374],[-70.58197349309923,-33.574816919571774],[-70.5818608403206,-33.57493535970567],[-70.58179646730424,-33.57488843061545]]]}",
+      "centroidLatitude": -33.57481766439182,
+      "centroidLongitude": -70.5820456147194,
+      "createdByUsername": "admin",
+      "createdAtUtc": "2026-06-25T17:32:16.8197356",
+      "updatedAtUtc": "2026-06-25T17:32:25.2593041"
     },
     {
       "id": 5,
@@ -2152,6 +2322,22 @@
       "updatedAtUtc": "2026-06-05T18:01:05.6199896"
     },
     {
+      "buildingExternalId": "MAN-BLD-478311",
+      "geometryJson": "{\u0022type\u0022:\u0022Polygon\u0022,\u0022coordinates\u0022:[[[-70.58187156915666,-33.574937594423616],[-70.58179646730424,-33.57488843061545],[-70.58207541704179,-33.57460015135864],[-70.58215856552125,-33.574644845880115],[-70.58187156915666,-33.574937594423616]]]}",
+      "centroidLatitude": -33.574767755569454,
+      "centroidLongitude": -70.58197550475599,
+      "updatedByUsername": "admin",
+      "updatedAtUtc": "2026-06-25T17:28:08.3719988"
+    },
+    {
+      "buildingExternalId": "MAN-BLD-728103",
+      "geometryJson": "{\u0022type\u0022:\u0022Polygon\u0022,\u0022coordinates\u0022:[[[-70.58179646730424,-33.57488843061545],[-70.58208078145982,-33.57459791663196],[-70.58213710784914,-33.57463814170337],[-70.58220416307451,-33.57476775569487],[-70.58220684528352,-33.57494653329482],[-70.58208078145982,-33.57494653329482],[-70.58207005262376,-33.57482138901374],[-70.58197349309923,-33.574816919571774],[-70.5818608403206,-33.57493535970567],[-70.58179646730424,-33.57488843061545]]]}",
+      "centroidLatitude": -33.57481766439182,
+      "centroidLongitude": -70.5820456147194,
+      "updatedByUsername": "admin",
+      "updatedAtUtc": "2026-06-25T17:32:25.2593041"
+    },
+    {
       "buildingExternalId": "MAN-BLD-765903",
       "geometryJson": "{\u0022type\u0022:\u0022Polygon\u0022,\u0022coordinates\u0022:[[[-70.57981082797052,-33.57680423422469],[-70.57970085740091,-33.57677183154705],[-70.5796284377575,-33.576847810220265],[-70.57969146966937,-33.57702323131323],[-70.57990470528605,-33.576855631550465],[-70.57981082797052,-33.57680423422469]]]}",
       "centroidLatitude": -33.57686054777115,
@@ -2160,12 +2346,36 @@
       "updatedAtUtc": "2026-06-04T14:20:06.4931552"
     },
     {
+      "buildingExternalId": "MAN-BLD-971742",
+      "geometryJson": "{\u0022type\u0022:\u0022Polygon\u0022,\u0022coordinates\u0022:[[[-70.58021664619447,-33.578151058969524],[-70.58003425598146,-33.578209159452676],[-70.58001011610033,-33.57815552823885],[-70.58020055294038,-33.57809519308346],[-70.58021664619447,-33.578151058969524]]]}",
+      "centroidLatitude": -33.57815273493613,
+      "centroidLongitude": -70.58011539280416,
+      "updatedByUsername": "admin",
+      "updatedAtUtc": "2026-06-25T15:06:36.1389732"
+    },
+    {
       "buildingExternalId": "SR-BLD-001",
       "geometryJson": "{\u0022type\u0022:\u0022Polygon\u0022,\u0022coordinates\u0022:[[[-70.5813938,-33.5760138],[-70.5814904,-33.576282],[-70.5814904,-33.5764071],[-70.5815976,-33.5764071],[-70.5815976,-33.576568],[-70.5814962,-33.5765728],[-70.5814904,-33.5766485],[-70.5805569,-33.5768988],[-70.5805203,-33.5768154],[-70.5803638,-33.5768541],[-70.58023676276208,-33.57653763762204],[-70.58038830757143,-33.576494061419446],[-70.5803209,-33.5762909],[-70.5813938,-33.5760138]]]}",
       "centroidLatitude": -33.57652232300319,
       "centroidLongitude": -70.5809956438718,
       "updatedByUsername": "admin",
       "updatedAtUtc": "2026-06-04T16:01:37.1947778"
+    },
+    {
+      "buildingExternalId": "SR-BLD-015",
+      "geometryJson": "{\u0022type\u0022:\u0022Polygon\u0022,\u0022coordinates\u0022:[[[-70.58022737503053,-33.578151058969524],[-70.58020055294038,-33.578092958447264],[-70.5804516,-33.5780176],[-70.5804742,-33.5780711],[-70.58022737503053,-33.578151058969524]]]}",
+      "centroidLatitude": -33.578083179354195,
+      "centroidLongitude": -70.58033843199273,
+      "updatedByUsername": "admin",
+      "updatedAtUtc": "2026-06-25T15:05:59.5116456"
+    },
+    {
+      "buildingExternalId": "SR-BLD-046",
+      "geometryJson": "{\u0022type\u0022:\u0022Polygon\u0022,\u0022coordinates\u0022:[[[-70.58133244514467,-33.57723038455462],[-70.58128684759141,-33.577134294183196],[-70.58121979236604,-33.576991275757855],[-70.58134853839876,-33.57694881711721],[-70.5813753604889,-33.57701585706658],[-70.58140486478807,-33.57708289696386],[-70.58143168687822,-33.577134294183196],[-70.58144778013231,-33.57716781409235],[-70.58146119117738,-33.57718792603159],[-70.58140486478807,-33.577205803306995],[-70.58133244514467,-33.57723038455462]]]}",
+      "centroidLatitude": -33.57710993632574,
+      "centroidLongitude": -70.58137133717538,
+      "updatedByUsername": "admin",
+      "updatedAtUtc": "2026-06-25T17:22:15.1992448"
     },
     {
       "buildingExternalId": "SR-BLD-049",
@@ -2192,5 +2402,5 @@
       "updatedAtUtc": "2026-06-08T17:18:38.0054896"
     }
   ],
-  "savedAt": "2026-06-08T18:48:26.4632184Z"
+  "savedAt": "2026-06-25T18:18:51.7817483Z"
 }

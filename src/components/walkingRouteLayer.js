@@ -2,7 +2,6 @@ import { map } from "../views/map.js";
 import { loadWalkingRouteNetwork } from "../utils/walkingRouteStorage.js?v=20260608b";
 
 const ROUTE_VISIBILITY_STORAGE_KEY = "sotero_map_walking_routes_visible";
-
 let routesLayer = null;
 let routesCache = null;
 let routesVisible = window.sessionStorage?.getItem(ROUTE_VISIBILITY_STORAGE_KEY) === "true";
