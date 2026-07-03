@@ -3,6 +3,7 @@
 /////////////////////////////////////////////////////////////////////////////////
 
 import { goTo } from "@app/goToCampus";
+import { map } from "../views/map.js";
 import { openBuildingPopupLayer, setCurrentOpenFeatureId } from "@app/featureDisplay";
 
 const url = new URL(window.location.href);
