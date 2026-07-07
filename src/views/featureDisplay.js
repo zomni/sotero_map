@@ -387,6 +387,7 @@ const formatSyncTimestamp = (value) => {
   return date.toLocaleString("es-CL", {
     dateStyle: "short",
     timeStyle: "short",
+    timeZone: "America/Santiago",
   });
 };
 

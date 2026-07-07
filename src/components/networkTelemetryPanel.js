@@ -1,4 +1,3 @@
-import { map } from "../views/map.js";
 import {
   loadNetworkTelemetryStatus,
   resetNetworkTelemetryCache,
@@ -8,10 +7,7 @@ const DEFAULT_CAMPUS = "sotero";
 const PANEL_ID = "network-telemetry-panel";
 const TOGGLE_ID = "network-telemetry-toggle";
 
-let telemetryLayer = null;
-let buildingCatalogPromise = null;
 let telemetryPanelElements = null;
-let telemetryHeatVisible = true;
 let telemetryState = null;
 let telemetryFetchInFlight = false;
 
@@ -32,136 +28,13 @@ const registerControlSurface = (element) => {
   });
 };
 
-const getRiskTone = (level, score) => {
-  const normalizedLevel = String(level || "").trim().toLowerCase();
-
-  if (normalizedLevel === "critical" || score >= 85) {
-    return { className: "critical", color: "#b91c1c", fill: "#ef4444" };
-  }
-
-  if (normalizedLevel === "high" || score >= 60) {
-    return { className: "high", color: "#ea580c", fill: "#f97316" };
-  }
-
-  if (normalizedLevel === "medium" || score >= 35) {
-    return { className: "medium", color: "#ca8a04", fill: "#facc15" };
-  }
-
-  return { className: "low", color: "#0284c7", fill: "#38bdf8" };
-};
-
 const getRiskLabel = (score, level) => `${String(level || "low").toUpperCase()} (${Number(score) || 0})`;
 
-const ensureTelemetryLayer = () => {
-  if (!telemetryLayer) {
-    telemetryLayer = L.layerGroup().addTo(map);
-  }
-
-  return telemetryLayer;
-};
-
-const loadBuildingCatalog = async () => {
-  if (buildingCatalogPromise) {
-    return buildingCatalogPromise;
-  }
-
-  buildingCatalogPromise = (async () => {
-    try {
-      const response = await fetch(`data/sotero_buildings_catalog.json?v=${Date.now()}`, {
-        cache: "no-store",
-      });
-
-      if (!response.ok) {
-        throw new Error(`catalogo respondio ${response.status}`);
-      }
-
-      const data = await response.json();
-      return Array.isArray(data?.buildings) ? data.buildings : [];
-    } catch (error) {
-      console.error("[network-telemetry] error al cargar catalogo de edificios:", error);
-      return [];
-    }
-  })();
-
-  return buildingCatalogPromise;
-};
-
-const buildBuildingIndex = async () => {
-  const catalog = await loadBuildingCatalog();
-  const index = new Map();
-
-  for (const building of catalog) {
-    const centroid = Array.isArray(building?.centroid) && building.centroid.length >= 2
-      ? [Number(building.centroid[1]), Number(building.centroid[0])]
-      : null;
-
-    if (building?.id && centroid && Number.isFinite(centroid[0]) && Number.isFinite(centroid[1])) {
-      index.set(building.id, {
-        id: building.id,
-        name: building.displayName || building.realName || building.id,
-        centroid,
-      });
-    }
-  }
-
-  return index;
-};
-
-const renderHeatLayer = async (telemetry) => {
-  const layer = ensureTelemetryLayer();
-  layer.clearLayers();
-
-  if (!telemetryHeatVisible) {
-    return;
-  }
-
-  const buildingIndex = await buildBuildingIndex();
-  const riskByBuilding = new Map();
-  const buildingSummaries = Array.isArray(telemetry?.buildingRiskSummaries) ? telemetry.buildingRiskSummaries : [];
-
-  if (buildingSummaries.length > 0) {
-    for (const item of buildingSummaries) {
-      const buildingId = String(item?.buildingExternalId || "").trim();
-      if (!buildingId) continue;
-
-      riskByBuilding.set(buildingId, {
-        score: Number(item?.maxRiskScore) || 0,
-        level: item?.maxRiskLevel || "low",
-      });
-    }
-  } else {
-    for (const observation of Array.isArray(telemetry?.topRiskObservations) ? telemetry.topRiskObservations : []) {
-      const buildingId = String(observation?.buildingExternalId || "").trim();
-      if (!buildingId) continue;
-
-      const score = Number(observation?.riskScore) || 0;
-      const existing = riskByBuilding.get(buildingId);
-      if (!existing || score > existing.score) {
-        riskByBuilding.set(buildingId, {
-          score,
-          level: observation?.riskLevel || "low",
-        });
-      }
-    }
-  }
-
-  for (const [buildingId, risk] of riskByBuilding.entries()) {
-    const building = buildingIndex.get(buildingId);
-    if (!building) continue;
-
-    const tone = getRiskTone(risk.level, risk.score);
-    const radius = 16 + Math.min(22, Math.round((Number(risk.score) || 0) / 4));
-
-    L.circleMarker(building.centroid, {
-      radius,
-      color: tone.color,
-      weight: 2,
-      opacity: 0.9,
-      fillColor: tone.fill,
-      fillOpacity: 0.28,
-      interactive: false,
-    }).addTo(layer);
-  }
+const getRankIcon = (index) => {
+  if (index === 0) return "🥇";
+  if (index === 1) return "🥈";
+  if (index === 2) return "🥉";
+  return `#${index + 1}`;
 };
 
 const renderSummary = (panel, telemetry) => {
@@ -175,7 +48,7 @@ const renderSummary = (panel, telemetry) => {
     "Desconocido";
 
   const observedAt = telemetry?.latestObservedAtUtc
-    ? new Date(telemetry.latestObservedAtUtc).toLocaleString("es-CL", { dateStyle: "short", timeStyle: "short" })
+    ? new Date(telemetry.latestObservedAtUtc).toLocaleString("es-CL", { dateStyle: "short", timeStyle: "short", timeZone: "America/Santiago" })
     : "Sin datos";
 
   panel.summary.innerHTML = `
@@ -196,38 +69,35 @@ const renderSummary = (panel, telemetry) => {
     return;
   }
 
-  panel.list.innerHTML = topObservations
-    .slice(0, 8)
-    .map((observation) => {
-      const reasons = Array.isArray(observation?.riskReasons) ? observation.riskReasons.join(", ") : "";
-      return `
-        <div class="network-telemetry-item">
-          <div class="network-telemetry-item-header">
-            <strong>${observation?.deviceName || observation?.externalKey || "Elemento"}</strong>
-            <span class="network-telemetry-risk ${String(observation?.riskLevel || "low").toLowerCase()}">${getRiskLabel(observation?.riskScore, observation?.riskLevel)}</span>
+  panel.list.innerHTML = `
+    <div class="network-telemetry-top-header">Top Riesgos</div>
+    ${topObservations
+      .slice(0, 10)
+      .map((observation, index) => {
+        const reasons = Array.isArray(observation?.riskReasons) ? observation.riskReasons.join(", ") : "";
+        const riskClass = String(observation?.riskLevel || "low").toLowerCase();
+        return `
+          <div class="network-telemetry-item">
+            <div class="network-telemetry-item-rank ${riskClass}">${getRankIcon(index)}</div>
+            <div class="network-telemetry-item-content">
+              <div class="network-telemetry-item-header">
+                <strong>${observation?.deviceName || observation?.externalKey || "Elemento"}</strong>
+                <span class="network-telemetry-risk ${riskClass}">${getRiskLabel(observation?.riskScore, observation?.riskLevel)}</span>
+              </div>
+              <div class="network-telemetry-item-meta">${observation?.observationType || "device"} · ${observation?.username || "sin usuario"} · ${observation?.ipAddress || "sin IP"}</div>
+              ${reasons ? `<div class="network-telemetry-item-reasons">${reasons}</div>` : ""}
+            </div>
           </div>
-          <div class="network-telemetry-item-meta">${observation?.observationType || "device"} · ${observation?.username || "sin usuario"} · ${observation?.ipAddress || "sin IP"}</div>
-          ${reasons ? `<div class="network-telemetry-item-reasons">${reasons}</div>` : ""}
-        </div>
-      `;
-    })
-    .join("");
+        `;
+      })
+      .join("")}
+  `;
 };
 
 const updateToggleButton = (panel, isOpen) => {
   if (!panel?.toggle) return;
   panel.toggle.setAttribute("aria-expanded", String(isOpen));
   panel.toggle.classList.toggle("is-active", isOpen);
-};
-
-const applyHeatVisibility = async (panel, telemetry) => {
-  if (telemetryHeatVisible) {
-    panel.heatButton.textContent = "Ocultar calor";
-    await renderHeatLayer(telemetry);
-  } else {
-    panel.heatButton.textContent = "Mostrar calor";
-    ensureTelemetryLayer().clearLayers();
-  }
 };
 
 const refreshPanel = async ({ forceRefresh = false } = {}) => {
@@ -244,12 +114,10 @@ const refreshPanel = async ({ forceRefresh = false } = {}) => {
     const telemetry = await loadNetworkTelemetryStatus(DEFAULT_CAMPUS, { forceRefresh });
     telemetryState = telemetry;
     renderSummary(panel, telemetry);
-    await applyHeatVisibility(panel, telemetry);
   } catch (error) {
     console.error("[network-telemetry] error al actualizar panel:", error);
     panel.summary.innerHTML = `<div class="network-telemetry-empty">No se pudo cargar la telemetria.</div>`;
     panel.list.innerHTML = `<div class="network-telemetry-empty">Revisa la consola para mas detalle.</div>`;
-    ensureTelemetryLayer().clearLayers();
   } finally {
     telemetryFetchInFlight = false;
     panel.refreshButton.disabled = false;
@@ -280,20 +148,11 @@ const getPanel = () => {
       <div class="network-telemetry-panel-header">
         <div>
           <div class="network-telemetry-panel-title">Red y riesgo</div>
-          <div class="network-telemetry-panel-subtitle">Snapshot local o en vivo de equipos y usuarios</div>
+          <div class="network-telemetry-panel-subtitle">Top de equipos con mayor riesgo</div>
         </div>
         <button type="button" class="network-telemetry-panel-refresh" data-network-telemetry-refresh>Actualizar</button>
       </div>
       <div class="network-telemetry-panel-summary"></div>
-      <div class="network-telemetry-panel-legend">
-        <span><i class="risk-dot risk-dot-critical"></i> Crítico</span>
-        <span><i class="risk-dot risk-dot-high"></i> Alto</span>
-        <span><i class="risk-dot risk-dot-medium"></i> Medio</span>
-        <span><i class="risk-dot risk-dot-low"></i> Bajo</span>
-      </div>
-      <div class="network-telemetry-panel-actions">
-        <button type="button" class="network-telemetry-panel-toggle-heat" data-network-telemetry-heat>Ocultar calor</button>
-      </div>
       <div class="network-telemetry-panel-list"></div>
     `;
   }
@@ -304,7 +163,6 @@ const getPanel = () => {
     summary: root.querySelector(".network-telemetry-panel-summary"),
     list: root.querySelector(".network-telemetry-panel-list"),
     refreshButton: root.querySelector("[data-network-telemetry-refresh]"),
-    heatButton: root.querySelector("[data-network-telemetry-heat]"),
   };
 
   registerControlSurface(root);
@@ -371,23 +229,10 @@ const initTelemetryPanel = () => {
     void refreshPanel({ forceRefresh: true });
   });
 
-  panelElements?.heatButton?.addEventListener("click", (event) => {
-    event.preventDefault();
-    event.stopPropagation();
-    telemetryHeatVisible = !telemetryHeatVisible;
-    void applyHeatVisibility(panelElements, telemetryState);
-  });
-
   window.addEventListener("sotero-session-changed", () => {
     resetNetworkTelemetryCache();
     if (!panel.hidden) {
       void refreshPanel({ forceRefresh: true });
-    }
-  });
-
-  window.addEventListener("sotero-map-data-refreshed", () => {
-    if (!panel.hidden && telemetryState) {
-      void renderHeatLayer(telemetryState);
     }
   });
 

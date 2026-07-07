@@ -279,7 +279,7 @@ Para publicar solo el mapa:
 1. Ejecuta `npm install`.
 2. Ejecuta `npm run build`.
 3. Publica la carpeta `dist/`.
-4. Verifica que `dist/data/walking_routes_backup.json` y `dist/data/sotero_buildings_backend_backup.json` esten incluidos.
+4. Verifica que `dist/data/walking_routes_backup.json`, `dist/data/sotero_buildings_backend_backup.json` y `dist/data/network_telemetry_backup.json` esten incluidos.
 
 Para Vercel, la carpeta de salida debe ser `dist`.
 
@@ -299,9 +299,10 @@ Datos del campus Sotero:
 - `src/data/sotero_buildings_catalog.json`: catalogo auxiliar.
 - `src/data/walking_routes_backup.json`: respaldo estatico de rutas caminables para uso sin API.
 - `src/data/sotero_buildings_backend_backup.json`: respaldo estatico de edificios editados, manuales y geometria para uso sin API.
+- `src/data/network_telemetry_backup.json`: respaldo estatico de telemetria de red para uso sin API.
 - `src/data/interiors/`: detalles, pisos y salas.
 
-Desde el panel de sincronizacion, el boton admin `Guardar respaldo` llama al backend y reemplaza directamente los dos JSON de respaldo en esta carpeta.
+Desde el panel de sincronizacion, el boton admin `Guardar respaldo` llama al backend y reemplaza directamente los JSON de respaldo en esta carpeta.
 
 Componentes principales:
 
